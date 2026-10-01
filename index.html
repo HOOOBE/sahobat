@@ -39,8 +39,14 @@ h2{font-size:15px;color:var(--mut);margin:14px 4px 8px;font-weight:700}
 .chd.on{background:var(--c);color:var(--on)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:8px}
 .item{width:100%;min-height:66px;text-align:center;line-height:1.3;background:color-mix(in srgb,var(--c) 14%,var(--card));border-color:color-mix(in srgb,var(--c) 45%,var(--bd));font-weight:600}
-.tile{display:flex;flex-direction:column;gap:4px}
-.tile .r{display:flex;gap:4px;justify-content:center}
+.grid.ed{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.tile{display:flex;flex-direction:column;gap:6px;min-width:0;padding:6px;border-radius:16px;border:2px solid color-mix(in srgb,var(--c) 35%,var(--bd));background:color-mix(in srgb,var(--c) 5%,var(--card))}
+.tile .r{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.ab{min-width:0;min-height:48px;padding:3px 2px;border-radius:10px;border-width:1.5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1.15}
+.ab .i{font-size:18px;font-weight:800;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ab .l{font-size:12px;font-weight:700;color:var(--mut);white-space:nowrap}
+.ab.set{border-color:color-mix(in srgb,var(--ac) 55%,var(--bd))}
+.ab.del{color:var(--bad)}.ab.del .i{color:var(--bad)}
 .dash{border-style:dashed;min-height:66px}
 #hot{margin-top:8px}
 #hot .lbl{font-size:14px;color:var(--mut);font-weight:700;margin:0 4px 6px}
@@ -279,7 +285,7 @@ function drawAcc(){var A=$("acc");A.innerHTML="";var q=$("q").value.trim().toLow
    hr.appendChild(btn("🎨","mini",function(){cat.c=(cat.c+1)%PAL.length;save();drawAcc()}));
    hr.appendChild(btn("✕","mini",function(){sure("حذف فئة «"+cat.n+"» مع كل موادها؟",function(){cat.items.forEach(function(i){delete S.xp[i];delete S.stock[i]});S.cats.splice(ci,1);S.cat=null;save();drawAcc()})}))}
   box.appendChild(hr);
-  if(open){var g=document.createElement("div");g.className="grid";
+  if(open){var g=document.createElement("div");g.className="grid"+(S.edit?" ed":"");
    items.forEach(function(name){
     var real=cat.items.indexOf(name);
     var main=btn(name,"item"+(S.item===name?" on":""),function(){S.item=name;S.n=1;S.fresh=true;drawAcc();upd()});
@@ -288,11 +294,14 @@ function drawAcc(){var A=$("acc");A.innerHTML="";var q=$("q").value.trim().toLow
     if(ACC()){var cs=document.createElement("small");cs.className="cst";cs.textContent=uc(name)!=null?"💰 "+money(uc(name)):"💰 بدون كلفة";main.appendChild(cs)}
     if(!S.edit){g.appendChild(main);return}
     var w=document.createElement("div");w.className="tile";w.appendChild(main);var r=document.createElement("div");r.className="r";
-    r.appendChild(btn("📦 "+(hasSt(name)?S.stock[name]:"—"),"mini",function(){editStock(name)}));
-    r.appendChild(btn("⏳","mini",function(){editXp(name)}));
-    if(ACC())r.appendChild(btn("💰","mini",function(){editCost(name)}));
-    r.appendChild(btn("✎","mini",function(){ask("الاسم الجديد:",name,function(n){cat.items[real]=n;if(S.item===name)S.item=n;if(n!==name&&hasSt(name)){S.stock[n]=S.stock[name];delete S.stock[name]}if(n!==name&&hasXp(name)){S.xp[n]=S.xp[name];delete S.xp[name]}if(n!==name)renCost(name,n);save();drawAcc();upd()})}));
-    r.appendChild(btn("✕","mini",function(){sure("حذف «"+name+"»؟",function(){cat.items.splice(real,1);delete S.stock[name];delete S.xp[name];if(S.item===name)S.item=null;save();drawAcc();upd()})}));
+    function ab(ic,lb,val,set,cls,fn){var b=btn("",("ab "+(set?"set ":"")+(cls||"")).trim(),fn);var a=document.createElement("span");a.className="i";a.textContent=ic;b.appendChild(a);
+     var l=document.createElement("span");l.className="l";l.textContent=lb;b.appendChild(l);b.title=lb;return b}
+    var xd=hasXp(name)?S.xp[name].split("-"):null;
+    r.appendChild(ab("📦","الرصيد",hasSt(name)?String(S.stock[name]):"—",hasSt(name),"",function(){editStock(name)}));
+    r.appendChild(ab("⏳","الانتهاء",xd?xd[2]+"/"+xd[1]+"/"+xd[0].slice(2):"—",!!xd,"",function(){editXp(name)}));
+    if(ACC())r.appendChild(ab("💰","الكلفة",uc(name)!=null?money(uc(name)):"—",uc(name)!=null,"",function(){editCost(name)}));
+    r.appendChild(ab("✎","الاسم",null,false,"",function(){ask("الاسم الجديد:",name,function(n){cat.items[real]=n;if(S.item===name)S.item=n;if(n!==name&&hasSt(name)){S.stock[n]=S.stock[name];delete S.stock[name]}if(n!==name&&hasXp(name)){S.xp[n]=S.xp[name];delete S.xp[name]}if(n!==name)renCost(name,n);save();drawAcc();upd()})}));
+    r.appendChild(ab("🗑","حذف",null,false,"del",function(){sure("حذف «"+name+"»؟",function(){cat.items.splice(real,1);delete S.stock[name];delete S.xp[name];if(S.item===name)S.item=null;save();drawAcc();upd()})}));
     w.appendChild(r);g.appendChild(w)});
    if(S.edit)g.appendChild(btn("+ مادة","dash",function(){ask("اسم المادة:","",function(n){cat.items.push(n);save();drawAcc()})}));
    box.appendChild(g)}
