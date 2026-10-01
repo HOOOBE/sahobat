@@ -390,12 +390,12 @@ $("undo").onclick=function(){if(!S.prev||S.log.length)return;
  sure("استرجاع سحوبات يوم "+dayLbl(S.prev.day)+" كيوم حالي؟",function(){var h=S.hist.pop();if(!h)return;S.log=h.log;S.day=h.day;S.exp=S.prev.exp;S.prev=null;save();drawAcc();upd();drawLog();dayCheck();toast("تم التراجع")})};
 function xe(v){return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
 function colL(i){return String.fromCharCode(65+i)}
-function sheetXml(rows,w,total,bd){
+function sheetXml(rows,w,total,bd,mc){
  var x='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView rightToLeft="1" workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>';
  w.forEach(function(n,i){x+='<col min="'+(i+1)+'" max="'+(i+1)+'" width="'+n+'" customWidth="1"/>'});
  x+='</cols><sheetData>';
  rows.forEach(function(r,ri){x+='<row r="'+(ri+1)+'">';
-  r.forEach(function(v,ci){var ref=colL(ci)+(ri+1),st=ri===0?1:((total&&ri===rows.length-1)||(bd&&bd.indexOf(ri)>-1)?2:0),sa=st?' s="'+st+'"':'';
+  r.forEach(function(v,ci){var ref=colL(ci)+(ri+1),st=ri===0?1:((total&&ri===rows.length-1)||(bd&&bd.indexOf(ri)>-1)?2:0);if(ri>0&&typeof v==="number"&&mc&&mc.indexOf(ci)>-1)st=st===2?4:3;var sa=st?' s="'+st+'"':'';
    if(typeof v==="number")x+='<c r="'+ref+'"'+sa+'><v>'+v+'</v></c>';
    else x+='<c r="'+ref+'"'+sa+' t="inlineStr"><is><t>'+xe(v)+'</t></is></c>'});
   x+='</row>'});
@@ -416,8 +416,8 @@ function buildXlsx(sheets){var H='<?xml version="1.0" encoding="UTF-8" standalon
  f.push({n:"_rels/.rels",d:H+'<Relationships xmlns="'+N+'package/2006/relationships"><Relationship Id="rId1" Type="'+N+'officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>'});
  f.push({n:"xl/workbook.xml",d:H+'<workbook xmlns="'+N+'spreadsheetml/2006/main" xmlns:r="'+N+'officeDocument/2006/relationships"><sheets>'+sheets.map(function(sh,i){return'<sheet name="'+xe(sh.name)+'" sheetId="'+(i+1)+'" r:id="rId'+(i+1)+'"/>'}).join("")+'</sheets></workbook>'});
  f.push({n:"xl/_rels/workbook.xml.rels",d:H+'<Relationships xmlns="'+N+'package/2006/relationships">'+sheets.map(function(_,i){return'<Relationship Id="rId'+(i+1)+'" Type="'+N+'officeDocument/2006/relationships/worksheet" Target="worksheets/sheet'+(i+1)+'.xml"/>'}).join("")+'<Relationship Id="rId'+(sheets.length+1)+'" Type="'+N+'officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>'});
- f.push({n:"xl/styles.xml",d:H+'<styleSheet xmlns="'+N+'spreadsheetml/2006/main"><fonts count="2"><font><sz val="12"/><name val="Arial"/></font><font><b/><sz val="12"/><name val="Arial"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFD9EEF0"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="3"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment horizontal="center"/></xf><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/></cellXfs></styleSheet>'});
- sheets.forEach(function(sh,i){f.push({n:"xl/worksheets/sheet"+(i+1)+".xml",d:sheetXml(sh.rows,sh.w,sh.total,sh.bold)})});
+ f.push({n:"xl/styles.xml",d:H+'<styleSheet xmlns="'+N+'spreadsheetml/2006/main"><numFmts count="1"><numFmt numFmtId="164" formatCode="#,##0 &quot;IQD&quot;"/></numFmts><fonts count="2"><font><sz val="12"/><name val="Arial"/></font><font><b/><sz val="12"/><name val="Arial"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFD9EEF0"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="5"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment horizontal="center"/></xf><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/><xf numFmtId="164" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1"/><xf numFmtId="164" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1" applyNumberFormat="1"/></cellXfs></styleSheet>'});
+ sheets.forEach(function(sh,i){f.push({n:"xl/worksheets/sheet"+(i+1)+".xml",d:sheetXml(sh.rows,sh.w,sh.total,sh.bold,sh.mc)})});
  return zipBlob(f)}
 function doExport(blob,name){try{var u=URL.createObjectURL(blob);var l=document.createElement("a");l.href=u;l.download=name;document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},2000);toast("تم تنزيل ملف Excel")}catch(e){toast("تعذّر التصدير")}}
 $("exp").onclick=function(){exportDay()};
@@ -443,11 +443,11 @@ function buildSheets(T,withStock){var A=ACC(),D="—";
  else{s2=[["اسم المادة","مجموع الكمية"].concat(A?["كلفة الوحدة","كلفة المسحوب"]:[])];
   ord.forEach(function(n){var r=[n,tot[n]];if(A)r.push(cvT(n),mulT(n));s2.push(r)});
   s2.push(["الإجمالي",tq].concat(A?["",tc]:[]))}
- var sh=[{name:"سحوبات اليوم",rows:s1,w:[34,10,22,22].concat(A?[14,16]:[]),total:true},{name:"مجموع كل مادة",rows:s2,w:(withStock?[34,18,20,30]:[34,18]).concat(A?[14,16]:[]),total:true}];
+ var sh=[{name:"سحوبات اليوم",rows:s1,w:[34,10,22,22].concat(A?[16,18]:[]),total:true,mc:[4,5]},{name:"مجموع كل مادة",rows:s2,w:(withStock?[34,18,20,30]:[34,18]).concat(A?[16,18]:[]),total:true,mc:withStock?[4,5]:[2,3]}];
  if(withStock){var s3=[["الفئة","اسم المادة","الرصيد أول اليوم","المسحوب اليوم","الرصيد المتبقي","تاريخ الانتهاء"].concat(A?["كلفة الوحدة","قيمة المتبقي"]:[])],tv=0;
   S.cats.forEach(function(c){c.items.forEach(function(n){if(!hasSt(n))return;var w=tot[n]||0,r=[c.n,n,S.stock[n]+w,w,S.stock[n],hasXp(n)?dayLbl(S.xp[n]):D];if(A){r.push(cv(n),mul(n,S.stock[n]));if(uc(n)!=null)tv+=uc(n)*S.stock[n]}s3.push(r)})});
   if(A&&s3.length>1)s3.push(["الإجمالي","","","","","","",tv]);
-  if(s3.length>1)sh.push({name:"رصيد المخزن",rows:s3,w:[22,34,18,16,18,16].concat(A?[14,18]:[]),total:A})}
+  if(s3.length>1)sh.push({name:"رصيد المخزن",rows:s3,w:[22,34,18,16,18,16].concat(A?[16,20]:[]),total:A,mc:[6,7]})}
  return sh}
 /* ===== سجل الأيام السابقة ===== */
 var MN=["كانون الثاني","شباط","آذار","نيسان","أيار","حزيران","تموز","آب","أيلول","تشرين الأول","تشرين الثاني","كانون الأول"];
@@ -524,7 +524,7 @@ function uc(n){if(!ACC())return null;var h=chOf(n);return h?h[h.length-1][1]:nul
 function ucAt(n,d){if(!ACC())return null;var h=chOf(n);if(!h)return null;var p=h[0][1];for(var i=0;i<h.length;i++){if(h[i][0]<=d)p=h[i][1];else break}return p}
 function rc(x){var c=ucAt(x.i,x.d);return c==null?null:c*x.n}
 function ucSince(n){var h=chOf(n);return h&&h[h.length-1][0]!=="0000-00-00"?h[h.length-1][0]:null}
-function money(v){return (Math.round(v*100)/100).toLocaleString("en-US")}
+function money(v){return (Math.round(v*100)/100).toLocaleString("en-US")+" IQD"}
 function b64(u){var a=new Uint8Array(u),s="";for(var i=0;i<a.length;i++)s+=String.fromCharCode(a[i]);return btoa(s)}
 function ub64(s){var b=atob(s),a=new Uint8Array(b.length);for(var i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a}
 function hsh(t){var h=5381;for(var i=0;i<t.length;i++)h=((h<<5)+h+t.charCodeAt(i))>>>0;return "h"+h}
@@ -564,7 +564,7 @@ $("apw").onclick=function(){pwDlg("الباسوورد الجديد للمحاس�
  pwDlg("أعد كتابة الباسوورد للتأكيد:",function(p2){if(p2===null)return;if(p2.trim()!==p){toast("الباسوورد غير متطابق");return}setPw(p).then(function(){toast("✔ تم تغيير الباسوورد")})})})};
 function editCost(name){var m=$("mi");m.inputMode="decimal";
  var hh=chOf(name),hist=hh&&hh.length>1?"\n\nسجل الأسعار:\n"+hh.map(function(e){return "• "+money(e[1])+(e[0]==="0000-00-00"?" (البداية)":" من "+dayLbl(e[0]))}).join("\n"):"";
- dlg("كلفة القطعة الواحدة من «"+name+"»"+(hh?"\nالسعر الجديد يُطبَّق على سحوبات اليوم وما بعده فقط.":"")+hist+"\n\n(اتركه فارغًا لحذف الكلفة)",uc(name)!=null?String(uc(name)):"",true,function(v){m.inputMode="";if(v===null)return;
+ dlg("كلفة القطعة الواحدة من «"+name+"» بالدينار العراقي (IQD)"+(hh?"\nالسعر الجديد يُطبَّق على سحوبات اليوم وما بعده فقط.":"")+hist+"\n\n(اتركه فارغًا لحذف الكلفة)",uc(name)!=null?String(uc(name)):"",true,function(v){m.inputMode="";if(v===null)return;
   var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).replace(/[,،٬\s]/g,"").replace("٫",".");
   if(t===""){sure("حذف كل أسعار «"+name+"» (الحالية والقديمة)؟\nالسحوبات السابقة ستظهر بدون كلفة.",function(){delete S.cost[name];saveCost().then(function(){drawAcc();upd();drawLog();toast("تم حذف الكلفة")})});return}
   if(!(/^\d+(\.\d+)?$/.test(t)&&+t<1e10)){toast("اكتب رقمًا صحيحًا");return}
@@ -594,7 +594,7 @@ function exportRange(a,b){if(!ACC())return;if(!a||!b){toast("اختر التار
  var s4=[["اسم الموظف","عدد السجلات","عدد القطع","الكلفة"]];emo.sort(function(x,y){return em[y].q-em[x].q}).forEach(function(e){s4.push([e,em[e].r,em[e].q,em[e].c])});s4.push(["الإجمالي",tr,tq,tc]);
  var noc=T.filter(function(x){return ucAt(x.i,x.d)==null}).map(function(x){return x.i}).filter(function(v,i,a){return a.indexOf(v)===i}).length;
  var s5=[["اسم المادة","السعر","يُطبَّق من"]];io.forEach(function(n){var h=chOf(n);if(h)h.forEach(function(e){s5.push([n,e[1],e[0]==="0000-00-00"?"البداية":dayLbl(e[0])])})});
- doExport(buildXlsx([{name:"كل السحوبات",rows:s1,w:[14,9,34,9,20,14,16],total:true},{name:"مجموع كل مادة",rows:s2,w:[34,20,16,14,18],total:true},{name:"ملخص الأيام",rows:s3,w:[16,14,14,18],total:true},{name:"حسب الموظف",rows:s4,w:[22,14,14,18],total:true}].concat(s5.length>1?[{name:"سجل الأسعار",rows:s5,w:[34,16,16]}]:[])),"withdrawals-"+a+"_to_"+b+"-cost.xlsx");
+ doExport(buildXlsx([{name:"كل السحوبات",rows:s1,w:[14,9,34,9,20,22,18],total:true,mc:[5,6]},{name:"مجموع كل مادة",rows:s2,w:[34,20,16,16,18],total:true,mc:[3,4]},{name:"ملخص الأيام",rows:s3,w:[16,14,14,20],total:true,mc:[3]},{name:"حسب الموظف",rows:s4,w:[22,14,14,20],total:true,mc:[3]}].concat(s5.length>1?[{name:"سجل الأسعار",rows:s5,w:[34,18,16],mc:[1]}]:[])),"withdrawals-"+a+"_to_"+b+"-cost.xlsx");
  if(noc)setTimeout(function(){toast("⚠ "+noc+" مادة بدون كلفة مسجلة — ظهرت بعلامة —")},3000)}
 var WN={stock:"أرصدة المواد",log:"سجل السحوبات",cost:"الكلف",freq:"الاقتراحات",xp:"تواريخ الانتهاء"};
 function wSel(){return [].slice.call(document.querySelectorAll(".wc")).filter(function(c){return c.checked}).map(function(c){return c.value})}
