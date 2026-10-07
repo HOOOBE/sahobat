@@ -182,7 +182,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 المحاسب 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 4 · مشاركة واتساب</div>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -687,7 +687,11 @@ $("rexp").onclick=function(){exportRange($("rf").value,$("rt").value)};
 $("dayb").onclick=function(){$("clr").onclick()};
 window.addEventListener("storage",function(e){if(e.key!=="wd_state"||!e.newValue)return;load();if(S.role){renderAll();upd();drawLog()}dayCheck()});
 document.addEventListener("visibilitychange",function(){if(!document.hidden){tick();dayCheck()}});
-if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){
+ /* عند وصول نسخة جديدة يعيد تحميل الصفحة مرة واحدة تلقائيًا */
+ var hadCtl=!!navigator.serviceWorker.controller,rl=false;
+ navigator.serviceWorker.addEventListener("controllerchange",function(){if(hadCtl&&!rl){rl=true;location.reload()}});
+ window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(function(r){try{r.update()}catch(e){}}).catch(function(){})})}
 tick();load();renderAll();upd();drawLog();dayCheck();showLogin();setInterval(function(){tick();dayCheck()},15000);
 </script>
 </body>
