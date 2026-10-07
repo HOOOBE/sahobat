@@ -179,7 +179,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 المحاسب 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 7 · أونلاين</div>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 8 · أونلاين</div>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -701,6 +701,8 @@ if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){
    كل عيادة = مستند واحد clinics/{رمز} + مستندات أشهر للأيام السابقة clinics/{رمز}/months/{YYYY-MM}.
    الدمج ثلاثي: base = آخر نسخة أونلاين شافها الجهاز. اللي تغيّر محليًا عن base يفوز، والباقي يُؤخذ من الأونلاين. */
 var FBV="https://www.gstatic.com/firebasejs/12.19.0/";
+/* مشروع Firebase الخاص بالعيادة (هذه معرّفات عامة وليست باسوورد — الحماية برمز الربط السري) */
+var FBCFG={apiKey:"AIzaSyDNQ_O0nhh-FQlm_t2QeXQMi4t8BFMYvPg",authDomain:"sahobat-35dc1.firebaseapp.com",projectId:"sahobat-35dc1",storageBucket:"sahobat-35dc1.firebasestorage.app",messagingSenderId:"408946713435",appId:"1:408946713435:web:9d15ffaa5bb4e0e93df07e"};
 var CL={cfg:null,F:null,db:null,ref:null,mcol:null,base:null,sent:null,ready:false,exists:true,st:"",err:"",ce0:null,lastM:null,lastH:null,uns:[]};
 var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd"],CLM=["stock","xp","freq","logm"];
 var CLD={emps:null,cats:null,day:null,thr:5,exp:false,prev:null,ce:null,cpub:null,ren:[],xpd:30,pin:""};
@@ -801,12 +803,12 @@ function clParseCfg(t){var c={},m,re=/["']?(apiKey|authDomain|projectId|storageB
 function clKey(){var a=new Uint8Array(18),s="";crypto.getRandomValues(a);for(var i=0;i<a.length;i++)s+=(a[i]%36).toString(36);return "c"+s+Date.now().toString(36)}
 function cmShow(){var on=!!CL.cfg;$("cmOff").hidden=on;$("cmOn").hidden=!on;$("cmIn").hidden=true;$("cmUn").hidden=!ACC();
  $("cmt").textContent=on?(CL.st||"")+"\n\nلربط جهاز ثاني (مثل جهاز البيت): انسخ هذا الرمز، وبالجهاز الثاني ادخل كمحاسب ← ⚙️ ← ☁️ الربط أونلاين ← «ربط هذا الجهاز بجهاز آخر» والصق الرمز.\n🔒 لا تعطي الرمز لأحد — أي أحد عنده الرمز يقدر يشوف ويعدّل البيانات."
-  :"اربط أجهزتك حتى تشوف وتعدّل نفس البيانات من العيادة والبيت.\n\n• أول جهاز (اللي بيه البيانات الحالية): اختر «إنشاء الربط» والصق إعدادات Firebase.\n• باقي الأجهزة: اختر «ربط هذا الجهاز» والصق رمز الربط من الجهاز الأول.";
+  :"اربط أجهزتك حتى تشوف وتعدّل نفس البيانات من العيادة والبيت.\n\n• أول جهاز (تاب العيادة اللي بيه البيانات الحالية): اختر «إنشاء الربط».\n• باقي الأجهزة: اختر «ربط هذا الجهاز» والصق رمز الربط من الجهاز الأول.";
  if(on)$("cmCode").value=clCode();$("cm").hidden=false}
 function cmInput(mode){$("cmOff").hidden=true;$("cmIn").hidden=false;var ta=$("cmTa");ta.value="";
  $("cmt").textContent=mode==="new"?"الصق هنا إعدادات Firebase (firebaseConfig) كما نسختها من موقع Firebase:":"الصق هنا رمز الربط اللي نسخته من الجهاز الأول (يبدأ بـ SAHOBAT1):";
  $("cmGo").textContent=mode==="new"?"🆕 إنشاء الربط ورفع بيانات هذا الجهاز":"🔗 ربط هذا الجهاز";$("cmGo").onclick=function(){mode==="new"?cmNew(ta.value):cmJoin(ta.value)};setTimeout(function(){ta.focus()},50)}
-function cmNew(t){var c=clParseCfg(t||"");if(!c){toast("⚠ ما گدرت أقرأ الإعدادات — تأكد أنك نسخت firebaseConfig كامل (فيه apiKey و projectId)");return}
+function cmNew(t){var c=t?clParseCfg(t):FBCFG;if(!c){toast("⚠ ما گدرت أقرأ الإعدادات — تأكد أنك نسخت firebaseConfig كامل (فيه apiKey و projectId)");return}
  sure("سيتم رفع بيانات هذا الجهاز أونلاين وتصير هي البيانات الأساسية لكل الأجهزة.\nمتابعة؟",function(){
   CL.cfg={c:c,k:clKey(),mode:"create"};CL.base=clEmpty();CL.sent=null;clSaveCfg();clSaveBase();clInit();cmShow();toast("☁️ جارِ رفع البيانات...")})}
 function cmJoin(t){var o=null;try{t=String(t||"").trim();var i=t.indexOf("SAHOBAT1:");o=JSON.parse(b64d(t.slice(i+9).replace(/\s+/g,"")))}catch(e){o=null}
@@ -814,7 +816,7 @@ function cmJoin(t){var o=null;try{t=String(t||"").trim();var i=t.indexOf("SAHOBA
  sure("⚠ بيانات هذا الجهاز راح تُستبدل بالبيانات الأونلاين (من الجهاز الأول).\nإذا عندك بيانات مهمة هنا، احفظ نسخة احتياطية أولًا.\n\nمتابعة؟",function(){
   CL.cfg={c:o.c,k:o.k,mode:"join"};CL.base=clEnc();CL.sent=null;clSaveCfg();clSaveBase();clInit();cmShow();toast("🔗 جارِ جلب البيانات...")})}
 $("clb").onclick=cmShow;$("cmX").onclick=function(){$("cm").hidden=true};
-$("cmNew").onclick=function(){cmInput("new")};$("cmJoin").onclick=function(){cmInput("join")};
+$("cmNew").onclick=function(){cmNew("")};$("cmJoin").onclick=function(){cmInput("join")};
 $("cloudb").onclick=function(){if(ACC())cmShow();else toast(CL.st||"")};
 $("cmCopy").onclick=function(){var t=$("cmCode");t.select();try{navigator.clipboard.writeText(t.value).then(function(){toast("📋 تم نسخ رمز الربط")},function(){document.execCommand("copy");toast("📋 تم النسخ")})}catch(e){document.execCommand("copy");toast("📋 تم النسخ")}};
 $("cmWa").onclick=function(){window.open("https://wa.me/?text="+encodeURIComponent("رمز ربط تطبيق السحوبات:\n"+clCode()),"_blank")};
