@@ -182,7 +182,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 المحاسب 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 4 · مشاركة واتساب</div>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 5 · مشاركة واتساب</div>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -435,9 +435,22 @@ function csvOf(sheets){function c(v){v=v==null?"":String(v);return /[",\n\r]/.te
  var out=[];sheets.forEach(function(sh,i){if(i)out.push("");if(sheets.length>1)out.push(c("— "+sh.name+" —"));sh.rows.forEach(function(r){out.push(r.map(c).join(","))})});
  return "\uFEFF"+out.join("\r\n")}
 /* يفتح قائمة المشاركة (واتساب / Drive ...). إذا الجهاز ما يسمح بمشاركة xlsx يرسل نفس الجداول كملف CSV يفتح بالإكسل. */
-function doShare(sheets,name){var xb=buildXlsx(sheets),f=mkFile([xb],name,XM);
- if(!canShareF(f)){f=mkFile([csvOf(sheets)],name.replace(/\.xlsx$/,".csv"),"text/csv");if(!canShareF(f)){doExport(xb,name);setTimeout(function(){toast("⚠ هذا المتصفح لا يدعم المشاركة المباشرة\nتم تنزيل الملف — أرسله للواتساب من التنزيلات")},1200);return}}
- navigator.share({files:[f],title:name}).then(function(){toast("✔ تم إرسال ملف Excel")}).catch(function(e){if(e&&e.name==="AbortError")toast("لم يتم الإرسال");else{doExport(xb,name)}})}
+function brw(){var u=navigator.userAgent,m;
+ var b=(m=u.match(/SamsungBrowser\/([\d]+)/))?"Samsung Internet "+m[1]:(m=u.match(/(?:Firefox|FxiOS)\/([\d]+)/))?"Firefox "+m[1]:(m=u.match(/EdgA?\/([\d]+)/))?"Edge "+m[1]:(m=u.match(/OPR\/([\d]+)/))?"Opera "+m[1]:/; wv\)|FBAN|FBAV|Instagram|WhatsApp/.test(u)?"متصفح داخل تطبيق (WebView)":(m=u.match(/Chrome\/([\d]+)/))?"Chrome "+m[1]:/Safari/.test(u)?"Safari":"غير معروف";
+ var o=(m=u.match(/Android ([\d.]+)/))?"Android "+m[1]:/iPad|iPhone|Macintosh/.test(u)?"Apple":/Windows/.test(u)?"Windows":"";
+ var st=window.matchMedia&&matchMedia("(display-mode: standalone)").matches?"تطبيق مثبت":"صفحة";
+ return b+" · "+o+" · "+st}
+function shareFail(why,xb,name){doExport(xb,name);
+ setTimeout(function(){alertModal("⚠ لم تفتح قائمة المشاركة — تم تنزيل الملف بدلها.\nأرسله للواتساب من التنزيلات.\n\nالسبب: "+why+"\nالمتصفح: "+brw())},900)}
+/* يفتح قائمة المشاركة (واتساب / Drive ...). إذا الجهاز ما يسمح بمشاركة xlsx يرسل نفس الجداول كملف CSV يفتح بالإكسل. */
+function doShare(sheets,name){var xb=buildXlsx(sheets);
+ if(!navigator.share){shareFail("هذا المتصفح لا يدعم المشاركة",xb,name);return}
+ var f=mkFile([xb],name,XM);
+ if(!canShareF(f)){f=mkFile([csvOf(sheets)],name.replace(/\.xlsx$/,".csv"),"text/csv");
+  if(!f){shareFail("تعذّر تجهيز الملف",xb,name);return}
+  if(navigator.canShare){var ok=false;try{ok=navigator.canShare({files:[f]})}catch(e){}if(!ok){shareFail("المتصفح لا يسمح بمشاركة الملفات",xb,name);return}}}
+ try{navigator.share({files:[f],title:name}).then(function(){toast("✔ تم إرسال ملف Excel")}).catch(function(e){if(e&&e.name==="AbortError")toast("لم يتم الإرسال");else shareFail((e&&e.name||"خطأ")+": "+(e&&e.message||""),xb,name)})}
+ catch(e){shareFail((e&&e.name||"خطأ")+": "+(e&&e.message||""),xb,name)}}
 /* زر التصدير: يسأل مشاركة أو تنزيل */
 var XP=null;
 function pickExport(sheets,name,after){XP={sh:sheets,n:name,a:after||null};$("xm").hidden=false}
