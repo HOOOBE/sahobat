@@ -133,7 +133,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,application/json" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -169,8 +169,8 @@ button.flash{animation:flash .5s ease-out}
 <div class="rr"><span style="width:34px">من</span><input type="date" id="rf"></div><div class="rr"><span style="width:34px">إلى</span><input type="date" id="rt"></div>
 <button id="rexp" style="width:100%;margin-top:8px;font-weight:800">📊 تصدير ملف Excel للفترة</button></div><div class="row" style="margin-top:12px"><button id="hexp" hidden>تصدير هذا اليوم Excel</button><button id="hx">إغلاق</button></div></div></div>
 <div class="md" id="bkm" hidden><div class="mb"><div id="bkt" style="font-weight:700;margin-bottom:12px;line-height:1.6;white-space:pre-line"></div>
-<button id="bkd" class="go" style="margin-bottom:8px">💾 تنزيل النسخة الاحتياطية</button>
-<button id="bksh" style="width:100%;margin-bottom:8px;font-weight:700">📤 إرسال النسخة (واتساب / Drive / الملفات)</button>
+<button id="bksh" class="go" style="width:100%;margin-bottom:8px">📤 إرسال النسخة للواتساب</button>
+<button id="bkd" style="width:100%;margin-bottom:8px;font-weight:700">💾 تنزيل النسخة على الجهاز</button>
 <button id="bkx" style="width:100%">لاحقًا</button></div></div>
 <div class="md" id="al" hidden><div class="mb"><div style="font-weight:800;margin-bottom:10px">🔔 التنبيهات</div><div id="alist"></div><button id="ntb" class="mini" style="width:100%;margin-top:8px" hidden>🔔 تفعيل إشعارات الجهاز</button><div class="row" style="margin-top:12px"><button id="alx">إغلاق</button></div></div></div>
 <div class="md" id="login" hidden style="background:var(--bg)"><div class="mb" style="text-align:center">
@@ -388,7 +388,7 @@ function endDay(){var n=S.log.length,q=0;S.log.forEach(function(x){q+=x.n});
  S.log=[];S.day=today();S.exp=false;S.item=null;S.n=1;S.fresh=true;
  save();drawAcc();upd();drawLog();dayCheck()}
 $("clr").onclick=function(){var n=S.log.length,q=0;S.log.forEach(function(x){q+=x.n});
- sure((n?"إنهاء يوم "+dayLbl(S.day)+" ("+n+" سجل / "+q+" قطعة) وبدء يوم جديد؟\n\nسيتم:\n📊 تنزيل ملف Excel لسحوبات اليوم\n💾 ثم يظهر لك زر حفظ النسخة الاحتياطية\n\nالكميات المسحوبة مخصومة من رصيد كل مادة، وسيبدأ اليوم الجديد بالرصيد المتبقي.":"لا توجد سحوبات في هذا اليوم.\nبدء يوم جديد مع حفظ نسخة احتياطية؟"),function(){
+ sure((n?"إنهاء يوم "+dayLbl(S.day)+" ("+n+" سجل / "+q+" قطعة) وبدء يوم جديد؟\n\nسيتم:\n📊 إرسال ملف Excel لسحوبات اليوم (واتساب / Drive)\n💾 ثم يظهر لك زر حفظ النسخة الاحتياطية\n\nالكميات المسحوبة مخصومة من رصيد كل مادة، وسيبدأ اليوم الجديد بالرصيد المتبقي.":"لا توجد سحوبات في هذا اليوم.\nبدء يوم جديد مع حفظ نسخة احتياطية؟"),function(){
   if(n)exportDay();
   endDay();
   bkDialog(n>0)})};
@@ -425,13 +425,23 @@ function buildXlsx(sheets){var H='<?xml version="1.0" encoding="UTF-8" standalon
  f.push({n:"xl/styles.xml",d:H+'<styleSheet xmlns="'+N+'spreadsheetml/2006/main"><numFmts count="1"><numFmt numFmtId="164" formatCode="#,##0 &quot;IQD&quot;"/></numFmts><fonts count="2"><font><sz val="12"/><name val="Arial"/></font><font><b/><sz val="12"/><name val="Arial"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFD9EEF0"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="5"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment horizontal="center"/></xf><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/><xf numFmtId="164" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1"/><xf numFmtId="164" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1" applyNumberFormat="1"/></cellXfs></styleSheet>'});
  sheets.forEach(function(sh,i){f.push({n:"xl/worksheets/sheet"+(i+1)+".xml",d:sheetXml(sh.rows,sh.w,sh.total,sh.bold,sh.mc)})});
  return zipBlob(f)}
+var XM="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+function mkFile(parts,name,type){try{return new File(parts,name,{type:type})}catch(e){return null}}
+function canShareF(f){try{return !!(f&&navigator.canShare&&navigator.share&&navigator.canShare({files:[f]}))}catch(e){return false}}
+function csvOf(sheets){function c(v){v=v==null?"":String(v);return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}
+ var out=[];sheets.forEach(function(sh,i){if(i)out.push("");if(sheets.length>1)out.push(c("— "+sh.name+" —"));sh.rows.forEach(function(r){out.push(r.map(c).join(","))})});
+ return "\uFEFF"+out.join("\r\n")}
+/* يفتح قائمة المشاركة (واتساب / Drive ...). إذا الجهاز ما يسمح بمشاركة xlsx يرسل نفس الجداول كملف CSV يفتح بالإكسل. */
+function doShare(sheets,name){var xb=buildXlsx(sheets),f=mkFile([xb],name,XM);
+ if(!canShareF(f)){f=mkFile([csvOf(sheets)],name.replace(/\.xlsx$/,".csv"),"text/csv");if(!canShareF(f)){doExport(xb,name);return}}
+ navigator.share({files:[f],title:name}).then(function(){toast("✔ تم إرسال ملف Excel")}).catch(function(e){if(e&&e.name==="AbortError")toast("لم يتم الإرسال");else doExport(xb,name)})}
 function doExport(blob,name){try{var u=URL.createObjectURL(blob);var l=document.createElement("a");l.href=u;l.download=name;document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},2000);toast("تم تنزيل ملف Excel")}catch(e){toast("تعذّر التصدير")}}
 $("exp").onclick=function(){exportDay()};
 function exportDay(){
  var d=S.day,T=S.log.slice();
  if(!T.length){toast("لا توجد سحوبات اليوم للتصدير");return false}
  var sh=buildSheets(T,true);
- doExport(buildXlsx(sh),"withdrawals-"+d+(ACC()?"-cost":"")+".xlsx");S.exp=true;save();return true}
+ doShare((sh),"withdrawals-"+d+(ACC()?"-cost":"")+".xlsx");S.exp=true;save();return true}
 function buildSheets(T,withStock){var A=ACC(),D="—";
  function cv(n){var c=uc(n);return c==null?D:c}
  function mul(n,q){var c=uc(n);return c==null?D:c*q}
@@ -491,7 +501,7 @@ function drawDay(){var B=$("hday"),k=H.sel;B.innerHTML="";$("hexp").hidden=true;
  T.forEach(function(x){var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=x.i+" × "+x.n;var m=document.createElement("small");m.textContent=" "+x.e+" · "+x.t;s.appendChild(m);r.appendChild(s);B.appendChild(r)});
  $("hexp").hidden=false}
 function exportPast(k){var T=recsOn(k);if(!T.length)return;
- doExport(buildXlsx(buildSheets(T,false)),"withdrawals-"+k+(ACC()?"-cost":"")+".xlsx")}
+ doShare((buildSheets(T,false)),"withdrawals-"+k+(ACC()?"-cost":"")+".xlsx")}
 $("histb").onclick=openHist;$("hx").onclick=function(){$("hs").hidden=true};
 $("hprev").onclick=function(){if(--H.m<0){H.m=11;H.y--}H.sel=null;drawCal()};
 $("hnext").onclick=function(){if(++H.m>11){H.m=0;H.y++}H.sel=null;drawCal()};
@@ -507,12 +517,11 @@ function bkFile(){S.bk=Date.now();save();var raw=localStorage.getItem("wd_state"
  return {name:name,blob:new Blob([JSON.stringify({app:"wd",v:1,at:S.bk,state:JSON.parse(raw)})],{type:"application/json"})}}
 function bkDownload(){var f=bkFile();
  try{var u=URL.createObjectURL(f.blob),l=document.createElement("a");l.href=u;l.download=f.name;document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);toast("💾 تم تنزيل النسخة الاحتياطية\nستجدها في التنزيلات باسم\n"+f.name)}catch(e){toast("تعذّر الحفظ")}}
-function bkShare(){var f=bkFile(),file;
- try{file=new File([f.blob],f.name,{type:"application/json"})}catch(e){bkDownload();return}
- if(navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file],title:"نسخة احتياطية — السحوبات"}).then(function(){toast("✔ تم إرسال النسخة الاحتياطية")}).catch(function(e){if(e&&e.name!=="AbortError")bkDownload()})}
+function bkShare(){var f=bkFile(),file=mkFile([f.blob],f.name.replace(/\.json$/,".txt"),"text/plain");
+ if(canShareF(file)){navigator.share({files:[file],title:"نسخة احتياطية — السحوبات"}).then(function(){toast("✔ تم إرسال النسخة الاحتياطية")}).catch(function(e){if(e&&e.name!=="AbortError")bkDownload()})}
  else bkDownload()}
-function bkDialog(x){$("bkt").textContent="✔ تم إنهاء اليوم وبدأ يوم جديد "+dayLbl(S.day)+(x?"\n📊 تم تنزيل ملف Excel":"")+"\n\nاحفظ الآن النسخة الاحتياطية لكل البيانات:";
- $("bksh").hidden=!(navigator.canShare&&window.File);$("bkm").hidden=false}
+function bkDialog(x){$("bkt").textContent="✔ تم إنهاء اليوم وبدأ يوم جديد "+dayLbl(S.day)+(x?"\n📊 تم تجهيز ملف Excel":"")+"\n\nاحفظ الآن النسخة الاحتياطية لكل البيانات:";
+ $("bksh").hidden=!canShareF(mkFile(["x"],"t.txt","text/plain"));$("bkm").hidden=false}
 $("bkd").onclick=function(){bkDownload();$("bkm").hidden=true};
 $("bksh").onclick=function(){bkShare();$("bkm").hidden=true};
 $("bkx").onclick=function(){$("bkm").hidden=true;toast("⚠ لم تُحفظ نسخة احتياطية")};
@@ -628,7 +637,7 @@ function exportRange(a,b){if(!ACC())return;if(!a||!b){toast("اختر التار
  var nos=T.filter(function(x){return usAt(x.i,x.d)==null}).map(function(x){return x.i}).filter(function(v,i,a){return a.indexOf(v)===i}).length;
  var s5=[["اسم المادة","السعر","يُطبَّق من"]];io.forEach(function(n){var h=chOf(n);if(h)h.forEach(function(e){s5.push([n,e[1],e[0]==="0000-00-00"?"البداية":dayLbl(e[0])])})});
  var s6=[["اسم المادة","سعر الخدمة","يُطبَّق من"]];io.forEach(function(n){var h=shOf(n);if(h)h.forEach(function(e){s6.push([n,e[1],e[0]==="0000-00-00"?"البداية":dayLbl(e[0])])})});
- doExport(buildXlsx([{name:"كل السحوبات",rows:s1,w:[14,9,34,9,20,22,18,26,18],total:true,mc:[5,6,7,8]},{name:"مجموع كل مادة",rows:s2,w:[34,20,16,16,18,18,18],total:true,mc:[3,4,5,6]},{name:"ملخص الأيام",rows:s3,w:[16,14,14,20,20],total:true,mc:[3,4]},{name:"حسب الموظف",rows:s4,w:[22,14,14,20,20],total:true,mc:[3,4]}].concat(s5.length>1?[{name:"سجل الأسعار",rows:s5,w:[34,18,16],mc:[1]}]:[]).concat(s6.length>1?[{name:"سجل أسعار الخدمة",rows:s6,w:[34,18,16],mc:[1]}]:[])),"withdrawals-"+a+"_to_"+b+"-cost.xlsx");
+ doShare(([{name:"كل السحوبات",rows:s1,w:[14,9,34,9,20,22,18,26,18],total:true,mc:[5,6,7,8]},{name:"مجموع كل مادة",rows:s2,w:[34,20,16,16,18,18,18],total:true,mc:[3,4,5,6]},{name:"ملخص الأيام",rows:s3,w:[16,14,14,20,20],total:true,mc:[3,4]},{name:"حسب الموظف",rows:s4,w:[22,14,14,20,20],total:true,mc:[3,4]}].concat(s5.length>1?[{name:"سجل الأسعار",rows:s5,w:[34,18,16],mc:[1]}]:[]).concat(s6.length>1?[{name:"سجل أسعار الخدمة",rows:s6,w:[34,18,16],mc:[1]}]:[])),"withdrawals-"+a+"_to_"+b+"-cost.xlsx");
  if(noc||nos)setTimeout(function(){toast((noc?"⚠ "+noc+" مادة بدون كلفة مسجلة":"")+(noc&&nos?"\n":"")+(nos?"⚠ "+nos+" مادة بدون سعر خدمة":"")+"\nظهرت بعلامة —")},3000)}
 var WN={stock:"أرصدة المواد",log:"سجل السحوبات",cost:"الكلف",freq:"الاقتراحات",xp:"تواريخ الانتهاء"};
 function wSel(){return [].slice.call(document.querySelectorAll(".wc")).filter(function(c){return c.checked}).map(function(c){return c.value})}
