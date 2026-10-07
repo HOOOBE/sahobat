@@ -172,17 +172,14 @@ button.flash{animation:flash .5s ease-out}
 <button id="bksh" class="go" style="width:100%;margin-bottom:8px">📤 إرسال النسخة للواتساب</button>
 <button id="bkd" style="width:100%;margin-bottom:8px;font-weight:700">💾 تنزيل النسخة على الجهاز</button>
 <button id="bkx" style="width:100%">لاحقًا</button></div></div>
-<div class="md" id="xm" hidden><div class="mb"><div id="xt" style="font-weight:700;margin-bottom:12px;line-height:1.6;white-space:pre-line">📊 ملف Excel جاهز</div>
-<button id="xsh" class="go" style="width:100%;margin-bottom:8px">📤 مشاركة (واتساب / Drive)</button>
-<button id="xdl" style="width:100%;margin-bottom:8px;font-weight:700">💾 تنزيل الملف على الجهاز</button>
-<button id="xno" style="width:100%">إلغاء</button></div></div>
+
 <div class="md" id="al" hidden><div class="mb"><div style="font-weight:800;margin-bottom:10px">🔔 التنبيهات</div><div id="alist"></div><button id="ntb" class="mini" style="width:100%;margin-top:8px" hidden>🔔 تفعيل إشعارات الجهاز</button><div class="row" style="margin-top:12px"><button id="alx">إغلاق</button></div></div></div>
 <div class="md" id="login" hidden style="background:var(--bg)"><div class="mb" style="text-align:center">
 <div style="font-size:40px">📦</div><div style="font-weight:800;font-size:22px;margin:4px 0 16px">تسجيل السحوبات</div>
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 المحاسب 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 5 · مشاركة واتساب</div>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 6</div>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -217,11 +214,11 @@ function today(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)
 function tick(){var d=new Date();$("clock").textContent=fd(d)+" · "+ft(d)}
 S.day=today();S.exp=false;S.freq={};S.prev=null;S.hist=[];
 function load(){try{var v=JSON.parse(localStorage.getItem("wd_state")||"null");if(v){S.emps=v.emps||S.emps;S.emp=v.emp||null;S.log=v.log||[];S.pin=v.pin||"";S.stock=v.stock||{};S.thr=(typeof v.thr==="number")?v.thr:5;if(v.cats&&v.cats.length)S.cats=v.cats;
- S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.ce=v.ce||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];
+ S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];
  if(!v.hist&&S.prev&&S.prev.log)S.hist.push({day:S.prev.day,log:S.prev.log});
  if(v.freq){S.freq=v.freq}else{S.log.forEach(function(x){S.freq[x.i]=(S.freq[x.i]||0)+1})}
  if(v.day){S.day=v.day}else{var d=today(),old=S.log.filter(function(x){return x.d!==d});if(old.length)S.hist.push({day:old[0].d,log:old});S.log=S.log.filter(function(x){return x.d===d});S.day=d}}}catch(e){}}
-function save(){try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,ren:S.ren,xp:S.xp,xpd:S.xpd}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
+function save(){try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
 function dayLbl(v){var p=v.split("-");return p[2]+"/"+p[1]+"/"+p[0]}
 function hasSt(n){return typeof S.stock[n]==="number"}
 function stLeft(n){return hasSt(n)?S.stock[n]:Infinity}
@@ -392,7 +389,7 @@ function endDay(){var n=S.log.length,q=0;S.log.forEach(function(x){q+=x.n});
  S.log=[];S.day=today();S.exp=false;S.item=null;S.n=1;S.fresh=true;
  save();drawAcc();upd();drawLog();dayCheck()}
 $("clr").onclick=function(){var n=S.log.length,q=0;S.log.forEach(function(x){q+=x.n});
- sure((n?"إنهاء يوم "+dayLbl(S.day)+" ("+n+" سجل / "+q+" قطعة) وبدء يوم جديد؟\n\nسيتم:\n📊 ملف Excel لسحوبات اليوم (مشاركة أو تنزيل)\n💾 ثم يظهر لك زر حفظ النسخة الاحتياطية\n\nالكميات المسحوبة مخصومة من رصيد كل مادة، وسيبدأ اليوم الجديد بالرصيد المتبقي.":"لا توجد سحوبات في هذا اليوم.\nبدء يوم جديد مع حفظ نسخة احتياطية؟"),function(){
+ sure((n?"إنهاء يوم "+dayLbl(S.day)+" ("+n+" سجل / "+q+" قطعة) وبدء يوم جديد؟\n\nسيتم:\n📊 تنزيل ملف Excel لسحوبات اليوم\n📤 ثم إرسال النسخة الاحتياطية للواتساب\n\nالكميات المسحوبة مخصومة من رصيد كل مادة، وسيبدأ اليوم الجديد بالرصيد المتبقي.":"لا توجد سحوبات في هذا اليوم.\nبدء يوم جديد مع حفظ نسخة احتياطية؟"),function(){
   if(n){exportDay(function(){bkDialog(true)});endDay()}
   else{endDay();bkDialog(false)}})};
 $("undo").onclick=function(){if(!S.prev||S.log.length)return;
@@ -431,41 +428,16 @@ function buildXlsx(sheets){var H='<?xml version="1.0" encoding="UTF-8" standalon
 var XM="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 function mkFile(parts,name,type){try{return new File(parts,name,{type:type})}catch(e){return null}}
 function canShareF(f){try{return !!(f&&navigator.canShare&&navigator.share&&navigator.canShare({files:[f]}))}catch(e){return false}}
-function csvOf(sheets){function c(v){v=v==null?"":String(v);return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}
- var out=[];sheets.forEach(function(sh,i){if(i)out.push("");if(sheets.length>1)out.push(c("— "+sh.name+" —"));sh.rows.forEach(function(r){out.push(r.map(c).join(","))})});
- return "\uFEFF"+out.join("\r\n")}
-/* يفتح قائمة المشاركة (واتساب / Drive ...). إذا الجهاز ما يسمح بمشاركة xlsx يرسل نفس الجداول كملف CSV يفتح بالإكسل. */
-function brw(){var u=navigator.userAgent,m;
- var b=(m=u.match(/SamsungBrowser\/([\d]+)/))?"Samsung Internet "+m[1]:(m=u.match(/(?:Firefox|FxiOS)\/([\d]+)/))?"Firefox "+m[1]:(m=u.match(/EdgA?\/([\d]+)/))?"Edge "+m[1]:(m=u.match(/OPR\/([\d]+)/))?"Opera "+m[1]:/; wv\)|FBAN|FBAV|Instagram|WhatsApp/.test(u)?"متصفح داخل تطبيق (WebView)":(m=u.match(/Chrome\/([\d]+)/))?"Chrome "+m[1]:/Safari/.test(u)?"Safari":"غير معروف";
- var o=(m=u.match(/Android ([\d.]+)/))?"Android "+m[1]:/iPad|iPhone|Macintosh/.test(u)?"Apple":/Windows/.test(u)?"Windows":"";
- var st=window.matchMedia&&matchMedia("(display-mode: standalone)").matches?"تطبيق مثبت":"صفحة";
- return b+" · "+o+" · "+st}
-function shareFail(why,xb,name){doExport(xb,name);
- setTimeout(function(){alertModal("⚠ لم تفتح قائمة المشاركة — تم تنزيل الملف بدلها.\nأرسله للواتساب من التنزيلات.\n\nالسبب: "+why+"\nالمتصفح: "+brw())},900)}
-/* يفتح قائمة المشاركة (واتساب / Drive ...). إذا الجهاز ما يسمح بمشاركة xlsx يرسل نفس الجداول كملف CSV يفتح بالإكسل. */
-function doShare(sheets,name){var xb=buildXlsx(sheets);
- if(!navigator.share){shareFail("هذا المتصفح لا يدعم المشاركة",xb,name);return}
- var f=mkFile([xb],name,XM);
- if(!canShareF(f)){f=mkFile([csvOf(sheets)],name.replace(/\.xlsx$/,".csv"),"text/csv");
-  if(!f){shareFail("تعذّر تجهيز الملف",xb,name);return}
-  if(navigator.canShare){var ok=false;try{ok=navigator.canShare({files:[f]})}catch(e){}if(!ok){shareFail("المتصفح لا يسمح بمشاركة الملفات",xb,name);return}}}
- try{navigator.share({files:[f],title:name}).then(function(){toast("✔ تم إرسال ملف Excel")}).catch(function(e){if(e&&e.name==="AbortError")toast("لم يتم الإرسال");else shareFail((e&&e.name||"خطأ")+": "+(e&&e.message||""),xb,name)})}
- catch(e){shareFail((e&&e.name||"خطأ")+": "+(e&&e.message||""),xb,name)}}
-/* زر التصدير: يسأل مشاركة أو تنزيل */
-var XP=null;
-function pickExport(sheets,name,after){XP={sh:sheets,n:name,a:after||null};$("xm").hidden=false}
-function xDone(){var a=XP&&XP.a;XP=null;$("xm").hidden=true;if(a)setTimeout(a,300)}
-$("xsh").onclick=function(){if(XP)doShare(XP.sh,XP.n);xDone()};
-$("xdl").onclick=function(){if(XP)doExport(buildXlsx(XP.sh),XP.n);xDone()};
-$("xno").onclick=function(){xDone()};
+function pickExport(sheets,name,after){doExport(buildXlsx(sheets),name);if(after)setTimeout(after,600)}
 function doExport(blob,name){try{var u=URL.createObjectURL(blob);var l=document.createElement("a");l.href=u;l.download=name;document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},2000);toast("تم تنزيل ملف Excel")}catch(e){toast("تعذّر التصدير")}}
 $("exp").onclick=function(){exportDay()};
 function exportDay(after){
  var d=S.day,T=S.log.slice();
  if(!T.length){toast("لا توجد سحوبات اليوم للتصدير");return false}
  var sh=buildSheets(T,true);
- pickExport((sh),"withdrawals-"+d+(ACC()?"-cost":"")+".xlsx",after);S.exp=true;save();return true}
-function buildSheets(T,withStock){var A=ACC(),D="—";
+ pickExport((sh),"withdrawals-"+d+".xlsx",after);S.exp=true;save();return true}
+function buildSheets(T,withStock){S.xall=true;try{return buildSheets0(T,withStock)}finally{S.xall=false}}
+function buildSheets0(T,withStock){var A=true,D="—";
  function cv(n){var c=uc(n);return c==null?D:c}
  function mul(n,q){var c=uc(n);return c==null?D:c*q}
  function sv(n){var c=us(n);return c==null?D:c}
@@ -524,7 +496,7 @@ function drawDay(){var B=$("hday"),k=H.sel;B.innerHTML="";$("hexp").hidden=true;
  T.forEach(function(x){var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=x.i+" × "+x.n;var m=document.createElement("small");m.textContent=" "+x.e+" · "+x.t;s.appendChild(m);r.appendChild(s);B.appendChild(r)});
  $("hexp").hidden=false}
 function exportPast(k){var T=recsOn(k);if(!T.length)return;
- pickExport((buildSheets(T,false)),"withdrawals-"+k+(ACC()?"-cost":"")+".xlsx")}
+ pickExport((buildSheets(T,false)),"withdrawals-"+k+".xlsx")}
 $("histb").onclick=openHist;$("hx").onclick=function(){$("hs").hidden=true};
 $("hprev").onclick=function(){if(--H.m<0){H.m=11;H.y--}H.sel=null;drawCal()};
 $("hnext").onclick=function(){if(++H.m>11){H.m=0;H.y++}H.sel=null;drawCal()};
@@ -538,14 +510,18 @@ document.addEventListener("pointerdown",function(e){var b=e.target.closest&&e.ta
 function bkFile(){S.bk=Date.now();save();var raw=localStorage.getItem("wd_state")||"{}";
  var name="withdrawals-backup-"+today()+"-"+pad(new Date().getHours())+pad(new Date().getMinutes())+".json";
  return {name:name,blob:new Blob([JSON.stringify({app:"wd",v:1,at:S.bk,state:JSON.parse(raw)})],{type:"application/json"})}}
-function bkDownload(){var f=bkFile();
+function bkDownload(f0){var f=f0||bkFile();
  try{var u=URL.createObjectURL(f.blob),l=document.createElement("a");l.href=u;l.download=f.name;document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);toast("💾 تم تنزيل النسخة الاحتياطية\nستجدها في التنزيلات باسم\n"+f.name)}catch(e){toast("تعذّر الحفظ")}}
+function bkWa(f){bkDownload(f);
+ setTimeout(function(){try{window.open("https://wa.me/?text="+encodeURIComponent("📦 نسخة احتياطية — السحوبات "+dayLbl(today())+"\nالملف: "+f.name),"_blank")}catch(e){}},700);
+ setTimeout(function(){alertModal("💾 تم تنزيل النسخة الاحتياطية:\n"+f.name+"\n\nفي الواتساب: افتح المحادثة ← 📎 ← مستند ← التنزيلات ← اختر الملف.")},900)}
+/* يرسل النسخة للواتساب: قائمة المشاركة إذا المتصفح يدعمها، وإلا ينزّل الملف ويفتح الواتساب */
 function bkShare(){var f=bkFile(),file=mkFile([f.blob],f.name.replace(/\.json$/,".txt"),"text/plain");
- if(canShareF(file)){navigator.share({files:[file],title:"نسخة احتياطية — السحوبات"}).then(function(){toast("✔ تم إرسال النسخة الاحتياطية")}).catch(function(e){if(e&&e.name!=="AbortError")bkDownload()})}
- else bkDownload()}
-function bkDialog(x){$("bkt").textContent="✔ تم إنهاء اليوم وبدأ يوم جديد "+dayLbl(S.day)+""+"\n\nاحفظ الآن النسخة الاحتياطية لكل البيانات:";
- $("bksh").hidden=!canShareF(mkFile(["x"],"t.txt","text/plain"));$("bkm").hidden=false}
-$("bkd").onclick=function(){bkDownload();$("bkm").hidden=true};
+ if(!navigator.share||!canShareF(file)){bkWa(f);return}
+ navigator.share({files:[file],title:"نسخة احتياطية — السحوبات"}).then(function(){toast("✔ تم إرسال النسخة الاحتياطية")}).catch(function(e){if(e&&e.name==="AbortError")toast("⚠ لم تُرسل النسخة الاحتياطية");else bkWa(f)})}
+function bkDialog(x){$("bkt").textContent="✔ تم إنهاء اليوم وبدأ يوم جديد "+dayLbl(S.day)+""+"\n\n📤 أرسل الآن النسخة الاحتياطية للواتساب:";
+ $("bkm").hidden=false}
+$("bkd").onclick=function(){bkDownload(null);$("bkm").hidden=true};
 $("bksh").onclick=function(){bkShare();$("bkm").hidden=true};
 $("bkx").onclick=function(){$("bkm").hidden=true;toast("⚠ لم تُحفظ نسخة احتياطية")};
 $("bke").onclick=function(){bkDialog(false);$("bkt").textContent="حفظ نسخة احتياطية لكل البيانات:"};
@@ -562,15 +538,16 @@ try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}
 S.role=null;S.cost={};S.key=null;
 var SUB=!!(window.crypto&&crypto.subtle&&window.TextEncoder);
 function ACC(){return S.role==="acc"}
-function chOf(n){var v=S.cost[n];if(typeof v==="number")return [["0000-00-00",v]];return Array.isArray(v)&&v.length?v:null}
-function uc(n){if(!ACC())return null;var h=chOf(n);return h?h[h.length-1][1]:null}
-function ucAt(n,d){if(!ACC())return null;var h=chOf(n);if(!h)return null;var p=h[0][1];for(var i=0;i<h.length;i++){if(h[i][0]<=d)p=h[i][1];else break}return p}
+function PC(){return ACC()?S.cost:(S.cpub||{})}
+function chOf(n){var v=PC()[n];if(typeof v==="number")return [["0000-00-00",v]];return Array.isArray(v)&&v.length?v:null}
+function uc(n){if(!ACC()&&!S.xall)return null;var h=chOf(n);return h?h[h.length-1][1]:null}
+function ucAt(n,d){if(!ACC()&&!S.xall)return null;var h=chOf(n);if(!h)return null;var p=h[0][1];for(var i=0;i<h.length;i++){if(h[i][0]<=d)p=h[i][1];else break}return p}
 function rc(x){var c=ucAt(x.i,x.d);return c==null?null:c*x.n}
 /* سعر الخدمة — يُحفظ مشفّرًا مع الكلف تحت المفتاح __svc */
-function svM(){var m=S.cost&&S.cost.__svc;return m&&typeof m==="object"&&!Array.isArray(m)?m:{}}
+function svM(){var m=PC().__svc;return m&&typeof m==="object"&&!Array.isArray(m)?m:{}}
 function shOf(n){var v=svM()[n];return Array.isArray(v)&&v.length?v:null}
-function us(n){if(!ACC())return null;var h=shOf(n);return h?h[h.length-1][1]:null}
-function usAt(n,d){if(!ACC())return null;var h=shOf(n);if(!h)return null;var p=h[0][1];for(var i=0;i<h.length;i++){if(h[i][0]<=d)p=h[i][1];else break}return p}
+function us(n){if(!ACC()&&!S.xall)return null;var h=shOf(n);return h?h[h.length-1][1]:null}
+function usAt(n,d){if(!ACC()&&!S.xall)return null;var h=shOf(n);if(!h)return null;var p=h[0][1];for(var i=0;i<h.length;i++){if(h[i][0]<=d)p=h[i][1];else break}return p}
 function rs(x){var c=usAt(x.i,x.d);return c==null?null:c*x.n}
 function usSince(n){var h=shOf(n);return h&&h[h.length-1][0]!=="0000-00-00"?h[h.length-1][0]:null}
 function svRen(a,b){var m=S.cost&&S.cost.__svc;if(m&&a in m){m[b]=m[a];delete m[a]}}
@@ -581,6 +558,7 @@ function ub64(s){var b=atob(s),a=new Uint8Array(b.length);for(var i=0;i<b.length
 function hsh(t){var h=5381;for(var i=0;i<t.length;i++)h=((h<<5)+h+t.charCodeAt(i))>>>0;return "h"+h}
 function dKey(pw,salt){return crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]).then(function(k){return crypto.subtle.deriveKey({name:"PBKDF2",salt:salt,iterations:150000,hash:"SHA-256"},k,{name:"AES-GCM",length:256},false,["encrypt","decrypt"])})}
 function saveCost(){
+ if(ACC())S.cpub=JSON.parse(JSON.stringify(S.cost||{}));
  if(S.ce&&S.ce.p){S.ce.c=S.cost;save();return Promise.resolve()}
  if(!S.key)return Promise.resolve();
  var iv=crypto.getRandomValues(new Uint8Array(12));
@@ -593,7 +571,7 @@ function tryPw(pw){
  if(S.ce.p)return Promise.resolve(S.ce.h===hsh(pw)?(S.cost=S.ce.c||{},true):false);
  if(!SUB)return Promise.resolve(false);
  return dKey(pw,ub64(S.ce.s)).then(function(k){return crypto.subtle.decrypt({name:"AES-GCM",iv:ub64(S.ce.iv)},k,ub64(S.ce.d)).then(function(p){S.key=k;S.cost=JSON.parse(new TextDecoder().decode(p));return true})}).catch(function(){return false})}
-function renCost(a,b){if(ACC()){if(a in S.cost){S.cost[b]=S.cost[a];delete S.cost[a]}svRen(a,b);saveCost()}else{(S.ren=S.ren||[]).push([a,b])}}
+function renCost(a,b){if(ACC()){if(a in S.cost){S.cost[b]=S.cost[a];delete S.cost[a]}svRen(a,b);saveCost()}else{(S.ren=S.ren||[]).push([a,b]);var c=S.cpub;if(c){if(a in c){c[b]=c[a];delete c[a]}if(c.__svc&&a in c.__svc){c.__svc[b]=c.__svc[a];delete c.__svc[a]}save()}}}
 function applyRen(){if(!S.ren||!S.ren.length)return;S.ren.forEach(function(r){if(r[0] in S.cost){S.cost[r[1]]=S.cost[r[0]];delete S.cost[r[0]]}svRen(r[0],r[1])});S.ren=[];saveCost()}
 function pwDlg(msg,cb){var i=$("mi");i.type="password";dlg(msg,"",true,function(v){i.type="text";cb(v)})}
 function enter(role){S.role=role;S.edit=false;$("login").hidden=true;renderAll();upd();drawLog();xpSync();sysNotify(false);if("Notification" in window&&Notification.permission==="granted")xpRegPeriodic();var l=xpList();if(l.length)setTimeout(function(){toast("⏳ "+l.length+" مادة قريبة الانتهاء أو منتهية — اضغط 🔔")},600)}
@@ -604,12 +582,12 @@ $("lgA").onclick=function(){
    pwDlg("أعد كتابة الباسوورد للتأكيد:",function(p2){if(p2===null)return;if(p2.trim()!==p){toast("الباسوورد غير متطابق");return}
     setPw(p).then(function(){enter("acc");toast("✔ تم حفظ باسوورد المحاسب\nلا تنساه — لا يمكن استرجاعه")})})});return}
  pwDlg("باسوورد المحاسب:",function(p){if(p===null)return;toast("جارِ التحقق...");
-  tryPw(p).then(function(ok){if(!ok){toast("❌ الباسوورد غير صحيح");return}applyRen();enter("acc");toast("أهلًا بالمحاسب 🧮")})})};
+  tryPw(p).then(function(ok){if(!ok){toast("❌ الباسوورد غير صحيح");return}applyRen();enter("acc");saveCost();toast("أهلًا بالمحاسب 🧮")})})};
 $("lgR").onclick=function(){if(!S.ce){toast("لم يتم تعيين باسوورد بعد");return}
  if(S.pin){pwDlg("اكتب رمز التعديل للمتابعة:",function(p){if(p===null)return;if(p!==S.pin){toast("❌ رمز التعديل غير صحيح");return}resetPw()});return}
  resetPw()};
 function resetPw(){
- sure("⚠ إعادة تعيين باسوورد المحاسب ستحذف كل الكلف المسجلة نهائيًا.\nبعدها تختار باسوورد جديد وتعيد إدخال الكلف.\nمتأكد؟",function(){S.ce=null;S.ren=[];S.cost={};save();toast("تم الحذف — اضغط «المحاسب» لاختيار باسوورد جديد")})}
+ sure("⚠ إعادة تعيين باسوورد المحاسب ستحذف كل الكلف المسجلة نهائيًا.\nبعدها تختار باسوورد جديد وتعيد إدخال الكلف.\nمتأكد؟",function(){S.ce=null;S.ren=[];S.cost={};S.cpub=null;save();toast("تم الحذف — اضغط «المحاسب» لاختيار باسوورد جديد")})}
 $("who2").onclick=function(){sure("تسجيل خروج؟",showLogin)};
 $("apw").onclick=function(){pwDlg("الباسوورد الجديد للمحاسب (4 أحرف أو أكثر):",function(p){if(p===null)return;p=p.trim();if(p.length<4){toast("الباسوورد قصير");return}
  pwDlg("أعد كتابة الباسوورد للتأكيد:",function(p2){if(p2===null)return;if(p2.trim()!==p){toast("الباسوورد غير متطابق");return}setPw(p).then(function(){toast("✔ تم تغيير الباسوورد")})})})};
