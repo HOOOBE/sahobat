@@ -129,11 +129,11 @@ button.flash{animation:flash .5s ease-out}
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><div class="ttl">📦 تسجيل السحوبات</div><div class="clock" id="clock"></div><button id="theme" title="الوضع الليلي / النهاري">🌙</button><button id="histb" title="الأيام السابقة">📅</button><button id="bell" title="مواد قربت تنفذ">🔔<span id="bellc" hidden></span></button><button id="gear" title="تعديل">⚙️</button><button id="who2" title="تسجيل خروج"></button></div>
+  <div class="top"><div class="ttl">📦 تسجيل السحوبات</div><div class="clock" id="clock"></div><button id="theme" title="الوضع الليلي / النهاري">🌙</button><button id="histb" title="الأيام السابقة">📅</button><button id="bell" title="مواد قربت تنفذ">🔔<span id="bellc" hidden></span></button><button id="cloudb" title="المزامنة الأونلاين" hidden>☁️</button><button id="gear" title="تعديل">⚙️</button><button id="who2" title="تسجيل خروج"></button></div>
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -179,7 +179,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 المحاسب 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 6</div>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 7 · أونلاين</div>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -191,6 +191,18 @@ button.flash{animation:flash .5s ease-out}
 <label class="wo"><input type="checkbox" class="wc" value="freq"> ⭐ الاقتراحات</label>
 <div style="color:var(--mut);font-size:13px;margin:8px 0 12px">تبقى دائمًا: المواد والفئات والموظفين والباسوورد.</div>
 <div class="row"><button id="wgo" style="color:#fff;background:var(--bad);border-color:var(--bad);font-weight:800" disabled>تصفير</button><button id="wno">إلغاء</button></div></div></div>
+<div class="md" id="cm" hidden><div class="mb" style="max-height:92vh;overflow-y:auto">
+<div style="font-weight:800;font-size:19px;margin-bottom:6px">☁️ الربط أونلاين</div>
+<div id="cmt" style="white-space:pre-line;line-height:1.6;margin-bottom:10px"></div>
+<div id="cmOff"><button id="cmNew" class="go" style="width:100%;margin-bottom:8px">🆕 أول جهاز: إنشاء الربط</button>
+<button id="cmJoin" style="width:100%;margin-bottom:8px;font-weight:700">🔗 ربط هذا الجهاز بجهاز آخر</button></div>
+<div id="cmIn" hidden><textarea id="cmTa" rows="7" dir="ltr" style="width:100%;font:13px monospace;padding:10px;border-radius:12px;border:2px solid var(--bd);background:var(--bg);color:var(--tx);margin-bottom:8px"></textarea>
+<button id="cmGo" class="go" style="width:100%;margin-bottom:8px"></button></div>
+<div id="cmOn" hidden><textarea id="cmCode" rows="4" dir="ltr" readonly style="width:100%;font:12px monospace;padding:10px;border-radius:12px;border:2px solid var(--bd);background:var(--bg);color:var(--tx);margin-bottom:8px"></textarea>
+<button id="cmCopy" class="go" style="width:100%;margin-bottom:8px">📋 نسخ رمز الربط</button>
+<button id="cmWa" style="width:100%;margin-bottom:8px;font-weight:700">📤 إرسال الرمز لنفسك بالواتساب</button>
+<button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
+<button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
 
 <script>
@@ -218,7 +230,8 @@ function load(){try{var v=JSON.parse(localStorage.getItem("wd_state")||"null");i
  if(!v.hist&&S.prev&&S.prev.log)S.hist.push({day:S.prev.day,log:S.prev.log});
  if(v.freq){S.freq=v.freq}else{S.log.forEach(function(x){S.freq[x.i]=(S.freq[x.i]||0)+1})}
  if(v.day){S.day=v.day}else{var d=today(),old=S.log.filter(function(x){return x.d!==d});if(old.length)S.hist.push({day:old[0].d,log:old});S.log=S.log.filter(function(x){return x.d===d});S.day=d}}}catch(e){}}
-function save(){try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
+function save(){saveLocal();clPush()}
+function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
 function dayLbl(v){var p=v.split("-");return p[2]+"/"+p[1]+"/"+p[0]}
 function hasSt(n){return typeof S.stock[n]==="number"}
 function stLeft(n){return hasSt(n)?S.stock[n]:Infinity}
@@ -328,7 +341,7 @@ function drawHot(){var H=$("hot");H.innerHTML="";
   var b=btn(name,"emp"+(S.item===name?" on":""),function(){S.item=name;S.n=1;S.fresh=true;drawAcc();upd()});
   var m=document.createElement("small");m.textContent="×"+cnt[name];b.appendChild(m);w.appendChild(b);r.appendChild(w)});
  H.appendChild(r)}
-function renderAll(){$("thb").textContent="⚠ حد التنبيه: "+S.thr;$("xpb").textContent="⏳ تحذير الانتهاء: قبل "+S.xpd+" يوم";$("xpb").hidden=!ACC();$("apw").hidden=!ACC();$("gear").hidden=!ACC();if(!ACC())S.edit=false;$("rsb").hidden=!ACC();$("pinb").hidden=!ACC();$("wipe").hidden=!ACC();$("who2").textContent=ACC()?"🧮 المحاسب 🚪":"👷 موظف 🚪";$("edbar").hidden=!S.edit;$("gear").textContent=S.edit?"✔":"⚙️";drawEmps();drawAcc()}
+function renderAll(){$("thb").textContent="⚠ حد التنبيه: "+S.thr;$("xpb").textContent="⏳ تحذير الانتهاء: قبل "+S.xpd+" يوم";$("xpb").hidden=!ACC();$("apw").hidden=!ACC();$("gear").hidden=!ACC();if(!ACC())S.edit=false;$("rsb").hidden=!ACC();$("pinb").hidden=!ACC();$("wipe").hidden=!ACC();$("clb").hidden=!ACC();$("who2").textContent=ACC()?"🧮 المحاسب 🚪":"👷 موظف 🚪";$("edbar").hidden=!S.edit;$("gear").textContent=S.edit?"✔":"⚙️";drawEmps();drawAcc()}
 function upd(){var e=$("sel"),bad="",t=S.item||"اختر مادة";
  if(S.item&&hasSt(S.item)){var q=S.stock[S.item];if(q<=0)bad="⛔ نفذت في المخزن";else if(S.n>q)bad="⚠ المتاح "+q+" فقط";t=S.item+" — "+(bad||"المتاح: "+q)}
  if(S.item&&uc(S.item)!=null)t+=" · 💰 "+money(uc(S.item)*S.n);
@@ -353,12 +366,13 @@ function editQty(x){var m=$("mi");m.inputMode="numeric";
  dlg("الكمية الجديدة لـ «"+x.i+"»:",String(x.n),true,function(v){m.inputMode="";if(v===null)return;
   var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();
   if(!/^\d+$/.test(t)||+t<1||+t>99999){toast("اكتب رقمًا صحيحًا أكبر من صفر");return}
+  var y=x.id?S.log.filter(function(z){return z.id===x.id})[0]:x;if(!y){toast("⚠ هذا السحب انحذف من جهاز آخر");return}x=y;
   var diff=+t-x.n;if(hasSt(x.i)){if(diff>S.stock[x.i]){toast("المتاح في المخزن "+S.stock[x.i]+" فقط");return}S.stock[x.i]-=diff}
   x.n=+t;S.exp=false;save();drawLog();drawAcc();upd();toast("تم تعديل الكمية إلى "+x.n);if(hasSt(x.i)&&S.stock[x.i]<=0)alertModal("⛔ المادة «"+x.i+"» نفذت في المخزن")})}
 function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ssum=0;$("dlbl").textContent="· بدأ "+dayLbl(S.day);
  t.slice().reverse().forEach(function(x){sum+=x.n;var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=x.i+" × "+x.n;var m=document.createElement("small");var dp=x.d.split("-");m.textContent=" "+x.e+" · "+dp[2]+"/"+dp[1]+"/"+dp[0]+" · "+x.t;s.appendChild(m);if(rc(x)!=null){csum+=rc(x);var cc=document.createElement("small");cc.className="cst";cc.textContent="💰 "+money(rc(x));s.appendChild(cc)}if(rs(x)!=null){ssum+=rs(x);var sc=document.createElement("small");sc.className="cst sv";sc.textContent="🛠 "+money(rs(x));s.appendChild(sc)}r.appendChild(s);
   var bs=document.createElement("div");bs.style.cssText="display:flex;gap:6px";bs.appendChild(btn("تعديل","ed",function(){editQty(x)}));
-  bs.appendChild(btn("حذف","",function(){sure("حذف هذا السحب؟",function(){S.log=S.log.filter(function(y){return y!==x});if(hasSt(x.i))S.stock[x.i]+=x.n;if(S.freq[x.i]>0)S.freq[x.i]--;S.exp=false;save();drawLog();drawAcc();upd()})}));r.appendChild(bs);L.appendChild(r)});
+  bs.appendChild(btn("حذف","",function(){sure("حذف هذا السحب؟",function(){var y=x.id?S.log.filter(function(z){return z.id===x.id})[0]:x;if(!y){toast("⚠ هذا السحب انحذف من جهاز آخر");return}x=y;S.log=S.log.filter(function(z){return z!==x});if(hasSt(x.i))S.stock[x.i]+=x.n;if(S.freq[x.i]>0)S.freq[x.i]--;S.exp=false;save();drawLog();drawAcc();upd()})}));r.appendChild(bs);L.appendChild(r)});
  if(!t.length)L.innerHTML='<div class="li"><small>لا توجد سحوبات بعد</small></div>';
  $("undo").hidden=!(S.prev&&!t.length);drawHot();$("tot").textContent=t.length?"("+t.length+" سجل / "+sum+" قطعة"+(ACC()?" / 💰 "+money(csum)+" / 🛠 "+money(ssum):"")+")":""}
 
@@ -375,7 +389,7 @@ $("go").onclick=function(){if(stale()){dayCheck();if(stale()){alertModal("⛔ ا
 function doGo(forced){
  var d=new Date(),it=S.item,n=S.n;if(!it||!S.emp)return;
  if(hasSt(it)){var q=S.stock[it];if(q<=0){alertModal("⛔ المادة «"+it+"» نفذت في المخزن");return}if(n>q){toast("الكمية أكبر من المتاح في المخزن ("+q+")");return}}
- S.log.push({d:today(),t:ft(d),i:it,n:n,e:S.emp});S.freq[it]=(S.freq[it]||0)+1;S.exp=false;
+ S.log.push({d:today(),t:ft(d),i:it,n:n,e:S.emp,id:rid(),o:Date.now()});S.freq[it]=(S.freq[it]||0)+1;S.exp=false;
  var extra="",gone=false;
  if(hasSt(it)){S.stock[it]-=n;var r=S.stock[it];if(r<=0)gone=true;else if(r<=S.thr)extra="\n⚠ باقي "+r+" فقط من هذه المادة"}
  save();toast("تم تسجيل "+it+" × "+n+"\n"+fd(d)+" · "+ft(d)+extra);S.item=null;S.n=1;S.fresh=true;drawAcc();upd();drawLog();
@@ -575,7 +589,7 @@ function renCost(a,b){if(ACC()){if(a in S.cost){S.cost[b]=S.cost[a];delete S.cos
 function applyRen(){if(!S.ren||!S.ren.length)return;S.ren.forEach(function(r){if(r[0] in S.cost){S.cost[r[1]]=S.cost[r[0]];delete S.cost[r[0]]}svRen(r[0],r[1])});S.ren=[];saveCost()}
 function pwDlg(msg,cb){var i=$("mi");i.type="password";dlg(msg,"",true,function(v){i.type="text";cb(v)})}
 function enter(role){S.role=role;S.edit=false;$("login").hidden=true;renderAll();upd();drawLog();xpSync();sysNotify(false);if("Notification" in window&&Notification.permission==="granted")xpRegPeriodic();var l=xpList();if(l.length)setTimeout(function(){toast("⏳ "+l.length+" مادة قريبة الانتهاء أو منتهية — اضغط 🔔")},600)}
-function showLogin(){S.role=null;S.cost={};S.key=null;S.edit=false;$("hs").hidden=true;$("login").hidden=false}
+function showLogin(){S.role=null;S.cost={};S.key=null;S.edit=false;$("hs").hidden=true;$("cm").hidden=true;$("login").hidden=false}
 $("lgE").onclick=function(){enter("emp")};
 $("lgA").onclick=function(){
  if(!S.ce){pwDlg("أول دخول للمحاسب — اختر باسوورد (4 أحرف أو أكثر):",function(p){if(p===null)return;p=p.trim();if(p.length<4){toast("الباسوورد قصير");return}
@@ -683,7 +697,129 @@ if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){
  var hadCtl=!!navigator.serviceWorker.controller,rl=false;
  navigator.serviceWorker.addEventListener("controllerchange",function(){if(hadCtl&&!rl){rl=true;location.reload()}});
  window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(function(r){try{r.update()}catch(e){}}).catch(function(){})})}
-tick();load();renderAll();upd();drawLog();dayCheck();showLogin();setInterval(function(){tick();dayCheck()},15000);
+/* ===== المزامنة الأونلاين (Firebase Firestore) =====
+   كل عيادة = مستند واحد clinics/{رمز} + مستندات أشهر للأيام السابقة clinics/{رمز}/months/{YYYY-MM}.
+   الدمج ثلاثي: base = آخر نسخة أونلاين شافها الجهاز. اللي تغيّر محليًا عن base يفوز، والباقي يُؤخذ من الأونلاين. */
+var FBV="https://www.gstatic.com/firebasejs/12.19.0/";
+var CL={cfg:null,F:null,db:null,ref:null,mcol:null,base:null,sent:null,ready:false,exists:true,st:"",err:"",ce0:null,lastM:null,lastH:null,uns:[]};
+var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd"],CLM=["stock","xp","freq","logm"];
+var CLD={emps:null,cats:null,day:null,thr:5,exp:false,prev:null,ce:null,cpub:null,ren:[],xpd:30,pin:""};
+function srt(v){if(Array.isArray(v))return v.map(srt);if(v&&typeof v==="object"){var o={};Object.keys(v).sort().forEach(function(k){if(v[k]!==undefined)o[k]=srt(v[k])});return o}return v}
+function sStr(v){return JSON.stringify(srt(v===undefined?null:v))}
+function nrm(s){try{return sStr(JSON.parse(s))}catch(x){return sStr(null)}}
+function rid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
+function clIds(){S.log.forEach(function(x,i){if(!x.id)x.id=rid();if(typeof x.o!=="number")x.o=i})}
+function clEmpty(){return {j:{},m:{stock:{},xp:{},freq:{},logm:{}},h:{}}}
+function clEnc(){clIds();var e=clEmpty();
+ CLJ.forEach(function(k){e.j[k]=sStr(S[k])});
+ ["stock","xp","freq"].forEach(function(k){var src=S[k]||{};Object.keys(src).forEach(function(n){if(src[n]!==undefined&&src[n]!==null)e.m[k][n]=sStr(src[n])})});
+ S.log.forEach(function(x){e.m.logm[x.id]=sStr(x)});
+ var h={};S.hist.forEach(function(x){var k=String(x.day).slice(0,7);(h[k]=h[k]||[]).push(x)});
+ Object.keys(h).forEach(function(k){e.h[k]=sStr(h[k])});return e}
+function clDecMain(d){var e=clEmpty();
+ CLJ.forEach(function(k){e.j[k]=typeof d[k]==="string"?nrm(d[k]):sStr(null)});
+ CLM.forEach(function(k){var src=d[k]||{};Object.keys(src).forEach(function(n){e.m[k][n]=sStr(src[n])})});return e}
+function m3(l,b,r){var o={},ks={};[l,b,r].forEach(function(x){Object.keys(x||{}).forEach(function(k){ks[k]=1})});
+ Object.keys(ks).forEach(function(k){var lv=l[k],bv=(b||{})[k],v=lv!==bv?lv:r[k];if(v!==undefined)o[k]=v});return o}
+function clSetMain(e){
+ CLJ.forEach(function(k){var v=JSON.parse(e.j[k]);if(v===null&&CLD[k]===null&&k!=="prev"&&k!=="ce"&&k!=="cpub")return;S[k]=v===null?CLD[k]:v});
+ ["stock","xp","freq"].forEach(function(k){var o={};Object.keys(e.m[k]).forEach(function(n){o[n]=JSON.parse(e.m[k][n])});S[k]=o});
+ S.log=Object.keys(e.m.logm).map(function(k){return JSON.parse(e.m.logm[k])}).sort(function(a,b){return (a.o-b.o)||(a.id<b.id?-1:1)});
+ if(S.item&&!itemExists(S.item))S.item=null;if(S.emp&&S.emps.indexOf(S.emp)<0)S.emp=null}
+function clSetH(h){var a=[];Object.keys(h).sort().forEach(function(k){a=a.concat(JSON.parse(h[k])||[])});S.hist=a}
+function clSaveCfg(){try{if(CL.cfg)localStorage.setItem("wd_cloud",JSON.stringify(CL.cfg));else localStorage.removeItem("wd_cloud")}catch(e){}}
+function clSaveBase(){try{if(CL.base)localStorage.setItem("wd_cloud_base",JSON.stringify(CL.base));else localStorage.removeItem("wd_cloud_base")}catch(e){}}
+function clRender(){if(S.role){renderAll();upd();drawLog();if(!$("hs").hidden)drawCal()}dayCheck();bellUpd();xpSync()}
+/* إرسال التغييرات المحلية: الفرق بين الحالة الحالية وآخر ما أُرسل */
+function clPush(){if(!CL.ready||!CL.F)return;var F=CL.F,l=clEnc(),b=CL.sent||CL.base,bt=F.writeBatch(CL.db),n=0;
+ try{
+  if(!CL.exists){var full={};CLJ.forEach(function(k){full[k]=l.j[k]});CLM.forEach(function(k){var o={};Object.keys(l.m[k]).forEach(function(x){o[x]=JSON.parse(l.m[k][x])});full[k]=o});
+   bt.set(CL.ref,full);n++;CL.exists=true}
+  else{var a=[];CLJ.forEach(function(k){if(l.j[k]!==b.j[k])a.push(k,l.j[k])});
+   CLM.forEach(function(k){var lm=l.m[k],bm=b.m[k]||{},ks={};Object.keys(lm).concat(Object.keys(bm)).forEach(function(x){ks[x]=1});
+    Object.keys(ks).forEach(function(x){if(lm[x]!==bm[x])a.push(new F.FieldPath(k,x),lm[x]===undefined?F.deleteField():JSON.parse(lm[x]))})});
+   if(a.length){bt.update.apply(bt,[CL.ref].concat(a));n++}}
+  var bh=b.h||{},hk={};Object.keys(l.h).concat(Object.keys(bh)).forEach(function(x){hk[x]=1});
+  Object.keys(hk).forEach(function(x){if(l.h[x]!==bh[x]){var r=F.doc(CL.mcol,x);if(l.h[x]===undefined)bt.delete(r);else bt.set(r,{e:l.h[x]});n++}});
+ }catch(e){clErr(e);return}
+ CL.sent=l;if(!n)return;clStat();
+ bt.commit().then(function(){if(CL.err){CL.err="";clStat()}}).catch(function(e){CL.sent=null;clErr(e)})}
+function clOnMain(snap){var md=snap.metadata;CL.md=md;clStat();
+ if(!snap.exists()){
+  if(md.fromCache)return;
+  if(CL.cfg.mode==="join"){clFail("⚠ لا توجد بيانات أونلاين بهذا الرمز.\nتأكد أنك نسخت رمز الربط كاملًا من الجهاز الأول.");return}
+  CL.exists=false;CL.ready=true;clPush();return}
+ CL.exists=true;
+ var r=clDecMain(snap.data()),key=sStr([r.j,r.m]);
+ if(CL.ready&&key===CL.lastM)return;CL.lastM=key;
+ var l=clEnc(),b=CL.base,out={j:m3(l.j,b.j,r.j),m:{}};CLM.forEach(function(k){out.m[k]=m3(l.m[k],b.m[k],r.m[k])});
+ var ch=sStr([out.j,out.m])!==sStr([l.j,l.m]);
+ CL.base.j=r.j;CL.base.m=r.m;CL.sent=null;
+ if(ch)clSetMain(out);
+ var first=!CL.ready;CL.ready=true;
+ if(CL.cfg.mode!=="ok"){var jn=CL.cfg.mode==="join";CL.cfg.mode="ok";clSaveCfg();if(jn)setTimeout(function(){toast("✔ تم ربط هذا الجهاز — البيانات صارت مثل الجهاز الأول")},300)}
+ clSaveBase();if(ch||first){saveLocal();clRender();clCeCheck()}clPush()}
+function clOnMonths(qs){if(qs.metadata.fromCache&&qs.empty)return;
+ var r={};qs.forEach(function(d){var x=d.data();r[d.id]=nrm(x&&x.e)});
+ var key=sStr(r);if(CL.hready&&key===CL.lastH)return;CL.lastH=key;
+ var l=clEnc().h,out=m3(l,CL.base.h,r),ch=sStr(out)!==sStr(l);
+ CL.base.h=r;CL.sent=null;CL.hready=true;
+ if(ch){clSetH(out);saveLocal();clRender()}clSaveBase();clPush()}
+/* تغيّرت الكلف المشفّرة من جهاز آخر */
+function clCeCheck(){var c=sStr(S.ce);if(c===CL.ce0)return;CL.ce0=c;if(!ACC())return;
+ if(!S.ce){showLogin();toast("تم إعادة تعيين باسوورد المحاسب من جهاز آخر");return}
+ if(S.ce.p){S.cost=S.ce.c||{};clRender();return}
+ if(!S.key||!S.ce.iv)return;
+ crypto.subtle.decrypt({name:"AES-GCM",iv:ub64(S.ce.iv)},S.key,ub64(S.ce.d)).then(function(p){S.cost=JSON.parse(new TextDecoder().decode(p));clRender()})
+  .catch(function(){showLogin();toast("تم تغيير باسوورد المحاسب من جهاز آخر\nادخل بالباسوورد الجديد")})}
+function clStat(){var b=$("cloudb"),t,i;b.hidden=!CL.cfg;if(!CL.cfg)return;
+ if(CL.err){i="⚠️";t="خطأ بالمزامنة: "+CL.err}
+ else if(!CL.ready){i="⏳";t="جارِ الاتصال..."}
+ else if(CL.md&&CL.md.fromCache){i="📴";t="بدون إنترنت — التغييرات محفوظة وتُرسل تلقائيًا عند رجوع النت"}
+ else if(CL.md&&CL.md.hasPendingWrites){i="⏳";t="جارِ الإرسال..."}
+ else{i="☁️";t="متزامن ✓ — كل الأجهزة المربوطة تشوف نفس البيانات"}
+ b.textContent=i;b.title=t;CL.st=t}
+function clErr(e){CL.err=(e&&(e.code||e.message))||"خطأ";clStat();
+ if(/permission/i.test(CL.err))toast("⚠ المزامنة مرفوضة — تأكد من قواعد Firestore (Rules)")}
+function clFail(msg){clStop();CL.cfg=null;CL.base=null;clSaveCfg();clSaveBase();clStat();alertModal(msg)}
+function clStop(){CL.uns.forEach(function(u){try{u()}catch(e){}});CL.uns=[];CL.ready=false;CL.hready=false}
+function clInit(){if(!CL.cfg)return;CL.err="";clStat();
+ Promise.all([import(FBV+"firebase-app.js"),import(FBV+"firebase-firestore.js")]).then(function(m){var A=m[0],F=m[1];CL.F=F;
+  if(!CL.db){var app=A.getApps().filter(function(a){return a.name==="wd"})[0]||A.initializeApp(CL.cfg.c,"wd");
+   try{CL.db=F.initializeFirestore(app,{localCache:F.persistentLocalCache({tabManager:F.persistentMultipleTabManager()})})}catch(e){CL.db=F.getFirestore(app)}}
+  CL.ref=F.doc(CL.db,"clinics",CL.cfg.k);CL.mcol=F.collection(CL.ref,"months");CL.ce0=sStr(S.ce);
+  CL.uns.push(F.onSnapshot(CL.ref,{includeMetadataChanges:true},clOnMain,clErr));
+  CL.uns.push(F.onSnapshot(CL.mcol,{includeMetadataChanges:true},clOnMonths,clErr))})
+ .catch(function(e){CL.err="تعذّر تحميل مكتبة المزامنة (تحتاج إنترنت أول مرة)";clStat();setTimeout(clInit,30000)})}
+function clStart(){try{CL.cfg=JSON.parse(localStorage.getItem("wd_cloud")||"null");CL.base=JSON.parse(localStorage.getItem("wd_cloud_base")||"null")}catch(e){}
+ if(CL.cfg&&!CL.base)CL.base=clEnc();if(CL.cfg)clInit();clStat()}
+/* ===== شاشة الربط ===== */
+function b64e(t){return btoa(unescape(encodeURIComponent(t)))}
+function b64d(t){return decodeURIComponent(escape(atob(t)))}
+function clCode(){return "SAHOBAT1:"+b64e(JSON.stringify({c:CL.cfg.c,k:CL.cfg.k}))}
+function clParseCfg(t){var c={},m,re=/["']?(apiKey|authDomain|projectId|storageBucket|messagingSenderId|appId)["']?\s*:\s*["']([^"']+)["']/g;while((m=re.exec(t)))c[m[1]]=m[2];return c.apiKey&&c.projectId?c:null}
+function clKey(){var a=new Uint8Array(18),s="";crypto.getRandomValues(a);for(var i=0;i<a.length;i++)s+=(a[i]%36).toString(36);return "c"+s+Date.now().toString(36)}
+function cmShow(){var on=!!CL.cfg;$("cmOff").hidden=on;$("cmOn").hidden=!on;$("cmIn").hidden=true;$("cmUn").hidden=!ACC();
+ $("cmt").textContent=on?(CL.st||"")+"\n\nلربط جهاز ثاني (مثل جهاز البيت): انسخ هذا الرمز، وبالجهاز الثاني ادخل كمحاسب ← ⚙️ ← ☁️ الربط أونلاين ← «ربط هذا الجهاز بجهاز آخر» والصق الرمز.\n🔒 لا تعطي الرمز لأحد — أي أحد عنده الرمز يقدر يشوف ويعدّل البيانات."
+  :"اربط أجهزتك حتى تشوف وتعدّل نفس البيانات من العيادة والبيت.\n\n• أول جهاز (اللي بيه البيانات الحالية): اختر «إنشاء الربط» والصق إعدادات Firebase.\n• باقي الأجهزة: اختر «ربط هذا الجهاز» والصق رمز الربط من الجهاز الأول.";
+ if(on)$("cmCode").value=clCode();$("cm").hidden=false}
+function cmInput(mode){$("cmOff").hidden=true;$("cmIn").hidden=false;var ta=$("cmTa");ta.value="";
+ $("cmt").textContent=mode==="new"?"الصق هنا إعدادات Firebase (firebaseConfig) كما نسختها من موقع Firebase:":"الصق هنا رمز الربط اللي نسخته من الجهاز الأول (يبدأ بـ SAHOBAT1):";
+ $("cmGo").textContent=mode==="new"?"🆕 إنشاء الربط ورفع بيانات هذا الجهاز":"🔗 ربط هذا الجهاز";$("cmGo").onclick=function(){mode==="new"?cmNew(ta.value):cmJoin(ta.value)};setTimeout(function(){ta.focus()},50)}
+function cmNew(t){var c=clParseCfg(t||"");if(!c){toast("⚠ ما گدرت أقرأ الإعدادات — تأكد أنك نسخت firebaseConfig كامل (فيه apiKey و projectId)");return}
+ sure("سيتم رفع بيانات هذا الجهاز أونلاين وتصير هي البيانات الأساسية لكل الأجهزة.\nمتابعة؟",function(){
+  CL.cfg={c:c,k:clKey(),mode:"create"};CL.base=clEmpty();CL.sent=null;clSaveCfg();clSaveBase();clInit();cmShow();toast("☁️ جارِ رفع البيانات...")})}
+function cmJoin(t){var o=null;try{t=String(t||"").trim();var i=t.indexOf("SAHOBAT1:");o=JSON.parse(b64d(t.slice(i+9).replace(/\s+/g,"")))}catch(e){o=null}
+ if(!o||!o.c||!o.k||t.indexOf("SAHOBAT1:")<0){toast("⚠ رمز الربط غير صحيح — انسخه كامل من الجهاز الأول");return}
+ sure("⚠ بيانات هذا الجهاز راح تُستبدل بالبيانات الأونلاين (من الجهاز الأول).\nإذا عندك بيانات مهمة هنا، احفظ نسخة احتياطية أولًا.\n\nمتابعة؟",function(){
+  CL.cfg={c:o.c,k:o.k,mode:"join"};CL.base=clEnc();CL.sent=null;clSaveCfg();clSaveBase();clInit();cmShow();toast("🔗 جارِ جلب البيانات...")})}
+$("clb").onclick=cmShow;$("cmX").onclick=function(){$("cm").hidden=true};
+$("cmNew").onclick=function(){cmInput("new")};$("cmJoin").onclick=function(){cmInput("join")};
+$("cloudb").onclick=function(){if(ACC())cmShow();else toast(CL.st||"")};
+$("cmCopy").onclick=function(){var t=$("cmCode");t.select();try{navigator.clipboard.writeText(t.value).then(function(){toast("📋 تم نسخ رمز الربط")},function(){document.execCommand("copy");toast("📋 تم النسخ")})}catch(e){document.execCommand("copy");toast("📋 تم النسخ")}};
+$("cmWa").onclick=function(){window.open("https://wa.me/?text="+encodeURIComponent("رمز ربط تطبيق السحوبات:\n"+clCode()),"_blank")};
+$("cmUn").onclick=function(){sure("فصل هذا الجهاز؟\nالبيانات تبقى على الجهاز، بس ما تتزامن بعد مع باقي الأجهزة.",function(){clStop();CL.cfg=null;CL.base=null;clSaveCfg();clSaveBase();location.reload()})};
+tick();load();clStart();renderAll();upd();drawLog();dayCheck();showLogin();setInterval(function(){tick();dayCheck()},15000);
 </script>
 </body>
 </html>

@@ -1,13 +1,16 @@
 // يحفظ ملفات التطبيق على الجهاز حتى يشتغل بدون نت.
 // عند وجود نت يجلب أحدث نسخة، وعند انقطاعه يفتح النسخة المحفوظة.
-const CACHE = "withdrawals-v6";
+const CACHE = "withdrawals-v7";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(k => Promise.all(k.filter(n => n !== CACHE && n !== "wd-data").map(n => caches.delete(n)))).then(() => self.clients.claim()));
 });
 self.addEventListener("fetch", e => {
-  if (e.request.method !== "GET" || new URL(e.request.url).pathname.endsWith("/__xp")) return;
+  const u = new URL(e.request.url);
+  if (e.request.method !== "GET" || u.pathname.endsWith("/__xp")) return;
+  // اتصالات المزامنة (Firestore) تمر مباشرة بدون كاش
+  if (u.origin !== location.origin && u.hostname !== "www.gstatic.com") return;
   e.respondWith(
     // نطلب دائمًا أحدث نسخة من السيرفر (بدون كاش المتصفح) حتى توصل التحديثات فورًا
     (new URL(e.request.url).origin === location.origin ? fetch(e.request.url, { cache: "no-cache" }) : fetch(e.request)).then(r => {
