@@ -172,6 +172,10 @@ button.flash{animation:flash .5s ease-out}
 <button id="bksh" class="go" style="width:100%;margin-bottom:8px">📤 إرسال النسخة للواتساب</button>
 <button id="bkd" style="width:100%;margin-bottom:8px;font-weight:700">💾 تنزيل النسخة على الجهاز</button>
 <button id="bkx" style="width:100%">لاحقًا</button></div></div>
+<div class="md" id="xm" hidden><div class="mb"><div id="xt" style="font-weight:700;margin-bottom:12px;line-height:1.6;white-space:pre-line">📊 ملف Excel جاهز</div>
+<button id="xsh" class="go" style="width:100%;margin-bottom:8px">📤 مشاركة (واتساب / Drive)</button>
+<button id="xdl" style="width:100%;margin-bottom:8px;font-weight:700">💾 تنزيل الملف على الجهاز</button>
+<button id="xno" style="width:100%">إلغاء</button></div></div>
 <div class="md" id="al" hidden><div class="mb"><div style="font-weight:800;margin-bottom:10px">🔔 التنبيهات</div><div id="alist"></div><button id="ntb" class="mini" style="width:100%;margin-top:8px" hidden>🔔 تفعيل إشعارات الجهاز</button><div class="row" style="margin-top:12px"><button id="alx">إغلاق</button></div></div></div>
 <div class="md" id="login" hidden style="background:var(--bg)"><div class="mb" style="text-align:center">
 <div style="font-size:40px">📦</div><div style="font-weight:800;font-size:22px;margin:4px 0 16px">تسجيل السحوبات</div>
@@ -388,10 +392,9 @@ function endDay(){var n=S.log.length,q=0;S.log.forEach(function(x){q+=x.n});
  S.log=[];S.day=today();S.exp=false;S.item=null;S.n=1;S.fresh=true;
  save();drawAcc();upd();drawLog();dayCheck()}
 $("clr").onclick=function(){var n=S.log.length,q=0;S.log.forEach(function(x){q+=x.n});
- sure((n?"إنهاء يوم "+dayLbl(S.day)+" ("+n+" سجل / "+q+" قطعة) وبدء يوم جديد؟\n\nسيتم:\n📊 إرسال ملف Excel لسحوبات اليوم (واتساب / Drive)\n💾 ثم يظهر لك زر حفظ النسخة الاحتياطية\n\nالكميات المسحوبة مخصومة من رصيد كل مادة، وسيبدأ اليوم الجديد بالرصيد المتبقي.":"لا توجد سحوبات في هذا اليوم.\nبدء يوم جديد مع حفظ نسخة احتياطية؟"),function(){
-  if(n)exportDay();
-  endDay();
-  bkDialog(n>0)})};
+ sure((n?"إنهاء يوم "+dayLbl(S.day)+" ("+n+" سجل / "+q+" قطعة) وبدء يوم جديد؟\n\nسيتم:\n📊 ملف Excel لسحوبات اليوم (مشاركة أو تنزيل)\n💾 ثم يظهر لك زر حفظ النسخة الاحتياطية\n\nالكميات المسحوبة مخصومة من رصيد كل مادة، وسيبدأ اليوم الجديد بالرصيد المتبقي.":"لا توجد سحوبات في هذا اليوم.\nبدء يوم جديد مع حفظ نسخة احتياطية؟"),function(){
+  if(n){exportDay(function(){bkDialog(true)});endDay()}
+  else{endDay();bkDialog(false)}})};
 $("undo").onclick=function(){if(!S.prev||S.log.length)return;
  sure("استرجاع سحوبات يوم "+dayLbl(S.prev.day)+" كيوم حالي؟",function(){var h=S.hist.pop();if(!h)return;S.log=h.log;S.day=h.day;S.exp=S.prev.exp;S.prev=null;save();drawAcc();upd();drawLog();dayCheck();toast("تم التراجع")})};
 function xe(v){return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
@@ -433,15 +436,22 @@ function csvOf(sheets){function c(v){v=v==null?"":String(v);return /[",\n\r]/.te
  return "\uFEFF"+out.join("\r\n")}
 /* يفتح قائمة المشاركة (واتساب / Drive ...). إذا الجهاز ما يسمح بمشاركة xlsx يرسل نفس الجداول كملف CSV يفتح بالإكسل. */
 function doShare(sheets,name){var xb=buildXlsx(sheets),f=mkFile([xb],name,XM);
- if(!canShareF(f)){f=mkFile([csvOf(sheets)],name.replace(/\.xlsx$/,".csv"),"text/csv");if(!canShareF(f)){doExport(xb,name);return}}
- navigator.share({files:[f],title:name}).then(function(){toast("✔ تم إرسال ملف Excel")}).catch(function(e){if(e&&e.name==="AbortError")toast("لم يتم الإرسال");else doExport(xb,name)})}
+ if(!canShareF(f)){f=mkFile([csvOf(sheets)],name.replace(/\.xlsx$/,".csv"),"text/csv");if(!canShareF(f)){doExport(xb,name);setTimeout(function(){toast("⚠ هذا المتصفح لا يدعم المشاركة المباشرة\nتم تنزيل الملف — أرسله للواتساب من التنزيلات")},1200);return}}
+ navigator.share({files:[f],title:name}).then(function(){toast("✔ تم إرسال ملف Excel")}).catch(function(e){if(e&&e.name==="AbortError")toast("لم يتم الإرسال");else{doExport(xb,name)}})}
+/* زر التصدير: يسأل مشاركة أو تنزيل */
+var XP=null;
+function pickExport(sheets,name,after){XP={sh:sheets,n:name,a:after||null};$("xm").hidden=false}
+function xDone(){var a=XP&&XP.a;XP=null;$("xm").hidden=true;if(a)setTimeout(a,300)}
+$("xsh").onclick=function(){if(XP)doShare(XP.sh,XP.n);xDone()};
+$("xdl").onclick=function(){if(XP)doExport(buildXlsx(XP.sh),XP.n);xDone()};
+$("xno").onclick=function(){xDone()};
 function doExport(blob,name){try{var u=URL.createObjectURL(blob);var l=document.createElement("a");l.href=u;l.download=name;document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},2000);toast("تم تنزيل ملف Excel")}catch(e){toast("تعذّر التصدير")}}
 $("exp").onclick=function(){exportDay()};
-function exportDay(){
+function exportDay(after){
  var d=S.day,T=S.log.slice();
  if(!T.length){toast("لا توجد سحوبات اليوم للتصدير");return false}
  var sh=buildSheets(T,true);
- doShare((sh),"withdrawals-"+d+(ACC()?"-cost":"")+".xlsx");S.exp=true;save();return true}
+ pickExport((sh),"withdrawals-"+d+(ACC()?"-cost":"")+".xlsx",after);S.exp=true;save();return true}
 function buildSheets(T,withStock){var A=ACC(),D="—";
  function cv(n){var c=uc(n);return c==null?D:c}
  function mul(n,q){var c=uc(n);return c==null?D:c*q}
@@ -501,7 +511,7 @@ function drawDay(){var B=$("hday"),k=H.sel;B.innerHTML="";$("hexp").hidden=true;
  T.forEach(function(x){var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=x.i+" × "+x.n;var m=document.createElement("small");m.textContent=" "+x.e+" · "+x.t;s.appendChild(m);r.appendChild(s);B.appendChild(r)});
  $("hexp").hidden=false}
 function exportPast(k){var T=recsOn(k);if(!T.length)return;
- doShare((buildSheets(T,false)),"withdrawals-"+k+(ACC()?"-cost":"")+".xlsx")}
+ pickExport((buildSheets(T,false)),"withdrawals-"+k+(ACC()?"-cost":"")+".xlsx")}
 $("histb").onclick=openHist;$("hx").onclick=function(){$("hs").hidden=true};
 $("hprev").onclick=function(){if(--H.m<0){H.m=11;H.y--}H.sel=null;drawCal()};
 $("hnext").onclick=function(){if(++H.m>11){H.m=0;H.y++}H.sel=null;drawCal()};
@@ -520,7 +530,7 @@ function bkDownload(){var f=bkFile();
 function bkShare(){var f=bkFile(),file=mkFile([f.blob],f.name.replace(/\.json$/,".txt"),"text/plain");
  if(canShareF(file)){navigator.share({files:[file],title:"نسخة احتياطية — السحوبات"}).then(function(){toast("✔ تم إرسال النسخة الاحتياطية")}).catch(function(e){if(e&&e.name!=="AbortError")bkDownload()})}
  else bkDownload()}
-function bkDialog(x){$("bkt").textContent="✔ تم إنهاء اليوم وبدأ يوم جديد "+dayLbl(S.day)+(x?"\n📊 تم تجهيز ملف Excel":"")+"\n\nاحفظ الآن النسخة الاحتياطية لكل البيانات:";
+function bkDialog(x){$("bkt").textContent="✔ تم إنهاء اليوم وبدأ يوم جديد "+dayLbl(S.day)+""+"\n\nاحفظ الآن النسخة الاحتياطية لكل البيانات:";
  $("bksh").hidden=!canShareF(mkFile(["x"],"t.txt","text/plain"));$("bkm").hidden=false}
 $("bkd").onclick=function(){bkDownload();$("bkm").hidden=true};
 $("bksh").onclick=function(){bkShare();$("bkm").hidden=true};
@@ -637,7 +647,7 @@ function exportRange(a,b){if(!ACC())return;if(!a||!b){toast("اختر التار
  var nos=T.filter(function(x){return usAt(x.i,x.d)==null}).map(function(x){return x.i}).filter(function(v,i,a){return a.indexOf(v)===i}).length;
  var s5=[["اسم المادة","السعر","يُطبَّق من"]];io.forEach(function(n){var h=chOf(n);if(h)h.forEach(function(e){s5.push([n,e[1],e[0]==="0000-00-00"?"البداية":dayLbl(e[0])])})});
  var s6=[["اسم المادة","سعر الخدمة","يُطبَّق من"]];io.forEach(function(n){var h=shOf(n);if(h)h.forEach(function(e){s6.push([n,e[1],e[0]==="0000-00-00"?"البداية":dayLbl(e[0])])})});
- doShare(([{name:"كل السحوبات",rows:s1,w:[14,9,34,9,20,22,18,26,18],total:true,mc:[5,6,7,8]},{name:"مجموع كل مادة",rows:s2,w:[34,20,16,16,18,18,18],total:true,mc:[3,4,5,6]},{name:"ملخص الأيام",rows:s3,w:[16,14,14,20,20],total:true,mc:[3,4]},{name:"حسب الموظف",rows:s4,w:[22,14,14,20,20],total:true,mc:[3,4]}].concat(s5.length>1?[{name:"سجل الأسعار",rows:s5,w:[34,18,16],mc:[1]}]:[]).concat(s6.length>1?[{name:"سجل أسعار الخدمة",rows:s6,w:[34,18,16],mc:[1]}]:[])),"withdrawals-"+a+"_to_"+b+"-cost.xlsx");
+ pickExport(([{name:"كل السحوبات",rows:s1,w:[14,9,34,9,20,22,18,26,18],total:true,mc:[5,6,7,8]},{name:"مجموع كل مادة",rows:s2,w:[34,20,16,16,18,18,18],total:true,mc:[3,4,5,6]},{name:"ملخص الأيام",rows:s3,w:[16,14,14,20,20],total:true,mc:[3,4]},{name:"حسب الموظف",rows:s4,w:[22,14,14,20,20],total:true,mc:[3,4]}].concat(s5.length>1?[{name:"سجل الأسعار",rows:s5,w:[34,18,16],mc:[1]}]:[]).concat(s6.length>1?[{name:"سجل أسعار الخدمة",rows:s6,w:[34,18,16],mc:[1]}]:[])),"withdrawals-"+a+"_to_"+b+"-cost.xlsx");
  if(noc||nos)setTimeout(function(){toast((noc?"⚠ "+noc+" مادة بدون كلفة مسجلة":"")+(noc&&nos?"\n":"")+(nos?"⚠ "+nos+" مادة بدون سعر خدمة":"")+"\nظهرت بعلامة —")},3000)}
 var WN={stock:"أرصدة المواد",log:"سجل السحوبات",cost:"الكلف",freq:"الاقتراحات",xp:"تواريخ الانتهاء"};
 function wSel(){return [].slice.call(document.querySelectorAll(".wc")).filter(function(c){return c.checked}).map(function(c){return c.value})}
