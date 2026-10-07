@@ -77,6 +77,8 @@ input[type=search]{width:100%;font:inherit;padding:14px;border-radius:14px;borde
 :root[data-theme="dark"] .xpt.soon{color:#ffb44d}:root[data-theme="dark"] .xpt.out{color:#ff7b6e}
 .cst{display:block;font-size:13px;font-weight:700;margin-top:2px;color:#b8860b}
 :root[data-theme="dark"] .cst{color:#e8c25a}
+.cst.sv{color:#0e7c86}
+:root[data-theme="dark"] .cst.sv{color:#5fd0d9}
 #who2{font-size:15px;font-weight:700;white-space:nowrap}
 .tools{display:flex;gap:8px;margin-top:12px}
 .tools button{flex:1}
@@ -292,7 +294,8 @@ function drawAcc(){var A=$("acc");A.innerHTML="";var q=$("q").value.trim().toLow
     var main=btn(name,"item"+(S.item===name?" on":""),function(){S.item=name;S.n=1;S.fresh=true;drawAcc();upd()});
     if(hasSt(name)){var q0=S.stock[name],sm=document.createElement("small");sm.style.cssText="display:block;font-size:13px;font-weight:700;margin-top:2px;opacity:.9";sm.textContent=q0<=0?"⛔ نفذت":"المتبقي: "+q0+(q0<=S.thr?" ⚠":"");main.appendChild(sm)}
     if(hasXp(name)){var xs=document.createElement("small"),st=xpState(name);xs.className="xpt "+st;xs.textContent=xpTxt(name);main.appendChild(xs)}
-    if(ACC()){var cs=document.createElement("small");cs.className="cst";cs.textContent=uc(name)!=null?"💰 "+money(uc(name))+(ucSince(name)?" (من "+dayLbl(ucSince(name)).slice(0,5)+")":""):"💰 بدون كلفة";main.appendChild(cs)}
+    if(ACC()){var cs=document.createElement("small");cs.className="cst";cs.textContent=uc(name)!=null?"💰 "+money(uc(name))+(ucSince(name)?" (من "+dayLbl(ucSince(name)).slice(0,5)+")":""):"💰 بدون كلفة";main.appendChild(cs);
+     var ss=document.createElement("small");ss.className="cst sv";ss.textContent=us(name)!=null?"🛠 خدمة: "+money(us(name))+(usSince(name)?" (من "+dayLbl(usSince(name)).slice(0,5)+")":""):"🛠 بدون سعر خدمة";main.appendChild(ss)}
     if(!S.edit){g.appendChild(main);return}
     var w=document.createElement("div");w.className="tile";w.appendChild(main);var r=document.createElement("div");r.className="r";
     function ab(ic,lb,val,set,cls,fn){var b=btn("",("ab "+(set?"set ":"")+(cls||"")).trim(),fn);var a=document.createElement("span");a.className="i";a.textContent=ic;b.appendChild(a);
@@ -301,6 +304,7 @@ function drawAcc(){var A=$("acc");A.innerHTML="";var q=$("q").value.trim().toLow
     r.appendChild(ab("📦","الرصيد",hasSt(name)?String(S.stock[name]):"—",hasSt(name),"",function(){editStock(name)}));
     r.appendChild(ab("⏳","الانتهاء",xd?xd[2]+"/"+xd[1]+"/"+xd[0].slice(2):"—",!!xd,"",function(){editXp(name)}));
     if(ACC())r.appendChild(ab("💰","الكلفة",uc(name)!=null?money(uc(name)):"—",uc(name)!=null,"",function(){editCost(name)}));
+    if(ACC())r.appendChild(ab("🛠","الخدمة",us(name)!=null?money(us(name)):"—",us(name)!=null,"",function(){editSvc(name)}));
     r.appendChild(ab("✎","الاسم",null,false,"",function(){ask("الاسم الجديد:",name,function(n){if(n!==name&&itemExists(n,name)){toast("⚠ توجد مادة بنفس الاسم");return}cat.items[real]=n;if(S.item===name)S.item=n;if(n!==name&&hasSt(name)){S.stock[n]=S.stock[name];delete S.stock[name]}if(n!==name&&hasXp(name)){S.xp[n]=S.xp[name];delete S.xp[name]}if(n!==name)renCost(name,n);save();drawAcc();upd()})}));
     r.appendChild(ab("🗑","حذف",null,false,"del",function(){sure("حذف «"+name+"»؟",function(){cat.items.splice(real,1);delete S.stock[name];delete S.xp[name];if(S.item===name)S.item=null;save();drawAcc();upd()})}));
     w.appendChild(r);g.appendChild(w)});
@@ -326,6 +330,7 @@ function renderAll(){$("thb").textContent="⚠ حد التنبيه: "+S.thr;$("x
 function upd(){var e=$("sel"),bad="",t=S.item||"اختر مادة";
  if(S.item&&hasSt(S.item)){var q=S.stock[S.item];if(q<=0)bad="⛔ نفذت في المخزن";else if(S.n>q)bad="⚠ المتاح "+q+" فقط";t=S.item+" — "+(bad||"المتاح: "+q)}
  if(S.item&&uc(S.item)!=null)t+=" · 💰 "+money(uc(S.item)*S.n);
+ if(S.item&&us(S.item)!=null)t+=" · 🛠 "+money(us(S.item)*S.n);
  if(S.item&&(xpState(S.item)==="soon"||xpState(S.item)==="out")){t+=" — "+xpTxt(S.item);if(!bad)bad="xp"}
  e.textContent=t;e.style.color=bad?"#ff8a80":"";$("n").textContent=S.n;chk()}
 function stale(){return S.day!==today()}
@@ -348,12 +353,12 @@ function editQty(x){var m=$("mi");m.inputMode="numeric";
   if(!/^\d+$/.test(t)||+t<1||+t>99999){toast("اكتب رقمًا صحيحًا أكبر من صفر");return}
   var diff=+t-x.n;if(hasSt(x.i)){if(diff>S.stock[x.i]){toast("المتاح في المخزن "+S.stock[x.i]+" فقط");return}S.stock[x.i]-=diff}
   x.n=+t;S.exp=false;save();drawLog();drawAcc();upd();toast("تم تعديل الكمية إلى "+x.n);if(hasSt(x.i)&&S.stock[x.i]<=0)alertModal("⛔ المادة «"+x.i+"» نفذت في المخزن")})}
-function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0;$("dlbl").textContent="· بدأ "+dayLbl(S.day);
- t.slice().reverse().forEach(function(x){sum+=x.n;var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=x.i+" × "+x.n;var m=document.createElement("small");var dp=x.d.split("-");m.textContent=" "+x.e+" · "+dp[2]+"/"+dp[1]+"/"+dp[0]+" · "+x.t;s.appendChild(m);if(rc(x)!=null){csum+=rc(x);var cc=document.createElement("small");cc.className="cst";cc.textContent="💰 "+money(rc(x));s.appendChild(cc)}r.appendChild(s);
+function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ssum=0;$("dlbl").textContent="· بدأ "+dayLbl(S.day);
+ t.slice().reverse().forEach(function(x){sum+=x.n;var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=x.i+" × "+x.n;var m=document.createElement("small");var dp=x.d.split("-");m.textContent=" "+x.e+" · "+dp[2]+"/"+dp[1]+"/"+dp[0]+" · "+x.t;s.appendChild(m);if(rc(x)!=null){csum+=rc(x);var cc=document.createElement("small");cc.className="cst";cc.textContent="💰 "+money(rc(x));s.appendChild(cc)}if(rs(x)!=null){ssum+=rs(x);var sc=document.createElement("small");sc.className="cst sv";sc.textContent="🛠 "+money(rs(x));s.appendChild(sc)}r.appendChild(s);
   var bs=document.createElement("div");bs.style.cssText="display:flex;gap:6px";bs.appendChild(btn("تعديل","ed",function(){editQty(x)}));
   bs.appendChild(btn("حذف","",function(){sure("حذف هذا السحب؟",function(){S.log=S.log.filter(function(y){return y!==x});if(hasSt(x.i))S.stock[x.i]+=x.n;if(S.freq[x.i]>0)S.freq[x.i]--;S.exp=false;save();drawLog();drawAcc();upd()})}));r.appendChild(bs);L.appendChild(r)});
  if(!t.length)L.innerHTML='<div class="li"><small>لا توجد سحوبات بعد</small></div>';
- $("undo").hidden=!(S.prev&&!t.length);drawHot();$("tot").textContent=t.length?"("+t.length+" سجل / "+sum+" قطعة"+(ACC()?" / 💰 "+money(csum):"")+")":""}
+ $("undo").hidden=!(S.prev&&!t.length);drawHot();$("tot").textContent=t.length?"("+t.length+" سجل / "+sum+" قطعة"+(ACC()?" / 💰 "+money(csum)+" / 🛠 "+money(ssum):"")+")":""}
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;$("alx").onclick=function(){$("al").hidden=true};
@@ -429,25 +434,30 @@ function exportDay(){
 function buildSheets(T,withStock){var A=ACC(),D="—";
  function cv(n){var c=uc(n);return c==null?D:c}
  function mul(n,q){var c=uc(n);return c==null?D:c*q}
- var ip={},icost={};T.forEach(function(x){var c=ucAt(x.i,x.d);if(c==null)return;(ip[x.i]=ip[x.i]||{})[c]=1;icost[x.i]=(icost[x.i]||0)+c*x.n});
+ function sv(n){var c=us(n);return c==null?D:c}
+ var ip={},icost={},sp={},isvc={};T.forEach(function(x){var c=ucAt(x.i,x.d);if(c!=null){(ip[x.i]=ip[x.i]||{})[c]=1;icost[x.i]=(icost[x.i]||0)+c*x.n}
+  var v=usAt(x.i,x.d);if(v!=null){(sp[x.i]=sp[x.i]||{})[v]=1;isvc[x.i]=(isvc[x.i]||0)+v*x.n}});
  function cvT(n){if(!ip[n])return D;var k=Object.keys(ip[n]);return k.length===1?+k[0]:"متعدد"}
  function mulT(n){return n in icost?icost[n]:D}
- var s1=[["اسم المادة","العدد","اسم الموظف","التاريخ والوقت"].concat(A?["كلفة الوحدة","الكلفة"]:[])],tq=0,tc=0,tot={},ord=[];
- T.forEach(function(x){var r=[x.i,x.n,x.e,dayLbl(x.d)+" "+x.t];if(A){var c0=ucAt(x.i,x.d);r.push(c0==null?D:c0,c0==null?D:c0*x.n);if(c0!=null)tc+=c0*x.n}s1.push(r);tq+=x.n;if(!(x.i in tot)){tot[x.i]=0;ord.push(x.i)}tot[x.i]+=x.n});
- s1.push(["الإجمالي",tq,"",""].concat(A?["",tc]:[]));
+ function svT(n){if(!sp[n])return D;var k=Object.keys(sp[n]);return k.length===1?+k[0]:"متعدد"}
+ function smulT(n){return n in isvc?isvc[n]:D}
+ var AH=["كلفة الوحدة","الكلفة","سعر خدمة الوحدة","مبلغ الخدمة"];
+ var s1=[["اسم المادة","العدد","اسم الموظف","التاريخ والوقت"].concat(A?AH:[])],tq=0,tc=0,ts=0,tot={},ord=[];
+ T.forEach(function(x){var r=[x.i,x.n,x.e,dayLbl(x.d)+" "+x.t];if(A){var c0=ucAt(x.i,x.d),v0=usAt(x.i,x.d);r.push(c0==null?D:c0,c0==null?D:c0*x.n,v0==null?D:v0,v0==null?D:v0*x.n);if(c0!=null)tc+=c0*x.n;if(v0!=null)ts+=v0*x.n}s1.push(r);tq+=x.n;if(!(x.i in tot)){tot[x.i]=0;ord.push(x.i)}tot[x.i]+=x.n});
+ s1.push(["الإجمالي",tq,"",""].concat(A?["",tc,"",ts]:[]));
  ord.sort(function(a,b){return tot[b]-tot[a]});
- var s2;
- if(withStock){s2=[["اسم المادة","الرصيد أول اليوم","مجموع الكمية اليوم","المتبقي بالمخزن (رصيد اليوم التالي)"].concat(A?["كلفة الوحدة","كلفة المسحوب"]:[])];
-  ord.forEach(function(n){var h=hasSt(n),r=[n,h?S.stock[n]+tot[n]:D,tot[n],h?S.stock[n]:D];if(A)r.push(cvT(n),mulT(n));s2.push(r)});
-  s2.push(["الإجمالي","",tq,""].concat(A?["",tc]:[]))}
- else{s2=[["اسم المادة","مجموع الكمية"].concat(A?["كلفة الوحدة","كلفة المسحوب"]:[])];
-  ord.forEach(function(n){var r=[n,tot[n]];if(A)r.push(cvT(n),mulT(n));s2.push(r)});
-  s2.push(["الإجمالي",tq].concat(A?["",tc]:[]))}
- var sh=[{name:"سحوبات اليوم",rows:s1,w:[34,10,22,22].concat(A?[16,18]:[]),total:true,mc:[4,5]},{name:"مجموع كل مادة",rows:s2,w:(withStock?[34,18,20,30]:[34,18]).concat(A?[16,18]:[]),total:true,mc:withStock?[4,5]:[2,3]}];
- if(withStock){var s3=[["الفئة","اسم المادة","الرصيد أول اليوم","المسحوب اليوم","الرصيد المتبقي","تاريخ الانتهاء"].concat(A?["كلفة الوحدة","قيمة المتبقي"]:[])],tv=0;
-  S.cats.forEach(function(c){c.items.forEach(function(n){if(!hasSt(n))return;var w=tot[n]||0,r=[c.n,n,S.stock[n]+w,w,S.stock[n],hasXp(n)?dayLbl(S.xp[n]):D];if(A){r.push(cv(n),mul(n,S.stock[n]));if(uc(n)!=null)tv+=uc(n)*S.stock[n]}s3.push(r)})});
-  if(A&&s3.length>1)s3.push(["الإجمالي","","","","","","",tv]);
-  if(s3.length>1)sh.push({name:"رصيد المخزن",rows:s3,w:[22,34,18,16,18,16].concat(A?[16,20]:[]),total:A,mc:[6,7]})}
+ var s2,AH2=["كلفة الوحدة","كلفة المسحوب","سعر خدمة الوحدة","مبلغ الخدمة"];
+ if(withStock){s2=[["اسم المادة","الرصيد أول اليوم","مجموع الكمية اليوم","المتبقي بالمخزن (رصيد اليوم التالي)"].concat(A?AH2:[])];
+  ord.forEach(function(n){var h=hasSt(n),r=[n,h?S.stock[n]+tot[n]:D,tot[n],h?S.stock[n]:D];if(A)r.push(cvT(n),mulT(n),svT(n),smulT(n));s2.push(r)});
+  s2.push(["الإجمالي","",tq,""].concat(A?["",tc,"",ts]:[]))}
+ else{s2=[["اسم المادة","مجموع الكمية"].concat(A?AH2:[])];
+  ord.forEach(function(n){var r=[n,tot[n]];if(A)r.push(cvT(n),mulT(n),svT(n),smulT(n));s2.push(r)});
+  s2.push(["الإجمالي",tq].concat(A?["",tc,"",ts]:[]))}
+ var sh=[{name:"سحوبات اليوم",rows:s1,w:[34,10,22,22].concat(A?[16,18,18,18]:[]),total:true,mc:[4,5,6,7]},{name:"مجموع كل مادة",rows:s2,w:(withStock?[34,18,20,30]:[34,18]).concat(A?[16,18,18,18]:[]),total:true,mc:withStock?[4,5,6,7]:[2,3,4,5]}];
+ if(withStock){var s3=[["الفئة","اسم المادة","الرصيد أول اليوم","المسحوب اليوم","الرصيد المتبقي","تاريخ الانتهاء"].concat(A?["كلفة الوحدة","قيمة المتبقي","سعر خدمة الوحدة"]:[])],tv=0;
+  S.cats.forEach(function(c){c.items.forEach(function(n){if(!hasSt(n))return;var w=tot[n]||0,r=[c.n,n,S.stock[n]+w,w,S.stock[n],hasXp(n)?dayLbl(S.xp[n]):D];if(A){r.push(cv(n),mul(n,S.stock[n]),sv(n));if(uc(n)!=null)tv+=uc(n)*S.stock[n]}s3.push(r)})});
+  if(A&&s3.length>1)s3.push(["الإجمالي","","","","","","",tv,""]);
+  if(s3.length>1)sh.push({name:"رصيد المخزن",rows:s3,w:[22,34,18,16,18,16].concat(A?[16,20,18]:[]),total:A,mc:[6,7,8]})}
  return sh}
 /* ===== سجل الأيام السابقة ===== */
 var MN=["كانون الثاني","شباط","آذار","نيسان","أيار","حزيران","تموز","آب","أيلول","تشرين الأول","تشرين الثاني","كانون الأول"];
@@ -469,13 +479,13 @@ function drawCal(){$("hmon").textContent=MN[H.m]+" "+H.y;
  drawDay()}
 function drawDay(){var B=$("hday"),k=H.sel;B.innerHTML="";$("hexp").hidden=true;
  if(!k){B.innerHTML='<div class="li"><small>اختر يومًا من التقويم (الأيام الملوّنة فيها سحوبات)</small></div>';return}
- var T=recsOn(k),tot={},ord=[],sum=0,csum=0;
+ var T=recsOn(k),tot={},ord=[],sum=0,csum=0,ssum=0,tss={};
  var h=document.createElement("div");h.className="hd";h.textContent="📅 "+dayLbl(k);B.appendChild(h);
  if(!T.length){var e=document.createElement("div");e.className="li";e.innerHTML="<small>لا توجد سحوبات في هذا اليوم</small>";B.appendChild(e);return}
- var tcs={};T.forEach(function(x){sum+=x.n;if(rc(x)!=null){csum+=rc(x);tcs[x.i]=(tcs[x.i]||0)+rc(x)}if(!(x.i in tot)){tot[x.i]=0;ord.push(x.i)}tot[x.i]+=x.n});
- h.textContent+="  ("+T.length+" سجل / "+sum+" قطعة"+(ACC()?" / 💰 "+money(csum):"")+")";
+ var tcs={};T.forEach(function(x){sum+=x.n;if(rc(x)!=null){csum+=rc(x);tcs[x.i]=(tcs[x.i]||0)+rc(x)}if(rs(x)!=null){ssum+=rs(x);tss[x.i]=(tss[x.i]||0)+rs(x)}if(!(x.i in tot)){tot[x.i]=0;ord.push(x.i)}tot[x.i]+=x.n});
+ h.textContent+="  ("+T.length+" سجل / "+sum+" قطعة"+(ACC()?" / 💰 "+money(csum)+" / 🛠 "+money(ssum):"")+")";
  var t1=document.createElement("div");t1.className="sub";t1.textContent="مجموع كل مادة";B.appendChild(t1);
- ord.sort(function(a,b){return tot[b]-tot[a]}).forEach(function(n){var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=n;var q=document.createElement("b");q.textContent=tot[n]+(n in tcs?"  · 💰 "+money(tcs[n]):"");r.appendChild(s);r.appendChild(q);B.appendChild(r)});
+ ord.sort(function(a,b){return tot[b]-tot[a]}).forEach(function(n){var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=n;var q=document.createElement("b");q.textContent=tot[n]+(n in tcs?"  · 💰 "+money(tcs[n]):"")+(n in tss?"  · 🛠 "+money(tss[n]):"");r.appendChild(s);r.appendChild(q);B.appendChild(r)});
  var t2=document.createElement("div");t2.className="sub";t2.textContent="كل السحوبات";B.appendChild(t2);
  T.forEach(function(x){var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=x.i+" × "+x.n;var m=document.createElement("small");m.textContent=" "+x.e+" · "+x.t;s.appendChild(m);r.appendChild(s);B.appendChild(r)});
  $("hexp").hidden=false}
@@ -523,6 +533,14 @@ function chOf(n){var v=S.cost[n];if(typeof v==="number")return [["0000-00-00",v]
 function uc(n){if(!ACC())return null;var h=chOf(n);return h?h[h.length-1][1]:null}
 function ucAt(n,d){if(!ACC())return null;var h=chOf(n);if(!h)return null;var p=h[0][1];for(var i=0;i<h.length;i++){if(h[i][0]<=d)p=h[i][1];else break}return p}
 function rc(x){var c=ucAt(x.i,x.d);return c==null?null:c*x.n}
+/* سعر الخدمة — يُحفظ مشفّرًا مع الكلف تحت المفتاح __svc */
+function svM(){var m=S.cost&&S.cost.__svc;return m&&typeof m==="object"&&!Array.isArray(m)?m:{}}
+function shOf(n){var v=svM()[n];return Array.isArray(v)&&v.length?v:null}
+function us(n){if(!ACC())return null;var h=shOf(n);return h?h[h.length-1][1]:null}
+function usAt(n,d){if(!ACC())return null;var h=shOf(n);if(!h)return null;var p=h[0][1];for(var i=0;i<h.length;i++){if(h[i][0]<=d)p=h[i][1];else break}return p}
+function rs(x){var c=usAt(x.i,x.d);return c==null?null:c*x.n}
+function usSince(n){var h=shOf(n);return h&&h[h.length-1][0]!=="0000-00-00"?h[h.length-1][0]:null}
+function svRen(a,b){var m=S.cost&&S.cost.__svc;if(m&&a in m){m[b]=m[a];delete m[a]}}
 function ucSince(n){var h=chOf(n);return h&&h[h.length-1][0]!=="0000-00-00"?h[h.length-1][0]:null}
 function money(v){return (Math.round(v*100)/100).toLocaleString("en-US")+" IQD"}
 function b64(u){var a=new Uint8Array(u),s="";for(var i=0;i<a.length;i++)s+=String.fromCharCode(a[i]);return btoa(s)}
@@ -542,8 +560,8 @@ function tryPw(pw){
  if(S.ce.p)return Promise.resolve(S.ce.h===hsh(pw)?(S.cost=S.ce.c||{},true):false);
  if(!SUB)return Promise.resolve(false);
  return dKey(pw,ub64(S.ce.s)).then(function(k){return crypto.subtle.decrypt({name:"AES-GCM",iv:ub64(S.ce.iv)},k,ub64(S.ce.d)).then(function(p){S.key=k;S.cost=JSON.parse(new TextDecoder().decode(p));return true})}).catch(function(){return false})}
-function renCost(a,b){if(ACC()){if(a in S.cost){S.cost[b]=S.cost[a];delete S.cost[a];saveCost()}}else{S.ren.push([a,b])}}
-function applyRen(){if(!S.ren.length)return;S.ren.forEach(function(r){if(r[0] in S.cost){S.cost[r[1]]=S.cost[r[0]];delete S.cost[r[0]]}});S.ren=[];saveCost()}
+function renCost(a,b){if(ACC()){if(a in S.cost){S.cost[b]=S.cost[a];delete S.cost[a]}svRen(a,b);saveCost()}else{(S.ren=S.ren||[]).push([a,b])}}
+function applyRen(){if(!S.ren||!S.ren.length)return;S.ren.forEach(function(r){if(r[0] in S.cost){S.cost[r[1]]=S.cost[r[0]];delete S.cost[r[0]]}svRen(r[0],r[1])});S.ren=[];saveCost()}
 function pwDlg(msg,cb){var i=$("mi");i.type="password";dlg(msg,"",true,function(v){i.type="text";cb(v)})}
 function enter(role){S.role=role;S.edit=false;$("login").hidden=true;renderAll();upd();drawLog();xpSync();sysNotify(false);if("Notification" in window&&Notification.permission==="granted")xpRegPeriodic();var l=xpList();if(l.length)setTimeout(function(){toast("⏳ "+l.length+" مادة قريبة الانتهاء أو منتهية — اضغط 🔔")},600)}
 function showLogin(){S.role=null;S.cost={};S.key=null;S.edit=false;$("hs").hidden=true;$("login").hidden=false}
@@ -573,29 +591,44 @@ function editCost(name){var m=$("mi");m.inputMode="decimal";
   if(h.length&&h[h.length-1][0]===td)h[h.length-1]=[td,+t];else h.push([h.length?td:"0000-00-00",+t]);
   S.cost[name]=h;
   saveCost().then(function(){drawAcc();upd();drawLog();toast(h.length>1?"✔ الكلفة الجديدة "+money(+t)+"\nتُحسب من اليوم "+dayLbl(td)+" — السحوبات السابقة تبقى بسعرها القديم":"✔ تم حفظ الكلفة")})})}
+function editSvc(name){var m=$("mi");m.inputMode="decimal";
+ var hh=shOf(name),hist=hh&&hh.length>1?"\n\nسجل أسعار الخدمة:\n"+hh.map(function(e){return "• "+money(e[1])+(e[0]==="0000-00-00"?" (البداية)":" من "+dayLbl(e[0]))}).join("\n"):"";
+ dlg("سعر الخدمة للقطعة الواحدة من «"+name+"» بالدينار العراقي (IQD)"+(hh?"\nالسعر الجديد يُطبَّق على سحوبات اليوم وما بعده فقط.":"")+hist+"\n\n(اتركه فارغًا لحذف سعر الخدمة)",us(name)!=null?String(us(name)):"",true,function(v){m.inputMode="";if(v===null)return;
+  var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).replace(/[,،٬\s]/g,"").replace("٫",".");
+  if(t===""){if(!shOf(name))return;sure("حذف كل أسعار الخدمة لـ «"+name+"» (الحالية والقديمة)؟\nالسحوبات السابقة ستظهر بدون سعر خدمة.",function(){delete S.cost.__svc[name];saveCost().then(function(){drawAcc();upd();drawLog();toast("تم حذف سعر الخدمة")})});return}
+  if(!(/^\d+(\.\d+)?$/.test(t)&&+t<1e10)){toast("اكتب رقمًا صحيحًا");return}
+  var h=(shOf(name)||[]).slice(),td=today();
+  if(h.length&&h[h.length-1][1]===+t){toast("نفس سعر الخدمة الحالي");return}
+  if(h.length&&h[h.length-1][0]===td)h[h.length-1]=[td,+t];else h.push([h.length?td:"0000-00-00",+t]);
+  if(!S.cost.__svc||typeof S.cost.__svc!=="object"||Array.isArray(S.cost.__svc))S.cost.__svc={};
+  S.cost.__svc[name]=h;
+  saveCost().then(function(){drawAcc();upd();drawLog();toast(h.length>1?"✔ سعر الخدمة الجديد "+money(+t)+"\nيُحسب من اليوم "+dayLbl(td)+" — السحوبات السابقة تبقى بسعرها القديم":"✔ تم حفظ سعر الخدمة")})})}
 /* ===== تصدير فترة ===== */
 function exportRange(a,b){if(!ACC())return;if(!a||!b){toast("اختر التاريخين");return}if(a>b){var t=a;a=b;b=t}
  var T=allRecs().filter(function(x){return x.d>=a&&x.d<=b}).sort(function(x,y){return x.d<y.d?-1:x.d>y.d?1:(x.t<y.t?-1:x.t>y.t?1:0)});
  if(!T.length){toast("لا توجد سحوبات بين "+dayLbl(a)+" و "+dayLbl(b));return}
  var D="—",cat={};S.cats.forEach(function(c){c.items.forEach(function(i){cat[i]=c.n})});
  function cv(n){var c=uc(n);return c==null?D:c}
- var ip={};T.forEach(function(x){var c=ucAt(x.i,x.d);if(c!=null)(ip[x.i]=ip[x.i]||{})[c]=1});
+ var ip={},sp={};T.forEach(function(x){var c=ucAt(x.i,x.d);if(c!=null)(ip[x.i]=ip[x.i]||{})[c]=1;var v=usAt(x.i,x.d);if(v!=null)(sp[x.i]=sp[x.i]||{})[v]=1});
  function cvT(n){if(!ip[n])return D;var k=Object.keys(ip[n]);return k.length===1?+k[0]:"متعدد"}
- var s1=[["التاريخ","الوقت","اسم المادة","العدد","اسم الموظف","سعر الوحدة يوم السحب","الكلفة"]],tq=0,tc=0,it={},io=[],dy={},dyo=[],em={},emo=[];
- T.forEach(function(x){var u=ucAt(x.i,x.d),c=u==null?0:u*x.n;s1.push([dayLbl(x.d),x.t,x.i,x.n,x.e,u==null?D:u,u==null?D:c]);tq+=x.n;tc+=c;
-  if(!it[x.i]){it[x.i]={q:0,c:0};io.push(x.i)}it[x.i].q+=x.n;it[x.i].c+=c;
-  if(!dy[x.d]){dy[x.d]={r:0,q:0,c:0};dyo.push(x.d)}dy[x.d].r++;dy[x.d].q+=x.n;dy[x.d].c+=c;
-  if(!em[x.e]){em[x.e]={r:0,q:0,c:0};emo.push(x.e)}em[x.e].r++;em[x.e].q+=x.n;em[x.e].c+=c});
- s1.push(["الإجمالي","","",tq,"","",tc]);
- var s2=[["اسم المادة","الفئة","مجموع الكمية","كلفة الوحدة","الكلفة"]];
- io.sort(function(x,y){return it[y].c-it[x].c||it[y].q-it[x].q}).forEach(function(n){s2.push([n,cat[n]||D,it[n].q,cvT(n),ip[n]?it[n].c:D])});
- s2.push(["الإجمالي","",tq,"",tc]);
- var s3=[["التاريخ","عدد السجلات","عدد القطع","الكلفة"]],tr=0;dyo.forEach(function(d){s3.push([dayLbl(d),dy[d].r,dy[d].q,dy[d].c]);tr+=dy[d].r});s3.push(["الإجمالي",tr,tq,tc]);
- var s4=[["اسم الموظف","عدد السجلات","عدد القطع","الكلفة"]];emo.sort(function(x,y){return em[y].q-em[x].q}).forEach(function(e){s4.push([e,em[e].r,em[e].q,em[e].c])});s4.push(["الإجمالي",tr,tq,tc]);
+ function svT(n){if(!sp[n])return D;var k=Object.keys(sp[n]);return k.length===1?+k[0]:"متعدد"}
+ var s1=[["التاريخ","الوقت","اسم المادة","العدد","اسم الموظف","سعر الوحدة يوم السحب","الكلفة","سعر خدمة الوحدة يوم السحب","مبلغ الخدمة"]],tq=0,tc=0,ts=0,it={},io=[],dy={},dyo=[],em={},emo=[];
+ T.forEach(function(x){var u=ucAt(x.i,x.d),c=u==null?0:u*x.n,v=usAt(x.i,x.d),sv=v==null?0:v*x.n;s1.push([dayLbl(x.d),x.t,x.i,x.n,x.e,u==null?D:u,u==null?D:c,v==null?D:v,v==null?D:sv]);tq+=x.n;tc+=c;ts+=sv;
+  if(!it[x.i]){it[x.i]={q:0,c:0,s:0};io.push(x.i)}it[x.i].q+=x.n;it[x.i].c+=c;it[x.i].s+=sv;
+  if(!dy[x.d]){dy[x.d]={r:0,q:0,c:0,s:0};dyo.push(x.d)}dy[x.d].r++;dy[x.d].q+=x.n;dy[x.d].c+=c;dy[x.d].s+=sv;
+  if(!em[x.e]){em[x.e]={r:0,q:0,c:0,s:0};emo.push(x.e)}em[x.e].r++;em[x.e].q+=x.n;em[x.e].c+=c;em[x.e].s+=sv});
+ s1.push(["الإجمالي","","",tq,"","",tc,"",ts]);
+ var s2=[["اسم المادة","الفئة","مجموع الكمية","كلفة الوحدة","الكلفة","سعر خدمة الوحدة","مبلغ الخدمة"]];
+ io.sort(function(x,y){return it[y].c-it[x].c||it[y].q-it[x].q}).forEach(function(n){s2.push([n,cat[n]||D,it[n].q,cvT(n),ip[n]?it[n].c:D,svT(n),sp[n]?it[n].s:D])});
+ s2.push(["الإجمالي","",tq,"",tc,"",ts]);
+ var s3=[["التاريخ","عدد السجلات","عدد القطع","الكلفة","مبلغ الخدمة"]],tr=0;dyo.forEach(function(d){s3.push([dayLbl(d),dy[d].r,dy[d].q,dy[d].c,dy[d].s]);tr+=dy[d].r});s3.push(["الإجمالي",tr,tq,tc,ts]);
+ var s4=[["اسم الموظف","عدد السجلات","عدد القطع","الكلفة","مبلغ الخدمة"]];emo.sort(function(x,y){return em[y].q-em[x].q}).forEach(function(e){s4.push([e,em[e].r,em[e].q,em[e].c,em[e].s])});s4.push(["الإجمالي",tr,tq,tc,ts]);
  var noc=T.filter(function(x){return ucAt(x.i,x.d)==null}).map(function(x){return x.i}).filter(function(v,i,a){return a.indexOf(v)===i}).length;
+ var nos=T.filter(function(x){return usAt(x.i,x.d)==null}).map(function(x){return x.i}).filter(function(v,i,a){return a.indexOf(v)===i}).length;
  var s5=[["اسم المادة","السعر","يُطبَّق من"]];io.forEach(function(n){var h=chOf(n);if(h)h.forEach(function(e){s5.push([n,e[1],e[0]==="0000-00-00"?"البداية":dayLbl(e[0])])})});
- doExport(buildXlsx([{name:"كل السحوبات",rows:s1,w:[14,9,34,9,20,22,18],total:true,mc:[5,6]},{name:"مجموع كل مادة",rows:s2,w:[34,20,16,16,18],total:true,mc:[3,4]},{name:"ملخص الأيام",rows:s3,w:[16,14,14,20],total:true,mc:[3]},{name:"حسب الموظف",rows:s4,w:[22,14,14,20],total:true,mc:[3]}].concat(s5.length>1?[{name:"سجل الأسعار",rows:s5,w:[34,18,16],mc:[1]}]:[])),"withdrawals-"+a+"_to_"+b+"-cost.xlsx");
- if(noc)setTimeout(function(){toast("⚠ "+noc+" مادة بدون كلفة مسجلة — ظهرت بعلامة —")},3000)}
+ var s6=[["اسم المادة","سعر الخدمة","يُطبَّق من"]];io.forEach(function(n){var h=shOf(n);if(h)h.forEach(function(e){s6.push([n,e[1],e[0]==="0000-00-00"?"البداية":dayLbl(e[0])])})});
+ doExport(buildXlsx([{name:"كل السحوبات",rows:s1,w:[14,9,34,9,20,22,18,26,18],total:true,mc:[5,6,7,8]},{name:"مجموع كل مادة",rows:s2,w:[34,20,16,16,18,18,18],total:true,mc:[3,4,5,6]},{name:"ملخص الأيام",rows:s3,w:[16,14,14,20,20],total:true,mc:[3,4]},{name:"حسب الموظف",rows:s4,w:[22,14,14,20,20],total:true,mc:[3,4]}].concat(s5.length>1?[{name:"سجل الأسعار",rows:s5,w:[34,18,16],mc:[1]}]:[]).concat(s6.length>1?[{name:"سجل أسعار الخدمة",rows:s6,w:[34,18,16],mc:[1]}]:[])),"withdrawals-"+a+"_to_"+b+"-cost.xlsx");
+ if(noc||nos)setTimeout(function(){toast((noc?"⚠ "+noc+" مادة بدون كلفة مسجلة":"")+(noc&&nos?"\n":"")+(nos?"⚠ "+nos+" مادة بدون سعر خدمة":"")+"\nظهرت بعلامة —")},3000)}
 var WN={stock:"أرصدة المواد",log:"سجل السحوبات",cost:"الكلف",freq:"الاقتراحات",xp:"تواريخ الانتهاء"};
 function wSel(){return [].slice.call(document.querySelectorAll(".wc")).filter(function(c){return c.checked}).map(function(c){return c.value})}
 function wUpd(){var n=wSel().length;$("wAll").checked=n===5;$("wgo").disabled=!n}
