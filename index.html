@@ -321,6 +321,21 @@ button.flash{animation:flash .5s ease-out}
 .x-tm button{position:absolute;top:2px;inset-inline-end:2px;width:24px;height:24px;min-height:0!important;padding:0!important;border-radius:50%!important;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:12px;line-height:24px}
 .x-tm .ld{display:grid;place-items:center;width:100%;height:100%;font-size:12px;color:var(--mut)}
 #xv .x-it{cursor:pointer;border-radius:12px}
+/* 3.9v: أزرار تعديل وحذف واضحة + كل المصاريف */
+#xv .x-it{grid-template-columns:40px minmax(0,1fr) auto}
+#xv .x-it .acts{grid-column:2/-1;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-start}
+#xv .x-it .acts button{min-height:36px;padding:0 12px;font-size:14px;font-weight:700;border:1px solid var(--bd);background:var(--card);border-radius:10px}
+#xv .x-it .acts .dl{color:var(--bad)}
+#xv .x-seg{display:flex;background:var(--bg);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
+#xv .x-seg button{flex:1;border:0;background:transparent;min-height:42px;border-radius:10px;font-weight:700;color:var(--mut)}
+#xv .x-seg button.on{background:var(--card);color:var(--tx);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+#xv .x-af{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:10px}
+#xv .x-af #xAQ{grid-column:1/-1}
+#xv .x-af select{appearance:auto;min-width:0}
+#xv .x-afc{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap}
+#xv .x-dh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:14px 0 2px;padding:6px 10px;border-radius:10px;background:var(--bg);font-weight:800;font-size:14px}
+#xv .x-dh b{color:var(--out)}
+#xv .x-more{width:100%;margin-top:10px;border-style:dashed}
 #xv .x-it:hover{background:color-mix(in srgb,var(--ac) 5%,transparent)}
 #xv .x-it.pd .e{background:var(--pbg)}
 #xv .x-it .bdg{display:inline-block;font-size:12px;font-weight:800;color:var(--pc);background:var(--pbg);border-radius:999px;padding:1px 8px;margin-inline-start:6px;vertical-align:middle}
@@ -391,7 +406,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 3.8v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 3.9v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -436,7 +451,7 @@ button.flash{animation:flash .5s ease-out}
 <div class="hmt"><h1>البرامج<small id="hmWho"></small></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">3.8v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">3.9v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -469,10 +484,21 @@ button.flash{animation:flash .5s ease-out}
 <div class="x-after" id="xAfter"></div>
 </section>
 <section class="x-card" aria-labelledby="xDayTitle">
+<div class="x-seg" role="tablist"><button id="xTabDay" role="tab" aria-selected="true" class="on">📅 حسب اليوم</button><button id="xTabAll" role="tab" aria-selected="false">📋 كل المصاريف</button></div>
+<div id="xPDay">
 <h2 id="xDayTitle">مصاريف اليوم</h2>
 <div class="x-daynav"><button id="xPrev">→ السابق</button><input class="x-fld" type="date" id="xLdate" aria-label="اختر اليوم"><button id="xNext">التالي ←</button><button id="xToday">اليوم</button></div>
 <div class="x-daysum"><span id="xDayCnt">0 مصروف</span><b class="num" id="xDayTot">0</b></div>
 <div id="xDayList"></div>
+</div>
+<div id="xPAll" hidden>
+<h2>كل المصاريف</h2>
+<div class="x-af"><input class="x-fld" id="xAQ" type="search" placeholder="🔍 بحث: ملاحظة، نوع، اسم، مبلغ" autocomplete="off" aria-label="بحث بالمصاريف">
+<select class="x-fld" id="xAT" aria-label="نوع المصروف"></select><select class="x-fld" id="xAB" aria-label="منو اشترى"></select>
+<div class="x-afc"><button id="xAP" class="x-chip" aria-pressed="false">⏳ المؤقتة بس</button><button id="xAI" class="x-chip" aria-pressed="false">💵 ويه الإيداعات</button><button id="xAW" class="x-chip" aria-pressed="false" hidden>🏦 كل الخزائن</button></div></div>
+<div class="x-daysum"><span id="xACnt">0 مصروف</span><b class="num" id="xATot">0</b></div>
+<div id="xAList"></div>
+</div>
 </section>
 </div>
 <section class="x-card" id="xRep" hidden aria-labelledby="xhRep">
@@ -501,7 +527,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">3.8v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">3.9v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -526,16 +552,14 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 3.8v Online</div><div class="vd">تاريخ التحديث: 10/10/2026</div>
+<div class="vh">ℹ️ 3.9v Online</div><div class="vd">تاريخ التحديث: 11/10/2026</div>
 <ul class="vl">
-<li><b>🛒 شراء وجبة جديدة:</b> بوضع التعديل ⚙️ صار تحت كل مادة زر «🛒 شراء». تكتب عدد القطع وسعر القطعة وتاريخ الشراء، والعدد ينضاف للرصيد.</li>
-<li><b>💰 الباقي القديم بسعره القديم:</b> كل وجبة تبقى بسعرها. السحب ياخذ من الوجبة الأقدم أول، ولما تخلص يتحول لسعر الوجبة الجديدة. مثلًا: باقي 5 كلينس بـ 1,000 واشتريت 20 بـ 1,200، فأول 5 تنسحب بـ 1,000 وبعدها بـ 1,200. وإذا سحب واحد أخذ من الوجبتين، تنحسب كلفته من الاثنين، مثل «2×1,000 + 2×1,200».</li>
-<li><b>أول مرة:</b> بأول شراء لمادة بيها رصيد، يسألك عن سعر القطع الموجودة حاليًا حتى تنسحب بسعرها القديم.</li>
-<li><b>👀 تشوف الباقي:</b> على مربع المادة يطلع «💰 1,000 · باقي 5 بهذا السعر، بعدها 1,200»، ونافذة الشراء تبين كل وجبة وشكد باقي منها.</li>
-<li><b>📊 Excel:</b> الكلفة بملفات Excel صارت حسب الوجبة، وانضافت صفحة «وجبات الشراء» بملف اليوم.</li>
-<li>السحوبات اللي قبل أول شراء تبقى بسعرها القديم مثل ما چانت.</li>
+<li><b>🔧 تصحيح:</b> نافذة تعديل المصروف چانت ما تنفتح من نسخة 3.5v (خطأ بالبرنامج)، هسه تنفتح وتشتغل.</li>
+<li><b>✎ تعديل و🗑 حذف واضحين:</b> تحت كل مصروف صار أكو زرين «✎ تعديل» و«🗑 حذف»، ويم المصروف اللي بي فاتورة زر «🧾 الفاتورة». الحذف يسألك قبل، والمبلغ يرجع للخزينة.</li>
+<li><b>📋 كل المصاريف:</b> فوق قائمة مصاريف اليوم صار أكو تبويبين: «📅 حسب اليوم» و«📋 كل المصاريف». بـ «كل المصاريف» تشوف كل مصاريف الخزينة مرتبة من الأحدث، مقسمة حسب الأيام ويه مجموع كل يوم.</li>
+<li><b>🔍 بحث وفلترة:</b> تبحث بالملاحظة أو النوع أو الاسم أو المبلغ، وتفلتر حسب نوع المصروف أو منو اشترى أو المؤقتة بس. وتگدر تعرض الإيداعات ويهن، وإذا عندك أكثر من خزينة تعرض كل الخزائن سوا.</li>
 </ul>
-<div class="vold"><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
+<div class="vold"><b>3.8v Online</b>: وجبات الشراء — الباقي القديم ينسحب بسعره القديم قبل الجديد.<br><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -728,7 +752,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="3.8";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="3.9";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1473,8 +1497,8 @@ function editEntry(id){var e0=S.exe[id];if(!e0)return;var e=JSON.parse(JSON.stri
  var f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),a=amtField("xeAmt",e.amount),n=el("input",{class:"x-fld",id:"xeNote",autocomplete:"off",placeholder:"ملاحظة"}),d=el("input",{class:"x-fld",id:"xeDate",type:"date"});n.value=e.note||"";d.value=e.date;
  f.appendChild(el("label",{},[isIn?"المبلغ (دينار)":"المبلغ (دينار) — إذا رجعولك باقي غيّره للمبلغ الصحيح",a]));
  var ts=null,ck=null;
- if(!isIn){ts=el("select",{class:"x-fld",id:"xeType"});var names=types().map(function(t){return t.n});if(e.type&&names.indexOf(e.type)<0&&e.type!==NOTYPE)names.push(e.type);
-  ts.appendChild(el("option",{value:NOTYPE,text:"⏳ "+NOTYPE}));names.forEach(function(nm){var o=el("option",{value:nm,text:iconOf(nm)+" "+nm});if(nm===e.type)o.selected=true;ts.appendChild(o)});if(!e.type||e.type===NOTYPE)ts.value=NOTYPE;
+ if(!isIn){ts=el("select",{class:"x-fld",id:"xeType"});var tnames=types().map(function(t){return t.n});if(e.type&&tnames.indexOf(e.type)<0&&e.type!==NOTYPE)tnames.push(e.type);
+  ts.appendChild(el("option",{value:NOTYPE,text:"⏳ "+NOTYPE}));tnames.forEach(function(nm){var o=el("option",{value:nm,text:iconOf(nm)+" "+nm});if(nm===e.type)o.selected=true;ts.appendChild(o)});if(!e.type||e.type===NOTYPE)ts.value=NOTYPE;
   f.appendChild(el("label",{},["نوع المصروف",ts]))}
  function whoSel(id,k,cur){var s=el("select",{class:"x-fld",id:id}),L=names(k).slice();if(cur&&L.indexOf(cur)<0)L.push(cur);s.appendChild(el("option",{value:"",text:"—"}));L.forEach(function(nm){s.appendChild(el("option",{value:nm,text:nm}))});s.value=cur||"";return s}
  var gs=null,bs=null;if(!isIn){gs=whoSel("xeGiver","giver",e.giver);bs=whoSel("xeBuyer","buyer",e.buyer);f.appendChild(el("label",{},["💵 منو انطى الفلوس",gs]));f.appendChild(el("label",{},["🛒 منو اشترى",bs]))}
@@ -1514,19 +1538,44 @@ function drawPend(){var B=g("xPBox"),P=pends();B.innerHTML="";B.hidden=!P.length
  B.appendChild(L)}
 
 /* ---------- سجل اليوم ---------- */
-function rowOf(e){var isIn=e.kind==="in",pd=!!e.pending,ni=(e.imgs||[]).length;
+function rowOf(e,showTre){var isIn=e.kind==="in",pd=!!e.pending,ni=(e.imgs||[]).length,tn=showTre&&S.ext[e.tid]?S.ext[e.tid].name:"";
  var r=el("div",{class:"x-it"+(isIn?" in":"")+(pd?" pd":""),role:"button",tabindex:"0","aria-label":"تعديل "+(isIn?"الإيداع":e.type)+" "+fmn(e.amount)},[el("span",{class:"e",text:isIn?"💵":(pd&&e.type===NOTYPE?"⏳":(e.icon||iconOf(e.type)))}),
-  el("div",{style:"min-width:0"},[el("div",{class:"t"},[isIn?"إيداع بالخزينة":(e.type===NOTYPE?"مصروف مؤقت":e.type),pd?el("span",{class:"bdg",text:"⏳ مؤقت"}):null]),el("div",{class:"s",text:[e.time,isIn?"":whoTxt(e),e.note].filter(Boolean).join(" · ")})]),
+  el("div",{style:"min-width:0"},[el("div",{class:"t"},[isIn?"إيداع بالخزينة":(e.type===NOTYPE?"مصروف مؤقت":e.type),pd?el("span",{class:"bdg",text:"⏳ مؤقت"}):null]),el("div",{class:"s",text:[e.time,isIn?"":whoTxt(e),e.note,tn?"🏦 "+tn:""].filter(Boolean).join(" · ")})]),
   el("span",{class:"a num",text:(isIn?"+":"−")+fmn(e.amount)}),
-  ni?el("button",{class:"iv",title:"عرض الفاتورة","aria-label":"عرض صور الفاتورة",text:"🧾"+(ni>1?" "+ni:""),on:{click:function(ev){ev.stopPropagation();viewer(e.imgs,0)}}}):el("span")]);
+  el("div",{class:"acts"},[ni?el("button",{class:"iv",title:"عرض الفاتورة","aria-label":"عرض صور الفاتورة",text:"🧾 الفاتورة"+(ni>1?" ("+ni+")":""),on:{click:function(ev){ev.stopPropagation();viewer(e.imgs,0)}}}):null,
+   el("button",{text:"✎ تعديل","aria-label":"تعديل",on:{click:function(ev){ev.stopPropagation();editEntry(e.id)}}}),
+   el("button",{class:"dl",text:"🗑 حذف","aria-label":"حذف",on:{click:function(ev){ev.stopPropagation();delE(Object.assign({id:e.id},S.exe[e.id]))}}})])]);
  r.onclick=function(){editEntry(e.id)};r.onkeydown=function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();editEntry(e.id)}};return r}
 function drawDay(){var L=g("xDayList");L.innerHTML="";var d=X.ldate,rows=ents().filter(function(e){return e.date===d}).sort(function(a,b){return (b.ts||0)-(a.ts||0)});
  var out=rows.filter(function(e){return e.kind!=="in"}),tot=out.reduce(function(s,e){return s+(e.amount||0)},0);
  g("xDayTitle").textContent=d===tdy()?"مصاريف اليوم":"مصاريف "+wd(d)+" "+dmy(d);
  g("xDayCnt").textContent=out.length+(out.length===1?" مصروف":" مصاريف")+(rows.length>out.length?" · "+(rows.length-out.length)+" إيداع":"");g("xDayTot").textContent=fmn(tot)+" دينار";
  if(!rows.length){L.appendChild(el("div",{class:"x-empty",text:d===tdy()?"ما مسجل أي مصروف اليوم. سجّل أول مصروف من خانة «تسجيل مصروف».":"ما مسجل شي بهذا اليوم."}));return}
- rows.forEach(function(e){L.appendChild(rowOf(e))});L.appendChild(el("div",{class:"x-empty",style:"padding:10px 0 0;font-size:13px",text:"اضغط على أي مصروف حتى تعدله أو تحذفه أو تضيف صورة فاتورته."}))}
+ rows.forEach(function(e){L.appendChild(rowOf(e))});}
 function setDay(d){X.ldate=d;g("xLdate").value=d;drawDay()}
+/* ---------- كل المصاريف (3.9v) ---------- */
+var XA={tab:"day",q:"",t:"",b:"",p:false,i:false,w:false,lim:120};
+function setTab(t){XA.tab=t;g("xTabDay").classList.toggle("on",t==="day");g("xTabAll").classList.toggle("on",t==="all");g("xTabDay").setAttribute("aria-selected",t==="day");g("xTabAll").setAttribute("aria-selected",t==="all");g("xPDay").hidden=t!=="day";g("xPAll").hidden=t!=="all";if(t==="all"){XA.lim=120;drawAll()}else drawDay()}
+g("xTabDay").onclick=function(){setTab("day")};g("xTabAll").onclick=function(){setTab("all")};
+function fillSel(id,first,opts,cur){var s=g(id),key=opts.join("|");if(s.dataset.k!==key){s.innerHTML="";s.appendChild(el("option",{value:"",text:first}));opts.forEach(function(o){s.appendChild(el("option",{value:o,text:o===NOTYPE?"⏳ مؤقت (غير محدد)":o}))});s.dataset.k=key}if(cur&&opts.indexOf(cur)<0)cur="";s.value=cur;return cur}
+function drawAll(){if(g("xPAll").hidden)return;var base=XA.w?allE().filter(function(e){return S.ext[e.tid]}):ents();
+ var ts=[],bs=[];base.forEach(function(e){if(e.kind==="in")return;var k=e.type||"أخرى";if(ts.indexOf(k)<0)ts.push(k);if(e.buyer&&bs.indexOf(e.buyer)<0)bs.push(e.buyer)});
+ XA.t=fillSel("xAT","كل الأنواع",ts,XA.t);XA.b=fillSel("xAB","كل اللي اشتروا",bs,XA.b);
+ g("xAW").hidden=Object.keys(S.ext||{}).length<2;
+ [["xAP","p"],["xAI","i"],["xAW","w"]].forEach(function(p){var b=g(p[0]);b.classList.toggle("on",!!XA[p[1]]);b.setAttribute("aria-pressed",XA[p[1]]?"true":"false")});
+ var q=XA.q.trim().toLowerCase().replace(/[,،]/g,"");
+ var rows=base.filter(function(e){if(e.kind==="in"){if(!XA.i||XA.t||XA.b||XA.p)return false}else{if(XA.t&&(e.type||"أخرى")!==XA.t)return false;if(XA.b&&e.buyer!==XA.b)return false;if(XA.p&&!e.pending)return false}
+  if(q){var h=[e.type,e.note,e.giver,e.buyer,String(e.amount),dmy(e.date),S.ext[e.tid]&&S.ext[e.tid].name].join(" ").toLowerCase();if(h.indexOf(q)<0)return false}return true})
+  .sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:(b.ts||0)-(a.ts||0)});
+ var out=rows.filter(function(e){return e.kind!=="in"}),tot=out.reduce(function(s,e){return s+(e.amount||0)},0);
+ g("xACnt").textContent=out.length+(out.length===1?" مصروف":" مصاريف")+(rows.length>out.length?" · "+(rows.length-out.length)+" إيداع":"");g("xATot").textContent=fmn(tot)+" دينار";
+ var L=g("xAList");L.innerHTML="";if(!rows.length){L.appendChild(el("div",{class:"x-empty",text:base.length?"ما أكو مصاريف تطابق البحث.":"ما مسجل أي مصروف بعد."}));return}
+ var dt={};rows.forEach(function(e){if(e.kind==="in")return;dt[e.date]=(dt[e.date]||0)+(e.amount||0)});
+ var last=null;rows.slice(0,XA.lim).forEach(function(e){if(e.date!==last){last=e.date;L.appendChild(el("div",{class:"x-dh"},[el("span",{text:wd(e.date)+" "+dmy(e.date)}),el("b",{class:"num",text:dt[e.date]?fmn(dt[e.date]):""})]))}L.appendChild(rowOf(e,XA.w))});
+ if(rows.length>XA.lim)L.appendChild(el("button",{class:"x-more",text:"عرض أكثر ("+(rows.length-XA.lim)+" باقي)",on:{click:function(){XA.lim+=200;drawAll()}}}))}
+var aqT=null;g("xAQ").addEventListener("input",function(){XA.q=g("xAQ").value;clearTimeout(aqT);aqT=setTimeout(function(){XA.lim=120;drawAll()},150)});
+g("xAT").onchange=function(){XA.t=g("xAT").value;XA.lim=120;drawAll()};g("xAB").onchange=function(){XA.b=g("xAB").value;XA.lim=120;drawAll()};
+g("xAP").onclick=function(){XA.p=!XA.p;drawAll()};g("xAI").onclick=function(){XA.i=!XA.i;drawAll()};g("xAW").onclick=function(){XA.w=!XA.w;drawAll()};
 g("xLdate").onchange=function(){if(g("xLdate").value)setDay(g("xLdate").value)};
 g("xPrev").onclick=function(){setDay(shift(X.ldate,-1))};g("xNext").onclick=function(){setDay(shift(X.ldate,1))};g("xToday").onclick=function(){setDay(tdy())};
 
@@ -1577,7 +1626,7 @@ g("xExp").onclick=function(){var T=curT();if(!T)return;var all=ents().sort(funct
 
 /* ---------- فتح وعرض ---------- */
 function clock(){var d=new Date();g("xClock").textContent=wd(tdy())+" "+dmy(tdy())+" · "+hm(d)}
-xRender=function(){if(g("xv").hidden)return;if(!S.exs)seed();clock();drawTre();drawPend();drawTypes();drawWho();chk();drawDay();drawRep();drawNewThumbs()};
+xRender=function(){if(g("xv").hidden)return;if(!S.exs)seed();clock();drawTre();drawPend();drawTypes();drawWho();chk();drawDay();drawAll();drawRep();drawNewThumbs()};
 xOpen=function(){if(!ACC())return;var t=tdy();if(!X.ldate||g("xDate").dataset.day!==t){X.ldate=t;g("xLdate").value=t;g("xDate").value=t;g("xDate").dataset.day=t}
  g("home").hidden=true;g("xv").hidden=false;g("xv").scrollTop=0;xRender();imgFlush()};
 g("xHome").onclick=function(){g("xv").hidden=true;g("xiv").hidden=true;close();showHome()};
