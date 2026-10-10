@@ -260,6 +260,9 @@ button.flash{animation:flash .5s ease-out}
 #xv .x-rf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
 #xv .x-rf label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mut);flex:1 1 170px}
 #xv .x-rf label input{flex:1;min-width:0}
+#xv .x-rf .x-rtl{flex:1 1 100%}
+#xv .x-rf select{flex:1;min-width:0;font-weight:700;appearance:auto}
+#xv .x-rnote{margin:-4px 0 12px;font-size:14px;font-weight:700;color:var(--ac)}
 #xv .x-rf button{min-height:48px}
 #xv .x-rf button.pri{background:var(--ac);color:var(--on);border-color:var(--ac)}
 #xv .x-rgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px}
@@ -377,7 +380,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 3.5v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 3.6v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -422,7 +425,7 @@ button.flash{animation:flash .5s ease-out}
 <div class="hmt"><h1>البرامج<small id="hmWho"></small></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">3.5v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">3.6v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -463,8 +466,8 @@ button.flash{animation:flash .5s ease-out}
 </div>
 <section class="x-card" id="xRep" hidden aria-labelledby="xhRep">
 <h2 id="xhRep">تقرير الخزينة</h2>
-<div class="x-rf"><label>من <input class="x-fld" type="date" id="xFrom" data-ph="من البداية"></label><label>إلى <input class="x-fld" type="date" id="xTo" data-ph="لحد الآن"></label><button id="xAll">كل الخزينة</button><button id="xMon">هذا الشهر</button><button class="pri" id="xExp">تصدير Excel</button></div>
-<div class="x-tot" id="xTot"></div>
+<div class="x-rf"><label class="x-rtl">نوع التقرير <select class="x-fld" id="xRType" aria-label="نوع التقرير"></select></label><label>من <input class="x-fld" type="date" id="xFrom" data-ph="من البداية"></label><label>إلى <input class="x-fld" type="date" id="xTo" data-ph="لحد الآن"></label><button id="xAll">كل الخزينة</button><button id="xMon">هذا الشهر</button><button class="pri" id="xExp">تصدير Excel</button></div>
+<div class="x-rnote" id="xRNote" hidden></div><div class="x-tot" id="xTot"></div>
 <div class="x-rgrid"><div><h3 style="margin-top:0">حسب نوع المصروف</h3><div class="x-tb" id="xRTypes"></div><h3>حسب اللي اشترى</h3><div class="x-tw"><table><thead><tr><th>الاسم</th><th class="r">العدد</th><th class="r">المبلغ</th><th class="r">منها مؤقت</th></tr></thead><tbody id="xRBuy"></tbody></table></div></div>
 <div><h3 style="margin-top:0">حسب اليوم</h3><div class="x-tw"><table><thead><tr><th>اليوم</th><th class="r">العدد</th><th class="r">المصروف</th></tr></thead><tbody id="xRDays"></tbody><tfoot id="xRDaysF"></tfoot></table></div></div></div>
 </section>
@@ -477,7 +480,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">3.5v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">3.6v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -502,12 +505,13 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 3.5v Online</div><div class="vd">تاريخ التحديث: 10/10/2026</div>
+<div class="vh">ℹ️ 3.6v Online</div><div class="vd">تاريخ التحديث: 10/10/2026</div>
 <ul class="vl">
-<li><b>🔧 تصحيح:</b> أسماء «منو انطى الفلوس» و«منو اشترى» صارت منفصلة. الاسم اللي تضيفه بوحدة ما يطلع بالثانية، وزر ✎ بكل خانة يعدل أسماءها هي بس.</li>
-<li>قائمة «منو اشترى» بقت مثل ما هي، وقائمة «منو انطى الفلوس» صار بيها بس الأسماء اللي انطت فلوس بالمصاريف السابقة.</li>
+<li><b>📋 نوع التقرير:</b> بتقرير الخزينة صار أكو خانة «نوع التقرير». تختار «كل المصاريف» أو نوع واحد (مثل ضيافة أو مولدة)، ويه الفترة من تاريخ لتاريخ.</li>
+<li>إذا اخترت نوع واحد، التقرير يبين مجموعه وعدد مصاريفه ونسبته من كل المصروف بنفس الفترة، والجداول (حسب اليوم وحسب اللي اشترى) تصير لهذا النوع بس.</li>
+<li><b>📊 Excel:</b> ملف التصدير يطلع حسب نوع التقرير اللي اخترته، ومكتوب بصفحة الملخص.</li>
 </ul>
-<div class="vold"><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
+<div class="vold"><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -699,7 +703,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="3.5";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="3.6";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1215,7 +1219,7 @@ var DEFT=[{n:"ضيافة",i:"☕"},{n:"نظافة ومنظفات",i:"🧽"},{n:"
 var SEED={id:"47g25hqq5a9tblym4qae",t:{name:"خزينة تشرين الأول 2026",amount:5015000,date:"2026-10-10",ts:1791640039409}};
 var MON=["كانون الثاني","شباط","آذار","نيسان","أيار","حزيران","تموز","آب","أيلول","تشرين الأول","تشرين الثاني","كانون الأول"];
 var NOTYPE="غير محدد";
-var X={type:null,ldate:null,rFrom:"",rTo:"",pend:false,imgs:[],giver:null,buyer:null};
+var X={type:null,ldate:null,rFrom:"",rTo:"",rType:"",pend:false,imgs:[],giver:null,buyer:null};
 try{X.giver=localStorage.getItem("wd_xgiver")||null}catch(e){}
 function g(i){return document.getElementById(i)}
 function p2(v){return String(v).padStart(2,"0")}
@@ -1449,15 +1453,25 @@ g("xLdate").onchange=function(){if(g("xLdate").value)setDay(g("xLdate").value)};
 g("xPrev").onclick=function(){setDay(shift(X.ldate,-1))};g("xNext").onclick=function(){setDay(shift(X.ldate,1))};g("xToday").onclick=function(){setDay(tdy())};
 
 /* ---------- التقرير ---------- */
-function inR(e){return (!X.rFrom||e.date>=X.rFrom)&&(!X.rTo||e.date<=X.rTo)}
+function inD(e){return (!X.rFrom||e.date>=X.rFrom)&&(!X.rTo||e.date<=X.rTo)}
+/* نوع التقرير: «" "» = كل المصاريف (ويه الإيداعات)، أو نوع واحد (مصاريفه بس) */
+function inR(e){if(!inD(e))return false;if(!X.rType)return true;return e.kind!=="in"&&(e.type||"أخرى")===X.rType}
+function rtName(t){return t?(t===NOTYPE?"مؤقت (غير محدد)":t):"كل المصاريف"}
+function drawRType(){var s=g("xRType"),seen={},opts=[""];types().forEach(function(t){if(!seen[t.n]){seen[t.n]=1;opts.push(t.n)}});
+ ents().forEach(function(e){var k=e.type||"أخرى";if(e.kind!=="in"&&!seen[k]){seen[k]=1;opts.push(k)}});
+ if(X.rType&&!seen[X.rType])X.rType="";
+ var key=opts.join("|");if(s.dataset.k!==key){s.innerHTML="";opts.forEach(function(t){s.appendChild(el("option",{value:t,text:t?iconOf(t)+" "+rtName(t):"📋 كل المصاريف"}))});s.dataset.k=key}
+ s.value=X.rType}
+function rep0(){var o=ents().filter(function(e){return e.kind!=="in"&&inD(e)});return {to:o.reduce(function(s,e){return s+e.amount},0)}}
 function rep(){var rows=ents().filter(inR),out=rows.filter(function(e){return e.kind!=="in"}),inn=rows.filter(function(e){return e.kind==="in"});
  var r={out:out,to:out.reduce(function(s,e){return s+e.amount},0),ti:inn.reduce(function(s,e){return s+e.amount},0),by:{},dd:{}};
  out.forEach(function(e){var k=e.type||"أخرى";r.by[k]=r.by[k]||{v:0,c:0,i:e.icon};r.by[k].v+=e.amount;r.by[k].c++;r.dd[e.date]=r.dd[e.date]||{v:0,c:0};r.dd[e.date].v+=e.amount;r.dd[e.date].c++});
  r.bb={};out.forEach(function(e){var k=e.buyer||"—";var o=r.bb[k]=r.bb[k]||{v:0,c:0,p:0};o.v+=e.amount;o.c++;if(e.pending)o.p+=e.amount});
  r.bk=Object.keys(r.bb).sort(function(a,b){return (a==="—")-(b==="—")||r.bb[b].v-r.bb[a].v});
  r.keys=Object.keys(r.by).sort(function(a,b){return r.by[b].v-r.by[a].v});r.days=Object.keys(r.dd).sort().reverse();return r}
-function drawRep(){if(!curT())return;var r=rep(),T=g("xTot");T.innerHTML="";
- [["مجموع المصروف",fmn(r.to)],["عدد المصاريف",String(r.out.length)],["الإيداعات",fmn(r.ti)],["الباقي الآن",fmn(sums().rem)]].forEach(function(p){T.appendChild(el("div",{},[el("span",{text:p[0]}),el("b",{class:"num",text:p[1]})]))});
+function drawRep(){if(!curT())return;drawRType();var r=rep(),T=g("xTot");T.innerHTML="";
+ var rn=g("xRNote");rn.hidden=!X.rType;if(X.rType)rn.textContent="التقرير لـ «"+rtName(X.rType)+"» بس"+(X.rFrom||X.rTo?"، من "+(X.rFrom?dmy(X.rFrom):"البداية")+" لحد "+(X.rTo?dmy(X.rTo):"الآن"):"، لكل الخزينة");
+ (X.rType?[["مجموع «"+rtName(X.rType)+"»",fmn(r.to)],["عدد المصاريف",String(r.out.length)],["نسبته من كل المصروف",Math.round(r.to/(rep0().to||1)*100)+"%"],["الباقي الآن",fmn(sums().rem)]]:[["مجموع المصروف",fmn(r.to)],["عدد المصاريف",String(r.out.length)],["الإيداعات",fmn(r.ti)],["الباقي الآن",fmn(sums().rem)]]).forEach(function(p){T.appendChild(el("div",{},[el("span",{text:p[0]}),el("b",{class:"num",text:p[1]})]))});
  var G=g("xRTypes"),mx=r.keys.length?r.by[r.keys[0]].v:1;G.innerHTML="";
  if(!r.keys.length)G.appendChild(el("div",{class:"x-empty",style:"grid-column:1/-1",text:"ما بيها مصاريف بهذي الفترة"}));
  r.keys.forEach(function(k){var o=r.by[k];G.appendChild(el("span",{class:"n",text:iconOf(k)+" "+(k===NOTYPE?"مؤقت (غير محدد)":k)}));G.appendChild(el("span",{class:"tr"},[el("b",{style:"width:"+Math.max(2,o.v/mx*100)+"%"})]));G.appendChild(el("span",{class:"v num"},[fmn(o.v),el("small",{text:Math.round(o.v/(r.to||1)*100)+"%"})]))});
@@ -1466,21 +1480,22 @@ function drawRep(){if(!curT())return;var r=rep(),T=g("xTot");T.innerHTML="";
  var B=g("xRDays");B.innerHTML="";r.days.forEach(function(d){B.appendChild(el("tr",{},[el("td",{text:wd(d)+" "+dmy(d)}),el("td",{class:"r num",text:String(r.dd[d].c)}),el("td",{class:"r num",text:fmn(r.dd[d].v)})]))});
  if(!r.days.length)B.appendChild(el("tr",{},[el("td",{colspan:"3",style:"color:var(--mut)",text:"—"})]));
  var F=g("xRDaysF");F.innerHTML="";F.appendChild(el("tr",{},[el("td",{text:"المجموع"}),el("td",{class:"r num",text:String(r.out.length)}),el("td",{class:"r num",text:fmn(r.to)})]))}
+g("xRType").onchange=function(){X.rType=g("xRType").value;drawRep()};
 g("xFrom").onchange=function(){X.rFrom=g("xFrom").value;drawRep()};g("xTo").onchange=function(){X.rTo=g("xTo").value;drawRep()};
 g("xAll").onclick=function(){X.rFrom=X.rTo="";g("xFrom").value=g("xTo").value="";drawRep()};
 g("xMon").onclick=function(){var t=tdy(),p=t.split("-");X.rFrom=t.slice(0,8)+"01";X.rTo=iso(new Date(+p[0],+p[1],0));g("xFrom").value=X.rFrom;g("xTo").value=X.rTo;drawRep()};
 g("xExp").onclick=function(){var T=curT();if(!T)return;var all=ents().sort(function(a,b){return a.date<b.date?-1:a.date>b.date?1:(a.ts||0)-(b.ts||0)}),bal=T.amount||0,r=rep();
  var s1=[["التاريخ","اليوم","الوقت","الحركة","نوع المصروف","المبلغ","انطى الفلوس","اشترى","الملاحظة","الحالة","صور الفاتورة","الباقي بعد الحركة"]];
  all.forEach(function(e){var isIn=e.kind==="in";bal+=isIn?e.amount:-e.amount;if(!inR(e))return;s1.push([dmy(e.date),wd(e.date),e.time||"",isIn?"إيداع":"مصروف",isIn?"":(e.type===NOTYPE?"غير محدد":e.type),isIn?e.amount:-e.amount,e.giver||"",e.buyer||"",e.note||"",e.pending?"⏳ مؤقت":"",(e.imgs||[]).length||"",bal])});
- if(s1.length===1){toast("ما بيها حركات بهذي الفترة");return}
+ if(s1.length===1){toast(X.rType?"ما بيها مصاريف «"+rtName(X.rType)+"» بهذي الفترة":"ما بيها حركات بهذي الفترة");return}
  s1.push(["المجموع","","","","",r.ti-r.to,"","","","","",""]);
  var s5=[["اللي اشترى","العدد","المبلغ","منها مؤقت"]];r.bk.forEach(function(k){var o=r.bb[k];s5.push([k==="—"?"بدون اسم":k,o.c,o.v,o.p])});s5.push(["المجموع",r.out.length,r.to,r.bk.reduce(function(s,k){return s+r.bb[k].p},0)]);
  var s2=[["نوع المصروف","العدد","المبلغ","النسبة"]];r.keys.forEach(function(k){s2.push([k===NOTYPE?"مؤقت (غير محدد)":k,r.by[k].c,r.by[k].v,Math.round(r.by[k].v/(r.to||1)*100)+"%"])});s2.push(["المجموع",r.out.length,r.to,"100%"]);
  var s3=[["التاريخ","اليوم","العدد","المصروف"]];r.days.slice().reverse().forEach(function(d){s3.push([dmy(d),wd(d),r.dd[d].c,r.dd[d].v])});s3.push(["المجموع","",r.out.length,r.to]);
  var np=r.out.filter(function(e){return e.pending}).length;
- var s4=[["البند","القيمة"],["الخزينة",T.name],["تاريخ الخزينة",dmy(T.date)],["الفترة",(X.rFrom?dmy(X.rFrom):"البداية")+" - "+(X.rTo?dmy(X.rTo):"الآن")],["مبلغ الخزينة",T.amount||0],["الإيداعات بالفترة",r.ti],["المصروف بالفترة",r.to],["مصاريف مؤقتة ما مكتملة",np],["الباقي بالخزينة الآن",sums().rem]];
+ var s4=[["البند","القيمة"],["الخزينة",T.name],["تاريخ الخزينة",dmy(T.date)],["نوع التقرير",rtName(X.rType)],["الفترة",(X.rFrom?dmy(X.rFrom):"البداية")+" - "+(X.rTo?dmy(X.rTo):"الآن")],["مبلغ الخزينة",T.amount||0],["الإيداعات بالفترة",r.ti],["المصروف بالفترة",r.to],["مصاريف مؤقتة ما مكتملة",np],["الباقي بالخزينة الآن",sums().rem]];
  pickExport([{name:"الحركات",rows:s1,w:[14,12,9,10,20,16,16,16,30,12,12,18],total:true,mc:[5,11]},{name:"حسب النوع",rows:s2,w:[22,10,18,10],total:true,mc:[2]},{name:"حسب اللي اشترى",rows:s5,w:[22,10,18,16],total:true,mc:[2,3]},{name:"حسب اليوم",rows:s3,w:[14,12,10,18],total:true,mc:[3]},{name:"ملخص الخزينة",rows:s4,w:[26,26],total:true,mc:[1]}],
-  "clinic-expenses-"+(X.rFrom||T.date)+"_"+(X.rTo||tdy())+".xlsx")};
+  "clinic-expenses-"+(X.rType?"type-":"")+(X.rFrom||T.date)+"_"+(X.rTo||tdy())+".xlsx")};
 
 /* ---------- فتح وعرض ---------- */
 function clock(){var d=new Date();g("xClock").textContent=wd(tdy())+" "+dmy(tdy())+" · "+hm(d)}
