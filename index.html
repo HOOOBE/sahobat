@@ -299,15 +299,20 @@ button.flash{animation:flash .5s ease-out}
 #xm .x-tyr .x-fld.em{text-align:center;font-size:18px;padding:4px}
 #xm .x-tyr button{min-height:44px;padding:0;border-width:1px;border-radius:10px;color:var(--bad)}
 #xm .x-addt{min-height:44px;border-style:dashed;border-width:1px;font-weight:700}
+
+/* زر الوضع الليلي/النهاري بكل الشاشات (3.2v) */
+.thb{min-height:44px;min-width:48px;padding:4px 12px;font-size:21px;line-height:1}
+#xv .thb,.hmt .thb{font-size:21px;padding:4px 12px}
+.thl{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-start:12px;border-width:1px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><div class="ttl">📦 تسجيل السحوبات</div><div class="clock" id="clock"></div><button id="theme" title="الوضع الليلي / النهاري">🌙</button><button id="histb" title="الأيام السابقة">📅</button><button id="bell" title="مواد قربت تنفذ">🔔<span id="bellc" hidden></span></button><button id="cloudb" title="المزامنة الأونلاين" hidden>☁️</button><button id="gear" title="تعديل">⚙️</button><button id="homeb" title="البرامج">🏠</button><button id="who2" title="تسجيل خروج"></button></div>
+  <div class="top"><div class="ttl">📦 تسجيل السحوبات</div><div class="clock" id="clock"></div><button id="theme" class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="histb" title="الأيام السابقة">📅</button><button id="bell" title="مواد قربت تنفذ">🔔<span id="bellc" hidden></span></button><button id="cloudb" title="المزامنة الأونلاين" hidden>☁️</button><button id="gear" title="تعديل">⚙️</button><button id="homeb" title="البرامج">🏠</button><button id="who2" title="تسجيل خروج"></button></div>
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 3.1v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 3.2v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -349,10 +354,10 @@ button.flash{animation:flash .5s ease-out}
 
 <div class="md" id="al" hidden><div class="mb"><div style="font-weight:800;margin-bottom:10px">🔔 التنبيهات</div><div id="alist"></div><button id="ntb" class="mini" style="width:100%;margin-top:8px" hidden>🔔 تفعيل إشعارات الجهاز</button><div class="row" style="margin-top:12px"><button id="alx">إغلاق</button></div></div></div>
 <div id="home" hidden><div class="hm">
-<div class="hmt"><h1>البرامج<small id="hmWho"></small></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button id="hmOut">🚪 خروج</button></div>
+<div class="hmt"><h1>البرامج<small id="hmWho"></small></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">3.1v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">3.2v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -366,7 +371,7 @@ button.flash{animation:flash .5s ease-out}
 <button id="apDel" class="mini" style="width:100%;margin-top:10px;color:var(--bad)">🗑 حذف هذا البرنامج</button>
 </div></div>
 <div id="xv" hidden><div class="xw">
-<div class="x-top"><button id="xHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1>مصاريف العيادة</h1><div id="xClock"></div></div><button id="xTypesB">أنواع المصاريف</button></div>
+<div class="x-top"><button id="xHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1>مصاريف العيادة</h1><div id="xClock"></div></div><button id="xTypesB">أنواع المصاريف</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
 <section id="xTre"></section>
 <div class="x-cols" id="xMain" hidden>
 <section class="x-card" aria-labelledby="xhRec">
@@ -396,12 +401,12 @@ button.flash{animation:flash .5s ease-out}
 </section>
 </div></div>
 <div class="md" id="xm" hidden><div class="mb" id="xmb" role="dialog" aria-modal="true"></div></div>
-<div class="md" id="login" hidden style="background:var(--bg)"><div class="mb" style="text-align:center">
+<div class="md" id="login" hidden style="background:var(--bg)"><button class="thb thl" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><div class="mb" style="text-align:center">
 <div style="font-size:40px">🏥</div><div style="font-weight:800;font-size:22px;margin:4px 0 16px">برامج العيادة</div>
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">3.1v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">3.2v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -426,15 +431,11 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 3.1v Online</div><div class="vd">تاريخ التحديث: 10/10/2026</div>
+<div class="vh">ℹ️ 3.2v Online</div><div class="vd">تاريخ التحديث: 10/10/2026</div>
 <ul class="vl">
-<li><b>💰 مصاريف العيادة داخل البرنامج:</b> مربع «مصاريف العيادة» صار يفتح داخل البرنامج نفسه، ما يفتح المتصفح ولا يحتاج claude.ai. وزر «🏠 البرامج» يرجعك لشاشة البرامج.</li>
-<li><b>☁️ يتزامن بنفس الربط:</b> الخزينة والمصاريف تتزامن بين كل الأجهزة المربوطة مثل السحوبات، وتنحفظ ويه النسخة الاحتياطية.</li>
-<li><b>🏦 الخزينة انتقلت:</b> «خزينة تشرين الأول 2026» بمبلغ 5,015,000 انتقلت من النسخة القديمة.</li>
-<li><b>📊 Excel:</b> تصدير تقرير الخزينة صار ملف Excel بأربع صفحات: الحركات (ويه الباقي بعد كل حركة)، حسب النوع، حسب اليوم، وملخص الخزينة.</li>
-<li><b>🔐 للحسابات بس:</b> المصاريف تطلع بس لما تدخل كـ«الحسابات».</li>
+<li><b>🌙 الوضع الليلي والنهاري من كل مكان:</b> زر 🌙 / ☀️ صار موجود بشاشة الدخول، وشاشة البرامج، وتسجيل السحوبات، ومصاريف العيادة. تضغطه من أي شاشة ويتغير البرنامج كله، ويبقى محفوظ على الجهاز لما تفتحه مرة ثانية.</li>
 </ul>
-<div class="vold"><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
+<div class="vold"><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -626,7 +627,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="3.1";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="3.2";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -767,9 +768,9 @@ $("hprev").onclick=function(){if(--H.m<0){H.m=11;H.y--}H.sel=null;drawCal()};
 $("hnext").onclick=function(){if(++H.m>11){H.m=0;H.y++}H.sel=null;drawCal()};
 $("hexp").onclick=function(){if(H.sel)exportPast(H.sel)};
 function isDark(){var t=document.documentElement.getAttribute("data-theme");return t?t==="dark":window.matchMedia("(prefers-color-scheme:dark)").matches}
-function setTheme(t,keep){document.documentElement.setAttribute("data-theme",t);$("theme").textContent=t==="dark"?"☀️":"🌙";if(keep)try{localStorage.setItem("wd_theme",t)}catch(e){}}
+function setTheme(t,keep){document.documentElement.setAttribute("data-theme",t);document.querySelectorAll(".thb").forEach(function(b){b.textContent=t==="dark"?"☀️":"🌙"});if(keep)try{localStorage.setItem("wd_theme",t)}catch(e){}}
 (function(){var t=null;try{t=localStorage.getItem("wd_theme")}catch(e){}setTheme(t||(isDark()?"dark":"light"),false)})();
-$("theme").onclick=function(){setTheme(isDark()?"light":"dark",true)};
+document.querySelectorAll(".thb").forEach(function(b){b.onclick=function(){setTheme(isDark()?"light":"dark",true)}});
 document.addEventListener("pointerdown",function(e){var b=e.target.closest&&e.target.closest("button");if(!b||b.disabled)return;b.classList.remove("flash");void b.offsetWidth;b.classList.add("flash");try{if(navigator.vibrate)navigator.vibrate(12)}catch(x){}},true);
 /* ===== النسخ الاحتياطي ===== */
 function bkFile(){S.bk=Date.now();save();var raw=localStorage.getItem("wd_state")||"{}";
