@@ -125,6 +125,32 @@ button.flash{animation:flash .5s ease-out}
 #hday .hd{font-weight:800;margin:6px 0}
 #hday .sub{font-size:14px;color:var(--mut);font-weight:700;margin:10px 0 2px}
 .st-out{color:var(--bad);font-weight:800}.st-low{color:#d98200;font-weight:800}
+:root{--xpc:#7a4fd0;--stc:#d97a00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--xpc:#a98bf0;--stc:#f0a23a}}
+:root[data-theme="dark"]{--xpc:#a98bf0;--stc:#f0a23a}
+#al .mb{max-width:520px;max-height:calc(100vh - 32px);display:flex;flex-direction:column}
+#alist{overflow-y:auto;margin:0 -4px;padding:0 4px}
+.alsum{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:4px}
+.alt{display:flex;align-items:center;gap:8px;padding:10px;border-radius:14px;border:2px solid var(--k);background:color-mix(in srgb,var(--k) 10%,var(--card));text-align:start;min-height:auto}
+.alt.xp,.alh.xp,.alc.xp{--k:var(--xpc)}.alt.st,.alh.st,.alc.st{--k:var(--stc)}.alh.xp{--kh:#6f45c9}.alh.st{--kh:#c46a00}
+.alt .ic{font-size:24px}.alt .tx{display:flex;flex-direction:column;min-width:0}
+.alt b{font-size:24px;line-height:1;color:var(--k)}.alt small{font-size:12px;color:var(--mut);font-weight:700}.alt small.bad{color:var(--bad)}
+.alh{position:sticky;top:0;z-index:1;display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:12px;margin:14px 0 8px;background:var(--kh);color:#fff}
+.alh .ic{font-size:20px}.alh .tx{flex:1;display:flex;flex-direction:column}.alh b{font-size:17px}.alh small{font-size:12px;opacity:.9}
+.alh .n{background:rgba(255,255,255,.25);border-radius:999px;padding:2px 11px;font-weight:800}
+.alc{display:flex;align-items:center;gap:10px;padding:9px 10px;margin-bottom:6px;border-radius:12px;border:1px solid color-mix(in srgb,var(--k) 30%,var(--bd));border-inline-start:5px solid var(--k);background:color-mix(in srgb,var(--k) 6%,var(--card))}
+.alc .ic{font-size:20px}.alc .tx{flex:1;min-width:0;display:flex;flex-direction:column}
+.alc b{font-size:16px;overflow-wrap:anywhere}.alc small{font-size:12px;color:var(--mut)}
+.alc .bd{white-space:nowrap;font-size:13px;font-weight:800;padding:4px 10px;border-radius:999px;color:var(--k);background:color-mix(in srgb,var(--k) 15%,transparent)}
+.alc.crit{border-inline-start-color:var(--bad)}.alc.crit .bd{background:var(--bad);color:#fff}
+.alnone{color:var(--mut);font-size:14px;padding:6px 4px}
+.xwt{display:block;font-size:12px;font-weight:700;margin-top:2px;color:var(--mut)}.xwt.own{color:var(--xpc)}
+.tile .r .ab.del{grid-column:1/-1;flex-direction:row;gap:6px;min-height:38px}
+#ver{background:none;border:0;color:var(--mut);font-size:13px;margin-top:10px;min-height:auto;padding:6px 10px;text-decoration:underline dotted}
+#vm .mb{max-height:calc(100vh - 32px);overflow-y:auto}
+.vh{font-weight:800;font-size:18px;margin:4px 0 2px}.vd{color:var(--mut);font-size:13px;margin-bottom:8px}
+.vl{margin:0 0 12px;padding-inline-start:20px;line-height:1.6}.vl li{margin-bottom:6px}
+.vold{border-top:1px solid var(--bd);padding-top:10px;margin-top:6px;color:var(--mut);font-size:14px}
 </style>
 </head>
 <body>
@@ -133,7 +159,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ v2.1 Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -179,7 +205,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 المحاسب 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><div id="ver" style="margin-top:10px;color:var(--mut);font-size:12px">نسخة 8 · أونلاين</div>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">v2.1 Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -203,6 +229,17 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmWa" style="width:100%;margin-bottom:8px;font-weight:700">📤 إرسال الرمز لنفسك بالواتساب</button>
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
+<div class="md" id="vm" hidden><div class="mb">
+<div class="vh">ℹ️ v2.1 Online</div><div class="vd">تاريخ التحديث: 10/10/2026</div>
+<ul class="vl">
+<li><b>⏰ تحذير انتهاء لكل مادة:</b> بوضع التعديل ⚙️ صار تحت كل مادة زر «⏰ التحذير». تكتب بيه قبل كم يوم يبدي تحذير انتهاء هذه المادة بالذات. إذا مسحت الرقم ترجع المادة للتحذير العام.</li>
+<li><b>⏳ تحذير الانتهاء العام:</b> الزر اللي بالإعدادات بقى، وصار هو الرقم الافتراضي لكل المواد. إذا غيّرته وأكو مواد إلها رقم خاص، يسألك تطبقه عليهن هم لو يبقن على رقمهن.</li>
+<li><b>🔔 شكل جديد للتنبيهات:</b> بأعلاها مربعين بالعدد. <span style="color:var(--xpc);font-weight:800">⏳ البنفسجي = الصلاحية</span> (مواد راح تنتهي)، و<span style="color:var(--stc);font-weight:800">📦 البرتقالي = الخزين</span> (مواد قربت تنفذ). المنتهي والنافد يطلع بالأحمر.</li>
+<li><b>ℹ️ رقم النسخة:</b> تضغط عليه يطلعلك شنو انضاف وشنو تعدّل.</li>
+</ul>
+<div class="vold"><b>v2.0 Online</b> (النسخة السابقة): المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
+<div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
+</div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
 
 <script>
@@ -226,42 +263,54 @@ function today(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)
 function tick(){var d=new Date();$("clock").textContent=fd(d)+" · "+ft(d)}
 S.day=today();S.exp=false;S.freq={};S.prev=null;S.hist=[];
 function load(){try{var v=JSON.parse(localStorage.getItem("wd_state")||"null");if(v){S.emps=v.emps||S.emps;S.emp=v.emp||null;S.log=v.log||[];S.pin=v.pin||"";S.stock=v.stock||{};S.thr=(typeof v.thr==="number")?v.thr:5;if(v.cats&&v.cats.length)S.cats=v.cats;
- S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];
+ S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.xpw=(v.xpw&&typeof v.xpw==="object")?v.xpw:{};S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];
  if(!v.hist&&S.prev&&S.prev.log)S.hist.push({day:S.prev.day,log:S.prev.log});
  if(v.freq){S.freq=v.freq}else{S.log.forEach(function(x){S.freq[x.i]=(S.freq[x.i]||0)+1})}
  if(v.day){S.day=v.day}else{var d=today(),old=S.log.filter(function(x){return x.d!==d});if(old.length)S.hist.push({day:old[0].d,log:old});S.log=S.log.filter(function(x){return x.d===d});S.day=d}}}catch(e){}}
 function save(){saveLocal();clPush()}
-function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
+function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd,xpw:S.xpw}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
 function dayLbl(v){var p=v.split("-");return p[2]+"/"+p[1]+"/"+p[0]}
 function hasSt(n){return typeof S.stock[n]==="number"}
 function stLeft(n){return hasSt(n)?S.stock[n]:Infinity}
-S.xp={};S.xpd=30;
+S.xp={};S.xpd=30;S.xpw={};
 function dNum(k){var p=k.split("-");return Date.UTC(+p[0],+p[1]-1,+p[2])/864e5}
 function hasXp(n){return typeof S.xp[n]==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(S.xp[n])}
 function xpLeft(n){return hasXp(n)?dNum(S.xp[n])-dNum(today()):null}
-function xpState(n){var d=xpLeft(n);if(d===null)return null;return d<0?"out":d<=S.xpd?"soon":"ok"}
-function xpTxt(n){var d=xpLeft(n);if(d===null)return "";if(d<0)return "⛔ منتهية الصلاحية منذ "+(-d)+" يوم";if(d===0)return "⛔ تنتهي اليوم";return (d<=S.xpd?"⚠ تنتهي بعد ":"⏳ تنتهي بعد ")+d+" يوم"}
+function hasXw(n){return !!S.xpw&&typeof S.xpw[n]==="number"}
+function xpW(n){return hasXw(n)?S.xpw[n]:S.xpd}
+function xpState(n){var d=xpLeft(n);if(d===null)return null;return d<0?"out":d<=xpW(n)?"soon":"ok"}
+function xpTxt(n){var d=xpLeft(n);if(d===null)return "";if(d<0)return "⛔ منتهية الصلاحية منذ "+(-d)+" يوم";if(d===0)return "⛔ تنتهي اليوم";return (d<=xpW(n)?"⚠ تنتهي بعد ":"⏳ تنتهي بعد ")+d+" يوم"}
 function xpList(){var cat={};S.cats.forEach(function(c){c.items.forEach(function(i){cat[i]=c.n})});
- return Object.keys(S.xp).filter(function(n){return n in cat&&(xpState(n)==="soon"||xpState(n)==="out")}).map(function(n){return{n:n,c:cat[n],d:xpLeft(n)}}).sort(function(a,b){return a.d-b.d})}
+ return Object.keys(S.xp).filter(function(n){return n in cat&&(xpState(n)==="soon"||xpState(n)==="out")}).map(function(n){return{n:n,c:cat[n],d:xpLeft(n),w:xpW(n)}}).sort(function(a,b){return a.d-b.d})}
 function editXp(name){var i=$("mi");i.type="date";
  dlg("تاريخ انتهاء الصلاحية لـ «"+name+"»\n(امسحه واترك الخانة فارغة لإلغاء التاريخ):",hasXp(name)?S.xp[name]:"",true,function(v){i.type="text";if(v===null)return;v=String(v).trim();
   if(v===""){delete S.xp[name]}else if(/^\d{4}-\d{2}-\d{2}$/.test(v)){S.xp[name]=v}else{toast("اختر تاريخًا صحيحًا");return}
   save();drawAcc();upd();xpSync();toast(hasXp(name)?"✔ تاريخ الانتهاء: "+dayLbl(S.xp[name]):"تم إلغاء تاريخ الانتهاء")})}
+function editXw(name){var m=$("mi");m.inputMode="numeric";
+ dlg("⏰ تحذير انتهاء «"+name+"»\nيبدي التحذير قبل الانتهاء بكم يوم؟\n\nالتحذير العام لكل المواد: "+S.xpd+" يوم\n(امسح الرقم واترك الخانة فارغة حتى ترجع للعام)",hasXw(name)?String(S.xpw[name]):"",true,function(v){m.inputMode="";if(v===null)return;
+  var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();
+  if(t===""){delete S.xpw[name]}else if(/^\d+$/.test(t)&&+t<=3650){S.xpw[name]=+t}else{toast("اكتب عدد أيام صحيح");return}
+  save();drawAcc();upd();xpSync();toast(hasXw(name)?"✔ «"+name+"»: التحذير قبل "+S.xpw[name]+" يوم":"✔ «"+name+"» رجعت للتحذير العام ("+S.xpd+" يوم)")})}
 function lowList(){var cat={};S.cats.forEach(function(c){c.items.forEach(function(i){cat[i]=c.n})});
  return Object.keys(S.stock).filter(function(n){return n in cat&&S.stock[n]<=S.thr}).map(function(n){return{n:n,c:cat[n],q:S.stock[n]}}).sort(function(a,b){return a.q-b.q})}
 function bellUpd(){var n=lowList().length+xpList().length,b=$("bellc");b.textContent=n;b.hidden=!n;$("bell").classList.toggle("alert",n>0)}
 function showAlerts(){var L=$("alist"),a=lowList(),xl=xpList();L.innerHTML="";
- function hd(t){var h=document.createElement("div");h.style.cssText="font-weight:800;font-size:15px;color:var(--mut);margin:10px 0 2px";h.textContent=t;L.appendChild(h)}
- hd("⏳ الصلاحية (التحذير قبل "+S.xpd+" يوم)");
- xl.forEach(function(x){var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=x.n;var m=document.createElement("small");m.textContent=" · "+x.c+" · "+dayLbl(S.xp[x.n]);s.appendChild(m);r.appendChild(s);
-  var q=document.createElement("b");q.className=x.d<=0?"st-out":"st-low";q.textContent=x.d<0?"⛔ منتهية":x.d===0?"⛔ اليوم":"باقي "+x.d+" يوم";r.appendChild(q);L.appendChild(r)});
- if(!xl.length){var e=document.createElement("div");e.className="li";e.innerHTML="<small>لا توجد مواد قريبة الانتهاء ✓</small>";L.appendChild(e)}
- hd("📦 الخزين");
- a.forEach(function(x){var r=document.createElement("div");r.className="li";var s=document.createElement("span");s.textContent=x.n;var m=document.createElement("small");m.textContent=" · "+x.c;s.appendChild(m);r.appendChild(s);
-  var q=document.createElement("b");q.className=x.q<=0?"st-out":"st-low";q.textContent=x.q<=0?"⛔ نفذت":"باقي "+x.q;r.appendChild(q);L.appendChild(r)});
- if(!a.length){var e2=document.createElement("div");e2.className="li";e2.innerHTML="<small>لا توجد مواد قاربت على النفاد ✓</small>";L.appendChild(e2)}
+ function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+ var xo=xl.filter(function(x){return x.d<=0}).length,so=a.filter(function(x){return x.q<=0}).length;
+ var sm=el("div","alsum");
+ function tile(cls,ic,lb,n,bad,id){var t=el("button","alt "+cls);t.appendChild(el("span","ic",ic));var w=el("span","tx");w.appendChild(el("b",null,n));w.appendChild(el("small",null,lb));if(bad)w.appendChild(el("small","bad",bad+" منها "+(cls==="xp"?"منتهية":"نافدة")));t.appendChild(w);
+  t.onclick=function(){var h=$(id);if(h)h.scrollIntoView({behavior:"smooth",block:"start"})};return t}
+ sm.appendChild(tile("xp","⏳","راح تنتهي صلاحيتها",xl.length,xo,"alhx"));sm.appendChild(tile("st","📦","قربت تنفذ من المخزن",a.length,so,"alhs"));L.appendChild(sm);
+ function head(cls,id,ic,t,sub,n){var h=el("div","alh "+cls);h.id=id;h.appendChild(el("span","ic",ic));var w=el("span","tx");w.appendChild(el("b",null,t));w.appendChild(el("small",null,sub));h.appendChild(w);h.appendChild(el("span","n",n));L.appendChild(h)}
+ function card(cls,ic,name,sub,badge,crit){var r=el("div","alc "+cls+(crit?" crit":""));r.appendChild(el("span","ic",ic));var w=el("span","tx");w.appendChild(el("b",null,name));w.appendChild(el("small",null,sub));r.appendChild(w);r.appendChild(el("span","bd",badge));L.appendChild(r)}
+ head("xp","alhx","⏳","الصلاحية","مواد راح تنتهي أو انتهت",xl.length);
+ xl.forEach(function(x){card("xp",x.d<=0?"⛔":"⏳",x.n,x.c+" · تنتهي "+dayLbl(S.xp[x.n])+" · التحذير قبل "+x.w+" يوم"+(hasXw(x.n)?" (خاص)":""),x.d<0?"منتهية منذ "+(-x.d)+" يوم":x.d===0?"تنتهي اليوم":"باقي "+x.d+" يوم",x.d<=0)});
+ if(!xl.length)L.appendChild(el("div","alnone","✓ لا توجد مواد قريبة الانتهاء"));
+ head("st","alhs","📦","الخزين","مواد قربت تنفذ أو نفذت (الحد: "+S.thr+")",a.length);
+ a.forEach(function(x){card("st",x.q<=0?"⛔":"📦",x.n,x.c+" · المتبقي بالمخزن: "+x.q,x.q<=0?"نفذت":"باقي "+x.q,x.q<=0)});
+ if(!a.length)L.appendChild(el("div","alnone","✓ لا توجد مواد قاربت على النفاد"));
  $("ntb").hidden=!("Notification" in window)||Notification.permission==="granted";
- $("al").hidden=false}
+ $("al").hidden=false;L.scrollTop=0}
 function alertModal(msg){var no=$("mno");no.hidden=true;dlg(msg,"",false,function(){no.hidden=false});try{if(navigator.vibrate)navigator.vibrate([200,100,200])}catch(e){}}
 function editStock(name){var m=$("mi");m.inputMode="numeric";
  dlg("عدد الخزين في المخزن لـ «"+name+"» (اتركه فارغًا لإلغاء تتبع الخزين):",hasSt(name)?String(S.stock[name]):"",true,function(v){m.inputMode="";if(v===null)return;
@@ -301,7 +350,7 @@ function drawAcc(){var A=$("acc");A.innerHTML="";var q=$("q").value.trim().toLow
   if(S.edit){
    hr.appendChild(btn("✎","mini",function(){ask("اسم الفئة:",cat.n,function(n){cat.n=n;save();drawAcc()})}));
    hr.appendChild(btn("🎨","mini",function(){cat.c=(cat.c+1)%PAL.length;save();drawAcc()}));
-   hr.appendChild(btn("✕","mini",function(){sure("حذف فئة «"+cat.n+"» مع كل موادها؟",function(){cat.items.forEach(function(i){delete S.xp[i];delete S.stock[i]});S.cats.splice(ci,1);S.cat=null;save();drawAcc()})}))}
+   hr.appendChild(btn("✕","mini",function(){sure("حذف فئة «"+cat.n+"» مع كل موادها؟",function(){cat.items.forEach(function(i){delete S.xp[i];delete S.xpw[i];delete S.stock[i]});S.cats.splice(ci,1);S.cat=null;save();drawAcc()})}))}
   box.appendChild(hr);
   if(open){var g=document.createElement("div");g.className="grid"+(S.edit?" ed":"");
    items.forEach(function(name){
@@ -311,6 +360,7 @@ function drawAcc(){var A=$("acc");A.innerHTML="";var q=$("q").value.trim().toLow
     if(hasXp(name)){var xs=document.createElement("small"),st=xpState(name);xs.className="xpt "+st;xs.textContent=xpTxt(name);main.appendChild(xs)}
     if(ACC()){var cs=document.createElement("small");cs.className="cst";cs.textContent=uc(name)!=null?"💰 "+money(uc(name))+(ucSince(name)?" (من "+dayLbl(ucSince(name)).slice(0,5)+")":""):"💰 بدون كلفة";main.appendChild(cs);
      var ss=document.createElement("small");ss.className="cst sv";ss.textContent=us(name)!=null?"🛠 خدمة: "+money(us(name))+(usSince(name)?" (من "+dayLbl(usSince(name)).slice(0,5)+")":""):"🛠 بدون سعر خدمة";main.appendChild(ss)}
+    if(S.edit){var xw=document.createElement("small");xw.className="xwt"+(hasXw(name)?" own":"");xw.textContent="⏰ التحذير قبل "+xpW(name)+" يوم"+(hasXw(name)?" (خاص)":" (عام)");main.appendChild(xw)}
     if(!S.edit){g.appendChild(main);return}
     var w=document.createElement("div");w.className="tile";w.appendChild(main);var r=document.createElement("div");r.className="r";
     function ab(ic,lb,val,set,cls,fn){var b=btn("",("ab "+(set?"set ":"")+(cls||"")).trim(),fn);var a=document.createElement("span");a.className="i";a.textContent=ic;b.appendChild(a);
@@ -318,10 +368,11 @@ function drawAcc(){var A=$("acc");A.innerHTML="";var q=$("q").value.trim().toLow
     var xd=hasXp(name)?S.xp[name].split("-"):null;
     r.appendChild(ab("📦","الرصيد",hasSt(name)?String(S.stock[name]):"—",hasSt(name),"",function(){editStock(name)}));
     r.appendChild(ab("⏳","الانتهاء",xd?xd[2]+"/"+xd[1]+"/"+xd[0].slice(2):"—",!!xd,"",function(){editXp(name)}));
+    r.appendChild(ab("⏰",hasXw(name)?"تحذير "+S.xpw[name]+"ي":"التحذير",null,hasXw(name),"",function(){editXw(name)}));
     if(ACC())r.appendChild(ab("💰","الكلفة",uc(name)!=null?money(uc(name)):"—",uc(name)!=null,"",function(){editCost(name)}));
     if(ACC())r.appendChild(ab("🛠","الخدمة",us(name)!=null?money(us(name)):"—",us(name)!=null,"",function(){editSvc(name)}));
-    r.appendChild(ab("✎","الاسم",null,false,"",function(){ask("الاسم الجديد:",name,function(n){if(n!==name&&itemExists(n,name)){toast("⚠ توجد مادة بنفس الاسم");return}cat.items[real]=n;if(S.item===name)S.item=n;if(n!==name&&hasSt(name)){S.stock[n]=S.stock[name];delete S.stock[name]}if(n!==name&&hasXp(name)){S.xp[n]=S.xp[name];delete S.xp[name]}if(n!==name)renCost(name,n);save();drawAcc();upd()})}));
-    r.appendChild(ab("🗑","حذف",null,false,"del",function(){sure("حذف «"+name+"»؟",function(){cat.items.splice(real,1);delete S.stock[name];delete S.xp[name];if(S.item===name)S.item=null;save();drawAcc();upd()})}));
+    r.appendChild(ab("✎","الاسم",null,false,"",function(){ask("الاسم الجديد:",name,function(n){if(n!==name&&itemExists(n,name)){toast("⚠ توجد مادة بنفس الاسم");return}cat.items[real]=n;if(S.item===name)S.item=n;if(n!==name&&hasSt(name)){S.stock[n]=S.stock[name];delete S.stock[name]}if(n!==name&&hasXp(name)){S.xp[n]=S.xp[name];delete S.xp[name]}if(n!==name&&hasXw(name)){S.xpw[n]=S.xpw[name];delete S.xpw[name]}if(n!==name)renCost(name,n);save();drawAcc();upd()})}));
+    r.appendChild(ab("🗑","حذف",null,false,"del",function(){sure("حذف «"+name+"»؟",function(){cat.items.splice(real,1);delete S.stock[name];delete S.xp[name];delete S.xpw[name];if(S.item===name)S.item=null;save();drawAcc();upd()})}));
     w.appendChild(r);g.appendChild(w)});
    if(S.edit)g.appendChild(btn("+ مادة","dash",function(){ask("اسم المادة:","",function(n){if(itemExists(n)){toast("⚠ توجد مادة بنفس الاسم");return}cat.items.push(n);save();drawAcc()})}));
    box.appendChild(g)}
@@ -341,7 +392,7 @@ function drawHot(){var H=$("hot");H.innerHTML="";
   var b=btn(name,"emp"+(S.item===name?" on":""),function(){S.item=name;S.n=1;S.fresh=true;drawAcc();upd()});
   var m=document.createElement("small");m.textContent="×"+cnt[name];b.appendChild(m);w.appendChild(b);r.appendChild(w)});
  H.appendChild(r)}
-function renderAll(){$("thb").textContent="⚠ حد التنبيه: "+S.thr;$("xpb").textContent="⏳ تحذير الانتهاء: قبل "+S.xpd+" يوم";$("xpb").hidden=!ACC();$("apw").hidden=!ACC();$("gear").hidden=!ACC();if(!ACC())S.edit=false;$("rsb").hidden=!ACC();$("pinb").hidden=!ACC();$("wipe").hidden=!ACC();$("clb").hidden=!ACC();$("who2").textContent=ACC()?"🧮 المحاسب 🚪":"👷 موظف 🚪";$("edbar").hidden=!S.edit;$("gear").textContent=S.edit?"✔":"⚙️";drawEmps();drawAcc()}
+function renderAll(){$("thb").textContent="⚠ حد التنبيه: "+S.thr;$("xpb").textContent="⏳ تحذير الانتهاء (لكل المواد): قبل "+S.xpd+" يوم";$("xpb").hidden=!ACC();$("apw").hidden=!ACC();$("gear").hidden=!ACC();if(!ACC())S.edit=false;$("rsb").hidden=!ACC();$("pinb").hidden=!ACC();$("wipe").hidden=!ACC();$("clb").hidden=!ACC();$("who2").textContent=ACC()?"🧮 المحاسب 🚪":"👷 موظف 🚪";$("edbar").hidden=!S.edit;$("gear").textContent=S.edit?"✔":"⚙️";drawEmps();drawAcc()}
 function upd(){var e=$("sel"),bad="",t=S.item||"اختر مادة";
  if(S.item&&hasSt(S.item)){var q=S.stock[S.item];if(q<=0)bad="⛔ نفذت في المخزن";else if(S.n>q)bad="⚠ المتاح "+q+" فقط";t=S.item+" — "+(bad||"المتاح: "+q)}
  if(S.item&&uc(S.item)!=null)t+=" · 💰 "+money(uc(S.item)*S.n);
@@ -377,7 +428,10 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
  $("undo").hidden=!(S.prev&&!t.length);drawHot();$("tot").textContent=t.length?"("+t.length+" سجل / "+sum+" قطعة"+(ACC()?" / 💰 "+money(csum)+" / 🛠 "+money(ssum):"")+")":""}
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
-$("bell").onclick=showAlerts;$("alx").onclick=function(){$("al").hidden=true};
+$("bell").onclick=showAlerts;
+var APPV="2.1";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+$("ver").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
+setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
 $("gear").onclick=toggleEdit;$("done").onclick=toggleEdit;
 $("pinb").onclick=function(){if(!ACC())return;dlg("رمز التعديل يُطلب عند «نسيت باسوورد المحاسب؟».\nاكتب رمزًا جديدًا (اتركه فارغًا لإلغاء الرمز):",S.pin,true,function(p){if(p===null)return;S.pin=p.trim();save();toast(S.pin?"تم حفظ الرمز":"تم إلغاء الرمز")})};
@@ -674,8 +728,8 @@ $("wgo").onclick=function(){var w=wSel();if(!w.length)return;$("wm").hidden=true
 /* ===== إشعارات الصلاحية ===== */
 function xpMsg(){var l=xpList();if(!l.length)return null;
  var out=l.filter(function(x){return x.d<=0}).length,soon=l.length-out;
- return {title:"⏳ تنبيه صلاحية المواد",body:(out?out+" مادة منتهية أو تنتهي اليوم. ":"")+(soon?soon+" مادة تنتهي خلال "+S.xpd+" يوم. ":"")+"\n"+l.slice(0,4).map(function(x){return "• "+x.n+" ("+(x.d<0?"منتهية":x.d===0?"اليوم":x.d+" يوم")+")"}).join("\n")+(l.length>4?"\n…":"")}}
-function xpSync(){bellUpd();try{if(window.caches)caches.open("wd-data").then(function(c){c.put("./__xp",new Response(JSON.stringify({xp:S.xp,xpd:S.xpd,cats:S.cats.map(function(c){return c.items})}),{headers:{"Content-Type":"application/json"}}))})}catch(e){}}
+ return {title:"⏳ تنبيه صلاحية المواد",body:(out?out+" مادة منتهية أو تنتهي اليوم. ":"")+(soon?soon+" مادة قريبة الانتهاء. ":"")+"\n"+l.slice(0,4).map(function(x){return "• "+x.n+" ("+(x.d<0?"منتهية":x.d===0?"اليوم":x.d+" يوم")+")"}).join("\n")+(l.length>4?"\n…":"")}}
+function xpSync(){bellUpd();try{if(window.caches)caches.open("wd-data").then(function(c){c.put("./__xp",new Response(JSON.stringify({xp:S.xp,xpd:S.xpd,xpw:S.xpw,cats:S.cats.map(function(c){return c.items})}),{headers:{"Content-Type":"application/json"}}))})}catch(e){}}
 function sysNotify(force){var m=xpMsg();if(!m||!("Notification" in window)||Notification.permission!=="granted")return;
  var k="wd_nt",last="";try{last=localStorage.getItem(k)||""}catch(e){}
  if(!force&&last===today())return;try{localStorage.setItem(k,today())}catch(e){}
@@ -685,9 +739,12 @@ function sysNotify(force){var m=xpMsg();if(!m||!("Notification" in window)||Noti
 function xpRegPeriodic(){try{navigator.serviceWorker.ready.then(function(r){if(r.periodicSync)r.periodicSync.register("wd-xp",{minInterval:12*36e5}).catch(function(){})})}catch(e){}}
 $("ntb").onclick=function(){if(!("Notification" in window)){toast("الجهاز لا يدعم الإشعارات");return}
  Notification.requestPermission().then(function(p){if(p==="granted"){toast("✔ تم تفعيل الإشعارات");$("ntb").hidden=true;xpRegPeriodic();sysNotify(true)}else toast("لم يتم السماح بالإشعارات\nفعّلها من إعدادات كروم ← الإشعارات")})};
-$("xpb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("التحذير من انتهاء الصلاحية قبل كم يوم؟",String(S.xpd),true,function(v){m.inputMode="";if(v===null)return;
+$("xpb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("⏳ تحذير الانتهاء العام لكل المواد\nيبدي التحذير قبل الانتهاء بكم يوم؟\n\n(تگدر تغيّره لأي مادة لوحدها من زر ⏰ تحتها)",String(S.xpd),true,function(v){m.inputMode="";if(v===null)return;
  var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>3650){toast("اكتب عدد أيام صحيح");return}
- S.xpd=+t;save();renderAll();upd();xpSync();toast("✔ التحذير قبل "+S.xpd+" يوم من الانتهاء")})};
+ S.xpd=+t;var own=Object.keys(S.xpw).filter(function(k){return itemExists(k)});
+ function fin(){save();renderAll();upd();xpSync();toast("✔ التحذير قبل "+S.xpd+" يوم من الانتهاء"+(own.length&&Object.keys(S.xpw).length?"\n(عدا "+Object.keys(S.xpw).length+" مادة إلها تحذير خاص ⏰)":""))}
+ if(!own.length){S.xpw={};fin();return}
+ setTimeout(function(){dlg("صار التحذير العام "+S.xpd+" يوم.\n\nأكو "+own.length+" مادة إلها تحذير خاص ⏰:\n"+own.slice(0,6).map(function(k){return "• "+k+" ("+S.xpw[k]+" يوم)"}).join("\n")+(own.length>6?"\n…":"")+"\n\nتريد تطبق "+S.xpd+" يوم عليهن هم؟\n«موافق» = كل المواد نفس الرقم\n«إلغاء» = يبقن على رقمهن الخاص","",false,function(ok){if(ok)S.xpw={};fin()})},60)})};
 $("rexp").onclick=function(){exportRange($("rf").value,$("rt").value)};
 $("dayb").onclick=function(){$("clr").onclick()};
 window.addEventListener("storage",function(e){if(e.key!=="wd_state"||!e.newValue)return;load();if(S.role){renderAll();upd();drawLog()}dayCheck()});
@@ -704,17 +761,17 @@ var FBV="https://www.gstatic.com/firebasejs/12.19.0/";
 /* مشروع Firebase الخاص بالعيادة (هذه معرّفات عامة وليست باسوورد — الحماية برمز الربط السري) */
 var FBCFG={apiKey:"AIzaSyDNQ_O0nhh-FQlm_t2QeXQMi4t8BFMYvPg",authDomain:"sahobat-35dc1.firebaseapp.com",projectId:"sahobat-35dc1",storageBucket:"sahobat-35dc1.firebasestorage.app",messagingSenderId:"408946713435",appId:"1:408946713435:web:9d15ffaa5bb4e0e93df07e"};
 var CL={cfg:null,F:null,db:null,ref:null,mcol:null,base:null,sent:null,ready:false,exists:true,st:"",err:"",ce0:null,lastM:null,lastH:null,uns:[]};
-var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd"],CLM=["stock","xp","freq","logm"];
+var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd"],CLM=["stock","xp","freq","logm","xpw"];
 var CLD={emps:null,cats:null,day:null,thr:5,exp:false,prev:null,ce:null,cpub:null,ren:[],xpd:30,pin:""};
 function srt(v){if(Array.isArray(v))return v.map(srt);if(v&&typeof v==="object"){var o={};Object.keys(v).sort().forEach(function(k){if(v[k]!==undefined)o[k]=srt(v[k])});return o}return v}
 function sStr(v){return JSON.stringify(srt(v===undefined?null:v))}
 function nrm(s){try{return sStr(JSON.parse(s))}catch(x){return sStr(null)}}
 function rid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
 function clIds(){S.log.forEach(function(x,i){if(!x.id)x.id=rid();if(typeof x.o!=="number")x.o=i})}
-function clEmpty(){return {j:{},m:{stock:{},xp:{},freq:{},logm:{}},h:{}}}
+function clEmpty(){return {j:{},m:{stock:{},xp:{},freq:{},logm:{},xpw:{}},h:{}}}
 function clEnc(){clIds();var e=clEmpty();
  CLJ.forEach(function(k){e.j[k]=sStr(S[k])});
- ["stock","xp","freq"].forEach(function(k){var src=S[k]||{};Object.keys(src).forEach(function(n){if(src[n]!==undefined&&src[n]!==null)e.m[k][n]=sStr(src[n])})});
+ ["stock","xp","freq","xpw"].forEach(function(k){var src=S[k]||{};Object.keys(src).forEach(function(n){if(src[n]!==undefined&&src[n]!==null)e.m[k][n]=sStr(src[n])})});
  S.log.forEach(function(x){e.m.logm[x.id]=sStr(x)});
  var h={};S.hist.forEach(function(x){var k=String(x.day).slice(0,7);(h[k]=h[k]||[]).push(x)});
  Object.keys(h).forEach(function(k){e.h[k]=sStr(h[k])});return e}
@@ -725,7 +782,7 @@ function m3(l,b,r){var o={},ks={};[l,b,r].forEach(function(x){Object.keys(x||{})
  Object.keys(ks).forEach(function(k){var lv=l[k],bv=(b||{})[k],v=lv!==bv?lv:r[k];if(v!==undefined)o[k]=v});return o}
 function clSetMain(e){
  CLJ.forEach(function(k){var v=JSON.parse(e.j[k]);if(v===null&&CLD[k]===null&&k!=="prev"&&k!=="ce"&&k!=="cpub")return;S[k]=v===null?CLD[k]:v});
- ["stock","xp","freq"].forEach(function(k){var o={};Object.keys(e.m[k]).forEach(function(n){o[n]=JSON.parse(e.m[k][n])});S[k]=o});
+ ["stock","xp","freq","xpw"].forEach(function(k){var o={};Object.keys(e.m[k]).forEach(function(n){o[n]=JSON.parse(e.m[k][n])});S[k]=o});
  S.log=Object.keys(e.m.logm).map(function(k){return JSON.parse(e.m.logm[k])}).sort(function(a,b){return (a.o-b.o)||(a.id<b.id?-1:1)});
  if(S.item&&!itemExists(S.item))S.item=null;if(S.emp&&S.emps.indexOf(S.emp)<0)S.emp=null}
 function clSetH(h){var a=[];Object.keys(h).sort().forEach(function(k){a=a.concat(JSON.parse(h[k])||[])});S.hist=a}

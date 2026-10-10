@@ -1,6 +1,6 @@
 // يحفظ ملفات التطبيق على الجهاز حتى يشتغل بدون نت.
 // عند وجود نت يجلب أحدث نسخة، وعند انقطاعه يفتح النسخة المحفوظة.
-const CACHE = "withdrawals-v8";
+const CACHE = "withdrawals-v2.1";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener("activate", e => {
@@ -27,17 +27,18 @@ async function checkXp() {
   if (self.Notification && self.Notification.permission !== "granted") return;
   const c = await caches.open("wd-data");
   const r = await c.match("./__xp"); if (!r) return;
-  const { xp, xpd, cats } = await r.json();
+  const { xp, xpd, xpw, cats } = await r.json();
+  const wOf = n => (xpw && typeof xpw[n] === "number") ? xpw[n] : xpd;
   const items = new Set([].concat(...cats));
   const t = dNum(todayKey());
-  const l = Object.keys(xp).filter(n => items.has(n)).map(n => ({ n, d: dNum(xp[n]) - t })).filter(x => x.d <= xpd).sort((a, b) => a.d - b.d);
+  const l = Object.keys(xp).filter(n => items.has(n)).map(n => ({ n, d: dNum(xp[n]) - t })).filter(x => x.d <= wOf(x.n)).sort((a, b) => a.d - b.d);
   if (!l.length) return;
   const last = await c.match("./__nt");
   if (last && (await last.text()) === todayKey()) return;
   await c.put("./__nt", new Response(todayKey()));
   const out = l.filter(x => x.d <= 0).length, soon = l.length - out;
   await self.registration.showNotification("⏳ تنبيه صلاحية المواد", {
-    body: (out ? out + " مادة منتهية أو تنتهي اليوم. " : "") + (soon ? soon + " مادة تنتهي خلال " + xpd + " يوم. " : "") + "\n" +
+    body: (out ? out + " مادة منتهية أو تنتهي اليوم. " : "") + (soon ? soon + " مادة قريبة الانتهاء. " : "") + "\n" +
       l.slice(0, 4).map(x => "• " + x.n + " (" + (x.d < 0 ? "منتهية" : x.d === 0 ? "اليوم" : x.d + " يوم") + ")").join("\n"),
     icon: "icon-192.png", badge: "icon-192.png", tag: "wd-xp", lang: "ar", dir: "rtl"
   });
