@@ -71,7 +71,7 @@ input[type=search]{width:100%;font:inherit;padding:14px;border-radius:14px;borde
 .li small{color:var(--mut)}
 .li button{min-height:40px;padding:4px 12px;color:var(--bad)}
 .li button.ed{color:var(--ac)}
-.toast{white-space:pre-line;text-align:center;position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);background:var(--ok);color:#fff;padding:14px 22px;border-radius:14px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9}
+.toast{white-space:pre-line;text-align:center;position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);background:var(--ok);color:#fff;padding:14px 22px;border-radius:14px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
 .toast.show{opacity:1}
 .xpt{display:block;font-size:13px;font-weight:700;margin-top:2px}.xpt.ok{opacity:.75}.xpt.soon{color:#c26a00}.xpt.out{color:var(--bad)}
 :root[data-theme="dark"] .xpt.soon{color:#ffb44d}:root[data-theme="dark"] .xpt.out{color:#ff7b6e}
@@ -151,15 +151,55 @@ button.flash{animation:flash .5s ease-out}
 .vh{font-weight:800;font-size:18px;margin:4px 0 2px}.vd{color:var(--mut);font-size:13px;margin-bottom:8px}
 .vl{margin:0 0 12px;padding-inline-start:20px;line-height:1.6}.vl li{margin-bottom:6px}
 .vold{border-top:1px solid var(--bd);padding-top:10px;margin-top:6px;color:var(--mut);font-size:14px}
+
+/* ===== شاشة البرامج (3.0v) ===== */
+#home{position:fixed;inset:0;z-index:15;background:var(--bg);overflow-y:auto;padding:calc(14px + env(safe-area-inset-top,0px)) 16px calc(28px + env(safe-area-inset-bottom,0px))}
+.hm{max-width:1100px;margin:0 auto}
+.hmt{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.hmt h1{flex:1 1 180px;margin:0;font-size:26px;font-weight:800;line-height:1.2}
+.hmt h1 small{display:block;font-size:14px;color:var(--mut);font-weight:600;margin-top:2px}
+.hmt button{min-height:44px;padding:4px 14px;font-size:16px;font-weight:700;border-radius:12px;border-width:1px}
+#hmEd.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
+.hmn{background:var(--card);border:1px dashed var(--bd);border-radius:14px;padding:10px 14px;margin-bottom:14px;font-size:15px;color:var(--mut)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:14px}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+.tl{position:relative;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;aspect-ratio:1.55;min-height:98px;width:100%;padding:13px 15px;border-radius:20px;border:0;color:#fff;text-align:start;text-decoration:none;background:linear-gradient(165deg,var(--g1),var(--g2));box-shadow:0 1px 2px rgba(0,0,0,.08),0 6px 16px -6px var(--g2);font-weight:800;font-size:17px;line-height:1.25;cursor:pointer;transition:transform .12s,filter .12s;overflow:hidden}
+.tl:hover{filter:brightness(1.05)}
+.tl:active{transform:scale(.96)}
+.tl:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.tl .ti{display:flex;width:30px;height:30px}
+.tl .ti svg{width:28px;height:28px}
+.tl .te{font-size:26px;line-height:1}
+.tl .tn{overflow-wrap:anywhere;text-shadow:0 1px 1px rgba(0,0,0,.12)}
+.tl .tx{position:absolute;top:12px;inset-inline-end:14px;font-size:15px;opacity:.8}
+.tl .td{position:absolute;top:9px;inset-inline-end:9px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.92);color:#1d2630;display:grid;place-items:center;font-size:15px}
+.tl.add{background:transparent;border:2px dashed var(--bd);color:var(--mut);align-items:center;justify-content:center;box-shadow:none;font-size:16px;gap:4px}
+.tl.add .ti{width:auto;height:auto;font-size:28px;font-weight:400}
+.hmv{display:block;margin:22px auto 0;background:none;border:0;color:var(--mut);font-size:13px;min-height:auto;padding:6px 10px;text-decoration:underline dotted}
+#apm .mb{max-height:calc(100vh - 32px);overflow-y:auto;max-width:460px}
+.apl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700;color:var(--mut);margin-bottom:12px}
+.apl input{font:inherit;font-size:17px;font-weight:600;color:var(--tx);padding:12px;border-radius:12px;border:2px solid var(--bd);background:var(--bg)}
+.aps{display:flex;gap:6px;flex-wrap:wrap}
+.aps button{flex:1 1 90px;min-height:44px;padding:4px 10px;font-size:15px;font-weight:700;border-radius:12px}
+.aps button.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
+.apc{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.apc button{aspect-ratio:1;min-height:0;padding:0;border-radius:12px;border:3px solid transparent;background:linear-gradient(165deg,var(--g1),var(--g2))}
+.apc button.on{border-color:var(--card);outline:3px solid var(--tx);outline-offset:1px}
+.api{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.api button{aspect-ratio:1;min-height:0;padding:0;border-radius:12px;display:grid;place-items:center;border-width:2px}
+.api button svg{width:24px;height:24px}
+.api button.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
+.apv{max-width:200px;margin:2px auto 14px;pointer-events:none}
+#homeb{min-height:44px;padding:4px 12px;font-size:22px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><div class="ttl">📦 تسجيل السحوبات</div><div class="clock" id="clock"></div><button id="theme" title="الوضع الليلي / النهاري">🌙</button><button id="histb" title="الأيام السابقة">📅</button><button id="bell" title="مواد قربت تنفذ">🔔<span id="bellc" hidden></span></button><button id="cloudb" title="المزامنة الأونلاين" hidden>☁️</button><button id="gear" title="تعديل">⚙️</button><button id="who2" title="تسجيل خروج"></button></div>
+  <div class="top"><div class="ttl">📦 تسجيل السحوبات</div><div class="clock" id="clock"></div><button id="theme" title="الوضع الليلي / النهاري">🌙</button><button id="histb" title="الأيام السابقة">📅</button><button id="bell" title="مواد قربت تنفذ">🔔<span id="bellc" hidden></span></button><button id="cloudb" title="المزامنة الأونلاين" hidden>☁️</button><button id="gear" title="تعديل">⚙️</button><button id="homeb" title="البرامج">🏠</button><button id="who2" title="تسجيل خروج"></button></div>
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ v2.1 Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 3.0v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -200,12 +240,29 @@ button.flash{animation:flash .5s ease-out}
 <button id="bkx" style="width:100%">لاحقًا</button></div></div>
 
 <div class="md" id="al" hidden><div class="mb"><div style="font-weight:800;margin-bottom:10px">🔔 التنبيهات</div><div id="alist"></div><button id="ntb" class="mini" style="width:100%;margin-top:8px" hidden>🔔 تفعيل إشعارات الجهاز</button><div class="row" style="margin-top:12px"><button id="alx">إغلاق</button></div></div></div>
+<div id="home" hidden><div class="hm">
+<div class="hmt"><h1>البرامج<small id="hmWho"></small></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button id="hmOut">🚪 خروج</button></div>
+<div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
+<div class="tiles" id="tiles"></div>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">3.0v Online · ℹ️ شنو الجديد؟</button>
+</div></div>
+<div class="md" id="apm" hidden><div class="mb">
+<div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
+<a class="tl apv" id="apP" aria-hidden="true"></a>
+<label class="apl">اسم البرنامج<input id="apN" type="text" autocomplete="off" maxlength="40"></label>
+<label class="apl" id="apUw">رابط البرنامج<input id="apU" type="url" dir="ltr" autocomplete="off" placeholder="https://"></label>
+<div class="apl" id="apWw">يظهر لـ<div class="aps" id="apW"><button data-w="emp">👷 الموظف</button><button data-w="acc">🧮 الحسابات</button><button data-w="all">الاثنين</button></div></div>
+<div class="apl">اللون<div class="apc" id="apC"></div></div>
+<div class="apl">الأيقونة<div class="api" id="apI"></div></div>
+<div class="row" style="margin-top:6px"><button id="apOk" class="emp on k" style="--h:170">حفظ</button><button id="apX">إلغاء</button></div>
+<button id="apDel" class="mini" style="width:100%;margin-top:10px;color:var(--bad)">🗑 حذف هذا البرنامج</button>
+</div></div>
 <div class="md" id="login" hidden style="background:var(--bg)"><div class="mb" style="text-align:center">
-<div style="font-size:40px">📦</div><div style="font-weight:800;font-size:22px;margin:4px 0 16px">تسجيل السحوبات</div>
+<div style="font-size:40px">🏥</div><div style="font-weight:800;font-size:22px;margin:4px 0 16px">برامج العيادة</div>
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
-<button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 المحاسب 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">v2.1 Online · ℹ️ شنو الجديد؟</button>
+<button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">3.0v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -230,14 +287,17 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ v2.1 Online</div><div class="vd">تاريخ التحديث: 10/10/2026</div>
+<div class="vh">ℹ️ 3.0v Online</div><div class="vd">تاريخ التحديث: 10/10/2026</div>
 <ul class="vl">
-<li><b>⏰ تحذير انتهاء لكل مادة:</b> بوضع التعديل ⚙️ صار تحت كل مادة زر «⏰ التحذير». تكتب بيه قبل كم يوم يبدي تحذير انتهاء هذه المادة بالذات. إذا مسحت الرقم ترجع المادة للتحذير العام.</li>
-<li><b>⏳ تحذير الانتهاء العام:</b> الزر اللي بالإعدادات بقى، وصار هو الرقم الافتراضي لكل المواد. إذا غيّرته وأكو مواد إلها رقم خاص، يسألك تطبقه عليهن هم لو يبقن على رقمهن.</li>
-<li><b>🔔 شكل جديد للتنبيهات:</b> بأعلاها مربعين بالعدد. <span style="color:var(--xpc);font-weight:800">⏳ البنفسجي = الصلاحية</span> (مواد راح تنتهي)، و<span style="color:var(--stc);font-weight:800">📦 البرتقالي = الخزين</span> (مواد قربت تنفذ). المنتهي والنافد يطلع بالأحمر.</li>
-<li><b>ℹ️ رقم النسخة:</b> تضغط عليه يطلعلك شنو انضاف وشنو تعدّل.</li>
+<li><b>🏠 شاشة البرامج:</b> بعد ما تختار نوع الدخول تطلعلك مربعات ملونة بالبرامج، مثل تطبيق Shortcuts بالآيفون والماك. تضغط على المربع ويفتح البرنامج.</li>
+<li><b>👷 الموظف:</b> يطلعله مربع واحد «تسجيل السحوبات».</li>
+<li><b>🧮 الحسابات:</b> يطلعله مربعين: «تسجيل الحسابات» (السحوبات بصلاحيات المحاسب: الكلف وسعر الخدمة والربح)، و«مصاريف العيادة» (برنامج الخزينة والمصاريف اليومية، ينفتح من claude.ai).</li>
+<li><b>＋ إضافة برنامج:</b> من زر «＋ برنامج» تضيف رابط أي برنامج جديد، وتختار اسمه ولونه وأيقونته ولمن يظهر (الموظف أو الحسابات أو الاثنين)، ويطلع يم البقية. ومن «✎ تعديل» تغيّر الاسم واللون والأيقونة أو تحذف البرنامج. التغييرات تتزامن لكل الأجهزة.</li>
+<li><b>🏠 زر البرامج:</b> بأعلى «تسجيل السحوبات» صار أكو زر 🏠 يرجعك لشاشة البرامج بدون ما تسجل خروج.</li>
+<li><b>🔐 شاشة الدخول:</b> زر «المحاسب» صار اسمه «الحسابات»، والباسوورد نفسه ما تغيّر.</li>
+<li><b>💬 الرسائل:</b> رسائل مثل «جارِ التحقق» و«الباسوورد غير صحيح» صارت تبين فوق شاشة الدخول، قبل كانت تختفي وراها.</li>
 </ul>
-<div class="vold"><b>v2.0 Online</b> (النسخة السابقة): المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
+<div class="vold"><b>v2.1 Online</b> (النسخة السابقة): تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات (الصلاحية بالبنفسجي والخزين بالبرتقالي)، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -263,12 +323,12 @@ function today(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)
 function tick(){var d=new Date();$("clock").textContent=fd(d)+" · "+ft(d)}
 S.day=today();S.exp=false;S.freq={};S.prev=null;S.hist=[];
 function load(){try{var v=JSON.parse(localStorage.getItem("wd_state")||"null");if(v){S.emps=v.emps||S.emps;S.emp=v.emp||null;S.log=v.log||[];S.pin=v.pin||"";S.stock=v.stock||{};S.thr=(typeof v.thr==="number")?v.thr:5;if(v.cats&&v.cats.length)S.cats=v.cats;
- S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.xpw=(v.xpw&&typeof v.xpw==="object")?v.xpw:{};S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];
+ S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.xpw=(v.xpw&&typeof v.xpw==="object")?v.xpw:{};S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];S.apps=Array.isArray(v.apps)?v.apps:null;
  if(!v.hist&&S.prev&&S.prev.log)S.hist.push({day:S.prev.day,log:S.prev.log});
  if(v.freq){S.freq=v.freq}else{S.log.forEach(function(x){S.freq[x.i]=(S.freq[x.i]||0)+1})}
  if(v.day){S.day=v.day}else{var d=today(),old=S.log.filter(function(x){return x.d!==d});if(old.length)S.hist.push({day:old[0].d,log:old});S.log=S.log.filter(function(x){return x.d===d});S.day=d}}}catch(e){}}
 function save(){saveLocal();clPush()}
-function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd,xpw:S.xpw}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
+function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd,xpw:S.xpw,apps:S.apps||null}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
 function dayLbl(v){var p=v.split("-");return p[2]+"/"+p[1]+"/"+p[0]}
 function hasSt(n){return typeof S.stock[n]==="number"}
 function stLeft(n){return hasSt(n)?S.stock[n]:Infinity}
@@ -429,8 +489,8 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="2.1";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
-$("ver").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
+var APPV="3.0";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+$("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
 $("gear").onclick=toggleEdit;$("done").onclick=toggleEdit;
@@ -642,8 +702,8 @@ function tryPw(pw){
 function renCost(a,b){if(ACC()){if(a in S.cost){S.cost[b]=S.cost[a];delete S.cost[a]}svRen(a,b);saveCost()}else{(S.ren=S.ren||[]).push([a,b]);var c=S.cpub;if(c){if(a in c){c[b]=c[a];delete c[a]}if(c.__svc&&a in c.__svc){c.__svc[b]=c.__svc[a];delete c.__svc[a]}save()}}}
 function applyRen(){if(!S.ren||!S.ren.length)return;S.ren.forEach(function(r){if(r[0] in S.cost){S.cost[r[1]]=S.cost[r[0]];delete S.cost[r[0]]}svRen(r[0],r[1])});S.ren=[];saveCost()}
 function pwDlg(msg,cb){var i=$("mi");i.type="password";dlg(msg,"",true,function(v){i.type="text";cb(v)})}
-function enter(role){S.role=role;S.edit=false;$("login").hidden=true;renderAll();upd();drawLog();xpSync();sysNotify(false);if("Notification" in window&&Notification.permission==="granted")xpRegPeriodic();var l=xpList();if(l.length)setTimeout(function(){toast("⏳ "+l.length+" مادة قريبة الانتهاء أو منتهية — اضغط 🔔")},600)}
-function showLogin(){S.role=null;S.cost={};S.key=null;S.edit=false;$("hs").hidden=true;$("cm").hidden=true;$("login").hidden=false}
+function enter(role){S.role=role;S.edit=false;$("login").hidden=true;renderAll();upd();drawLog();xpSync();sysNotify(false);if("Notification" in window&&Notification.permission==="granted")xpRegPeriodic();var l=xpList();if(l.length)setTimeout(function(){toast("⏳ "+l.length+" مادة قريبة الانتهاء أو منتهية — اضغط 🔔")},600);showHome()}
+function showLogin(){$("home").hidden=true;$("apm").hidden=true;S.hmEd=false;S.role=null;S.cost={};S.key=null;S.edit=false;$("hs").hidden=true;$("cm").hidden=true;$("login").hidden=false}
 $("lgE").onclick=function(){enter("emp")};
 $("lgA").onclick=function(){
  if(!S.ce){pwDlg("أول دخول للمحاسب — اختر باسوورد (4 أحرف أو أكثر):",function(p){if(p===null)return;p=p.trim();if(p.length<4){toast("الباسوورد قصير");return}
@@ -761,8 +821,8 @@ var FBV="https://www.gstatic.com/firebasejs/12.19.0/";
 /* مشروع Firebase الخاص بالعيادة (هذه معرّفات عامة وليست باسوورد — الحماية برمز الربط السري) */
 var FBCFG={apiKey:"AIzaSyDNQ_O0nhh-FQlm_t2QeXQMi4t8BFMYvPg",authDomain:"sahobat-35dc1.firebaseapp.com",projectId:"sahobat-35dc1",storageBucket:"sahobat-35dc1.firebasestorage.app",messagingSenderId:"408946713435",appId:"1:408946713435:web:9d15ffaa5bb4e0e93df07e"};
 var CL={cfg:null,F:null,db:null,ref:null,mcol:null,base:null,sent:null,ready:false,exists:true,st:"",err:"",ce0:null,lastM:null,lastH:null,uns:[]};
-var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd"],CLM=["stock","xp","freq","logm","xpw"];
-var CLD={emps:null,cats:null,day:null,thr:5,exp:false,prev:null,ce:null,cpub:null,ren:[],xpd:30,pin:""};
+var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd","apps"],CLM=["stock","xp","freq","logm","xpw"];
+var CLD={emps:null,cats:null,day:null,thr:5,exp:false,prev:null,ce:null,cpub:null,ren:[],xpd:30,pin:"",apps:null};
 function srt(v){if(Array.isArray(v))return v.map(srt);if(v&&typeof v==="object"){var o={};Object.keys(v).sort().forEach(function(k){if(v[k]!==undefined)o[k]=srt(v[k])});return o}return v}
 function sStr(v){return JSON.stringify(srt(v===undefined?null:v))}
 function nrm(s){try{return sStr(JSON.parse(s))}catch(x){return sStr(null)}}
@@ -788,7 +848,7 @@ function clSetMain(e){
 function clSetH(h){var a=[];Object.keys(h).sort().forEach(function(k){a=a.concat(JSON.parse(h[k])||[])});S.hist=a}
 function clSaveCfg(){try{if(CL.cfg)localStorage.setItem("wd_cloud",JSON.stringify(CL.cfg));else localStorage.removeItem("wd_cloud")}catch(e){}}
 function clSaveBase(){try{if(CL.base)localStorage.setItem("wd_cloud_base",JSON.stringify(CL.base));else localStorage.removeItem("wd_cloud_base")}catch(e){}}
-function clRender(){if(S.role){renderAll();upd();drawLog();if(!$("hs").hidden)drawCal()}dayCheck();bellUpd();xpSync()}
+function clRender(){if(!$("home").hidden)drawHome();if(S.role){renderAll();upd();drawLog();if(!$("hs").hidden)drawCal()}dayCheck();bellUpd();xpSync()}
 /* إرسال التغييرات المحلية: الفرق بين الحالة الحالية وآخر ما أُرسل */
 function clPush(){if(!CL.ready||!CL.F)return;var F=CL.F,l=clEnc(),b=CL.sent||CL.base,bt=F.writeBatch(CL.db),n=0;
  try{
@@ -878,6 +938,63 @@ $("cloudb").onclick=function(){if(ACC())cmShow();else toast(CL.st||"")};
 $("cmCopy").onclick=function(){var t=$("cmCode");t.select();try{navigator.clipboard.writeText(t.value).then(function(){toast("📋 تم نسخ رمز الربط")},function(){document.execCommand("copy");toast("📋 تم النسخ")})}catch(e){document.execCommand("copy");toast("📋 تم النسخ")}};
 $("cmWa").onclick=function(){window.open("https://wa.me/?text="+encodeURIComponent("رمز ربط تطبيق السحوبات:\n"+clCode()),"_blank")};
 $("cmUn").onclick=function(){sure("فصل هذا الجهاز؟\nالبيانات تبقى على الجهاز، بس ما تتزامن بعد مع باقي الأجهزة.",function(){clStop();CL.cfg=null;CL.base=null;clSaveCfg();clSaveBase();location.reload()})};
+/* ===== شاشة البرامج (3.0v) ===== */
+var EXP_URL="https://claude.ai/artifact/5Wxt8M7QPvSw7xWCLLrcxL";
+var GR=[["#a65fe8","#7b3fd1"],["#5ad46f","#2fae4f"],["#f68ad8","#dd58bb"],["#ff9474","#ef6847"],["#2fcbea","#0a9fd4"],["#6189f2","#3c5bd6"],["#ffc93f","#f09d0a"],["#ff7088","#e5435c"],["#b89f81","#93785b"],["#1fd0ac","#0aa486"],["#94aa9e","#6d8779"],["#3aa2f7","#1572dd"]];
+var ICO={
+box:'<path d="M12 2.8 20.5 7v10L12 21.2 3.5 17V7z"/><path d="M3.8 7.2 12 11.4l8.2-4.2M12 11.4v9.6"/>',
+calc:'<rect x="5" y="2.8" width="14" height="18.4" rx="2.5"/><path d="M8.5 6.5h7v3h-7zM8.5 13.2h.01M12 13.2h.01M15.5 13.2h.01M8.5 17h.01M12 17h.01M15.5 17h.01"/>',
+wallet:'<path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="3.5" y="7.5" width="17" height="12" rx="2.5"/><path d="M16 13.5h.01"/>',
+chart:'<path d="M4 20h16M7 16v-5M12 16V6M17 16v-8"/>',
+users:'<circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5M15.5 5.3a3 3 0 0 1 0 5.6M17.5 14.8c1.6.6 2.7 2.2 3 4.7"/>',
+cal:'<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+clip:'<rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/><path d="M9 4.5V3h6v1.5M8.5 10.5h7M8.5 14.5h7M8.5 18h4"/>',
+med:'<path d="M12 20.5s-7.5-4.4-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.9c0 5.8-7.5 10.2-7.5 10.2z"/><path d="M12 10.5v5M9.5 13h5"/>',
+cart:'<path d="M3 4h2.5l2.2 11h10.6l2-8H6.6"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/>',
+star:'<path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
+tooth:'<path d="M7.5 3.5c-2.5 0-4 2-4 4.5 0 2.2 1 3.4 1.6 5.4.7 2.4.8 7.1 2.6 7.1 1.6 0 1.6-4.5 4.3-4.5s2.7 4.5 4.3 4.5c1.8 0 1.9-4.7 2.6-7.1.6-2 1.6-3.2 1.6-5.4 0-2.5-1.5-4.5-4-4.5-1.9 0-2.8 1-4.5 1s-2.6-1-4.5-1z"/>',
+link:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>'};
+var DEF_APPS=[{id:"wd-emp",k:"wd",n:"تسجيل السحوبات",i:"box",c:0,w:"emp"},{id:"wd-acc",k:"wd",n:"تسجيل الحسابات",i:"calc",c:5,w:"acc"},{id:"exp",k:"link",n:"مصاريف العيادة",i:"wallet",c:9,w:"acc",u:EXP_URL}];
+function apps(){return (Array.isArray(S.apps)&&S.apps.length)?S.apps:DEF_APPS}
+function icoEl(k){var s=document.createElement("span");if(ICO[k]){s.className="ti";s.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICO[k]+'</svg>'}else{s.className="te";s.textContent=k||"⭐"}return s}
+function tileFill(t,a){var g=GR[(a.c|0)%GR.length];t.style.setProperty("--g1",g[0]);t.style.setProperty("--g2",g[1]);t.innerHTML="";t.appendChild(icoEl(a.i));var n=document.createElement("span");n.className="tn";n.textContent=a.n||"برنامج";t.appendChild(n)}
+function okUrl(u){return /^https?:\/\/[^\s]+\.[^\s]+/i.test(u||"")}
+function showHome(){if(!S.role)return;S.hmEd=false;$("home").hidden=false;drawHome();$("home").scrollTop=0}
+function drawHome(){if(!S.role)return;var acc=ACC(),T=$("tiles");T.innerHTML="";
+ $("hmWho").textContent=acc?"🧮 الحسابات":"👷 موظف";$("hmAdd").hidden=!acc;$("hmEd").hidden=!acc;if(!acc)S.hmEd=false;
+ $("hmEd").textContent=S.hmEd?"✔ تم":"✎ تعديل";$("hmEd").classList.toggle("on",!!S.hmEd);$("hmN").hidden=!S.hmEd;
+ apps().forEach(function(a){if(!(a.w==="all"||a.w===S.role))return;
+  var link=a.k==="link"&&!S.hmEd,t=document.createElement(link?"a":"button");t.className="tl";tileFill(t,a);
+  if(link){t.href=a.u;t.target="_blank";t.rel="noopener";var x=document.createElement("span");x.className="tx";x.textContent="↗";x.setAttribute("aria-hidden","true");t.appendChild(x);t.title="يفتح "+a.n}
+  if(S.hmEd){var d=document.createElement("span");d.className="td";d.textContent="✎";d.setAttribute("aria-hidden","true");t.appendChild(d);t.onclick=function(){apEdit(a.id)}}
+  else if(a.k==="wd")t.onclick=function(){$("home").hidden=true;window.scrollTo(0,0)};
+  T.appendChild(t)});
+ if(acc){var ad=document.createElement("button");ad.className="tl add";ad.innerHTML='<span class="ti">＋</span><span>إضافة برنامج</span>';ad.onclick=function(){apEdit(null)};T.appendChild(ad)}}
+$("homeb").onclick=showHome;
+$("hmOut").onclick=function(){sure("تسجيل خروج؟",showLogin)};
+$("hmEd").onclick=function(){S.hmEd=!S.hmEd;drawHome()};
+$("hmAdd").onclick=function(){apEdit(null)};
+var AP=null;
+function apEdit(id){if(!ACC())return;var cur=id?apps().filter(function(a){return a.id===id})[0]:null;
+ AP=cur?JSON.parse(JSON.stringify(cur)):{id:"a"+rid(),k:"link",n:"",i:"star",c:(apps().length*5)%GR.length,w:"acc",u:""};AP.isNew=!cur;
+ $("apT").textContent=cur?"تعديل «"+cur.n+"»":"إضافة برنامج";$("apN").value=AP.n;$("apU").value=AP.u||"";
+ var wd=AP.k==="wd";$("apUw").hidden=wd;$("apWw").hidden=wd;$("apDel").hidden=wd||AP.isNew;
+ var C=$("apC");C.innerHTML="";GR.forEach(function(g,i){var b=document.createElement("button");b.style.setProperty("--g1",g[0]);b.style.setProperty("--g2",g[1]);b.setAttribute("aria-label","لون "+(i+1));b.onclick=function(){AP.c=i;apDraw()};C.appendChild(b)});
+ var I=$("apI");I.innerHTML="";Object.keys(ICO).forEach(function(k){var b=document.createElement("button");b.dataset.i=k;b.appendChild(icoEl(k));b.firstChild.className="";b.setAttribute("aria-label",k);b.onclick=function(){AP.i=k;apDraw()};I.appendChild(b)});
+ apDraw();$("apm").hidden=false;setTimeout(function(){$("apN").focus()},60)}
+function apDraw(){var p=$("apP");tileFill(p,{n:$("apN").value.trim()||"اسم البرنامج",i:AP.i,c:AP.c});
+ Array.prototype.forEach.call($("apC").children,function(b,i){b.classList.toggle("on",i===AP.c)});
+ Array.prototype.forEach.call($("apI").children,function(b){b.classList.toggle("on",b.dataset.i===AP.i)});
+ Array.prototype.forEach.call($("apW").children,function(b){b.classList.toggle("on",b.dataset.w===AP.w)})}
+$("apN").oninput=apDraw;
+Array.prototype.forEach.call($("apW").children,function(b){b.onclick=function(){AP.w=b.dataset.w;apDraw()}});
+$("apX").onclick=function(){$("apm").hidden=true};
+$("apOk").onclick=function(){var n=$("apN").value.trim();if(!n){toast("اكتب اسم البرنامج");return}
+ if(AP.k==="link"){var u=$("apU").value.trim();if(u&&!/^https?:\/\//i.test(u))u="https://"+u;if(!okUrl(u)){toast("اكتب رابط البرنامج كامل\nمثل https://...");return}AP.u=u}
+ AP.n=n;var list=apps().map(function(a){return JSON.parse(JSON.stringify(a))}),nw=AP.isNew;delete AP.isNew;
+ if(nw)list.push(AP);else list=list.map(function(a){return a.id===AP.id?AP:a});
+ S.apps=list;save();$("apm").hidden=true;drawHome();toast(nw?"✔ انضاف «"+n+"»":"✔ تم حفظ «"+n+"»")};
+$("apDel").onclick=function(){var a=AP;sure("حذف «"+a.n+"» من شاشة البرامج؟",function(){S.apps=apps().filter(function(x){return x.id!==a.id});save();$("apm").hidden=true;drawHome();toast("انحذف «"+a.n+"»")})};
 tick();load();clStart();renderAll();upd();drawLog();dayCheck();showLogin();setInterval(function(){tick();dayCheck()},15000);
 </script>
 </body>
