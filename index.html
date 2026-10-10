@@ -218,7 +218,8 @@ button.flash{animation:flash .5s ease-out}
 #xv .x-tact{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
 #xv .x-tact button{border:1px solid color-mix(in srgb,var(--on) 40%,transparent);background:color-mix(in srgb,var(--on) 10%,transparent);color:var(--on)}
 #xv .x-tact button.pri{background:var(--on);color:var(--ac);border-color:var(--on)}
-@media (max-width:760px){#xv .x-tre{grid-template-columns:minmax(0,1fr)}#xv .x-meta b{font-size:15px;white-space:nowrap;overflow-wrap:normal}#xv .x-meta div{padding:10px 8px}}
+#xv .x-meta b{white-space:nowrap;overflow-wrap:normal;font-size:clamp(14px,1.6vw + 6px,19px)}
+@media (max-width:900px){#xv .x-tre{grid-template-columns:minmax(0,1fr)}#xv .x-meta div{padding:10px 8px}}
 #xv .x-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
 @media (max-width:860px){#xv .x-cols{grid-template-columns:minmax(0,1fr)}}
 #xv .x-card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:18px;box-shadow:var(--xsh);min-width:0}
@@ -394,6 +395,14 @@ button.flash{animation:flash .5s ease-out}
 .lotinfo small{display:block;color:var(--mut);font-size:13px;font-weight:500}
 .lotsum{font-size:14px;color:var(--mut);margin-bottom:6px;min-height:20px}
 .apl .dfw{font-size:17px;font-weight:600;color:var(--tx);padding:12px;border-radius:12px;border:2px solid var(--bd);background:var(--bg)}
+/* أبعاد كل الأجهزة (3.10v) */
+/* شاشة قصيرة (موبايل بالعرض): نصغّر لوحة الأرقام حتى يبين زر التسجيل */
+@media (max-height:600px){.scr{min-height:0;padding:6px 10px;margin-bottom:6px}.scr .sel{min-height:0;font-size:14px}.scr .who{min-height:0}.scr .num{font-size:clamp(28px,8vh,44px)}.keys{gap:4px;margin-bottom:6px}.keys button{min-height:clamp(32px,8.5vh,48px);font-size:20px}.side .go,.go{min-height:44px;font-size:18px}
+ .md .mb{padding:14px}#home{padding-top:calc(8px + env(safe-area-inset-top,0px))}.tl{aspect-ratio:2.1;min-height:84px}}
+/* شاشات كبيرة (ويندوز): مربعات البرامج أكبر شوية */
+@media (min-width:1200px){.tiles{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}.tl{font-size:18px}}
+/* تاب وويندوز: نوافذ أعرض شوية */
+@media (min-width:700px){#xm .mb,#lotm .mb,#apm .mb{max-width:520px}}
 /* زر الوضع الليلي/النهاري بكل الشاشات (3.2v) */
 .thb{min-height:44px;min-width:48px;padding:4px 12px;font-size:21px;line-height:1}
 #xv .thb,.hmt .thb{font-size:21px;padding:4px 12px}
@@ -406,7 +415,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 3.9v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 3.10v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -451,7 +460,7 @@ button.flash{animation:flash .5s ease-out}
 <div class="hmt"><h1>البرامج<small id="hmWho"></small></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">3.9v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">3.10v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -527,7 +536,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">3.9v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">3.10v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -552,14 +561,13 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 3.9v Online</div><div class="vd">تاريخ التحديث: 11/10/2026</div>
+<div class="vh">ℹ️ 3.10v Online</div><div class="vd">تاريخ التحديث: 11/10/2026</div>
 <ul class="vl">
-<li><b>🔧 تصحيح:</b> نافذة تعديل المصروف چانت ما تنفتح من نسخة 3.5v (خطأ بالبرنامج)، هسه تنفتح وتشتغل.</li>
-<li><b>✎ تعديل و🗑 حذف واضحين:</b> تحت كل مصروف صار أكو زرين «✎ تعديل» و«🗑 حذف»، ويم المصروف اللي بي فاتورة زر «🧾 الفاتورة». الحذف يسألك قبل، والمبلغ يرجع للخزينة.</li>
-<li><b>📋 كل المصاريف:</b> فوق قائمة مصاريف اليوم صار أكو تبويبين: «📅 حسب اليوم» و«📋 كل المصاريف». بـ «كل المصاريف» تشوف كل مصاريف الخزينة مرتبة من الأحدث، مقسمة حسب الأيام ويه مجموع كل يوم.</li>
-<li><b>🔍 بحث وفلترة:</b> تبحث بالملاحظة أو النوع أو الاسم أو المبلغ، وتفلتر حسب نوع المصروف أو منو اشترى أو المؤقتة بس. وتگدر تعرض الإيداعات ويهن، وإذا عندك أكثر من خزينة تعرض كل الخزائن سوا.</li>
+<li><b>↩ إيماءة الرجوع ما تطلعك من البرنامج:</b> صارت ترجعك خطوة لورا داخل البرنامج: تسد النافذة أو الصورة المفتوحة، ومن «مصاريف العيادة» أو «تسجيل السحوبات» ترجعك لشاشة البرامج، ومن وضع التعديل ⚙️ تطلعك منه.</li>
+<li><b>📱💻 الأبعاد:</b> البرنامج يتناسب ويه الموبايل (عمودي وبالعرض) والتاب والويندوز. بالموبايل بالعرض لوحة الأرقام تصغر حتى يبين زر التسجيل، وأرقام الخزينة ما تنقسم على سطرين، وبالشاشات الكبيرة مربعات البرامج أكبر.</li>
+<li>بشاشة البرامج أو شاشة الدخول، إذا سحبت رجوع يطلعلك «اسحب مرة ثانية حتى تطلع من البرنامج»، حتى ما تطلع بالغلط.</li>
 </ul>
-<div class="vold"><b>3.8v Online</b>: وجبات الشراء — الباقي القديم ينسحب بسعره القديم قبل الجديد.<br><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
+<div class="vold"><b>3.9v Online</b>: تعديل وحذف المصاريف بأزرار واضحة، قائمة «كل المصاريف» ويه بحث وفلترة، وتصحيح نافذة التعديل.<br><b>3.8v Online</b>: وجبات الشراء — الباقي القديم ينسحب بسعره القديم قبل الجديد.<br><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -752,7 +760,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="3.9";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="3.10";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1649,6 +1657,30 @@ function scan(root){if(root.querySelectorAll)Array.prototype.forEach.call(root.q
 var mi=document.getElementById("mi");if(mi)fix(mi);
 scan(document);
 new MutationObserver(function(ms){ms.forEach(function(m){Array.prototype.forEach.call(m.addedNodes,function(n){if(n.nodeType!==1)return;if(n.matches&&n.matches('input[type="date"]'))fix(n);else scan(n)})})}).observe(document.body,{childList:true,subtree:true});
+})();
+/* ===== زر/إيماءة الرجوع (3.10v): ترجع خطوة داخل البرنامج بدل ما تطلع منه =====
+   نخلي دائمًا سجل «حارس» فوق الصفحة. لما ينسحب الرجوع نسد آخر شي مفتوح ونرجّع الحارس.
+   كروم يتجاهل السجلات المضافة بدون لمس، فنضيفه أول ما المستخدم يلمس الشاشة. */
+(function(){
+var onGuard=false,lastExit=0;
+function V(id){var e=$(id);return !!(e&&!e.hidden)}
+function push(){try{history.pushState({wdg:Date.now()},"");onGuard=true}catch(e){}}
+function backStep(){
+ if(V("xiv")){$("xiv").hidden=true;return true}
+ if(V("md")){(!$("mno").hidden?$("mno"):$("mok")).click();return true}
+ var M=[["vm","vmx"],["cm","cmX"],["wm","wno"],["lotm","lotX"],["xm",null],["apm","apX"],["al","alx"],["bkm","bkx"],["hs","hx"]];
+ for(var i=0;i<M.length;i++){if(V(M[i][0])){if(M[i][1])$(M[i][1]).click();else{$(M[i][0]).hidden=true;$("xmb").innerHTML=""}return true}}
+ if(V("login"))return false;
+ if(V("xv")){$("xHome").click();return true}
+ if(V("home"))return false;
+ if(S.role){if(S.edit){toggleEdit();return true}showHome();return true}
+ return false}
+window.addEventListener("popstate",function(){onGuard=false;
+ if(backStep()){push();return}
+ var now=Date.now();if(now-lastExit<2500){try{history.back()}catch(e){}return}
+ lastExit=now;toast("اسحب مرة ثانية حتى تطلع من البرنامج");push()});
+document.addEventListener("pointerdown",function(){if(!onGuard)push()},true);
+document.addEventListener("keydown",function(){if(!onGuard)push()},true);
 })();
 tick();load();clStart();renderAll();upd();drawLog();dayCheck();showLogin();setInterval(function(){tick();dayCheck()},15000);
 </script>
