@@ -478,7 +478,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 4.6v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 4.7v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -524,7 +524,7 @@ button.flash{animation:flash .5s ease-out}
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
 <button class="hmv" id="hmOrg" hidden title="الاسم اللي ينكتب بأعلى ملفات PDF وExcel"></button>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">4.6v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">4.7v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -583,7 +583,7 @@ button.flash{animation:flash .5s ease-out}
 </section>
 </div></div>
 <div id="sv" hidden><div class="xw">
-<div class="x-top"><button id="spHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1>الموردين والديون</h1><div id="spClock"></div></div><button id="spExp">📊 Excel</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
+<div class="x-top"><button id="spHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1>الموردين والديون</h1><div id="spClock"></div></div><button id="spExp">📊 Excel</button><button id="spPdf">📄 PDF</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
 <div id="spList">
 <section id="spSum"></section>
 <section class="x-pbox sp-od" id="spOd" hidden></section>
@@ -615,7 +615,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">4.6v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">4.7v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -640,13 +640,11 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 4.6v Online</div><div class="vd">تاريخ التحديث: 13/10/2026</div>
+<div class="vh">ℹ️ 4.7v Online</div><div class="vd">تاريخ التحديث: 13/10/2026</div>
 <ul class="vl">
-<li><b>📄 الصادر اليومي PDF:</b> من 📅 «الأيام السابقة» ← «تصدير فترة» تختار من تاريخ لتاريخ وتضغط «📄 تصدير PDF للفترة». يطلع تقرير مرتب: مجموع كل مادة، الصادر يوم بيوم (الوقت، المادة، العدد، الموظف، الكلفة)، وحسب الموظف.</li>
-<li><b>📄 المصاريف اليومية PDF:</b> بتقرير الخزينة اختار الفترة ونوع التقرير واضغط «📄 تصدير PDF»: حسب النوع، المصاريف يوم بيوم (اشترى، انطى، المؤقت)، وحسب اللي اشترى.</li>
-<li><b>🏥 ترويسة بكل ملف:</b> اسم العيادة و«قسم الحسابات · Acc: Ihab S. Ahmed» ينكتبون بأعلى كل PDF وExcel (حتى كشف حساب المورد). تغيّرهم من «🏥 ترويسة الملفات» بشاشة البرامج.</li>
+<li><b>📄 قوائم الموردين PDF:</b> بشاشة «الموردين والديون» يم زر Excel صار زر «📄 PDF». يطلع تقرير مرتب بيه: ملخص كل مورد (مجموع القوائم، المسدد، غير المسدد)، القوائم المتأخرة، وكل القوائم حسب المورد ويه حالتها «✓ تم التسديد» أو «غير مسدد» وتاريخ التسديد.</li>
 </ul>
-<div class="vold"><b>4.5v Online</b>: زر «💵 تسديد» تحت القوائم غير المسددة.<br><b>4.4v Online</b>: التسديد صار على نفس القائمة (✓ تم التسديد / غير مسدد)، وكشف الحساب قائمة بقائمة.<br><b>4.3v Online</b>: قوائم الموردين من Google Sheets، والتاريخ تكتبه باليد أو تختاره من 📅.<br><b>4.2v Online</b>: كشف حساب PDF، تصفير قوائم الموردين، تفاصيل القائمة، والقوائم المسددة بالأخضر.<br><b>4.1v Online</b>: تصوير القائمة ووصل الدفع أول شي بالنوافذ، واستيراد الموردين من Google Sheets.<br><b>4.0v Online</b>: برنامج «الموردين والديون»: قوائم الموردين والتسديدات وكشف الحساب والمتأخرة.<br><b>3.10v Online</b>: الرجوع ما يطلع من البرنامج، وأبعاد تناسب الموبايل والتاب والويندوز.<br><b>3.9v Online</b>: تعديل وحذف المصاريف بأزرار واضحة، قائمة «كل المصاريف» ويه بحث وفلترة، وتصحيح نافذة التعديل.<br><b>3.8v Online</b>: وجبات الشراء — الباقي القديم ينسحب بسعره القديم قبل الجديد.<br><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
+<div class="vold"><b>4.6v Online</b>: الصادر اليومي والمصاريف اليومية PDF لفترة، وترويسة العيادة وقسم الحسابات بكل ملف.<br><b>4.5v Online</b>: زر «💵 تسديد» تحت القوائم غير المسددة.<br><b>4.4v Online</b>: التسديد صار على نفس القائمة (✓ تم التسديد / غير مسدد)، وكشف الحساب قائمة بقائمة.<br><b>4.3v Online</b>: قوائم الموردين من Google Sheets، والتاريخ تكتبه باليد أو تختاره من 📅.<br><b>4.2v Online</b>: كشف حساب PDF، تصفير قوائم الموردين، تفاصيل القائمة، والقوائم المسددة بالأخضر.<br><b>4.1v Online</b>: تصوير القائمة ووصل الدفع أول شي بالنوافذ، واستيراد الموردين من Google Sheets.<br><b>4.0v Online</b>: برنامج «الموردين والديون»: قوائم الموردين والتسديدات وكشف الحساب والمتأخرة.<br><b>3.10v Online</b>: الرجوع ما يطلع من البرنامج، وأبعاد تناسب الموبايل والتاب والويندوز.<br><b>3.9v Online</b>: تعديل وحذف المصاريف بأزرار واضحة، قائمة «كل المصاريف» ويه بحث وفلترة، وتصحيح نافذة التعديل.<br><b>3.8v Online</b>: وجبات الشراء — الباقي القديم ينسحب بسعره القديم قبل الجديد.<br><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -839,7 +837,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="4.6";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="4.7";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1446,7 +1444,7 @@ function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0e7c86",INK="#14202
    (o.info||[]).forEach(function(t){tb.appendChild(pe("div","font-size:13px;margin-top:2px;opacity:.85",t))});
    pg.appendChild(tb);
    if(o.cards&&o.cards.length){var cs=pe("div","display:flex;gap:10px;margin:14px 0 4px");
-    o.cards.forEach(function(c){cs.appendChild(pe("div","flex:1;min-width:0;border:1.5px solid "+LINE+";border-radius:12px;padding:10px 14px;background:"+(c[3]||"#fff"),null,[pe("div","font-size:12px;color:"+MUT+";font-weight:600",c[0]),pe("div","font-size:20px;font-weight:800;margin-top:3px;direction:ltr;text-align:right;color:"+(c[2]||INK),c[1])]))});
+    o.cards.forEach(function(c){cs.appendChild(pe("div","flex:1;min-width:0;border:1.5px solid "+LINE+";border-radius:12px;padding:10px 14px;background:"+(c[3]||"#fff"),null,[pe("div","font-size:12px;color:"+MUT+";font-weight:600",c[0]),pe("div","font-size:"+(String(c[1]).length>13?17:20)+"px;font-weight:800;margin-top:3px;direction:ltr;text-align:right;white-space:nowrap;color:"+(c[2]||INK),c[1])]))});
     pg.appendChild(cs)}}
   else pg.appendChild(pe("div","display:flex;justify-content:space-between;gap:12px;border-bottom:2px solid "+TEAL+";padding-bottom:8px;font-size:14px",null,[pe("b","color:"+TEAL,o.title),pe("span","color:"+MUT,g.n||"")]));
   host.appendChild(pg);pages.push(pg)}
@@ -2102,6 +2100,27 @@ g("spEdit").onclick=function(){supForm(P.sid)};
 g("spQ").addEventListener("input",function(){P.q=g("spQ").value;drawList()});
 g("spDebt").onclick=function(){P.all=false;drawList()};g("spAll").onclick=function(){P.all=true;drawList()};
 g("spExp").onclick=expAll;
+/* 4.7v: كل قوائم الموردين PDF — ملخص الموردين، المتأخرة، وكل القوائم حسب المورد ويه حالتها */
+function pdfAll(){var L=sups().map(function(s){return {s:s,a:acct(s.id)}}).filter(function(x){return x.a.M.length});
+ if(!L.length){toast("ما أكو قوائم حتى تتصدر");return}
+ ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",TEAL="#0e7c86",D="—",ti=0,tp=0,tb=0,nu=0,ni=0,deb=0;
+ L.sort(function(x,y){return y.a.bal-x.a.bal||x.s.n.localeCompare(y.s.n,"ar")});
+ var s1={h:"🏪 ملخص الموردين",cols:[{h:"#",w:28},{h:"المورد"},{h:"القوائم",w:70,a:"c",n:1},{h:"مجموع القوائم",w:112,a:"l",n:1},{h:"✓ المسدد",w:112,a:"l",n:1},{h:"غير المسدد",w:112,a:"l",n:1}],rows:[]};
+ L.forEach(function(x,i){var a=x.a,un=a.M.filter(function(m){return !m.paid}).length;ti+=a.ti;tp+=a.tp;tb+=a.bal;nu+=un;ni+=a.M.length;if(a.bal>0)deb++;
+  s1.rows.push({c:[String(i+1),{t:x.s.n,b:1,s:[x.s.ph,un?un+" غير مسددة":"كلها مسددة"].filter(Boolean).join(" · ")},String(a.M.length),fmn(a.ti),{t:fmn(a.tp),col:OK},a.bal>0?{t:fmn(a.bal),col:BAD,b:1}:{t:"✓ مسدد",col:OK,b:1}]})});
+ s1.rows.push({k:"tot",c:["","المجموع ("+L.length+" مورد)",String(ni),fmn(ti),{t:fmn(tp),col:OK},{t:fmn(tb),col:BAD}]});
+ var od=allOverdue(),s2={h:"⏰ القوائم المتأخرة (فات موعد تسديدها)",cols:[{h:"المورد"},{h:"رقم القائمة",w:90},{h:"تاريخ القائمة",w:96,n:1},{h:"موعد التسديد",w:96,n:1},{h:"المبلغ",w:112,a:"l",n:1}],rows:[]};
+ od.forEach(function(o){s2.rows.push({c:[{t:o.s.n,b:1},o.m.no||D,dmy(o.m.date),{t:dmy(o.m.due),col:BAD,b:1},{t:fmn(o.rem),col:BAD,b:1}]})});
+ if(od.length)s2.rows.push({k:"tot",c:["المجموع ("+od.length+" قائمة)","","","",{t:fmn(od.reduce(function(t,o){return t+o.rem},0)),col:BAD}]});
+ var s3={h:"🧾 كل القوائم حسب المورد",cols:[{h:"التاريخ",w:80,n:1},{h:"القائمة"},{h:"الحالة",w:100},{h:"التسديد",w:126},{h:"المبلغ",w:100,a:"l",n:1}],rows:[]};
+ function cut(t,n){t=(t||"").trim();return t.length>n?t.slice(0,n-1)+"…":t}
+ L.forEach(function(x){var a=x.a;s3.rows.push({k:"grp",c:["🏪 "+x.s.n,a.bal>0?"غير مسدد: "+fmn(a.bal):"✓ كله مسدد"]});
+  a.M.forEach(function(m){var st=a.st[m.id]||{};s3.rows.push({bg:m.paid?"#f3faf5":"",c:[dmy(m.date),{t:"قائمة"+(m.no?" رقم "+m.no:""),b:1,s:[m.note,!m.paid&&m.due?"موعدها "+dmy(m.due):""].filter(Boolean).join(" · ")},
+   m.paid?{t:"✓ تم التسديد",pill:[OK,"#eef8f1"]}:{t:st.late?"⏰ متأخرة":"غير مسدد",pill:[BAD,"#fdf1ef"]},m.paid?{t:m.pdate?dmy(m.pdate):D,col:OK,s:[m.pm,cut(m.pnote,34)].filter(Boolean).join(" · ")}:{t:D,col:"#9aa7b1"},{t:fmn(m.amount),b:1,col:m.paid?OK:BAD}]})})});
+ pdfReport({title:"تقرير قوائم الموردين والديون",sub:"لغاية "+wd(tdy())+" "+dmy(tdy()),info:[L.length+" مورد · "+ni+" قائمة · "+nu+" غير مسددة"+(od.length?" · "+od.length+" متأخرة":"")],
+  cards:[["مجموع القوائم",fmn(ti)+" د.ع"],["✓ تم التسديد",fmn(tp)+" د.ع",OK,"#eef8f1"],["غير مسدد (الباقي عليك)",fmn(tb)+" د.ع",BAD,"#fdf1ef"],["موردين عليهم دين",String(deb),TEAL]],
+  secs:[s1,s2,s3],name:"قوائم الموردين - "+tdy()})})}
+g("spPdf").onclick=pdfAll;
 })();
 
 
