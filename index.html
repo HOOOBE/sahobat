@@ -478,7 +478,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 4.5v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 4.6v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -512,7 +512,7 @@ button.flash{animation:flash .5s ease-out}
 <div class="md" id="hs" hidden><div class="mb hb"><div class="hnav"><button id="hprev" class="mini" title="الشهر السابق">▶</button><b id="hmon"></b><button id="hnext" class="mini" title="الشهر التالي">◀</button></div><div id="hcal"></div><div id="hday"></div>
 <div id="rng" hidden><b>🧮 تصدير فترة (المحاسب)</b>
 <div class="rr"><span style="width:34px">من</span><input type="date" id="rf"></div><div class="rr"><span style="width:34px">إلى</span><input type="date" id="rt"></div>
-<button id="rexp" style="width:100%;margin-top:8px;font-weight:800">📊 تصدير ملف Excel للفترة</button></div><div class="row" style="margin-top:12px"><button id="hexp" hidden>تصدير هذا اليوم Excel</button><button id="hx">إغلاق</button></div></div></div>
+<button id="rpdf" style="width:100%;margin-top:8px;font-weight:800">📄 تصدير PDF للفترة (الصادر اليومي)</button><button id="rexp" style="width:100%;margin-top:8px;font-weight:800">📊 تصدير ملف Excel للفترة</button></div><div class="row" style="margin-top:12px"><button id="hexp" hidden>تصدير هذا اليوم Excel</button><button id="hx">إغلاق</button></div></div></div>
 <div class="md" id="bkm" hidden><div class="mb"><div id="bkt" style="font-weight:700;margin-bottom:12px;line-height:1.6;white-space:pre-line"></div>
 <button id="bksh" class="go" style="width:100%;margin-bottom:8px">📤 إرسال النسخة للواتساب</button>
 <button id="bkd" style="width:100%;margin-bottom:8px;font-weight:700">💾 تنزيل النسخة على الجهاز</button>
@@ -523,7 +523,8 @@ button.flash{animation:flash .5s ease-out}
 <div class="hmt"><h1>البرامج<small id="hmWho"></small></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">4.5v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="hmOrg" hidden title="الاسم اللي ينكتب بأعلى ملفات PDF وExcel"></button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">4.6v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -575,7 +576,7 @@ button.flash{animation:flash .5s ease-out}
 </div>
 <section class="x-card" id="xRep" hidden aria-labelledby="xhRep">
 <h2 id="xhRep">تقرير الخزينة</h2>
-<div class="x-rf"><label class="x-rtl">نوع التقرير <select class="x-fld" id="xRType" aria-label="نوع التقرير"></select></label><label>من <input class="x-fld" type="date" id="xFrom" data-ph="من البداية"></label><label>إلى <input class="x-fld" type="date" id="xTo" data-ph="لحد الآن"></label><button id="xAll">كل الخزينة</button><button id="xMon">هذا الشهر</button><button class="pri" id="xExp">تصدير Excel</button></div>
+<div class="x-rf"><label class="x-rtl">نوع التقرير <select class="x-fld" id="xRType" aria-label="نوع التقرير"></select></label><label>من <input class="x-fld" type="date" id="xFrom" data-ph="من البداية"></label><label>إلى <input class="x-fld" type="date" id="xTo" data-ph="لحد الآن"></label><button id="xAll">كل الخزينة</button><button id="xMon">هذا الشهر</button><button class="pri" id="xExp">تصدير Excel</button><button class="pri" id="xPdf">📄 تصدير PDF</button></div>
 <div class="x-rnote" id="xRNote" hidden></div><div class="x-tot" id="xTot"></div>
 <div class="x-rgrid"><div><h3 style="margin-top:0">حسب نوع المصروف</h3><div class="x-tb" id="xRTypes"></div><h3>حسب اللي اشترى</h3><div class="x-tw"><table><thead><tr><th>الاسم</th><th class="r">العدد</th><th class="r">المبلغ</th><th class="r">منها مؤقت</th></tr></thead><tbody id="xRBuy"></tbody></table></div></div>
 <div><h3 style="margin-top:0">حسب اليوم</h3><div class="x-tw"><table><thead><tr><th>اليوم</th><th class="r">العدد</th><th class="r">المصروف</th></tr></thead><tbody id="xRDays"></tbody><tfoot id="xRDaysF"></tfoot></table></div></div></div>
@@ -614,7 +615,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">4.5v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">4.6v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -639,11 +640,13 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 4.5v Online</div><div class="vd">تاريخ التحديث: 13/10/2026</div>
+<div class="vh">ℹ️ 4.6v Online</div><div class="vd">تاريخ التحديث: 13/10/2026</div>
 <ul class="vl">
-<li><b>💵 زر «تسديد»:</b> الزر اللي تحت القائمة غير المسددة صار اسمه «تسديد» (بدل «تم التسديد») حتى تفرق بينه وبين حالة القائمة. «✓ تم التسديد» بالأخضر يعني القائمة مسددة، و«غير مسدد» بالأحمر يعني بعدها.</li>
+<li><b>📄 الصادر اليومي PDF:</b> من 📅 «الأيام السابقة» ← «تصدير فترة» تختار من تاريخ لتاريخ وتضغط «📄 تصدير PDF للفترة». يطلع تقرير مرتب: مجموع كل مادة، الصادر يوم بيوم (الوقت، المادة، العدد، الموظف، الكلفة)، وحسب الموظف.</li>
+<li><b>📄 المصاريف اليومية PDF:</b> بتقرير الخزينة اختار الفترة ونوع التقرير واضغط «📄 تصدير PDF»: حسب النوع، المصاريف يوم بيوم (اشترى، انطى، المؤقت)، وحسب اللي اشترى.</li>
+<li><b>🏥 ترويسة بكل ملف:</b> اسم العيادة و«قسم الحسابات · Acc: Ihab S. Ahmed» ينكتبون بأعلى كل PDF وExcel (حتى كشف حساب المورد). تغيّرهم من «🏥 ترويسة الملفات» بشاشة البرامج.</li>
 </ul>
-<div class="vold"><b>4.4v Online</b>: التسديد صار على نفس القائمة (✓ تم التسديد / غير مسدد)، وكشف الحساب قائمة بقائمة.<br><b>4.3v Online</b>: قوائم الموردين من Google Sheets، والتاريخ تكتبه باليد أو تختاره من 📅.<br><b>4.2v Online</b>: كشف حساب PDF، تصفير قوائم الموردين، تفاصيل القائمة، والقوائم المسددة بالأخضر.<br><b>4.1v Online</b>: تصوير القائمة ووصل الدفع أول شي بالنوافذ، واستيراد الموردين من Google Sheets.<br><b>4.0v Online</b>: برنامج «الموردين والديون»: قوائم الموردين والتسديدات وكشف الحساب والمتأخرة.<br><b>3.10v Online</b>: الرجوع ما يطلع من البرنامج، وأبعاد تناسب الموبايل والتاب والويندوز.<br><b>3.9v Online</b>: تعديل وحذف المصاريف بأزرار واضحة، قائمة «كل المصاريف» ويه بحث وفلترة، وتصحيح نافذة التعديل.<br><b>3.8v Online</b>: وجبات الشراء — الباقي القديم ينسحب بسعره القديم قبل الجديد.<br><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
+<div class="vold"><b>4.5v Online</b>: زر «💵 تسديد» تحت القوائم غير المسددة.<br><b>4.4v Online</b>: التسديد صار على نفس القائمة (✓ تم التسديد / غير مسدد)، وكشف الحساب قائمة بقائمة.<br><b>4.3v Online</b>: قوائم الموردين من Google Sheets، والتاريخ تكتبه باليد أو تختاره من 📅.<br><b>4.2v Online</b>: كشف حساب PDF، تصفير قوائم الموردين، تفاصيل القائمة، والقوائم المسددة بالأخضر.<br><b>4.1v Online</b>: تصوير القائمة ووصل الدفع أول شي بالنوافذ، واستيراد الموردين من Google Sheets.<br><b>4.0v Online</b>: برنامج «الموردين والديون»: قوائم الموردين والتسديدات وكشف الحساب والمتأخرة.<br><b>3.10v Online</b>: الرجوع ما يطلع من البرنامج، وأبعاد تناسب الموبايل والتاب والويندوز.<br><b>3.9v Online</b>: تعديل وحذف المصاريف بأزرار واضحة، قائمة «كل المصاريف» ويه بحث وفلترة، وتصحيح نافذة التعديل.<br><b>3.8v Online</b>: وجبات الشراء — الباقي القديم ينسحب بسعره القديم قبل الجديد.<br><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -669,12 +672,12 @@ function today(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)
 function tick(){var d=new Date();$("clock").textContent=fd(d)+" · "+ft(d)}
 S.day=today();S.exp=false;S.freq={};S.prev=null;S.hist=[];
 function load(){try{var v=JSON.parse(localStorage.getItem("wd_state")||"null");if(v){S.emps=v.emps||S.emps;S.emp=v.emp||null;S.log=v.log||[];S.pin=v.pin||"";S.stock=v.stock||{};S.thr=(typeof v.thr==="number")?v.thr:5;if(v.cats&&v.cats.length)S.cats=v.cats;
- S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.xpw=(v.xpw&&typeof v.xpw==="object")?v.xpw:{};S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];S.apps=Array.isArray(v.apps)?v.apps:null;S.ext=(v.ext&&typeof v.ext==="object")?v.ext:{};S.exe=(v.exe&&typeof v.exe==="object")?v.exe:{};S.exs=v.exs||null;S.lots=(v.lots&&typeof v.lots==="object")?v.lots:{};S.sup=(v.sup&&typeof v.sup==="object")?v.sup:{};S.spimp=v.spimp||null;S.spreset=v.spreset||null;S.spmig=v.spmig||null;S.smv=(v.smv&&typeof v.smv==="object")?v.smv:{};
+ S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.xpw=(v.xpw&&typeof v.xpw==="object")?v.xpw:{};S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];S.apps=Array.isArray(v.apps)?v.apps:null;S.ext=(v.ext&&typeof v.ext==="object")?v.ext:{};S.exe=(v.exe&&typeof v.exe==="object")?v.exe:{};S.exs=v.exs||null;S.lots=(v.lots&&typeof v.lots==="object")?v.lots:{};S.sup=(v.sup&&typeof v.sup==="object")?v.sup:{};S.spimp=v.spimp||null;S.spreset=v.spreset||null;S.spmig=v.spmig||null;S.org=(v.org&&typeof v.org==="object")?v.org:null;S.smv=(v.smv&&typeof v.smv==="object")?v.smv:{};
  if(!v.hist&&S.prev&&S.prev.log)S.hist.push({day:S.prev.day,log:S.prev.log});
  if(v.freq){S.freq=v.freq}else{S.log.forEach(function(x){S.freq[x.i]=(S.freq[x.i]||0)+1})}
  if(v.day){S.day=v.day}else{var d=today(),old=S.log.filter(function(x){return x.d!==d});if(old.length)S.hist.push({day:old[0].d,log:old});S.log=S.log.filter(function(x){return x.d===d});S.day=d}}}catch(e){}}
 function save(){FC={};saveLocal();clPush()}
-function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd,xpw:S.xpw,apps:S.apps||null,ext:S.ext,exe:S.exe,exs:S.exs||null,lots:S.lots,sup:S.sup,smv:S.smv,spimp:S.spimp||null,spreset:S.spreset||null,spmig:S.spmig||null}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
+function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd,xpw:S.xpw,apps:S.apps||null,ext:S.ext,exe:S.exe,exs:S.exs||null,lots:S.lots,sup:S.sup,smv:S.smv,spimp:S.spimp||null,spreset:S.spreset||null,spmig:S.spmig||null,org:S.org||null}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
 function dayLbl(v){var p=v.split("-");return p[2]+"/"+p[1]+"/"+p[0]}
 function hasSt(n){return typeof S.stock[n]==="number"}
 function stLeft(n){return hasSt(n)?S.stock[n]:Infinity}
@@ -836,7 +839,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="4.5";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="4.6";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -871,12 +874,14 @@ $("undo").onclick=function(){if(!S.prev||S.log.length)return;
  sure("استرجاع سحوبات يوم "+dayLbl(S.prev.day)+" كيوم حالي؟",function(){var h=S.hist.pop();if(!h)return;S.log=h.log;S.day=h.day;S.exp=S.prev.exp;S.prev=null;save();drawAcc();upd();drawLog();dayCheck();toast("تم التراجع")})};
 function xe(v){return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
 function colL(i){return String.fromCharCode(65+i)}
-function sheetXml(rows,w,total,bd,mc){
- var x='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView rightToLeft="1" workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>';
+function sheetXml(rows,w,total,bd,mc){var OL=typeof orgLines==="function"?orgLines():[],K=OL.length?OL.length+1:0;
+ var x='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView rightToLeft="1" workbookViewId="0"><pane ySplit="'+(K+1)+'" topLeftCell="A'+(K+2)+'" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>';
  w.forEach(function(n,i){x+='<col min="'+(i+1)+'" max="'+(i+1)+'" width="'+n+'" customWidth="1"/>'});
  x+='</cols><sheetData>';
- rows.forEach(function(r,ri){x+='<row r="'+(ri+1)+'">';
-  r.forEach(function(v,ci){var ref=colL(ci)+(ri+1),st=ri===0?1:((total&&ri===rows.length-1)||(bd&&bd.indexOf(ri)>-1)?2:0);if(ri>0&&typeof v==="number"&&mc&&mc.indexOf(ci)>-1)st=st===2?4:3;var sa=st?' s="'+st+'"':'';
+ /* 4.6v: ترويسة: اسم العيادة + القسم والمحاسب */
+ OL.forEach(function(t,i){x+='<row r="'+(i+1)+'"'+(i?'':' ht="24" customHeight="1"')+'><c r="A'+(i+1)+'" s="'+(i?6:5)+'" t="inlineStr"><is><t>'+xe(t)+'</t></is></c></row>'});
+ rows.forEach(function(r,ri){x+='<row r="'+(ri+1+K)+'">';
+  r.forEach(function(v,ci){var ref=colL(ci)+(ri+1+K),st=ri===0?1:((total&&ri===rows.length-1)||(bd&&bd.indexOf(ri)>-1)?2:0);if(ri>0&&typeof v==="number"&&mc&&mc.indexOf(ci)>-1)st=st===2?4:3;var sa=st?' s="'+st+'"':'';
    if(typeof v==="number")x+='<c r="'+ref+'"'+sa+'><v>'+v+'</v></c>';
    else x+='<c r="'+ref+'"'+sa+' t="inlineStr"><is><t>'+xe(v)+'</t></is></c>'});
   x+='</row>'});
@@ -897,13 +902,13 @@ function buildXlsx(sheets){var H='<?xml version="1.0" encoding="UTF-8" standalon
  f.push({n:"_rels/.rels",d:H+'<Relationships xmlns="'+N+'package/2006/relationships"><Relationship Id="rId1" Type="'+N+'officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>'});
  f.push({n:"xl/workbook.xml",d:H+'<workbook xmlns="'+N+'spreadsheetml/2006/main" xmlns:r="'+N+'officeDocument/2006/relationships"><sheets>'+sheets.map(function(sh,i){return'<sheet name="'+xe(sh.name)+'" sheetId="'+(i+1)+'" r:id="rId'+(i+1)+'"/>'}).join("")+'</sheets></workbook>'});
  f.push({n:"xl/_rels/workbook.xml.rels",d:H+'<Relationships xmlns="'+N+'package/2006/relationships">'+sheets.map(function(_,i){return'<Relationship Id="rId'+(i+1)+'" Type="'+N+'officeDocument/2006/relationships/worksheet" Target="worksheets/sheet'+(i+1)+'.xml"/>'}).join("")+'<Relationship Id="rId'+(sheets.length+1)+'" Type="'+N+'officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>'});
- f.push({n:"xl/styles.xml",d:H+'<styleSheet xmlns="'+N+'spreadsheetml/2006/main"><numFmts count="1"><numFmt numFmtId="164" formatCode="#,##0 &quot;IQD&quot;"/></numFmts><fonts count="2"><font><sz val="12"/><name val="Arial"/></font><font><b/><sz val="12"/><name val="Arial"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFD9EEF0"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="5"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment horizontal="center"/></xf><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/><xf numFmtId="164" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1"/><xf numFmtId="164" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1" applyNumberFormat="1"/></cellXfs></styleSheet>'});
+ f.push({n:"xl/styles.xml",d:H+'<styleSheet xmlns="'+N+'spreadsheetml/2006/main"><numFmts count="1"><numFmt numFmtId="164" formatCode="#,##0 &quot;IQD&quot;"/></numFmts><fonts count="4"><font><sz val="12"/><name val="Arial"/></font><font><b/><sz val="12"/><name val="Arial"/></font><font><b/><sz val="16"/><color rgb="FF0E7C86"/><name val="Arial"/></font><font><sz val="11"/><color rgb="FF5F6F7C"/><name val="Arial"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFD9EEF0"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="7"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment horizontal="center"/></xf><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/><xf numFmtId="164" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1"/><xf numFmtId="164" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1" applyNumberFormat="1"/><xf numFmtId="0" fontId="2" fillId="0" borderId="0" xfId="0" applyFont="1"/><xf numFmtId="0" fontId="3" fillId="0" borderId="0" xfId="0" applyFont="1"/></cellXfs></styleSheet>'});
  sheets.forEach(function(sh,i){f.push({n:"xl/worksheets/sheet"+(i+1)+".xml",d:sheetXml(sh.rows,sh.w,sh.total,sh.bold,sh.mc)})});
  return zipBlob(f)}
 var XM="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 function mkFile(parts,name,type){try{return new File(parts,name,{type:type})}catch(e){return null}}
 function canShareF(f){try{return !!(f&&navigator.canShare&&navigator.share&&navigator.canShare({files:[f]}))}catch(e){return false}}
-function pickExport(sheets,name,after){doExport(buildXlsx(sheets),name);if(after)setTimeout(after,600)}
+function pickExport(sheets,name,after){ensureOrg(function(){doExport(buildXlsx(sheets),name);if(after)setTimeout(after,600)})}
 function doExport(blob,name){try{var u=URL.createObjectURL(blob);var l=document.createElement("a");l.href=u;l.download=name;document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},2000);toast("تم تنزيل ملف Excel")}catch(e){toast("تعذّر التصدير")}}
 $("exp").onclick=function(){exportDay()};
 function exportDay(after){
@@ -1008,7 +1013,7 @@ $("rsf").onchange=function(){var f=this.files&&this.files[0];if(!f)return;var r=
   var st=o&&o.app==="wd"&&o.state;if(!st||!st.cats){toast("هذا ليس ملف نسخة احتياطية للبرنامج");return}
   var n=(st.log||[]).length;(st.hist||[]).forEach(function(h){n+=h.log.length});
   sure("استرجاع نسخة "+fd(new Date(o.at))+" · "+ft(new Date(o.at))+"؟\n("+n+" سجل سحب)\n⚠ ستُستبدل كل البيانات الحالية على هذا الجهاز بالنسخة.",function(){
-   try{if(!("ext" in st)){st.ext=S.ext;st.exe=S.exe;st.exs=S.exs}if(!("sup" in st)){st.sup=S.sup;st.smv=S.smv;st.spimp=S.spimp;st.spreset=S.spreset;st.spmig=S.spmig}localStorage.setItem("wd_state",JSON.stringify(st));location.reload()}catch(e){toast("تعذّر الاسترجاع")}})};
+   try{if(!("ext" in st)){st.ext=S.ext;st.exe=S.exe;st.exs=S.exs}if(!("sup" in st)){st.sup=S.sup;st.smv=S.smv;st.spimp=S.spimp;st.spreset=S.spreset;st.spmig=S.spmig}if(!("org" in st))st.org=S.org;localStorage.setItem("wd_state",JSON.stringify(st));location.reload()}catch(e){toast("تعذّر الاسترجاع")}})};
  r.readAsText(f)};
 try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
 /* ===== المستخدمون والكلفة ===== */
@@ -1203,7 +1208,7 @@ $("xpb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("⏳ تحذ�
  function fin(){save();renderAll();upd();xpSync();toast("✔ التحذير قبل "+S.xpd+" يوم من الانتهاء"+(own.length&&Object.keys(S.xpw).length?"\n(عدا "+Object.keys(S.xpw).length+" مادة إلها تحذير خاص ⏰)":""))}
  if(!own.length){S.xpw={};fin();return}
  setTimeout(function(){dlg("صار التحذير العام "+S.xpd+" يوم.\n\nأكو "+own.length+" مادة إلها تحذير خاص ⏰:\n"+own.slice(0,6).map(function(k){return "• "+k+" ("+S.xpw[k]+" يوم)"}).join("\n")+(own.length>6?"\n…":"")+"\n\nتريد تطبق "+S.xpd+" يوم عليهن هم؟\n«موافق» = كل المواد نفس الرقم\n«إلغاء» = يبقن على رقمهن الخاص","",false,function(ok){if(ok)S.xpw={};fin()})},60)})};
-$("rexp").onclick=function(){exportRange($("rf").value,$("rt").value)};
+$("rexp").onclick=function(){exportRange($("rf").value,$("rt").value)};$("rpdf").onclick=function(){pdfRange($("rf").value,$("rt").value)};
 $("dayb").onclick=function(){$("clr").onclick()};
 window.addEventListener("storage",function(e){if(e.key!=="wd_state"||!e.newValue)return;load();if(S.role){renderAll();upd();drawLog()}dayCheck()});
 document.addEventListener("visibilitychange",function(){if(!document.hidden){tick();dayCheck()}});
@@ -1219,8 +1224,8 @@ var FBV="https://www.gstatic.com/firebasejs/12.19.0/";
 /* مشروع Firebase الخاص بالعيادة (هذه معرّفات عامة وليست باسوورد — الحماية برمز الربط السري) */
 var FBCFG={apiKey:"AIzaSyDNQ_O0nhh-FQlm_t2QeXQMi4t8BFMYvPg",authDomain:"sahobat-35dc1.firebaseapp.com",projectId:"sahobat-35dc1",storageBucket:"sahobat-35dc1.firebasestorage.app",messagingSenderId:"408946713435",appId:"1:408946713435:web:9d15ffaa5bb4e0e93df07e"};
 var CL={cfg:null,F:null,db:null,ref:null,mcol:null,base:null,sent:null,ready:false,exists:true,st:"",err:"",ce0:null,lastM:null,lastH:null,uns:[]};
-var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd","apps","exs","spimp","spreset","spmig"],CLM=["stock","xp","freq","logm","xpw","ext","exe","lots","sup","smv"];
-var CLD={emps:null,cats:null,day:null,thr:5,exp:false,prev:null,ce:null,cpub:null,ren:[],xpd:30,pin:"",apps:null,exs:null,spimp:null,spreset:null,spmig:null};
+var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd","apps","exs","spimp","spreset","spmig","org"],CLM=["stock","xp","freq","logm","xpw","ext","exe","lots","sup","smv"];
+var CLD={emps:null,cats:null,day:null,thr:5,exp:false,prev:null,ce:null,cpub:null,ren:[],xpd:30,pin:"",apps:null,exs:null,spimp:null,spreset:null,spmig:null,org:null};
 function srt(v){if(Array.isArray(v))return v.map(srt);if(v&&typeof v==="object"){var o={};Object.keys(v).sort().forEach(function(k){if(v[k]!==undefined)o[k]=srt(v[k])});return o}return v}
 function sStr(v){return JSON.stringify(srt(v===undefined?null:v))}
 function nrm(s){try{return sStr(JSON.parse(s))}catch(x){return sStr(null)}}
@@ -1362,7 +1367,7 @@ function tileFill(t,a){var g=GR[(a.c|0)%GR.length];t.style.setProperty("--g1",g[
 function okUrl(u){return /^https?:\/\/[^\s]+\.[^\s]+/i.test(u||"")}
 function showHome(){if(!S.role)return;S.hmEd=false;$("home").hidden=false;drawHome();$("home").scrollTop=0}
 function drawHome(){if(!S.role)return;var acc=ACC(),T=$("tiles");T.innerHTML="";
- $("hmWho").textContent=acc?"🧮 الحسابات":"👷 موظف";$("hmAdd").hidden=!acc;$("hmEd").hidden=!acc;if(!acc)S.hmEd=false;
+ $("hmWho").textContent=acc?"🧮 الحسابات":"👷 موظف";$("hmOrg").hidden=!acc;$("hmOrg").textContent="🏥 ترويسة الملفات: "+(org().n||"اكتب اسم العيادة")+" ✎";$("hmOrg").onclick=function(){orgForm(null,false)};$("hmAdd").hidden=!acc;$("hmEd").hidden=!acc;if(!acc)S.hmEd=false;
  $("hmEd").textContent=S.hmEd?"✔ تم":"✎ تعديل";$("hmEd").classList.toggle("on",!!S.hmEd);$("hmN").hidden=!S.hmEd;
  apps().forEach(function(a){if(!(a.w==="all"||a.w===S.role))return;
   var link=a.k==="link"&&!S.hmEd,t=document.createElement(link?"a":"button");t.className="tl";tileFill(t,a);
@@ -1398,6 +1403,116 @@ $("apOk").onclick=function(){var n=$("apN").value.trim();if(!n){toast("اكتب 
  if(nw)list.push(AP);else list=list.map(function(a){return a.id===AP.id?AP:a});
  S.apps=list;save();$("apm").hidden=true;drawHome();toast(nw?"✔ انضاف «"+n+"»":"✔ تم حفظ «"+n+"»")};
 $("apDel").onclick=function(){var a=AP;sure("حذف «"+a.n+"» من شاشة البرامج؟",function(){S.apps=apps().filter(function(x){return x.id!==a.id});save();$("apm").hidden=true;drawHome();toast("انحذف «"+a.n+"»")})};
+/* ===== ترويسة الملفات + تقارير PDF (4.6v) =====
+   S.org = {n:اسم العيادة, d:القسم, a:اسم المحاسب} — يتزامن ضمن CLJ، وينكتب بكل ملف PDF وExcel */
+var ORG_D={n:"",d:"قسم الحسابات",a:"Acc: Ihab S. Ahmed"};
+function org(){var o=S.org&&typeof S.org==="object"?S.org:{};return {n:(o.n||"").trim(),d:(o.d==null?ORG_D.d:o.d).trim(),a:(o.a==null?ORG_D.a:o.a).trim()}}
+function orgSub(){var o=org();return [o.d,o.a].filter(Boolean).join(" · ")}
+function orgLines(){var o=org();return [o.n,orgSub()].filter(Boolean)}
+function orgForm(cb,first){var U=XU,o=org(),f=U.el("div",{style:"display:flex;flex-direction:column;gap:12px"});
+ var n=U.el("input",{class:"x-fld",id:"orgN",autocomplete:"off",placeholder:"مثلًا: عيادة … التجميلية"}),d=U.el("input",{class:"x-fld",id:"orgD",autocomplete:"off"}),a=U.el("input",{class:"x-fld",id:"orgA",autocomplete:"off",dir:"ltr"});
+ n.value=o.n;d.value=o.d;a.value=o.a;
+ if(first)f.appendChild(U.el("p",{style:"margin:0;color:var(--mut)",text:"هذا الاسم ينكتب بأعلى كل ملف PDF وExcel. تكتبه مرة وحدة، وتگدر تغيّره بعدين من «🏥 ترويسة الملفات» بشاشة البرامج."}));
+ f.appendChild(U.el("label",{},["اسم العيادة",n]));f.appendChild(U.el("label",{},["القسم",d]));f.appendChild(U.el("label",{},["المحاسب (acc)",a]));
+ U.modal("🏥 ترويسة الملفات",f,[{t:first?"بعدين":"إلغاء",fn:function(){if(cb)setTimeout(cb,0)}},{t:"حفظ",cls:"ok",fn:function(){var nn=n.value.trim();if(!nn){toast("اكتب اسم العيادة");return false}
+  S.org={n:nn,d:d.value.trim(),a:a.value.trim()};save();if(typeof drawHome==="function"&&!$("home").hidden)drawHome();toast("✔ انحفظت ترويسة الملفات");if(cb)setTimeout(cb,0)}}]);
+ if(first)setTimeout(function(){n.focus()},80)}
+/* قبل أي تصدير: إذا اسم العيادة مو مكتوب، نسأل مرة (للحسابات بس) وبعدها نكمل التصدير بكل الأحوال */
+var orgAsked=false;
+function ensureOrg(cb){if(org().n||!ACC()||orgAsked||typeof XU==="undefined"){cb();return}orgAsked=true;orgForm(cb,true)}
+
+function wdN(s){try{var p=s.split("-");return new Date(+p[0],p[1]-1,+p[2]).toLocaleDateString("ar-IQ-u-nu-latn",{weekday:"long"})}catch(e){return ""}}
+function nfm(n){return Math.round(n||0).toLocaleString("en-US")}
+function pdfLib(src){return new Promise(function(res,rej){if(document.querySelector('script[data-lib="'+src+'"]'))return res();var x=document.createElement("script");x.src=src;x.dataset.lib=src;x.onload=function(){res()};x.onerror=function(){x.remove();rej(new Error(src))};document.head.appendChild(x)})}
+function pdfLibs(){return Promise.all([pdfLib("lib/html2canvas.min.js"),pdfLib("lib/jspdf.umd.min.js")])}
+function pe(t,st,txt,kids){var e=document.createElement(t);if(st)e.style.cssText=st;if(txt!=null)e.textContent=txt;(kids||[]).forEach(function(k){if(k)e.appendChild(k)});return e}
+/* تقرير PDF عام: o = {title, sub, info:[سطور], cards:[[عنوان,قيمة,لون,خلفية]], secs:[{h, cols:[{h,w,a:"l"|"c",n}], rows:[{c:[خلايا], k:"grp"|"tot"}]}], name}
+   الخلية: نص، أو {t, s:سطر صغير, col:لون, b:عريض, pill:[لون,خلفية]} */
+function pdfReport(o){toast("⏳ جارِ تجهيز ملف PDF…");
+ return pdfLibs().then(function(){return pdfBuild(o)}).then(function(r){pdfGive(r.blob,r.name)})
+  .catch(function(e){console.error(e);toast("تعذّر تجهيز الـ PDF\nإذا أول مرة، تأكد من الإنترنت وجرب مرة ثانية")})}
+function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0e7c86",INK="#14202b",MUT="#5f6f7c",LINE="#dde5ea",SOFT="#eef6f7";
+ var F='font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",Arial,sans-serif;';
+ var g=org(),sub=orgSub(),host=pe("div","position:fixed;left:-20000px;top:0;width:"+W+"px;z-index:-1;"+F);document.body.appendChild(host);
+ var now=new Date(),stamp=dmyG(today())+" · "+String(now.getHours()).padStart(2,"0")+":"+String(now.getMinutes()).padStart(2,"0");
+ var pages=[],pg=null;
+ function newPage(first){pg=pe("div","width:"+W+"px;height:"+H+"px;background:#fff;color:"+INK+";direction:rtl;box-sizing:border-box;padding:"+PAD+"px "+PAD+"px 74px;position:relative;overflow:hidden;"+F);
+  if(first){
+   var lh=pe("div","display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:12px;border-bottom:3px solid "+TEAL,null,[
+    pe("div","min-width:0",null,[pe("div","font-size:24px;font-weight:800;color:"+TEAL+";line-height:1.3",g.n||"العيادة"),sub?pe("div","font-size:14px;color:"+MUT+";font-weight:600;margin-top:2px",sub):null]),
+    pe("div","text-align:left;font-size:12px;color:"+MUT+";line-height:1.6;white-space:nowrap",null,[pe("div","","تاريخ الإصدار"),pe("div","font-size:14px;font-weight:700;color:"+INK,stamp)])]);
+   pg.appendChild(lh);
+   var tb=pe("div","background:"+TEAL+";color:#fff;border-radius:14px;padding:16px 22px;margin-top:14px",null,[pe("div","font-size:24px;font-weight:800;line-height:1.3",o.title),o.sub?pe("div","font-size:15px;margin-top:4px;opacity:.92",o.sub):null]);
+   (o.info||[]).forEach(function(t){tb.appendChild(pe("div","font-size:13px;margin-top:2px;opacity:.85",t))});
+   pg.appendChild(tb);
+   if(o.cards&&o.cards.length){var cs=pe("div","display:flex;gap:10px;margin:14px 0 4px");
+    o.cards.forEach(function(c){cs.appendChild(pe("div","flex:1;min-width:0;border:1.5px solid "+LINE+";border-radius:12px;padding:10px 14px;background:"+(c[3]||"#fff"),null,[pe("div","font-size:12px;color:"+MUT+";font-weight:600",c[0]),pe("div","font-size:20px;font-weight:800;margin-top:3px;direction:ltr;text-align:right;color:"+(c[2]||INK),c[1])]))});
+    pg.appendChild(cs)}}
+  else pg.appendChild(pe("div","display:flex;justify-content:space-between;gap:12px;border-bottom:2px solid "+TEAL+";padding-bottom:8px;font-size:14px",null,[pe("b","color:"+TEAL,o.title),pe("span","color:"+MUT,g.n||"")]));
+  host.appendChild(pg);pages.push(pg)}
+ function bottom(){var l=pg.lastElementChild;return l?l.getBoundingClientRect().bottom-pg.getBoundingClientRect().top:0}
+ function cell(v,col,k){var c=v&&typeof v==="object"?v:{t:v==null?"":String(v)};
+  var st="padding:"+(k==="grp"?"8px 8px":"7px 6px")+";vertical-align:top;overflow-wrap:anywhere;text-align:"+(col.a==="l"?"left":col.a==="c"?"center":"right")+";"+(col.n?"direction:ltr;white-space:nowrap;":"")+(c.b||col.b||k==="tot"?"font-weight:800;":"")+(c.col?"color:"+c.col+";":"");
+  var td=pe("td",st);
+  if(c.pill)td.appendChild(pe("span","display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:800;color:"+c.pill[0]+";background:"+c.pill[1],c.t));else td.appendChild(document.createTextNode(c.t));
+  if(c.s)td.appendChild(pe("div","color:"+MUT+";font-size:11px;font-weight:400;margin-top:1px;direction:rtl;white-space:normal",c.s));
+  return td}
+ function mkRow(r,sec,i){if(r.k==="grp"){var tr=pe("tr","background:"+SOFT+";border-top:2px solid "+TEAL);
+   var a=pe("td","padding:8px 8px;font-weight:800;color:"+TEAL+";font-size:14px",r.c[0]);a.colSpan=Math.max(1,sec.cols.length-(r.c[1]!=null?2:0));tr.appendChild(a);
+   if(r.c[1]!=null){var b=pe("td","padding:8px 8px;font-weight:800;text-align:left;color:"+INK+";font-size:13px",r.c[1]);b.colSpan=Math.min(2,sec.cols.length-1);tr.appendChild(b)}return tr}
+  var tr2=pe("tr",r.k==="tot"?"background:"+SOFT+";border-top:2px solid "+TEAL:"border-bottom:1px solid "+LINE+";"+(r.bg?"background:"+r.bg:(i%2?"":"background:#fafcfd")));
+  sec.cols.forEach(function(col,j){tr2.appendChild(cell(r.c[j],col,r.k))});return tr2}
+ function startSec(sec,cont){var w=pe("div","margin-top:"+(cont?"10px":"18px"));
+  w.appendChild(pe("div","font-size:16px;font-weight:800;color:"+INK+";margin-bottom:6px;padding-right:10px;border-right:4px solid "+TEAL,sec.h+(cont?" (تكملة)":"")));
+  var t=pe("table","width:100%;border-collapse:collapse;font-size:12.5px;table-layout:fixed"),hr=pe("tr","background:"+SOFT);
+  sec.cols.forEach(function(c){hr.appendChild(pe("th","padding:8px 6px;font-weight:800;color:"+TEAL+";border-bottom:2px solid "+TEAL+";text-align:"+(c.a==="l"?"left":c.a==="c"?"center":"right")+";"+(c.w?"width:"+c.w+"px;":""),c.h))});
+  t.appendChild(pe("thead","",null,[hr]));var body=pe("tbody");t.appendChild(body);w.appendChild(t);pg.appendChild(w);return {w:w,body:body}}
+ newPage(true);
+ (o.secs||[]).forEach(function(sec){if(!sec.rows.length)return;var cur=startSec(sec,false),n=0;
+  sec.rows.forEach(function(r){var tr=mkRow(r,sec,n++);cur.body.appendChild(tr);
+   if(bottom()>LIM){cur.body.removeChild(tr);var carry=[];
+    /* عنوان اليوم ما يبقى وحده بآخر الصفحة */
+    while(cur.body.lastElementChild&&cur.body.lastElementChild.dataset.k==="grp"){carry.unshift(cur.body.lastElementChild);cur.body.removeChild(cur.body.lastElementChild)}
+    var empty=!cur.body.children.length;if(empty)cur.w.remove();
+    newPage(false);cur=startSec(sec,!empty);carry.forEach(function(c){cur.body.appendChild(c)});cur.body.appendChild(tr)}
+   if(r.k==="grp")tr.dataset.k="grp"})});
+ if(o.foot){pg.appendChild(pe("div","margin-top:14px;font-size:12px;color:"+MUT,o.foot));if(bottom()>LIM){pg.lastElementChild.remove();newPage(false);pg.appendChild(pe("div","margin-top:14px;font-size:12px;color:"+MUT,o.foot))}}
+ pages.forEach(function(p,k){p.appendChild(pe("div","position:absolute;left:"+PAD+"px;right:"+PAD+"px;bottom:24px;display:flex;justify-content:space-between;gap:12px;font-size:11.5px;color:"+MUT+";border-top:1px solid "+LINE+";padding-top:8px",null,[pe("span","",[g.n,sub].filter(Boolean).join(" · ")||o.title),pe("span","white-space:nowrap","صفحة "+(k+1)+" من "+pages.length)]))});
+ var pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4",orientation:"portrait"});
+ return pages.reduce(function(pr,p,k){return pr.then(function(){return window.html2canvas(p,{scale:2,backgroundColor:"#ffffff",logging:false,useCORS:true}).then(function(c){if(k)pdf.addPage();pdf.addImage(c.toDataURL("image/jpeg",0.9),"JPEG",0,0,210,297)})})},Promise.resolve())
+  .then(function(){host.remove();return {blob:pdf.output("blob"),name:o.name.replace(/[\\/:*?"<>|]/g," ")+".pdf"}},function(e){host.remove();throw e})}
+function dmyG(s){if(!s)return "";var p=String(s).split("-");return p[2]+"/"+p[1]+"/"+p[0]}
+function pdfGive(blob,name){var file=null;try{file=new File([blob],name,{type:"application/pdf"})}catch(e){}
+ function dl(){try{var u=URL.createObjectURL(blob),l=document.createElement("a");l.href=u;l.download=name;document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);toast("📄 تم تنزيل ملف PDF")}catch(e){toast("تعذّر التنزيل")}}
+ if(!canShareF(file)){dl();return}
+ XU.modal("📄 الملف جاهز",XU.el("p",{style:"margin:0",text:name}),[{t:"💾 تنزيل",fn:function(){dl()}},{t:"📤 مشاركة (واتساب)",cls:"ok",fn:function(){navigator.share({files:[file],title:name}).catch(function(e){if(!e||e.name!=="AbortError")dl()})}}])}
+
+/* تقرير الصادر اليومي (السحوبات) PDF لفترة */
+function pdfRange(a,b){if(!ACC())return;if(!a||!b){toast("اختر التاريخين");return}if(a>b){var t=a;a=b;b=t}
+ var T;S.xall=true;try{T=allRecs().filter(function(x){return x.d>=a&&x.d<=b}).sort(function(x,y){return x.d<y.d?-1:x.d>y.d?1:(x.t<y.t?-1:x.t>y.t?1:0)})
+  .map(function(x){var u=rcUnit(x),v=usAt(x.i,x.d);return {x:x,c:u==null?null:rc(x),s:v==null?null:v*x.n}})}finally{S.xall=false}
+ if(!T.length){toast("لا توجد سحوبات بين "+dayLbl(a)+" و "+dayLbl(b));return}
+ ensureOrg(function(){
+ var cat={};S.cats.forEach(function(c){c.items.forEach(function(i){cat[i]=c.n})});
+ var tq=0,tc=0,ts=0,it={},io=[],dy={},dyo=[],em={},emo=[],nc=0;
+ T.forEach(function(r){var x=r.x,c=r.c||0,s=r.s||0;tq+=x.n;tc+=c;ts+=s;if(r.c==null)nc++;
+  if(!it[x.i]){it[x.i]={q:0,c:0,s:0,r:0,nc:0};io.push(x.i)}var I=it[x.i];I.q+=x.n;I.c+=c;I.s+=s;I.r++;if(r.c==null)I.nc++;
+  if(!dy[x.d]){dy[x.d]={q:0,c:0,s:0,L:[]};dyo.push(x.d)}dy[x.d].q+=x.n;dy[x.d].c+=c;dy[x.d].s+=s;dy[x.d].L.push(r);
+  if(!em[x.e]){em[x.e]={q:0,c:0,s:0,r:0};emo.push(x.e)}em[x.e].q+=x.n;em[x.e].c+=c;em[x.e].s+=s;em[x.e].r++});
+ var D="—",OK="#1b8a4b",TEAL="#0e7c86";
+ var s1={h:"📦 مجموع كل مادة",cols:[{h:"#",w:30},{h:"المادة"},{h:"الكمية",w:70,a:"c",n:1},{h:"الكلفة",w:120,a:"l",n:1},{h:"مبلغ الخدمة",w:120,a:"l",n:1}],rows:[]};
+ io.sort(function(x,y){return it[y].q-it[x].q||it[y].c-it[x].c}).forEach(function(n,i){var I=it[n];s1.rows.push({c:[String(i+1),{t:n,s:cat[n]||"",b:1},{t:String(I.q),b:1},I.nc===I.r?D:nfm(I.c),I.s?{t:nfm(I.s),col:OK}:D]})});
+ s1.rows.push({k:"tot",c:["",{t:"المجموع"},String(tq),nfm(tc),{t:nfm(ts),col:OK}]});
+ var s2={h:"📅 الصادر يوم بيوم",cols:[{h:"الوقت",w:58},{h:"المادة"},{h:"العدد",w:54,a:"c",n:1},{h:"الموظف",w:120},{h:"الكلفة",w:104,a:"l",n:1},{h:"الخدمة",w:104,a:"l",n:1}],rows:[]};
+ dyo.forEach(function(d){var Y=dy[d];s2.rows.push({k:"grp",c:[wdN(d)+"  "+dayLbl(d),Y.q+" قطعة · كلفة "+nfm(Y.c)]});
+  Y.L.forEach(function(r){var x=r.x;s2.rows.push({c:[{t:x.t||"",col:"#5f6f7c"},{t:x.i,b:1},{t:String(x.n),b:1},x.e||"",r.c==null?D:nfm(r.c),r.s==null?D:{t:nfm(r.s),col:OK}]})})});
+ s2.rows.push({k:"tot",c:["",{t:"المجموع ("+dyo.length+" يوم)"},String(tq),"",nfm(tc),{t:nfm(ts),col:OK}]});
+ var s3={h:"👤 حسب الموظف",cols:[{h:"الموظف"},{h:"عدد السحوبات",w:100,a:"c",n:1},{h:"عدد القطع",w:90,a:"c",n:1},{h:"الكلفة",w:120,a:"l",n:1},{h:"مبلغ الخدمة",w:120,a:"l",n:1}],rows:[]};
+ emo.sort(function(x,y){return em[y].q-em[x].q}).forEach(function(e){var E=em[e];s3.rows.push({c:[{t:e||D,b:1},String(E.r),String(E.q),nfm(E.c),{t:nfm(E.s),col:OK}]})});
+ s3.rows.push({k:"tot",c:[{t:"المجموع"},String(T.length),String(tq),nfm(tc),{t:nfm(ts),col:OK}]});
+ pdfReport({title:"تقرير الصادر اليومي (سحوبات المواد)",sub:"من "+wdN(a)+" "+dayLbl(a)+"  إلى  "+wdN(b)+" "+dayLbl(b),info:[dyo.length+" يوم فيه سحوبات · "+io.length+" مادة"],
+  cards:[["مجموع القطع المسحوبة",String(tq),TEAL],["عدد السحوبات",String(T.length)],["الكلفة",nfm(tc)+" د.ع"],["مبلغ الخدمة",nfm(ts)+" د.ع",OK,"#eef8f1"]],
+  secs:[s1,s2,s3],foot:nc?"⚠ "+nc+" سحب بدون كلفة مسجلة (ظهر بعلامة —).":"",name:"الصادر اليومي - "+a+" إلى "+b})})}
 /* ===== مصاريف العيادة (3.1v+) — الخزينة والمصاريف اليومية، تتزامن بنفس الربط (S.ext / S.exe / S.exs) ===== */
 var xOpen,xRender,xPendCount,XU;
 (function(){
@@ -1710,6 +1825,29 @@ g("xExp").onclick=function(){var T=curT();if(!T)return;var all=ents().sort(funct
  var s4=[["البند","القيمة"],["الخزينة",T.name],["تاريخ الخزينة",dmy(T.date)],["نوع التقرير",rtName(X.rType)],["الفترة",(X.rFrom?dmy(X.rFrom):"البداية")+" - "+(X.rTo?dmy(X.rTo):"الآن")],["مبلغ الخزينة",T.amount||0],["الإيداعات بالفترة",r.ti],["المصروف بالفترة",r.to],["مصاريف مؤقتة ما مكتملة",np],["الباقي بالخزينة الآن",sums().rem]];
  pickExport([{name:"الحركات",rows:s1,w:[14,12,9,10,20,16,16,16,30,12,12,18],total:true,mc:[5,11]},{name:"حسب النوع",rows:s2,w:[22,10,18,10],total:true,mc:[2]},{name:"حسب اللي اشترى",rows:s5,w:[22,10,18,16],total:true,mc:[2,3]},{name:"حسب اليوم",rows:s3,w:[14,12,10,18],total:true,mc:[3]},{name:"ملخص الخزينة",rows:s4,w:[26,26],total:true,mc:[1]}],
   "clinic-expenses-"+(X.rType?"type-":"")+(X.rFrom||T.date)+"_"+(X.rTo||tdy())+".xlsx")};
+/* 4.6v: تقرير المصاريف اليومية PDF (نفس الفترة ونوع التقرير المختارين) */
+g("xPdf").onclick=function(){var T=curT();if(!T)return;var r=rep();
+ var rows=ents().filter(inR).sort(function(a,b){return a.date<b.date?-1:a.date>b.date?1:(a.ts||0)-(b.ts||0)});
+ if(!rows.length){toast(X.rType?"ما بيها مصاريف «"+rtName(X.rType)+"» بهذي الفترة":"ما بيها حركات بهذي الفترة");return}
+ ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",PC="#b45309",TEAL="#0e7c86",D="—";
+ function tn(e){return e.type===NOTYPE?"مؤقت (غير محدد)":(e.type||"أخرى")}
+ var s1={h:"🗂️ حسب نوع المصروف",cols:[{h:"نوع المصروف"},{h:"العدد",w:70,a:"c",n:1},{h:"المبلغ",w:140,a:"l",n:1},{h:"النسبة",w:80,a:"c",n:1}],rows:[]};
+ r.keys.forEach(function(k){s1.rows.push({c:[{t:iconOf(k)+" "+(k===NOTYPE?"مؤقت (غير محدد)":k),b:1},String(r.by[k].c),{t:fmn(r.by[k].v),b:1},Math.round(r.by[k].v/(r.to||1)*100)+"%"]})});
+ s1.rows.push({k:"tot",c:["المجموع",String(r.out.length),fmn(r.to),"100%"]});
+ var s2={h:"📅 المصاريف يوم بيوم",cols:[{h:"الوقت",w:54},{h:"المصروف"},{h:"اشترى",w:96},{h:"انطى الفلوس",w:96},{h:"المبلغ",w:108,a:"l",n:1}],rows:[]},last=null;
+ rows.forEach(function(e){if(e.date!==last){last=e.date;var dd=r.dd[e.date];s2.rows.push({k:"grp",c:[wd(e.date)+"  "+dmy(e.date),dd?dd.c+" مصروف · "+fmn(dd.v):"إيداع"]})}
+  if(e.kind==="in")s2.rows.push({bg:"#eef8f1",c:[{t:e.time||"",col:"#5f6f7c"},{t:"💰 إيداع بالخزينة",s:e.note||"",b:1,col:OK},e.buyer||"",e.giver||"",{t:"+"+fmn(e.amount),col:OK,b:1}]});
+  else s2.rows.push({bg:e.pending?"#fff8eb":"",c:[{t:e.time||"",col:"#5f6f7c"},{t:(e.type===NOTYPE?"⏳ مؤقت (غير محدد)":(e.icon||iconOf(e.type||"أخرى"))+" "+tn(e)+(e.pending?"  ⏳ مؤقت":"")),s:[e.note,(e.imgs||[]).length?"🧾 بيها صورة فاتورة":""].filter(Boolean).join(" · "),b:1,col:e.pending?PC:""},e.buyer||D,e.giver||D,{t:fmn(e.amount),b:1}]})});
+ s2.rows.push({k:"tot",c:["",{t:"مجموع المصروف ("+r.days.length+" يوم)"},"","",fmn(r.to)]});
+ var s3={h:"🛒 حسب اللي اشترى",cols:[{h:"الاسم"},{h:"العدد",w:70,a:"c",n:1},{h:"المبلغ",w:140,a:"l",n:1},{h:"منها مؤقت",w:120,a:"l",n:1}],rows:[]};
+ r.bk.forEach(function(k){var o=r.bb[k];s3.rows.push({c:[{t:k==="—"?"بدون اسم":k,b:1},String(o.c),fmn(o.v),o.p?{t:fmn(o.p),col:PC}:D]})});
+ s3.rows.push({k:"tot",c:["المجموع",String(r.out.length),fmn(r.to),fmn(r.bk.reduce(function(s,k){return s+r.bb[k].p},0))]});
+ var np=r.out.filter(function(e){return e.pending}).length,per=(X.rFrom?wd(X.rFrom)+" "+dmy(X.rFrom):"بداية الخزينة")+"  إلى  "+(X.rTo?wd(X.rTo)+" "+dmy(X.rTo):"الآن");
+ var cards=X.rType?[["مجموع «"+rtName(X.rType)+"»",fmn(r.to)+" د.ع",BAD,"#fdf1ef"],["عدد المصاريف",String(r.out.length)],["نسبته من كل المصروف",Math.round(r.to/(rep0().to||1)*100)+"%"],["الباقي بالخزينة الآن",fmn(sums().rem)+" د.ع",TEAL]]
+  :[["مجموع المصروف",fmn(r.to)+" د.ع",BAD,"#fdf1ef"],["عدد المصاريف",String(r.out.length)],["الإيداعات",fmn(r.ti)+" د.ع",OK],["الباقي بالخزينة الآن",fmn(sums().rem)+" د.ع",TEAL,"#eef6f7"]];
+ pdfReport({title:"تقرير المصاريف اليومية"+(X.rType?" — "+rtName(X.rType):""),sub:"من "+per,info:["الخزينة: "+T.name+" · مبلغها "+fmn(T.amount||0)+" د.ع · تاريخها "+dmy(T.date)],cards:cards,
+  secs:X.rType?[s2,s3]:[s1,s2,s3],foot:np?"⏳ "+np+" مصروف مؤقت بعده ما مكتمل (مبلغه مقدّر لحد ما توصل القائمة).":"",
+  name:"المصاريف اليومية"+(X.rType?" - "+rtName(X.rType):"")+" - "+(X.rFrom||T.date)+" إلى "+(X.rTo||tdy())})})};
 
 /* ---------- فتح وعرض ---------- */
 function clock(){var d=new Date();g("xClock").textContent=wd(tdy())+" "+dmy(tdy())+" · "+hm(d)}
@@ -1898,7 +2036,8 @@ function expStatement(sid){var s=S.sup[sid],a=acct(sid);if(!a.M.length){toast("�
 function loadJs(src){return new Promise(function(res,rej){if(document.querySelector('script[data-lib="'+src+'"]'))return res();var x=document.createElement("script");x.src=src;x.dataset.lib=src;x.onload=function(){res()};x.onerror=function(){x.remove();rej(new Error(src))};document.head.appendChild(x)})}
 function pdfEl(t,st,txt,kids){var e=document.createElement(t);if(st)e.style.cssText=st;if(txt!=null)e.textContent=txt;(kids||[]).forEach(function(k){if(k)e.appendChild(k)});return e}
 function pdfStatement(sid){var s=S.sup[sid],a=acct(sid);if(!a.M.length){toast("ما أكو قوائم حتى يطلع كشف حساب");return}
- toast("⏳ جارِ تجهيز كشف الحساب PDF…");
+ ensureOrg(function(){pdfStatement0(s,a)})}
+function pdfStatement0(s,a){toast("⏳ جارِ تجهيز كشف الحساب PDF…");
  Promise.all([loadJs("lib/html2canvas.min.js"),loadJs("lib/jspdf.umd.min.js")]).then(function(){return buildPdf(s,a)}).then(function(r){pdfDeliver(r.blob,r.name)})
   .catch(function(e){console.error(e);toast("تعذّر تجهيز الـ PDF\nإذا أول مرة، تأكد من الإنترنت وجرب مرة ثانية")})}
 function buildPdf(s,a){var W=794,H=1123,PAD=40,TEAL="#0e7c86",INK="#14202b",MUT="#5f6f7c",LINE="#dde5ea",OK="#1b8a4b",BAD="#c0392b";
@@ -1909,6 +2048,7 @@ function buildPdf(s,a){var W=794,H=1123,PAD=40,TEAL="#0e7c86",INK="#14202b",MUT=
   if(first){var hd=pdfEl("div","background:"+TEAL+";color:#fff;border-radius:16px;padding:22px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px");
    hd.appendChild(pdfEl("div","",null,[pdfEl("div","font-size:15px;opacity:.85;font-weight:600","كشف حساب مورد"),pdfEl("div","font-size:30px;font-weight:800;margin-top:4px;line-height:1.25",s.n),s.ph?pdfEl("div","font-size:15px;margin-top:6px;opacity:.9;direction:ltr;text-align:right","📞 "+s.ph):null]));
    hd.appendChild(pdfEl("div","text-align:left;font-size:13px;opacity:.9;line-height:1.7",null,[pdfEl("div","","تاريخ الكشف"),pdfEl("div","font-size:16px;font-weight:700",dmy(tdy())),pdfEl("div","","عدد القوائم: "+a.M.length+(un?" · غير مسددة: "+un:""))]));
+   var og=org();pg.appendChild(pdfEl("div","display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:10px;margin-bottom:14px;border-bottom:3px solid "+TEAL,null,[pdfEl("div","",null,[pdfEl("div","font-size:22px;font-weight:800;color:"+TEAL,og.n||"العيادة"),orgSub()?pdfEl("div","font-size:14px;color:"+MUT+";font-weight:600;margin-top:2px",orgSub()):null]),pdfEl("div","font-size:12px;color:"+MUT,"طُبع "+stamp)]));
    pg.appendChild(hd);
    var cards=pdfEl("div","display:flex;gap:12px;margin:16px 0 18px");
    function card(l,v,c,bg){return pdfEl("div","flex:1;border:1.5px solid "+LINE+";border-radius:14px;padding:12px 16px;background:"+(bg||"#fff"),null,[pdfEl("div","font-size:13px;color:"+MUT+";font-weight:600",l),pdfEl("div","font-size:22px;font-weight:800;margin-top:4px;color:"+(c||INK),v)])}
@@ -1933,7 +2073,7 @@ function buildPdf(s,a){var W=794,H=1123,PAD=40,TEAL="#0e7c86",INK="#14202b",MUT=
   addRow(r)});
  var tot=pdfEl("tr","background:#eef6f7;font-weight:800",null,[pdfEl("td","padding:10px 6px",""),pdfEl("td","padding:10px 6px",""),pdfEl("td","padding:10px 6px;color:"+TEAL,"المجموع"),pdfEl("td","padding:10px 6px;direction:ltr;text-align:left",fmn(a.ti)),pdfEl("td","padding:10px 6px;color:"+OK+";font-size:12px","مسدد: "+fmn(a.tp)),pdfEl("td","padding:10px 6px;color:"+(a.bal>0?BAD:OK)+";font-size:12px",a.bal>0?"غير مسدد: "+fmn(a.bal):"✓ كله مسدد")]);
  addRow(tot);
- pages.forEach(function(p,k){p.pg.appendChild(pdfEl("div","position:absolute;left:"+PAD+"px;right:"+PAD+"px;bottom:26px;display:flex;justify-content:space-between;font-size:12px;color:"+MUT+";border-top:1px solid "+LINE+";padding-top:8px",null,[pdfEl("span","","كشف حساب «"+s.n+"» · طُبع "+stamp),pdfEl("span","","صفحة "+(k+1)+" من "+pages.length)]))});
+ pages.forEach(function(p,k){p.pg.appendChild(pdfEl("div","position:absolute;left:"+PAD+"px;right:"+PAD+"px;bottom:26px;display:flex;justify-content:space-between;font-size:12px;color:"+MUT+";border-top:1px solid "+LINE+";padding-top:8px",null,[pdfEl("span","",[org().n,orgSub(),"كشف حساب «"+s.n+"»"].filter(Boolean).join(" · ")),pdfEl("span","","صفحة "+(k+1)+" من "+pages.length)]))});
  var pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4",orientation:"portrait"});
  return pages.reduce(function(pr,p,k){return pr.then(function(){return window.html2canvas(p.pg,{scale:2,backgroundColor:"#ffffff",logging:false,useCORS:true}).then(function(c){if(k)pdf.addPage();pdf.addImage(c.toDataURL("image/jpeg",0.9),"JPEG",0,0,210,297)})})},Promise.resolve())
   .then(function(){host.remove();var nm=("كشف حساب - "+s.n+" - "+tdy()).replace(/[\\/:*?"<>|]/g," ")+".pdf";return {blob:pdf.output("blob"),name:nm}},function(e){host.remove();throw e})}
