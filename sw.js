@@ -1,7 +1,7 @@
 // يحفظ ملفات التطبيق على الجهاز حتى يشتغل بدون نت.
 // عند وجود نت يجلب أحدث نسخة، وعند انقطاعه يفتح النسخة المحفوظة.
-const CACHE = "withdrawals-v4.1";
-const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
+const CACHE = "withdrawals-v4.2";
+const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./lib/html2canvas.min.js", "./lib/jspdf.umd.min.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(k => Promise.all(k.filter(n => n !== CACHE && n !== "wd-data").map(n => caches.delete(n)))).then(() => self.clients.claim()));
