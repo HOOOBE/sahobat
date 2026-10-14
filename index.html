@@ -181,6 +181,17 @@ button.flash{animation:flash .5s ease-out}
 .tl .td{position:absolute;top:9px;inset-inline-end:9px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.92);color:#1d2630;display:grid;place-items:center;font-size:15px}
 .tl.add{background:transparent;border:2px dashed var(--bd);color:var(--mut);align-items:center;justify-content:center;box-shadow:none;font-size:16px;gap:4px}
 .tl.add .ti{width:auto;height:auto;font-size:28px;font-weight:400}
+.hmbk{display:flex;flex-direction:column;align-items:center;gap:2px;margin:20px auto 0;width:min(420px,100%);min-height:60px;padding:10px 16px;border:2px solid color-mix(in srgb,var(--ok) 55%,var(--bd));border-radius:16px;background:color-mix(in srgb,var(--ok) 9%,var(--card));color:var(--tx);font-size:17px}
+.hmbk small{font-size:13px;color:var(--mut);font-weight:600}
+.hmbk.warn{border-color:color-mix(in srgb,#e08a00 65%,var(--bd));background:color-mix(in srgb,#e08a00 10%,var(--card))}
+.hmbk.warn small{color:#b45309}
+#xm .bk-box p{margin:0 0 8px}#xm .bk-box ul{margin:0 0 10px;padding-inline-start:20px;line-height:1.7;font-size:15px}
+#xm .bk-last{padding:8px 12px;border-radius:12px;font-weight:700;margin-bottom:10px}
+#xm .bk-last.ok{color:var(--ok);background:color-mix(in srgb,var(--ok) 11%,var(--card))}
+#xm .bk-last.warn{color:#b45309;background:color-mix(in srgb,#e08a00 12%,var(--card))}
+#xm label.bk-chk{display:flex;flex-direction:row;align-items:center;gap:10px;font-weight:700;margin-bottom:8px;cursor:pointer}#xm .bk-chk input{width:22px;height:22px;flex:0 0 auto;margin:0}
+#xm .bk-acts{display:flex;flex-direction:column;gap:8px;margin-top:4px}#xm .bk-acts button{min-height:52px;font-size:16px;font-weight:800;border-radius:14px;border:1.5px solid var(--bd);background:var(--card);color:var(--tx)}#xm .bk-acts button.ok{background:var(--ok);border-color:var(--ok);color:#fff}#xm .bk-acts button.rs{color:var(--ac)}
+#xm .bk-tip{color:var(--mut);font-size:14px}
 .hmv{display:block;margin:22px auto 0;background:none;border:0;color:var(--mut);font-size:13px;min-height:auto;padding:6px 10px;text-decoration:underline dotted}
 #apm .mb{max-height:calc(100vh - 32px);overflow-y:auto;max-width:460px}
 .apl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700;color:var(--mut);margin-bottom:12px}
@@ -484,7 +495,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 4.8v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 4.9v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -529,8 +540,9 @@ button.flash{animation:flash .5s ease-out}
 <div class="hmt"><h1>البرامج<small id="hmWho"></small></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
+<button class="hmbk" id="hmBk" hidden><b>💾 النسخة الاحتياطية</b><small id="hmBkS"></small></button>
 <button class="hmv" id="hmOrg" hidden title="الاسم اللي ينكتب بأعلى ملفات PDF وExcel"></button>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">4.8v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">4.9v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -621,7 +633,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">4.8v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">4.9v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -646,11 +658,14 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 4.8v Online</div><div class="vd">تاريخ التحديث: 13/10/2026</div>
+<div class="vh">ℹ️ 4.9v Online</div><div class="vd">تاريخ التحديث: 14/10/2026</div>
 <ul class="vl">
-<li><b>📐 أبعاد التاب:</b> شريط «تسجيل السحوبات» الفوقاني چان أعرض من الشاشة بالتاب (وبأي جهاز خطه مكبّر)، فالبرنامج كله يطلع شوية برا. هسه بالتاب العنوان والساعة بسطر والأزرار بسطر تحته، وما يطلع شي برا الشاشة بالموبايل والتاب والويندوز.</li>
+<li><b>💾 النسخة الاحتياطية بشاشة البرامج:</b> زر جديد يحفظ كل شي بملف واحد: السحوبات والأيام السابقة، المواد والأرصدة والكلف، مصاريف العيادة، الموردين والقوائم والتسديدات، الإعدادات، و<b>صور الفواتير والوصولات</b>.</li>
+<li><b>📤 إرسال أو تنزيل:</b> تدز النسخة لنفسك بالواتساب أو تحفظها بـ Google Drive، أو تنزلها على الجهاز.</li>
+<li><b>📂 استرجاع:</b> من نفس الزر ترجع أي نسخة سابقة (ويه صورها) على نفس الجهاز أو جهاز جديد.</li>
+<li><b>⏰ تذكير:</b> الزر يصير برتقالي إذا مرّ أسبوع بدون نسخة، ويبين تاريخ آخر نسخة.</li>
 </ul>
-<div class="vold"><b>4.7v Online</b>: زر «📄 PDF» لقوائم الموردين.<br><b>4.6v Online</b>: الصادر اليومي والمصاريف اليومية PDF لفترة، وترويسة العيادة وقسم الحسابات بكل ملف.<br><b>4.5v Online</b>: زر «💵 تسديد» تحت القوائم غير المسددة.<br><b>4.4v Online</b>: التسديد صار على نفس القائمة (✓ تم التسديد / غير مسدد)، وكشف الحساب قائمة بقائمة.<br><b>4.3v Online</b>: قوائم الموردين من Google Sheets، والتاريخ تكتبه باليد أو تختاره من 📅.<br><b>4.2v Online</b>: كشف حساب PDF، تصفير قوائم الموردين، تفاصيل القائمة، والقوائم المسددة بالأخضر.<br><b>4.1v Online</b>: تصوير القائمة ووصل الدفع أول شي بالنوافذ، واستيراد الموردين من Google Sheets.<br><b>4.0v Online</b>: برنامج «الموردين والديون»: قوائم الموردين والتسديدات وكشف الحساب والمتأخرة.<br><b>3.10v Online</b>: الرجوع ما يطلع من البرنامج، وأبعاد تناسب الموبايل والتاب والويندوز.<br><b>3.9v Online</b>: تعديل وحذف المصاريف بأزرار واضحة، قائمة «كل المصاريف» ويه بحث وفلترة، وتصحيح نافذة التعديل.<br><b>3.8v Online</b>: وجبات الشراء — الباقي القديم ينسحب بسعره القديم قبل الجديد.<br><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
+<div class="vold"><b>4.8v Online</b>: أبعاد التاب، ما يطلع شي برا الشاشة.<br><b>4.7v Online</b>: زر «📄 PDF» لقوائم الموردين.<br><b>4.6v Online</b>: الصادر اليومي والمصاريف اليومية PDF لفترة، وترويسة العيادة وقسم الحسابات بكل ملف.<br><b>4.5v Online</b>: زر «💵 تسديد» تحت القوائم غير المسددة.<br><b>4.4v Online</b>: التسديد صار على نفس القائمة (✓ تم التسديد / غير مسدد)، وكشف الحساب قائمة بقائمة.<br><b>4.3v Online</b>: قوائم الموردين من Google Sheets، والتاريخ تكتبه باليد أو تختاره من 📅.<br><b>4.2v Online</b>: كشف حساب PDF، تصفير قوائم الموردين، تفاصيل القائمة، والقوائم المسددة بالأخضر.<br><b>4.1v Online</b>: تصوير القائمة ووصل الدفع أول شي بالنوافذ، واستيراد الموردين من Google Sheets.<br><b>4.0v Online</b>: برنامج «الموردين والديون»: قوائم الموردين والتسديدات وكشف الحساب والمتأخرة.<br><b>3.10v Online</b>: الرجوع ما يطلع من البرنامج، وأبعاد تناسب الموبايل والتاب والويندوز.<br><b>3.9v Online</b>: تعديل وحذف المصاريف بأزرار واضحة، قائمة «كل المصاريف» ويه بحث وفلترة، وتصحيح نافذة التعديل.<br><b>3.8v Online</b>: وجبات الشراء — الباقي القديم ينسحب بسعره القديم قبل الجديد.<br><b>3.7v Online</b>: زر تعديل وحذف أنواع المصاريف داخل مربعات نوع المصروف.<br><b>3.6v Online</b>: تقرير الخزينة حسب النوع (كل المصاريف أو نوع واحد) ويه الفترة.<br><b>3.5v Online</b>: تصحيح: أسماء «منو انطى الفلوس» و«منو اشترى» صارت قائمتين منفصلات.<br><b>3.4v Online</b>: «منو انطى الفلوس» و«منو اشترى» بالمصاريف، وجدول وصفحة Excel «حسب اللي اشترى».<br><b>3.3v Online</b>: التواريخ بالعربي بدون انقلاب، المصروف المؤقت، صور الفواتير، وتعديل المصروف بالضغط عليه.<br><b>3.2v Online</b>: زر الوضع الليلي/النهاري بكل الشاشات.<br><b>3.1v Online</b>: «مصاريف العيادة» صار داخل البرنامج ويتزامن بنفس الربط، انتقلت خزينة تشرين الأول 2026، وتصدير Excel للمصاريف بأربع صفحات.<br><b>3.0v Online</b>: شاشة البرامج بمربعات (الموظف: تسجيل السحوبات، الحسابات: تسجيل الحسابات ومصاريف العيادة)، إضافة وتعديل البرامج، زر 🏠، «المحاسب» صار «الحسابات».<br><b>v2.1 Online</b>: تحذير انتهاء خاص لكل مادة، شكل جديد للتنبيهات، وسجل التغييرات عند الضغط على رقم النسخة.<br><b>v2.0 Online</b>: المزامنة أونلاين بين الأجهزة، تاريخ الانتهاء لكل مادة، الكلف وسعر الخدمة والربحية للمحاسب، التنبيهات، Excel والنسخ الاحتياطي.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -843,7 +858,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="4.8";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="4.9";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1010,14 +1025,16 @@ function bkDialog(x){$("bkt").textContent="✔ تم إنهاء اليوم وبد
 $("bkd").onclick=function(){bkDownload(null);$("bkm").hidden=true};
 $("bksh").onclick=function(){bkShare();$("bkm").hidden=true};
 $("bkx").onclick=function(){$("bkm").hidden=true;toast("⚠ لم تُحفظ نسخة احتياطية")};
-$("bke").onclick=function(){bkDialog(false);$("bkt").textContent="حفظ نسخة احتياطية لكل البيانات:"};
+$("bke").onclick=function(){bkOpen()};
 $("rsb").onclick=function(){if(!ACC())return;$("rsf").value="";$("rsf").click()};
 $("rsf").onchange=function(){var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();
  r.onload=function(){var o;try{o=JSON.parse(r.result)}catch(e){toast("الملف غير صالح");return}
   var st=o&&o.app==="wd"&&o.state;if(!st||!st.cats){toast("هذا ليس ملف نسخة احتياطية للبرنامج");return}
-  var n=(st.log||[]).length;(st.hist||[]).forEach(function(h){n+=h.log.length});
-  sure("استرجاع نسخة "+fd(new Date(o.at))+" · "+ft(new Date(o.at))+"؟\n("+n+" سجل سحب)\n⚠ ستُستبدل كل البيانات الحالية على هذا الجهاز بالنسخة.",function(){
-   try{if(!("ext" in st)){st.ext=S.ext;st.exe=S.exe;st.exs=S.exs}if(!("sup" in st)){st.sup=S.sup;st.smv=S.smv;st.spimp=S.spimp;st.spreset=S.spreset;st.spmig=S.spmig}if(!("org" in st))st.org=S.org;localStorage.setItem("wd_state",JSON.stringify(st));location.reload()}catch(e){toast("تعذّر الاسترجاع")}})};
+  var c=bkCounts(st),im=o.imgs&&typeof o.imgs==="object"?Object.keys(o.imgs):[];
+  sure("استرجاع نسخة "+fd(new Date(o.at))+" · "+ft(new Date(o.at))+(o.org?" — "+o.org:"")+"؟\n📦 "+c.wd+" سجل سحب"+("exe" in st?" · 🧾 "+c.ex+" مصروف":"")+("smv" in st?" · 🏪 "+c.inv+" قائمة":"")+(im.length?" · 📷 "+im.length+" صورة":"")+"\n⚠ ستُستبدل كل البيانات الحالية على هذا الجهاز بالنسخة.",function(){
+   var put=im.length&&typeof XU!=="undefined"?im.reduce(function(p,id){return p.then(function(){return XU.imgPut(id,o.imgs[id]).catch(function(){})})},Promise.resolve()):Promise.resolve();
+   put.then(function(){
+   try{if(!("ext" in st)){st.ext=S.ext;st.exe=S.exe;st.exs=S.exs}if(!("sup" in st)){st.sup=S.sup;st.smv=S.smv;st.spimp=S.spimp;st.spreset=S.spreset;st.spmig=S.spmig}if(!("org" in st))st.org=S.org;localStorage.setItem("wd_state",JSON.stringify(st));location.reload()}catch(e){toast("تعذّر الاسترجاع")}})})};
  r.readAsText(f)};
 try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
 /* ===== المستخدمون والكلفة ===== */
@@ -1371,7 +1388,7 @@ function tileFill(t,a){var g=GR[(a.c|0)%GR.length];t.style.setProperty("--g1",g[
 function okUrl(u){return /^https?:\/\/[^\s]+\.[^\s]+/i.test(u||"")}
 function showHome(){if(!S.role)return;S.hmEd=false;$("home").hidden=false;drawHome();$("home").scrollTop=0}
 function drawHome(){if(!S.role)return;var acc=ACC(),T=$("tiles");T.innerHTML="";
- $("hmWho").textContent=acc?"🧮 الحسابات":"👷 موظف";$("hmOrg").hidden=!acc;$("hmOrg").textContent="🏥 ترويسة الملفات: "+(org().n||"اكتب اسم العيادة")+" ✎";$("hmOrg").onclick=function(){orgForm(null,false)};$("hmAdd").hidden=!acc;$("hmEd").hidden=!acc;if(!acc)S.hmEd=false;
+ $("hmWho").textContent=acc?"🧮 الحسابات":"👷 موظف";$("hmOrg").hidden=!acc;bkHome();$("hmOrg").textContent="🏥 ترويسة الملفات: "+(org().n||"اكتب اسم العيادة")+" ✎";$("hmOrg").onclick=function(){orgForm(null,false)};$("hmAdd").hidden=!acc;$("hmEd").hidden=!acc;if(!acc)S.hmEd=false;
  $("hmEd").textContent=S.hmEd?"✔ تم":"✎ تعديل";$("hmEd").classList.toggle("on",!!S.hmEd);$("hmN").hidden=!S.hmEd;
  apps().forEach(function(a){if(!(a.w==="all"||a.w===S.role))return;
   var link=a.k==="link"&&!S.hmEd,t=document.createElement(link?"a":"button");t.className="tl";tileFill(t,a);
@@ -1517,6 +1534,32 @@ function pdfRange(a,b){if(!ACC())return;if(!a||!b){toast("اختر التاري�
  pdfReport({title:"تقرير الصادر اليومي (سحوبات المواد)",sub:"من "+wdN(a)+" "+dayLbl(a)+"  إلى  "+wdN(b)+" "+dayLbl(b),info:[dyo.length+" يوم فيه سحوبات · "+io.length+" مادة"],
   cards:[["مجموع القطع المسحوبة",String(tq),TEAL],["عدد السحوبات",String(T.length)],["الكلفة",nfm(tc)+" د.ع"],["مبلغ الخدمة",nfm(ts)+" د.ع",OK,"#eef8f1"]],
   secs:[s1,s2,s3],foot:nc?"⚠ "+nc+" سحب بدون كلفة مسجلة (ظهر بعلامة —).":"",name:"الصادر اليومي - "+a+" إلى "+b})})}
+/* ===== 4.9v: نسخة احتياطية كاملة من شاشة البرامج — كل البيانات + صور الفواتير والوصولات ===== */
+function bkImgIds(){var ids={};function add(a){(a||[]).forEach(function(i){if(i)ids[i]=1})}
+ Object.keys(S.exe||{}).forEach(function(k){add((S.exe[k]||{}).imgs)});Object.keys(S.smv||{}).forEach(function(k){var m=S.smv[k]||{};add(m.imgs);add(m.pimgs)});return Object.keys(ids)}
+function bkCounts(st){var n=(st.log||[]).length;(st.hist||[]).forEach(function(h){n+=(h.log||[]).length});
+ var ex=Object.keys(st.exe||{}).length,inv=Object.keys(st.smv||{}).length,sp=Object.keys(st.sup||{}).length;return {wd:n,ex:ex,inv:inv,sp:sp}}
+function bkAgo(){if(!S.bk)return null;return Math.floor((Date.now()-S.bk)/864e5)}
+function bkFull(withImgs){S.bk=Date.now();save();var st=JSON.parse(localStorage.getItem("wd_state")||"{}"),ids=withImgs?bkImgIds():[],imgs={},miss=0,k=0;
+ return ids.reduce(function(p,id){return p.then(function(){k++;if(k%3===1||k===ids.length)toast("⏳ جارِ تجهيز الصور "+k+"/"+ids.length);return XU.imgGet(id).then(function(d){if(d)imgs[id]=d;else miss++})})},Promise.resolve()).then(function(){
+  var now=new Date(),name="clinic-backup-"+today()+"-"+pad(now.getHours())+pad(now.getMinutes());
+  var o={app:"wd",v:2,at:S.bk,org:org().n||"",counts:bkCounts(st),state:st};if(withImgs)o.imgs=imgs;
+  return {name:name,miss:miss,ni:Object.keys(imgs).length,json:JSON.stringify(o)}})}
+function bkOpen(){if(!ACC())return;var U=XU,el=U.el,st=JSON.parse(localStorage.getItem("wd_state")||"{}"),c=bkCounts(st),ni=bkImgIds().length,ag=bkAgo(),f=el("div",{class:"bk-box"});
+ f.appendChild(el("p",{text:"تحفظ كل بيانات البرامج بملف واحد، وتگدر ترجعها بأي وقت أو على أي جهاز:"}));
+ f.appendChild(el("ul",{},[el("li",{text:"📦 السحوبات: "+c.wd+" سجل (اليوم والأيام السابقة)، المواد والأرصدة والكلف ووجبات الشراء"}),el("li",{text:"🧾 مصاريف العيادة: "+c.ex+" حركة ويه الخزائن والأنواع"}),el("li",{text:"🏪 الموردين: "+c.sp+" مورد · "+c.inv+" قائمة ويه التسديدات"}),el("li",{text:"📷 صور الفواتير والوصولات: "+ni+" صورة"}),el("li",{text:"⚙️ الموظفين والباسووردات والإعدادات وترويسة الملفات"})]));
+ f.appendChild(el("div",{class:"bk-last "+(ag==null||ag>=7?"warn":"ok"),text:S.bk?"آخر نسخة: "+fd(new Date(S.bk))+" · "+ft(new Date(S.bk))+(ag?" (قبل "+ag+" يوم)":" (اليوم)"):"⚠ ما مسوي نسخة احتياطية بعد"}));
+ var cb=el("input",{type:"checkbox",id:"bkImg"});cb.checked=true;
+ if(ni)f.appendChild(el("label",{class:"bk-chk"},[cb,el("span",{text:"ويه الصور ("+ni+" صورة) — الملف يصير أكبر"})]));
+ f.appendChild(el("p",{class:"bk-tip",text:"💡 دز النسخة لنفسك بالواتساب أو احفظها بـ Google Drive، حتى لو الجهاز ضاع أو انمسح تبقى بياناتك."}));
+ function go(share){var wi=ni&&cb.checked;toast("⏳ جارِ تجهيز النسخة الاحتياطية…");
+  bkFull(wi).then(function(r){var blob=new Blob([r.json],{type:"application/json"}),extra=(r.miss?"\n⚠ "+r.miss+" صورة ما تحمّلت (تأكد من النت)":"");
+   if(share){var file=mkFile([r.json],r.name+".txt","text/plain");if(navigator.share&&canShareF(file)){navigator.share({files:[file],title:"نسخة احتياطية — "+(org().n||"العيادة")}).then(function(){toast("✔ انرسلت النسخة الاحتياطية"+extra)}).catch(function(e){if(e&&e.name==="AbortError")toast("⚠ ما انرسلت النسخة");else bkDownload({name:r.name+".json",blob:blob})});return}}
+   bkDownload({name:r.name+".json",blob:blob});if(extra)setTimeout(function(){toast(extra.trim())},2500);if(typeof drawHome==="function")drawHome()}).catch(function(e){console.error(e);toast("تعذّر تجهيز النسخة")})}
+ f.appendChild(el("div",{class:"bk-acts"},[el("button",{type:"button",class:"ok",text:"📤 إرسال النسخة (واتساب / Drive)",on:{click:function(){U.close();go(true)}}}),el("button",{type:"button",text:"💾 تنزيل النسخة على الجهاز",on:{click:function(){U.close();go(false)}}}),el("button",{type:"button",class:"rs",text:"📂 استرجاع نسخة سابقة",on:{click:function(){U.close();setTimeout(function(){$("rsb").onclick()},0)}}})]));
+ U.modal("💾 النسخة الاحتياطية",f,[{t:"إغلاق"}])}
+function bkHome(){var b=$("hmBk");if(!b)return;b.hidden=!ACC();if(!ACC())return;var ag=bkAgo();
+ b.classList.toggle("warn",ag==null||ag>=7);$("hmBkS").textContent=S.bk?"آخر نسخة "+(ag?"قبل "+ag+" يوم":"اليوم")+" · "+fd(new Date(S.bk)):"ما مسوي نسخة بعد — سوّي وحدة هسه";b.onclick=bkOpen}
 /* ===== مصاريف العيادة (3.1v+) — الخزينة والمصاريف اليومية، تتزامن بنفس الربط (S.ext / S.exe / S.exs) ===== */
 var xOpen,xRender,xPendCount,XU;
 (function(){
@@ -1860,7 +1903,7 @@ xOpen=function(){if(!ACC())return;var t=tdy();if(!X.ldate||g("xDate").dataset.da
  g("home").hidden=true;g("xv").hidden=false;g("xv").scrollTop=0;xRender();imgFlush()};
 g("xHome").onclick=function(){g("xv").hidden=true;g("xiv").hidden=true;close();showHome()};
 setInterval(function(){if(!g("xv").hidden)clock()},20000);
-XU={el:el,fmn:fmn,num:num,amtField:amtField,dmy:dmy,wd:wd,tdy:tdy,iso:iso,shift:shift,modal:modal,close:close,invBox:invBox,viewer:viewer,imgDrop:imgDrop,thumbs:thumbs};
+XU={el:el,fmn:fmn,num:num,amtField:amtField,dmy:dmy,wd:wd,tdy:tdy,iso:iso,shift:shift,modal:modal,close:close,invBox:invBox,viewer:viewer,imgDrop:imgDrop,thumbs:thumbs,imgGet:imgGet,imgPut:function(id,d){IMC[id]=d;return idbPut({id:id,d:d,up:false,t:Date.now()})},imgFlush:imgFlush};
 })();
 /* ===== الموردين والديون (4.0v): قوائم الموردين، الديون، والتسديدات =====
    S.sup = {id:{n:الاسم,ph:الهاتف,note,ts}}
