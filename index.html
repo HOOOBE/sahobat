@@ -96,8 +96,8 @@ input[type=search]{width:100%;font:inherit;padding:14px;border-radius:14px;borde
 .cst.sv{color:#0e7c86}
 :root[data-theme="dark"] .cst.sv{color:#5fd0d9}
 #who2{font-size:15px;font-weight:700;white-space:nowrap}
-.tools{display:flex;gap:8px;margin-top:12px}
-.tools button{flex:1}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tools button{flex:1 1 150px}
 .endd{background:color-mix(in srgb,var(--ac) 16%,var(--card));border-color:var(--ac);font-weight:800}
 .md{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:20;padding:16px}
 .mb{background:var(--card);border-radius:18px;padding:18px;width:100%;max-width:420px}
@@ -544,7 +544,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 5.0v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 5.1v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -569,6 +569,7 @@ button.flash{animation:flash .5s ease-out}
   <div class="log" id="log"></div>
   <div class="tools">
     <button id="exp">تصدير ملف Excel</button>
+    <button id="matpdf">📄 تقرير المواد PDF</button>
     <button id="clr" class="endd">إنهاء اليوم وبدء يوم جديد</button>
   </div>
   <button id="undo" class="mini" style="margin-top:8px;width:100%" hidden>↩ تراجع عن إنهاء اليوم السابق</button>
@@ -578,7 +579,7 @@ button.flash{animation:flash .5s ease-out}
 <div class="md" id="hs" hidden><div class="mb hb"><div class="hnav"><button id="hprev" class="mini" title="الشهر السابق">▶</button><b id="hmon"></b><button id="hnext" class="mini" title="الشهر التالي">◀</button></div><div id="hcal"></div><div id="hday"></div>
 <div id="rng" hidden><b>🧮 تصدير فترة (المحاسب)</b>
 <div class="rr"><span style="width:34px">من</span><input type="date" id="rf"></div><div class="rr"><span style="width:34px">إلى</span><input type="date" id="rt"></div>
-<button id="rpdf" style="width:100%;margin-top:8px;font-weight:800">📄 تصدير PDF للفترة (الصادر اليومي)</button><button id="rexp" style="width:100%;margin-top:8px;font-weight:800">📊 تصدير ملف Excel للفترة</button></div><div class="row" style="margin-top:12px"><button id="hexp" hidden>تصدير هذا اليوم Excel</button><button id="hx">إغلاق</button></div></div></div>
+<button id="rpdf" style="width:100%;margin-top:8px;font-weight:800">📄 تصدير PDF للفترة (الصادر اليومي)</button><button id="rmat" style="width:100%;margin-top:8px;font-weight:800">📦 PDF الصادر + العدد والإكسباير (اختار الفئات)</button><button id="rexp" style="width:100%;margin-top:8px;font-weight:800">📊 تصدير ملف Excel للفترة</button></div><div class="row" style="margin-top:12px"><button id="hexp" hidden>تصدير هذا اليوم Excel</button><button id="hx">إغلاق</button></div></div></div>
 <div class="md" id="bkm" hidden><div class="mb"><div id="bkt" style="font-weight:700;margin-bottom:12px;line-height:1.6;white-space:pre-line"></div>
 <button id="bksh" class="go" style="width:100%;margin-bottom:8px">📤 إرسال النسخة للواتساب</button>
 <button id="bkd" style="width:100%;margin-bottom:8px;font-weight:700">💾 تنزيل النسخة على الجهاز</button>
@@ -591,7 +592,7 @@ button.flash{animation:flash .5s ease-out}
 <div class="tiles" id="tiles"></div>
 <button class="hmbk" id="hmBk" hidden><b>💾 النسخة الاحتياطية</b><small id="hmBkS"></small></button>
 <button class="hmv" id="hmOrg" hidden title="الاسم اللي ينكتب بأعلى ملفات PDF وExcel"></button>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.0v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.1v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -696,7 +697,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">5.0v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">5.1v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -721,15 +722,13 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 5.0v Online</div><div class="vd">تاريخ التحديث: 15/10/2026</div>
+<div class="vh">ℹ️ 5.1v Online</div><div class="vd">تاريخ التحديث: 17/10/2026</div>
 <ul class="vl">
-<li><b>👥 برنامج جديد «ديون الكادر»:</b> بشاشة البرامج للحسابات. أسماء الكادر جاهزة (18 اسم). تسجل الدين ونوعه (سلفة، سلفة على الراتب، مشتريات…) ومنين انطى: <b>من الخزينة</b> (ينزل تلقائيًا كمصروف بالخزينة) أو <b>من الإيراد</b>. والتسديد: رجع للخزينة، للإيراد، أو خصم من الراتب. ويه كشف PDF وExcel لكل موظف وللكل.</li>
-<li><b>🧾 مصاريف اليوم أوضح:</b> الملاحظة صارت كبيرة وواضحة، ونوع المصروف وأزرار التعديل والحذف بسطر واحد فوق، والمبلغ كبير تحت.</li>
-<li><b>✍️ تسميات أوضح:</b> «مُسلِّم المبلغ» بدل «منو انطى الفلوس»، و«المُشتري» بدل «منو اشترى».</li>
-<li><b>🎨 ألوان للأسماء:</b> كل اسم إله لون هادئ ثابت حتى تميزه بسرعة.</li>
-<li><b>🔤 خط جديد:</b> خط «Readex Pro» لكل البرامج وملفات PDF.</li>
+<li><b>📄 تقرير المواد PDF:</b> زر جديد «📄 تقرير المواد PDF» يم «تصدير ملف Excel» بشاشة السحوبات. يطلع لكل مادة <b>العدد المتبقي</b> و<b>تاريخ الإكسباير</b> وكم باقي عليه، ويه قائمة «يحتاج انتباه» (منتهية، قريبة الانتهاء، قليلة أو نفدت).</li>
+<li><b>🗂️ تختار الفئات:</b> تحدد بس الفئات اللي تريدها (مثلًا فلر بس) أو الكل.</li>
+<li><b>📅 الصادر + العدد والإكسباير:</b> للحسابات تگدر تختار فترة (من – إلى) فيطلع الصادر بالفترة لكل مادة يم المتبقي والإكسباير، والصادر يوم بيوم. وهم من «📅 الأيام السابقة» ← تصدير فترة.</li>
 </ul>
-<div class="vold"><b>4.9v Online</b>: زر «💾 النسخة الاحتياطية» الكاملة ويه الصور بشاشة البرامج.<br><b>4.8v Online</b>: أبعاد التاب، ما يطلع شي برا الشاشة.<br><b>4.7v Online</b>: زر «📄 PDF» لقوائم الموردين.<br><b>4.6v Online</b>: الصادر اليومي والمصاريف اليومية PDF لفترة، وترويسة العيادة وقسم الحسابات بكل ملف.<br><b>4.5v Online</b>: زر «💵 تسديد» تحت القوائم غير المسددة.</div>
+<div class="vold"><b>5.0v Online</b>: برنامج «ديون الكادر»، مصاريف اليوم أوضح، «مُسلِّم المبلغ / المُشتري»، ألوان الأسماء، وخط جديد.<br><b>4.9v Online</b>: زر «💾 النسخة الاحتياطية» الكاملة ويه الصور بشاشة البرامج.<br><b>4.8v Online</b>: أبعاد التاب، ما يطلع شي برا الشاشة.<br><b>4.7v Online</b>: زر «📄 PDF» لقوائم الموردين.<br><b>4.6v Online</b>: الصادر اليومي والمصاريف اليومية PDF لفترة، وترويسة العيادة وقسم الحسابات بكل ملف.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -922,7 +921,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="5.0";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="5.1";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1293,7 +1292,7 @@ $("xpb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("⏳ تحذ�
  function fin(){save();renderAll();upd();xpSync();toast("✔ التحذير قبل "+S.xpd+" يوم من الانتهاء"+(own.length&&Object.keys(S.xpw).length?"\n(عدا "+Object.keys(S.xpw).length+" مادة إلها تحذير خاص ⏰)":""))}
  if(!own.length){S.xpw={};fin();return}
  setTimeout(function(){dlg("صار التحذير العام "+S.xpd+" يوم.\n\nأكو "+own.length+" مادة إلها تحذير خاص ⏰:\n"+own.slice(0,6).map(function(k){return "• "+k+" ("+S.xpw[k]+" يوم)"}).join("\n")+(own.length>6?"\n…":"")+"\n\nتريد تطبق "+S.xpd+" يوم عليهن هم؟\n«موافق» = كل المواد نفس الرقم\n«إلغاء» = يبقن على رقمهن الخاص","",false,function(ok){if(ok)S.xpw={};fin()})},60)})};
-$("rexp").onclick=function(){exportRange($("rf").value,$("rt").value)};$("rpdf").onclick=function(){pdfRange($("rf").value,$("rt").value)};
+$("rexp").onclick=function(){exportRange($("rf").value,$("rt").value)};$("rpdf").onclick=function(){pdfRange($("rf").value,$("rt").value)};$("rmat").onclick=function(){matForm("period")};$("matpdf").onclick=function(){matForm("stock")};
 $("dayb").onclick=function(){$("clr").onclick()};
 window.addEventListener("storage",function(e){if(e.key!=="wd_state"||!e.newValue)return;load();if(S.role){renderAll();upd();drawLog()}dayCheck()});
 document.addEventListener("visibilitychange",function(){if(!document.hidden){tick();dayCheck()}});
@@ -1603,6 +1602,64 @@ function pdfRange(a,b){if(!ACC())return;if(!a||!b){toast("اختر التاري�
  pdfReport({title:"تقرير الصادر اليومي (سحوبات المواد)",sub:"من "+wdN(a)+" "+dayLbl(a)+"  إلى  "+wdN(b)+" "+dayLbl(b),info:[dyo.length+" يوم فيه سحوبات · "+io.length+" مادة"],
   cards:[["مجموع القطع المسحوبة",String(tq),TEAL],["عدد السحوبات",String(T.length)],["الكلفة",nfm(tc)+" د.ع"],["مبلغ الخدمة",nfm(ts)+" د.ع",OK,"#eef8f1"]],
   secs:[s1,s2,s3],foot:nc?"⚠ "+nc+" سحب بدون كلفة مسجلة (ظهر بعلامة —).":"",name:"الصادر اليومي - "+a+" إلى "+b})})}
+/* ===== 5.1v: تقرير المواد PDF — العدد المتبقي والإكسباير لكل مادة، ويه اختيار الفئات، ويمّه الصادر لفترة ===== */
+function matStat(n){var st=hasSt(n)?S.stock[n]:null,d=xpLeft(n),xs=xpState(n);
+ var sp=st==null?{t:"غير محدد",col:"#9aa7b1"}:st<=0?{t:"0 · نفدت",pill:["#c0392b","#fdf1ef"]}:st<=S.thr?{t:String(st)+" · قليل",pill:["#b45309","#fff4e0"]}:{t:String(st),b:1};
+ var xp=d===null?{t:"—",col:"#9aa7b1"}:xs==="out"||d<=0?{t:d<0?"⛔ منتهية منذ "+(-d)+" يوم":"⛔ تنتهي اليوم",pill:["#c0392b","#fdf1ef"]}:xs==="soon"?{t:"⚠ بعد "+d+" يوم",pill:["#b45309","#fff4e0"]}:{t:"✓ بعد "+d+" يوم",col:"#1b8a4b"};
+ return {st:st,d:d,xs:xs,sp:sp,xp:xp,date:hasXp(n)?dayLbl(S.xp[n]):"—"}}
+function matForm(type0){var U=XU,el=U.el,f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),acc=ACC(),type=acc?(type0||"stock"):"stock",sel={};
+ S.cats.forEach(function(c){sel[c.n]=true});
+ var cb=el("div",{class:"sp-qb"});function drawC(){cb.innerHTML="";S.cats.forEach(function(c){var b=el("button",{type:"button",class:sel[c.n]?"on":"",text:(sel[c.n]?"✓ ":"")+c.n+" ("+c.items.length+")",on:{click:function(){sel[c.n]=!sel[c.n];drawC()}}});cb.appendChild(b)})}drawC();
+ var allB=el("div",{class:"sp-qb"},[el("button",{type:"button",text:"☑ الكل",on:{click:function(){S.cats.forEach(function(c){sel[c.n]=true});drawC()}}}),el("button",{type:"button",text:"☐ ولا وحدة",on:{click:function(){S.cats.forEach(function(c){sel[c.n]=false});drawC()}}})]);
+ f.appendChild(el("div",{class:"sp-pw"},[el("span",{class:"sp-pl",text:"الفئات اللي تدخل بالتقرير"}),allB,cb]));
+ var a=el("input",{class:"x-fld",id:"mrA",type:"date"}),b=el("input",{class:"x-fld",id:"mrB",type:"date"}),pw=el("div",{style:"display:flex;flex-direction:column;gap:12px"},[el("label",{},["من",a]),el("label",{},["إلى",b])]);
+ var rf=$("rf")&&$("rf").value,rt=$("rt")&&$("rt").value;a.value=rf||today().slice(0,8)+"01";b.value=rt||today();
+ if(acc){var sw=el("div",{class:"sp-ps"}),t1=el("button",{type:"button",text:"📦 العدد والإكسباير"}),t2=el("button",{type:"button",text:"📅 الصادر لفترة + العدد والإكسباير"});sw.appendChild(t1);sw.appendChild(t2);
+  function ps(){t1.classList.toggle("on",type==="stock");t2.classList.toggle("on",type==="period");pw.hidden=type!=="period"}t1.onclick=function(){type="stock";ps()};t2.onclick=function(){type="period";ps()};
+  f.appendChild(el("div",{class:"sp-pw"},[el("span",{class:"sp-pl",text:"نوع التقرير"}),sw]));f.appendChild(pw);ps()}
+ U.modal("📄 تقرير المواد PDF",f,[{t:"إلغاء"},{t:"📄 تصدير PDF",cls:"ok",fn:function(){var cats=S.cats.filter(function(c){return sel[c.n]}).map(function(c){return c.n});if(!cats.length){toast("اختر فئة وحدة على الأقل");return false}
+  if(type==="period"){if(!a.value||!b.value){toast("اختر التاريخين");return false}setTimeout(function(){pdfMat({type:"period",a:a.value,b:b.value,cats:cats})},0)}else setTimeout(function(){pdfMat({type:"stock",cats:cats})},0)}}])}
+function pdfMat(o){var CS={};o.cats.forEach(function(n){CS[n]=1});var cat={},items=[];S.cats.forEach(function(c){c.items.forEach(function(i){cat[i]=c.n;if(CS[c.n])items.push(i)})});
+ var allCats=o.cats.length===S.cats.length,catTxt=allCats?"كل الفئات":o.cats.join("، ");
+ var per=o.type==="period",a=o.a,b=o.b,T=[];if(per&&a>b){var t=a;a=b;b=t}
+ if(per){S.xall=true;try{T=allRecs().filter(function(x){return x.d>=a&&x.d<=b&&CS[cat[x.i]]}).sort(function(x,y){return x.d<y.d?-1:x.d>y.d?1:(x.t<y.t?-1:x.t>y.t?1:0)})
+  .map(function(x){var u=rcUnit(x),v=usAt(x.i,x.d);return {x:x,c:u==null?null:rc(x),s:v==null?null:v*x.n}})}finally{S.xall=false}}
+ if(!items.length){toast("ما أكو مواد بهذي الفئات");return}
+ ensureOrg(function(){var D="—",OK="#1b8a4b",BAD="#c0392b",WARN="#b45309",TEAL="#0e7c86";
+ var out={};T.forEach(function(r){out[r.x.i]=(out[r.x.i]||0)+r.x.n});
+ /* العدد والإكسباير */
+ var nSt=0,nOut=0,nLow=0,nXo=0,nXs=0,alerts=[];
+ var cols=[{h:"#",w:28},{h:"المادة"},{h:"المتبقي",w:96,a:"c"},{h:"تاريخ الإكسباير",w:100,a:"c",n:1},{h:"الصلاحية",w:132,a:"c"}];if(per)cols.push({h:"الصادر بالفترة",w:84,a:"c",n:1});
+ var s0={h:"📦 العدد المتبقي والإكسباير"+(allCats?"":" — "+catTxt),cols:cols,rows:[]},k=0;
+ S.cats.forEach(function(c){if(!CS[c.n]||!c.items.length)return;var cq=0;c.items.forEach(function(n){if(hasSt(n))cq+=Math.max(0,S.stock[n])});
+  s0.rows.push({k:"grp",c:["🗂️ "+c.n+"  ("+c.items.length+" مادة)","المتبقي: "+cq+" قطعة"]});
+  c.items.forEach(function(n){var m=matStat(n);k++;if(m.st!=null)nSt+=Math.max(0,m.st);if(m.st!=null&&m.st<=0)nOut++;else if(m.st!=null&&m.st<=S.thr)nLow++;if(m.xs==="out"||(m.d!==null&&m.d<=0))nXo++;else if(m.xs==="soon")nXs++;
+   if((m.d!==null&&(m.xs!=="ok"||m.d<=0))||(m.st!=null&&m.st<=S.thr))alerts.push({n:n,m:m});
+   var bg=(m.xs==="out"||(m.d!==null&&m.d<=0)||(m.st!=null&&m.st<=0))?"#fdf6f5":"";
+   var row=[String(k),{t:n,b:1},m.sp,{t:m.date,col:m.d===null?"#9aa7b1":""},m.xp];if(per)row.push(out[n]?{t:String(out[n]),b:1,col:TEAL}:{t:"—",col:"#9aa7b1"});s0.rows.push({bg:bg,c:row})})});
+ var sA={h:"⚠ يحتاج انتباه (منتهية، قريبة الانتهاء، أو قليلة/نفدت)",cols:[{h:"المادة"},{h:"الفئة",w:110},{h:"المتبقي",w:96,a:"c"},{h:"تاريخ الإكسباير",w:100,a:"c",n:1},{h:"الصلاحية",w:132,a:"c"}],rows:[]};
+ alerts.sort(function(x,y){var dx=x.m.d===null?1e9:x.m.d,dy=y.m.d===null?1e9:y.m.d;return dx-dy}).forEach(function(r){sA.rows.push({c:[{t:r.n,b:1},{t:cat[r.n],col:"#5f6f7c"},r.m.sp,r.m.date,r.m.xp]})});
+ var secs=[s0];if(alerts.length)secs.push(sA);
+ var cards=[["عدد المواد",String(items.length)],["القطع المتبقية",String(nSt),TEAL,"#eef6f7"],["⛔ منتهية · ⚠ قريبة",nXo+" · "+nXs,nXo?BAD:WARN,nXo?"#fdf1ef":"#fff8eb"],["نفدت · قليلة",nOut+" · "+nLow,nOut?BAD:WARN]];
+ var title="تقرير المواد — العدد والإكسباير",sub=(allCats?"كل الفئات":"الفئات: "+catTxt)+" · لغاية "+wdN(today())+" "+dayLbl(today()),name="العدد والإكسباير - "+(allCats?"كل الفئات":o.cats.join(" ، "))+" - "+today();
+ /* الصادر لفترة (نفس شكل تقرير الصادر اليومي) */
+ if(per){var acc=ACC(),tq=0,tc=0,ts=0,it={},io=[],dy={},dyo=[],nc=0;
+  T.forEach(function(r){var x=r.x,c=r.c||0,s=r.s||0;tq+=x.n;tc+=c;ts+=s;if(r.c==null)nc++;
+   if(!it[x.i]){it[x.i]={q:0,c:0,s:0,r:0,nc:0};io.push(x.i)}var I=it[x.i];I.q+=x.n;I.c+=c;I.s+=s;I.r++;if(r.c==null)I.nc++;
+   if(!dy[x.d]){dy[x.d]={q:0,c:0,L:[]};dyo.push(x.d)}dy[x.d].q+=x.n;dy[x.d].c+=c;dy[x.d].L.push(r)});
+  var s1={h:"📊 مجموع الصادر لكل مادة",cols:[{h:"#",w:30},{h:"المادة"},{h:"الصادر",w:70,a:"c",n:1},{h:"المتبقي هسه",w:96,a:"c"},{h:"الكلفة",w:110,a:"l",n:1}],rows:[]};
+  io.sort(function(x,y){return it[y].q-it[x].q}).forEach(function(n,i){var I=it[n];s1.rows.push({c:[String(i+1),{t:n,s:cat[n]||"",b:1},{t:String(I.q),b:1},matStat(n).sp,I.nc===I.r?D:nfm(I.c)]})});
+  s1.rows.push({k:"tot",c:["","المجموع",String(tq),"",nfm(tc)]});
+  var s2={h:"📅 الصادر يوم بيوم",cols:[{h:"الوقت",w:58},{h:"المادة"},{h:"العدد",w:54,a:"c",n:1},{h:"الموظف",w:120},{h:"الكلفة",w:104,a:"l",n:1}],rows:[]};
+  dyo.forEach(function(d){var Y=dy[d];s2.rows.push({k:"grp",c:[wdN(d)+"  "+dayLbl(d),Y.q+" قطعة"+(acc?" · كلفة "+nfm(Y.c):"")]});
+   Y.L.forEach(function(r){var x=r.x;s2.rows.push({c:[{t:x.t||"",col:"#5f6f7c"},{t:x.i,b:1},{t:String(x.n),b:1},x.e||"",r.c==null?D:nfm(r.c)]})})});
+  s2.rows.push({k:"tot",c:["","المجموع ("+dyo.length+" يوم)",String(tq),"",nfm(tc)]});
+  if(T.length){secs.push(s1);secs.push(s2)}
+  title="تقرير الصادر اليومي ويه العدد والإكسباير";sub="من "+wdN(a)+" "+dayLbl(a)+"  إلى  "+wdN(b)+" "+dayLbl(b);
+  cards=[["الصادر بالفترة (قطعة)",String(tq),TEAL,"#eef6f7"],["القطع المتبقية هسه",String(nSt)],["⛔ منتهية · ⚠ قريبة",nXo+" · "+nXs,nXo?BAD:WARN,nXo?"#fdf1ef":"#fff8eb"],["الكلفة بالفترة",nfm(tc)+" د.ع"]];
+  name="الصادر اليومي والعدد والإكسباير - "+(allCats?"كل الفئات":o.cats.join(" ، "))+" - "+a+" إلى "+b}
+ pdfReport({title:title,sub:sub,info:[(allCats?"كل الفئات":"الفئات: "+catTxt)+" · "+items.length+" مادة"+(per?" · "+T.length+" سحب بالفترة":"")+" · حد «قليل» = "+S.thr+" أو أقل"],cards:cards,secs:secs,
+  foot:per&&!T.length?"ما أكو سحوبات بهذي الفترة للفئات المختارة.":"",name:name})})}
 /* ===== 4.9v: نسخة احتياطية كاملة من شاشة البرامج — كل البيانات + صور الفواتير والوصولات ===== */
 function bkImgIds(){var ids={};function add(a){(a||[]).forEach(function(i){if(i)ids[i]=1})}
  Object.keys(S.exe||{}).forEach(function(k){add((S.exe[k]||{}).imgs)});Object.keys(S.smv||{}).forEach(function(k){var m=S.smv[k]||{};add(m.imgs);add(m.pimgs)});return Object.keys(ids)}
@@ -2326,7 +2383,7 @@ function debtForm(mid,sid){var m=mid?S.sdb[mid]:null,f=el("div",{style:"display:
  if(!m&&sid)f.appendChild(el("div",{class:"dv-who"},["👤 ",S.stf[sid].n]));else f.appendChild(el("label",{},["الموظف",sel]));
  f.appendChild(el("label",{},["مبلغ الدين (دينار)",am]));
  var ow=el("label",{},["نوع آخر",ot]);ow.hidden=ty!=="أخرى";
- f.appendChild(el("label",{},["نوع الدين",chips(DTYPES.map(function(t){return [t,t]}),ty,function(v){ty=v;ow.hidden=v!=="أخرى";if(v==="أخرى")setTimeout(function(){ot.focus()},30)})]));f.appendChild(ow);
+ f.appendChild(el("div",{class:"sp-pw"},[el("span",{class:"sp-pl",text:"نوع الدين"}),chips(DTYPES.map(function(t){return [t,t]}),ty,function(v){ty=v;ow.hidden=v!=="أخرى";if(v==="أخرى")setTimeout(function(){ot.focus()},30)})]));f.appendChild(ow);
  var sw=el("div",{class:"sp-ps"}),b1=el("button",{type:"button",text:SRC.tr}),b2=el("button",{type:"button",text:SRC.rev});sw.appendChild(b1);sw.appendChild(b2);
  var hint=el("div",{class:"dv-hint"});function ps(){b1.classList.toggle("on",src==="tr");b2.classList.toggle("on",src==="rev");hint.textContent=src==="tr"?"ينزل تلقائيًا كمصروف «ديون الكادر» بالخزينة الحالية بمصاريف العيادة.":"ما يأثر على الخزينة."}
  b1.onclick=function(){src="tr";ps()};b2.onclick=function(){src="rev";ps()};ps();
@@ -2346,7 +2403,7 @@ function payForm(mid,sid){var m=mid?S.sdb[mid]:null,f=el("div",{style:"display:f
  sel.onchange=upd;
  if(!(m||sid))f.appendChild(el("label",{},["الموظف",sel]));else f.appendChild(el("div",{class:"dv-who"},["👤 ",S.stf[m?m.sid:sid].n]));
  f.appendChild(info);f.appendChild(el("label",{},["مبلغ التسديد (دينار)",am]));
- f.appendChild(el("label",{},["وين راحت الفلوس؟",chips([["tr",DST.tr],["rev",DST.rev],["sal",DST.sal]],to,function(v){to=v})]));
+ f.appendChild(el("div",{class:"sp-pw"},[el("span",{class:"sp-pl",text:"وين راحت الفلوس؟"}),chips([["tr",DST.tr],["rev",DST.rev],["sal",DST.sal]],to,function(v){to=v})]));
  f.appendChild(el("label",{},["التاريخ",d]));f.appendChild(el("label",{},["ملاحظة",nt]));
  var btns=[{t:"إلغاء"},{t:"حفظ",cls:"ok",fn:function(){var a=num(am.value);if(!(a>0)){toast("اكتب مبلغ التسديد");return false}var s2=m?m.sid:(sid||sel.value);if(!s2){toast("اختر الموظف");return false}
   var id=mid||"p"+rid(),o=Object.assign({},m||{ts:Date.now()},{sid:s2,k:"pay",amount:a,date:d.value||tdy(),to:to,note:nt.value.trim()});if(!o.note)delete o.note;
