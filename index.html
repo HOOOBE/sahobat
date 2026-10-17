@@ -544,7 +544,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 5.1v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 5.2v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -592,7 +592,7 @@ button.flash{animation:flash .5s ease-out}
 <div class="tiles" id="tiles"></div>
 <button class="hmbk" id="hmBk" hidden><b>💾 النسخة الاحتياطية</b><small id="hmBkS"></small></button>
 <button class="hmv" id="hmOrg" hidden title="الاسم اللي ينكتب بأعلى ملفات PDF وExcel"></button>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.1v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.2v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -697,7 +697,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">5.1v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">5.2v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -722,13 +722,11 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 5.1v Online</div><div class="vd">تاريخ التحديث: 17/10/2026</div>
+<div class="vh">ℹ️ 5.2v Online</div><div class="vd">تاريخ التحديث: 17/10/2026</div>
 <ul class="vl">
-<li><b>📄 تقرير المواد PDF:</b> زر جديد «📄 تقرير المواد PDF» يم «تصدير ملف Excel» بشاشة السحوبات. يطلع لكل مادة <b>العدد المتبقي</b> و<b>تاريخ الإكسباير</b> وكم باقي عليه، ويه قائمة «يحتاج انتباه» (منتهية، قريبة الانتهاء، قليلة أو نفدت).</li>
-<li><b>🗂️ تختار الفئات:</b> تحدد بس الفئات اللي تريدها (مثلًا فلر بس) أو الكل.</li>
-<li><b>📅 الصادر + العدد والإكسباير:</b> للحسابات تگدر تختار فترة (من – إلى) فيطلع الصادر بالفترة لكل مادة يم المتبقي والإكسباير، والصادر يوم بيوم. وهم من «📅 الأيام السابقة» ← تصدير فترة.</li>
+<li><b>📄 تقرير العدد والإكسباير صار بسيط:</b> جدول واحد لكل فئة: المادة، العدد، تاريخ الإكسباير، وكم يوم باقي. بدون مربعات وألوان زايدة — بس <b style="color:var(--bad)">الأحمر</b> للمنتهية أو اللي نفدت، و<b style="color:#b45309">البرتقالي</b> للقريبة الانتهاء أو القليلة.</li>
 </ul>
-<div class="vold"><b>5.0v Online</b>: برنامج «ديون الكادر»، مصاريف اليوم أوضح، «مُسلِّم المبلغ / المُشتري»، ألوان الأسماء، وخط جديد.<br><b>4.9v Online</b>: زر «💾 النسخة الاحتياطية» الكاملة ويه الصور بشاشة البرامج.<br><b>4.8v Online</b>: أبعاد التاب، ما يطلع شي برا الشاشة.<br><b>4.7v Online</b>: زر «📄 PDF» لقوائم الموردين.<br><b>4.6v Online</b>: الصادر اليومي والمصاريف اليومية PDF لفترة، وترويسة العيادة وقسم الحسابات بكل ملف.</div>
+<div class="vold"><b>5.1v Online</b>: «📄 تقرير المواد PDF» — العدد المتبقي والإكسباير ويه اختيار الفئات.<br><b>5.0v Online</b>: برنامج «ديون الكادر»، مصاريف اليوم أوضح، «مُسلِّم المبلغ / المُشتري»، ألوان الأسماء، وخط جديد.<br><b>4.9v Online</b>: زر «💾 النسخة الاحتياطية» الكاملة ويه الصور بشاشة البرامج.<br><b>4.8v Online</b>: أبعاد التاب، ما يطلع شي برا الشاشة.<br><b>4.7v Online</b>: زر «📄 PDF» لقوائم الموردين.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -921,7 +919,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="5.1";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="5.2";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1531,8 +1529,8 @@ function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0e7c86",INK="#14202
     pe("div","min-width:0",null,[pe("div","font-size:24px;font-weight:800;color:"+TEAL+";line-height:1.3",g.n||"العيادة"),sub?pe("div","font-size:14px;color:"+MUT+";font-weight:600;margin-top:2px",sub):null]),
     pe("div","text-align:left;font-size:12px;color:"+MUT+";line-height:1.6;white-space:nowrap",null,[pe("div","","تاريخ الإصدار"),pe("div","font-size:14px;font-weight:700;color:"+INK,stamp)])]);
    pg.appendChild(lh);
-   var tb=pe("div","background:"+TEAL+";color:#fff;border-radius:14px;padding:16px 22px;margin-top:14px",null,[pe("div","font-size:24px;font-weight:800;line-height:1.3",o.title),o.sub?pe("div","font-size:15px;margin-top:4px;opacity:.92",o.sub):null]);
-   (o.info||[]).forEach(function(t){tb.appendChild(pe("div","font-size:13px;margin-top:2px;opacity:.85",t))});
+   var tb=o.plain?pe("div","margin-top:14px;padding:0 2px",null,[pe("div","font-size:22px;font-weight:800;color:"+INK,o.title),o.sub?pe("div","font-size:14px;margin-top:3px;color:"+MUT,o.sub):null]):pe("div","background:"+TEAL+";color:#fff;border-radius:14px;padding:16px 22px;margin-top:14px",null,[pe("div","font-size:24px;font-weight:800;line-height:1.3",o.title),o.sub?pe("div","font-size:15px;margin-top:4px;opacity:.92",o.sub):null]);
+   if(!o.plain)(o.info||[]).forEach(function(t){tb.appendChild(pe("div","font-size:13px;margin-top:2px;opacity:.85",t))});
    pg.appendChild(tb);
    if(o.cards&&o.cards.length){var cs=pe("div","display:flex;gap:10px;margin:14px 0 4px");
     o.cards.forEach(function(c){cs.appendChild(pe("div","flex:1;min-width:0;border:1.5px solid "+LINE+";border-radius:12px;padding:10px 14px;background:"+(c[3]||"#fff"),null,[pe("div","font-size:12px;color:"+MUT+";font-weight:600",c[0]),pe("div","font-size:"+(String(c[1]).length>13?17:20)+"px;font-weight:800;margin-top:3px;direction:ltr;text-align:right;white-space:nowrap;color:"+(c[2]||INK),c[1])]))});
@@ -1549,10 +1547,10 @@ function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0e7c86",INK="#14202
  function mkRow(r,sec,i){if(r.k==="grp"){var tr=pe("tr","background:"+SOFT+";border-top:2px solid "+TEAL);
    var a=pe("td","padding:8px 8px;font-weight:800;color:"+TEAL+";font-size:14px",r.c[0]);a.colSpan=Math.max(1,sec.cols.length-(r.c[1]!=null?2:0));tr.appendChild(a);
    if(r.c[1]!=null){var b=pe("td","padding:8px 8px;font-weight:800;text-align:left;color:"+INK+";font-size:13px",r.c[1]);b.colSpan=Math.min(2,sec.cols.length-1);tr.appendChild(b)}return tr}
-  var tr2=pe("tr",r.k==="tot"?"background:"+SOFT+";border-top:2px solid "+TEAL:"border-bottom:1px solid "+LINE+";"+(r.bg?"background:"+r.bg:(i%2?"":"background:#fafcfd")));
+  var tr2=pe("tr",r.k==="tot"?"background:"+SOFT+";border-top:2px solid "+TEAL:"border-bottom:1px solid "+LINE+";"+(r.bg?"background:"+r.bg:(i%2||o.plain?"":"background:#fafcfd")));
   sec.cols.forEach(function(col,j){tr2.appendChild(cell(r.c[j],col,r.k))});return tr2}
  function startSec(sec,cont){var w=pe("div","margin-top:"+(cont?"10px":"18px"));
-  w.appendChild(pe("div","font-size:16px;font-weight:800;color:"+INK+";margin-bottom:6px;padding-right:10px;border-right:4px solid "+TEAL,sec.h+(cont?" (تكملة)":"")));
+  if(sec.h)w.appendChild(pe("div","font-size:16px;font-weight:800;color:"+INK+";margin-bottom:6px;padding-right:10px;border-right:4px solid "+TEAL,sec.h+(cont?" (تكملة)":"")));
   var t=pe("table","width:100%;border-collapse:collapse;font-size:12.5px;table-layout:fixed"),hr=pe("tr","background:"+SOFT);
   sec.cols.forEach(function(c){hr.appendChild(pe("th","padding:8px 6px;font-weight:800;color:"+TEAL+";border-bottom:2px solid "+TEAL+";text-align:"+(c.a==="l"?"left":c.a==="c"?"center":"right")+";"+(c.w?"width:"+c.w+"px;":""),c.h))});
   t.appendChild(pe("thead","",null,[hr]));var body=pe("tbody");t.appendChild(body);w.appendChild(t);pg.appendChild(w);return {w:w,body:body}}
@@ -1565,7 +1563,7 @@ function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0e7c86",INK="#14202
     var empty=!cur.body.children.length;if(empty)cur.w.remove();
     newPage(false);cur=startSec(sec,!empty);carry.forEach(function(c){cur.body.appendChild(c)});cur.body.appendChild(tr)}
    if(r.k==="grp")tr.dataset.k="grp"})});
- if(o.foot){pg.appendChild(pe("div","margin-top:14px;font-size:12px;color:"+MUT,o.foot));if(bottom()>LIM){pg.lastElementChild.remove();newPage(false);pg.appendChild(pe("div","margin-top:14px;font-size:12px;color:"+MUT,o.foot))}}
+ if(o.foot){pg.appendChild(pe("div","margin-top:14px;font-size:12px;line-height:1.7;white-space:pre-line;color:"+MUT,o.foot));if(bottom()>LIM){pg.lastElementChild.remove();newPage(false);pg.appendChild(pe("div","margin-top:14px;font-size:12px;line-height:1.7;white-space:pre-line;color:"+MUT,o.foot))}}
  pages.forEach(function(p,k){p.appendChild(pe("div","position:absolute;left:"+PAD+"px;right:"+PAD+"px;bottom:24px;display:flex;justify-content:space-between;gap:12px;font-size:11.5px;color:"+MUT+";border-top:1px solid "+LINE+";padding-top:8px",null,[pe("span","",[g.n,sub].filter(Boolean).join(" · ")||o.title),pe("span","white-space:nowrap","صفحة "+(k+1)+" من "+pages.length)]))});
  var pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4",orientation:"portrait"});
  return pages.reduce(function(pr,p,k){return pr.then(function(){return window.html2canvas(p,{scale:2,backgroundColor:"#ffffff",logging:false,useCORS:true}).then(function(c){if(k)pdf.addPage();pdf.addImage(c.toDataURL("image/jpeg",0.9),"JPEG",0,0,210,297)})})},Promise.resolve())
@@ -1603,9 +1601,10 @@ function pdfRange(a,b){if(!ACC())return;if(!a||!b){toast("اختر التاري�
   cards:[["مجموع القطع المسحوبة",String(tq),TEAL],["عدد السحوبات",String(T.length)],["الكلفة",nfm(tc)+" د.ع"],["مبلغ الخدمة",nfm(ts)+" د.ع",OK,"#eef8f1"]],
   secs:[s1,s2,s3],foot:nc?"⚠ "+nc+" سحب بدون كلفة مسجلة (ظهر بعلامة —).":"",name:"الصادر اليومي - "+a+" إلى "+b})})}
 /* ===== 5.1v: تقرير المواد PDF — العدد المتبقي والإكسباير لكل مادة، ويه اختيار الفئات، ويمّه الصادر لفترة ===== */
-function matStat(n){var st=hasSt(n)?S.stock[n]:null,d=xpLeft(n),xs=xpState(n);
- var sp=st==null?{t:"غير محدد",col:"#9aa7b1"}:st<=0?{t:"0 · نفدت",pill:["#c0392b","#fdf1ef"]}:st<=S.thr?{t:String(st)+" · قليل",pill:["#b45309","#fff4e0"]}:{t:String(st),b:1};
- var xp=d===null?{t:"—",col:"#9aa7b1"}:xs==="out"||d<=0?{t:d<0?"⛔ منتهية منذ "+(-d)+" يوم":"⛔ تنتهي اليوم",pill:["#c0392b","#fdf1ef"]}:xs==="soon"?{t:"⚠ بعد "+d+" يوم",pill:["#b45309","#fff4e0"]}:{t:"✓ بعد "+d+" يوم",col:"#1b8a4b"};
+function matStat(n){var st=hasSt(n)?S.stock[n]:null,d=xpLeft(n),xs=xpState(n),BAD="#c0392b",WARN="#b45309",G="#9aa7b1";
+ /* 5.2v: بسيط — رقم بس، وبالأحمر إذا نفدت/منتهية، وبالبرتقالي إذا قليلة/قريبة */
+ var sp=st==null?{t:"—",col:G}:st<=0?{t:"نفدت",col:BAD,b:1}:{t:String(st),b:1,col:st<=S.thr?WARN:""};
+ var xp=d===null?{t:"—",col:G}:d<0?{t:"منتهية",col:BAD,b:1}:d===0?{t:"تنتهي اليوم",col:BAD,b:1}:{t:d+" يوم",col:xs==="soon"?WARN:"",b:xs==="soon"?1:0};
  return {st:st,d:d,xs:xs,sp:sp,xp:xp,date:hasXp(n)?dayLbl(S.xp[n]):"—"}}
 function matForm(type0){var U=XU,el=U.el,f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),acc=ACC(),type=acc?(type0||"stock"):"stock",sel={};
  S.cats.forEach(function(c){sel[c.n]=true});
@@ -1627,21 +1626,18 @@ function pdfMat(o){var CS={};o.cats.forEach(function(n){CS[n]=1});var cat={},ite
  if(!items.length){toast("ما أكو مواد بهذي الفئات");return}
  ensureOrg(function(){var D="—",OK="#1b8a4b",BAD="#c0392b",WARN="#b45309",TEAL="#0e7c86";
  var out={};T.forEach(function(r){out[r.x.i]=(out[r.x.i]||0)+r.x.n});
- /* العدد والإكسباير */
- var nSt=0,nOut=0,nLow=0,nXo=0,nXs=0,alerts=[];
- var cols=[{h:"#",w:28},{h:"المادة"},{h:"المتبقي",w:96,a:"c"},{h:"تاريخ الإكسباير",w:100,a:"c",n:1},{h:"الصلاحية",w:132,a:"c"}];if(per)cols.push({h:"الصادر بالفترة",w:84,a:"c",n:1});
- var s0={h:"📦 العدد المتبقي والإكسباير"+(allCats?"":" — "+catTxt),cols:cols,rows:[]},k=0;
- S.cats.forEach(function(c){if(!CS[c.n]||!c.items.length)return;var cq=0;c.items.forEach(function(n){if(hasSt(n))cq+=Math.max(0,S.stock[n])});
-  s0.rows.push({k:"grp",c:["🗂️ "+c.n+"  ("+c.items.length+" مادة)","المتبقي: "+cq+" قطعة"]});
-  c.items.forEach(function(n){var m=matStat(n);k++;if(m.st!=null)nSt+=Math.max(0,m.st);if(m.st!=null&&m.st<=0)nOut++;else if(m.st!=null&&m.st<=S.thr)nLow++;if(m.xs==="out"||(m.d!==null&&m.d<=0))nXo++;else if(m.xs==="soon")nXs++;
-   if((m.d!==null&&(m.xs!=="ok"||m.d<=0))||(m.st!=null&&m.st<=S.thr))alerts.push({n:n,m:m});
-   var bg=(m.xs==="out"||(m.d!==null&&m.d<=0)||(m.st!=null&&m.st<=0))?"#fdf6f5":"";
-   var row=[String(k),{t:n,b:1},m.sp,{t:m.date,col:m.d===null?"#9aa7b1":""},m.xp];if(per)row.push(out[n]?{t:String(out[n]),b:1,col:TEAL}:{t:"—",col:"#9aa7b1"});s0.rows.push({bg:bg,c:row})})});
- var sA={h:"⚠ يحتاج انتباه (منتهية، قريبة الانتهاء، أو قليلة/نفدت)",cols:[{h:"المادة"},{h:"الفئة",w:110},{h:"المتبقي",w:96,a:"c"},{h:"تاريخ الإكسباير",w:100,a:"c",n:1},{h:"الصلاحية",w:132,a:"c"}],rows:[]};
- alerts.sort(function(x,y){var dx=x.m.d===null?1e9:x.m.d,dy=y.m.d===null?1e9:y.m.d;return dx-dy}).forEach(function(r){sA.rows.push({c:[{t:r.n,b:1},{t:cat[r.n],col:"#5f6f7c"},r.m.sp,r.m.date,r.m.xp]})});
- var secs=[s0];if(alerts.length)secs.push(sA);
- var cards=[["عدد المواد",String(items.length)],["القطع المتبقية",String(nSt),TEAL,"#eef6f7"],["⛔ منتهية · ⚠ قريبة",nXo+" · "+nXs,nXo?BAD:WARN,nXo?"#fdf1ef":"#fff8eb"],["نفدت · قليلة",nOut+" · "+nLow,nOut?BAD:WARN]];
- var title="تقرير المواد — العدد والإكسباير",sub=(allCats?"كل الفئات":"الفئات: "+catTxt)+" · لغاية "+wdN(today())+" "+dayLbl(today()),name="العدد والإكسباير - "+(allCats?"كل الفئات":o.cats.join(" ، "))+" - "+today();
+ /* العدد والإكسباير — جدول بسيط لكل فئة */
+ var nSt=0,nOut=0,nLow=0,nXo=0,nXs=0;
+ var cols=[{h:"#",w:28},{h:"المادة"},{h:"العدد",w:84,a:"c"},{h:"تاريخ الإكسباير",w:110,a:"c",n:1},{h:"باقي على الانتهاء",w:118,a:"c"}];if(per)cols.push({h:"الصادر بالفترة",w:84,a:"c",n:1});
+ var s0={h:per?"📦 العدد والإكسباير":"",cols:cols,rows:[]};
+ S.cats.forEach(function(c){if(!CS[c.n]||!c.items.length)return;var k=0;
+  s0.rows.push({k:"grp",c:[c.n,c.items.length+" مادة"]});
+  c.items.forEach(function(n){var m=matStat(n);k++;if(m.st!=null)nSt+=Math.max(0,m.st);if(m.st!=null&&m.st<=0)nOut++;else if(m.st!=null&&m.st<=S.thr)nLow++;if(m.d!==null&&m.d<=0)nXo++;else if(m.xs==="soon")nXs++;
+   var row=[{t:String(k),col:"#9aa7b1"},{t:n,b:1},m.sp,{t:m.date,col:m.d===null?"#9aa7b1":""},m.xp];if(per)row.push(out[n]?{t:String(out[n]),b:1}:{t:"—",col:"#9aa7b1"});s0.rows.push({c:row})})});
+ var secs=[s0];
+ var cards=[];
+ var title="العدد والإكسباير",sub=(allCats?"كل الفئات":catTxt)+" · "+dayLbl(today()),name="العدد والإكسباير - "+(allCats?"كل الفئات":o.cats.join(" ، "))+" - "+today();
+ var foot="منتهية: "+nXo+"   ·   قريبة الانتهاء: "+nXs+"   ·   نفدت: "+nOut+"   ·   قليلة: "+nLow+"\nالأحمر = منتهية أو نفدت · البرتقالي = قريبة الانتهاء (خلال "+S.xpd+" يوم) أو قليلة ("+S.thr+" أو أقل)";
  /* الصادر لفترة (نفس شكل تقرير الصادر اليومي) */
  if(per){var acc=ACC(),tq=0,tc=0,ts=0,it={},io=[],dy={},dyo=[],nc=0;
   T.forEach(function(r){var x=r.x,c=r.c||0,s=r.s||0;tq+=x.n;tc+=c;ts+=s;if(r.c==null)nc++;
@@ -1657,9 +1653,8 @@ function pdfMat(o){var CS={};o.cats.forEach(function(n){CS[n]=1});var cat={},ite
   if(T.length){secs.push(s1);secs.push(s2)}
   title="تقرير الصادر اليومي ويه العدد والإكسباير";sub="من "+wdN(a)+" "+dayLbl(a)+"  إلى  "+wdN(b)+" "+dayLbl(b);
   cards=[["الصادر بالفترة (قطعة)",String(tq),TEAL,"#eef6f7"],["القطع المتبقية هسه",String(nSt)],["⛔ منتهية · ⚠ قريبة",nXo+" · "+nXs,nXo?BAD:WARN,nXo?"#fdf1ef":"#fff8eb"],["الكلفة بالفترة",nfm(tc)+" د.ع"]];
-  name="الصادر اليومي والعدد والإكسباير - "+(allCats?"كل الفئات":o.cats.join(" ، "))+" - "+a+" إلى "+b}
- pdfReport({title:title,sub:sub,info:[(allCats?"كل الفئات":"الفئات: "+catTxt)+" · "+items.length+" مادة"+(per?" · "+T.length+" سحب بالفترة":"")+" · حد «قليل» = "+S.thr+" أو أقل"],cards:cards,secs:secs,
-  foot:per&&!T.length?"ما أكو سحوبات بهذي الفترة للفئات المختارة.":"",name:name})})}
+  name="الصادر اليومي والعدد والإكسباير - "+(allCats?"كل الفئات":o.cats.join(" ، "))+" - "+a+" إلى "+b;if(!T.length)foot="ما أكو سحوبات بهذي الفترة للفئات المختارة.\n"+foot}
+ pdfReport({title:title,sub:sub,plain:!per,info:[(allCats?"كل الفئات":"الفئات: "+catTxt)+" · "+items.length+" مادة"+(per?" · "+T.length+" سحب بالفترة":"")],cards:cards,secs:secs,foot:foot,name:name})})}
 /* ===== 4.9v: نسخة احتياطية كاملة من شاشة البرامج — كل البيانات + صور الفواتير والوصولات ===== */
 function bkImgIds(){var ids={};function add(a){(a||[]).forEach(function(i){if(i)ids[i]=1})}
  Object.keys(S.exe||{}).forEach(function(k){add((S.exe[k]||{}).imgs)});Object.keys(S.smv||{}).forEach(function(k){var m=S.smv[k]||{};add(m.imgs);add(m.pimgs)});return Object.keys(ids)}
