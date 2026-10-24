@@ -5,27 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>تسجيل السحوبات</title>
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0e7c86">
+<meta name="theme-color" content="#F5F5F5">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="mobile-web-app-capable" content="yes">
 <style>
-:root{--bg:#eef2f6;--card:#fff;--tx:#14202b;--mut:#6b7885;--bd:#d5dde5;--ok:#1b8a4b;--bad:#c0392b;--l:40%;--on:#fff;--ac:#0e7c86;
+:root{--bg:#F5F5F5;--card:#FFFFFF;--tx:#0F172A;--mut:#64748B;--bd:#E5E7EB;--ok:#047857;--bad:#B91C1C;--l:40%;--on:#FFFFFF;--ac:#0F172A;--lime:#D4FF3C;--lime-soft:#F0FFC4;--hero:#0F172A;--hero-tx:#FFFFFF;--sh:0 1px 2px rgba(15,23,42,.04),0 6px 18px rgba(15,23,42,.05);
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1418;--card:#19222a;--tx:#eef2f5;--mut:#93a1ad;--bd:#2b3841;--l:62%;--on:#0b1216;--ac:#2fb5c0}}
-:root[data-theme="dark"]{--bg:#0e1418;--card:#19222a;--tx:#eef2f5;--mut:#93a1ad;--bd:#2b3841;--l:62%;--on:#0b1216;--ac:#2fb5c0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1014;--card:#16181F;--tx:#E5E7EB;--mut:#9CA3AF;--bd:#2A2E37;--ok:#10B981;--bad:#F87171;--l:62%;--on:#0E1014;--ac:#E5E7EB;--hero:#1E2129;--hero-tx:#E5E7EB;--sh:0 1px 2px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1014;--card:#16181F;--tx:#E5E7EB;--mut:#9CA3AF;--bd:#2A2E37;--ok:#10B981;--bad:#F87171;--l:62%;--on:#0E1014;--ac:#E5E7EB;--hero:#1E2129;--hero-tx:#E5E7EB;--sh:0 1px 2px rgba(0,0,0,.4);color-scheme:dark}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-/* 5.0v: خط Readex Pro (محفوظ داخل البرنامج بمجلد fonts حتى يشتغل بدون نت) */
-@font-face{font-family:"Readex Pro";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/readex-pro-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
-@font-face{font-family:"Readex Pro";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/readex-pro-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Readex Pro";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/readex-pro-arabic-500-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
-@font-face{font-family:"Readex Pro";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/readex-pro-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Readex Pro";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/readex-pro-arabic-600-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
-@font-face{font-family:"Readex Pro";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/readex-pro-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Readex Pro";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/readex-pro-arabic-700-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
-@font-face{font-family:"Readex Pro";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/readex-pro-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-body{margin:0;background:var(--bg);color:var(--tx);font-family:"Readex Pro",system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;font-size:18px}
+/* 5.6v: خط Cairo (نفس خط برنامج الحضور TQAttendance) — محفوظ بمجلد fonts حتى يشتغل بدون نت */
+@font-face{font-family:"Cairo";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/cairo-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/cairo-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/cairo-arabic-500-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/cairo-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cairo-arabic-600-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cairo-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/cairo-arabic-700-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/cairo-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/cairo-arabic-800-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/cairo-latin-800-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;font-size:17px}
 input,select,textarea{font-family:inherit}
 .wrap{max-width:1200px;margin:0 auto;padding:12px}
 .k{--c:hsl(var(--h) 62% var(--l))}
@@ -93,7 +95,7 @@ input[type=search]{width:100%;font:inherit;padding:14px;border-radius:14px;borde
 :root[data-theme="dark"] .xpt.soon{color:#ffb44d}:root[data-theme="dark"] .xpt.out{color:#ff7b6e}
 .cst{display:block;font-size:13px;font-weight:700;margin-top:2px;color:#b8860b}
 :root[data-theme="dark"] .cst{color:#e8c25a}
-.cst.sv{color:#0e7c86}
+.cst.sv{color:#0F766E}
 :root[data-theme="dark"] .cst.sv{color:#5fd0d9}
 #who2{font-size:15px;font-weight:700;white-space:nowrap}
 .tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
@@ -553,6 +555,45 @@ button.flash{animation:flash .5s ease-out}
 .thb{min-height:44px;min-width:48px;padding:4px 12px;font-size:21px;line-height:1}
 :is(:is(#xv,#sv,#dv,#rv),#sv) .thb,.hmt .thb{font-size:21px;padding:4px 12px}
 .thl{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-start:12px;border-width:1px}
+
+/* ===== 5.6v: الثيم العام مثل برنامج الحضور (TQAttendance): خط Cairo، رمادي فاتح وأبيض، أسود للأزرار الأساسية، لمسة ليموني خفيفة ===== */
+button{border-width:1px;border-radius:12px}
+.mb{border-radius:16px;border:1px solid var(--bd);box-shadow:var(--sh)}
+.top{border-radius:16px;box-shadow:var(--sh)}
+.go{background:var(--ac);border-color:var(--ac);color:var(--on);border-radius:12px}
+.toast{background:var(--ac);color:var(--on);box-shadow:0 8px 24px rgba(15,23,42,.18);border-radius:12px}
+:is(#xv,#sv,#dv,#rv){--xsh:var(--sh)}
+:is(#xv,#sv,#dv,#rv) .x-card{border-radius:16px}
+:is(#xv,#sv,#dv,#rv) .x-tre{--ac:var(--hero);--on:var(--hero-tx);background:var(--hero);color:var(--hero-tx);border-radius:16px}
+:is(#xv,#sv,#dv,#rv) .x-tre .x-tact button.pri{background:var(--lime);color:#0F172A;border-color:var(--lime)}
+#xm .mb{border-radius:16px}
+/* مربعات البرامج */
+.tl{--tc:var(--tcl,#475569);background:color-mix(in srgb,var(--tc) 7%,var(--card));border:1px solid color-mix(in srgb,var(--tc) 16%,var(--bd));color:var(--tx);box-shadow:var(--sh);border-radius:16px;padding:14px 16px;font-weight:700;aspect-ratio:1.45}
+.tl:hover{filter:none;border-color:color-mix(in srgb,var(--tc) 40%,var(--bd))}
+.tl .ti{width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--tc) 15%,var(--card));color:var(--tc);display:grid;place-items:center;position:relative;z-index:1}
+.tl .ti svg{width:24px;height:24px}
+.tl .te{font-size:22px}
+.tl .ttx{display:flex;flex-direction:column;gap:1px;position:relative;z-index:1;max-width:100%}
+.tl .tn{text-shadow:none;color:var(--tx);font-size:17px;font-weight:700}
+.tl .tds{font-size:12.5px;font-weight:500;color:var(--mut);line-height:1.35}
+.tl .twm{position:absolute;inset-inline-end:-12px;bottom:-16px;width:112px;height:112px;color:var(--tc);opacity:.12;transform:rotate(-10deg);pointer-events:none}
+.tl .twm svg{width:100%;height:100%}
+.tl .tbd{background:var(--lime);color:#0F172A}
+.tl .td{background:var(--card);color:var(--tx);border:1px solid var(--bd)}
+.tl .tx{color:var(--tc)}
+.tl.add{background:transparent;border:1.5px dashed var(--bd)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tl{--tc:var(--tcd)}}
+:root[data-theme="dark"] .tl{--tc:var(--tcd)}
+#hmWho{display:inline-block;margin-top:6px;background:var(--lime);color:#0F172A;border-radius:100px;padding:1px 12px;font-size:13px;font-weight:700}
+/* عن البرنامج */
+.hab{margin:26px auto 0;max-width:520px;text-align:center;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px 20px;box-shadow:var(--sh)}
+.hab-logo{display:block;width:min(260px,70%);height:auto;margin:0 auto 10px}
+.hab-t{font-size:15px;color:var(--tx)}
+.hab-t b{font-weight:800;letter-spacing:.2px}
+.hab-s{font-size:14px;color:var(--mut);margin-top:4px}
+.hab-s b{color:var(--tx);font-weight:700}
+.hab-v{font-size:12px;color:var(--mut);margin-top:10px;padding-top:10px;border-top:1px solid var(--bd)}
+.lg-logo{display:block;width:min(240px,80%);height:auto;margin:4px auto 0}
 </style>
 </head>
 <body>
@@ -561,7 +602,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 5.5v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 5.6v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -607,9 +648,13 @@ button.flash{animation:flash .5s ease-out}
 <div class="hmt"><h1>البرامج<small id="hmWho"></small></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
+<div class="hab" id="hmAbout"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
+<div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
+<div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b> · قسم الحسابات</div>
+<div class="hab-v">السحوبات · المصاريف · الموردين · ديون الكادر · الإيراد الشهري</div></div>
 <button class="hmbk" id="hmBk" hidden><b>💾 النسخة الاحتياطية</b><small id="hmBkS"></small></button>
 <button class="hmv" id="hmOrg" hidden title="الاسم اللي ينكتب بأعلى ملفات PDF وExcel"></button>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.5v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.6v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -717,11 +762,11 @@ button.flash{animation:flash .5s ease-out}
 <div class="row" style="margin-top:6px"><button id="lotOk" class="emp on k" style="--h:170">🛒 حفظ الشراء</button><button id="lotX">إلغاء</button></div>
 </div></div>
 <div class="md" id="login" hidden style="background:var(--bg)"><button class="thb thl" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><div class="mb" style="text-align:center">
-<div style="font-size:40px">🏥</div><div style="font-weight:800;font-size:22px;margin:4px 0 16px">برامج العيادة</div>
+<img src="logo.webp" alt="Manar Derma Clinic" class="lg-logo" width="900" height="287"><div style="font-weight:800;font-size:22px;margin:6px 0 16px">برامج العيادة</div>
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">5.5v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">5.6v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -746,11 +791,13 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 5.5v Online</div><div class="vd">تاريخ التحديث: 24/10/2026</div>
+<div class="vh">ℹ️ 5.6v Online</div><div class="vd">تاريخ التحديث: 24/10/2026</div>
 <ul class="vl">
-<li><b>🧹 حذف بيانات الشيت:</b> انحذفت حركات الإيراد اللي انضافت من شيت «حركات الايراد» (الأشهر 7–10) وإيراداتها، حتى تبدي التسجيل بنفسك من الشهر العاشر. الحركات اللي سجلتها انت باليد ما تنمس.</li>
+<li><b>🎨 ثيم جديد:</b> نفس شكل برنامج الحضور — خط <b>Cairo</b>، خلفية رمادية فاتحة وبطاقات بيضاء، الأزرار الأساسية سوداء، ولمسة ليموني خفيفة. والوضع الليلي بنفس الألوان الهادئة.</li>
+<li><b>🧩 مربعات البرامج:</b> كل برنامج بلون هادئ، ويمه وصف قصير لشغله، وبداخله رسمة شفافة تدل عليه (صندوق، حاسبة، محفظة، شاحنة الموردين، الكادر، رسم بياني للإيراد).</li>
+<li><b>🏥 Manar Derma Clinic:</b> شعار العيادة بشاشة الدخول، وبالشاشة الرئيسية بطاقة «تم تصميم هذا البرنامج من قبل Manar Derma Clinic» ويه اسم المشرف.</li>
 </ul>
-<div class="vold"><b>5.4v Online</b>: أنواع «سلفة» و«مصاريف» بالإيراد، وخانة «مُسلِّم المبلغ».<br><b>5.3v Online</b>: برنامج «الإيراد الشهري» — حركات الإيراد ويه صور الوصولات، ومطابقة نهاية الشهر PDF.<br><b>5.2v Online</b>: تقرير العدد والإكسباير PDF بسيط وواضح.<br><b>5.1v Online</b>: «📄 تقرير المواد PDF» — العدد المتبقي والإكسباير ويه اختيار الفئات.<br><b>5.0v Online</b>: برنامج «ديون الكادر»، مصاريف اليوم أوضح، «مُسلِّم المبلغ / المُشتري»، ألوان الأسماء، وخط جديد.</div>
+<div class="vold"><b>5.5v Online</b>: حذف حركات الإيراد المضافة من الشيت.<br><b>5.4v Online</b>: أنواع «سلفة» و«مصاريف» بالإيراد، وخانة «مُسلِّم المبلغ».<br><b>5.3v Online</b>: برنامج «الإيراد الشهري» — حركات الإيراد ويه صور الوصولات، ومطابقة نهاية الشهر PDF.<br><b>5.2v Online</b>: تقرير العدد والإكسباير PDF بسيط وواضح.<br><b>5.1v Online</b>: «📄 تقرير المواد PDF» — العدد المتبقي والإكسباير ويه اختيار الفئات.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -943,7 +990,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="5.5";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="5.6";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1469,7 +1516,20 @@ function apps(){var l=(Array.isArray(S.apps)&&S.apps.length)?S.apps:DEF_APPS;
  /* 4.0v: البرامج الأساسية الجديدة تنضاف تلقائيًا يم البقية */
  DEF_APPS.forEach(function(d){if(!l.some(function(a){return a.id===d.id}))l=l.concat([d])});return l}
 function icoEl(k){var s=document.createElement("span");if(ICO[k]){s.className="ti";s.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICO[k]+'</svg>'}else{s.className="te";s.textContent=k||"⭐"}return s}
-function tileFill(t,a){var g=GR[(a.c|0)%GR.length];t.style.setProperty("--g1",g[0]);t.style.setProperty("--g2",g[1]);t.innerHTML="";t.appendChild(icoEl(a.i));var n=document.createElement("span");n.className="tn";n.textContent=a.n||"برنامج";t.appendChild(n)}
+/* 5.6v: مربعات البرامج بألوان هادئة + رسمة شفافة تدل على شغل كل برنامج */
+var TP=[["#7C3AED","#A78BFA"],["#047857","#34D399"],["#BE185D","#F472B6"],["#C2410C","#FB923C"],["#0E7490","#22D3EE"],["#1D4ED8","#60A5FA"],["#B45309","#FBBF24"],["#B91C1C","#F87171"],["#92400E","#D6A36A"],["#0F766E","#2DD4BF"],["#475569","#94A3B8"],["#0369A1","#38BDF8"]];
+var WMK={wde:'<path d="M10 24l22-10 22 10v22L32 56 10 46z"/><path d="M10 24l22 10 22-10M32 34v22"/><path d="M21 19l22 10"/>',
+ wda:'<rect x="14" y="6" width="36" height="52" rx="6"/><rect x="20" y="12" width="24" height="10" rx="2"/><path d="M22 31h4M30 31h4M38 31h4M22 39h4M30 39h4M38 39h4M22 47h4M30 47h12"/>',
+ xp:'<path d="M8 20h44a4 4 0 0 1 4 4v26a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4z"/><path d="M8 20l34-11 4 11"/><path d="M56 31H45a5 5 0 0 0 0 10h11"/><circle cx="46" cy="36" r="1.6"/>',
+ sp:'<path d="M4 15h34v29H4z"/><path d="M38 25h12l10 10v9H38z"/><circle cx="15" cy="48" r="5"/><circle cx="49" cy="48" r="5"/><path d="M11 24h18M11 32h12"/>',
+ dv:'<circle cx="21" cy="19" r="8"/><path d="M7 50c1-9 7-14 14-14s13 5 14 14"/><circle cx="46" cy="38" r="11"/><path d="M46 31v14M42 34h6a2.5 2.5 0 0 1 0 5h-4a2.5 2.5 0 0 0 0 5h6"/>',
+ rv:'<path d="M8 56h50"/><rect x="12" y="38" width="8" height="14" rx="1.5"/><rect x="26" y="29" width="8" height="23" rx="1.5"/><rect x="40" y="20" width="8" height="32" rx="1.5"/><path d="M10 26l14-10 10 6 18-14"/><path d="M44 8h8v8"/>',
+ link:'<circle cx="32" cy="32" r="22"/><path d="M10 32h44M32 10c7 7 7 37 0 44M32 10c-7 7-7 37 0 44"/>',
+ def:'<path d="M32 8l7 15 16 2-12 11 3 16-14-8-14 8 3-16L9 25l16-2z"/>'};
+function tileDesc(a){return a.k==="wd"?(a.w==="emp"?"تسجيل سحب المواد":"السحوبات والأرصدة والكلف"):a.k==="xp"?"الخزينة والمصاريف اليومية":a.k==="sp"?"قوائم الموردين والتسديدات":a.k==="dv"?"سلف وديون الكادر":a.k==="rv"?"حركات الإيراد والمطابقة":a.k==="link"?(function(){try{return new URL(a.u).hostname.replace(/^www\./,"")}catch(e){return "رابط"}})():""}
+function tileFill(t,a){var g=GR[(a.c|0)%GR.length],p=TP[(a.c|0)%TP.length];t.style.setProperty("--g1",g[0]);t.style.setProperty("--g2",g[1]);t.style.setProperty("--tcl",p[0]);t.style.setProperty("--tcd",p[1]);t.innerHTML="";
+ var wk=a.k==="wd"?(a.w==="emp"?"wde":"wda"):a.k==="link"?"link":WMK[a.k]?a.k:"def",w=document.createElement("span");w.className="twm";w.setAttribute("aria-hidden","true");w.innerHTML='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">'+WMK[wk]+'</svg>';t.appendChild(w);
+ t.appendChild(icoEl(a.i));var tt=document.createElement("span");tt.className="ttx";var n=document.createElement("span");n.className="tn";n.textContent=a.n||"برنامج";tt.appendChild(n);var dsc=tileDesc(a);if(dsc){var d=document.createElement("span");d.className="tds";d.textContent=dsc;tt.appendChild(d)}t.appendChild(tt)}
 function okUrl(u){return /^https?:\/\/[^\s]+\.[^\s]+/i.test(u||"")}
 function showHome(){if(!S.role)return;S.hmEd=false;$("home").hidden=false;drawHome();$("home").scrollTop=0}
 function drawHome(){if(!S.role)return;var acc=ACC(),T=$("tiles");T.innerHTML="";
@@ -1536,15 +1596,15 @@ function ensureOrg(cb){if(org().n||!ACC()||orgAsked||typeof XU==="undefined"){cb
 function wdN(s){try{var p=s.split("-");return new Date(+p[0],p[1]-1,+p[2]).toLocaleDateString("ar-IQ-u-nu-latn",{weekday:"long"})}catch(e){return ""}}
 function nfm(n){return Math.round(n||0).toLocaleString("en-US")}
 function pdfLib(src){return new Promise(function(res,rej){if(document.querySelector('script[data-lib="'+src+'"]'))return res();var x=document.createElement("script");x.src=src;x.dataset.lib=src;x.onload=function(){res()};x.onerror=function(){x.remove();rej(new Error(src))};document.head.appendChild(x)})}
-function pdfLibs(){return Promise.all([pdfLib("lib/html2canvas.min.js"),pdfLib("lib/jspdf.umd.min.js"),document.fonts&&document.fonts.load?Promise.all(["400","600","700","800"].map(function(w){return document.fonts.load(w+' 16px "Readex Pro"',"عربي 123").catch(function(){})})):null])}
+function pdfLibs(){return Promise.all([pdfLib("lib/html2canvas.min.js"),pdfLib("lib/jspdf.umd.min.js"),document.fonts&&document.fonts.load?Promise.all(["400","600","700","800"].map(function(w){return document.fonts.load(w+' 16px "Cairo"',"عربي 123").catch(function(){})})):null])}
 function pe(t,st,txt,kids){var e=document.createElement(t);if(st)e.style.cssText=st;if(txt!=null)e.textContent=txt;(kids||[]).forEach(function(k){if(k)e.appendChild(k)});return e}
 /* تقرير PDF عام: o = {title, sub, info:[سطور], cards:[[عنوان,قيمة,لون,خلفية]], secs:[{h, cols:[{h,w,a:"l"|"c",n}], rows:[{c:[خلايا], k:"grp"|"tot"}]}], name}
    الخلية: نص، أو {t, s:سطر صغير, col:لون, b:عريض, pill:[لون,خلفية]} */
 function pdfReport(o){toast("⏳ جارِ تجهيز ملف PDF…");
  return pdfLibs().then(function(){return pdfBuild(o)}).then(function(r){pdfGive(r.blob,r.name)})
   .catch(function(e){console.error(e);toast("تعذّر تجهيز الـ PDF\nإذا أول مرة، تأكد من الإنترنت وجرب مرة ثانية")})}
-function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0e7c86",INK="#14202b",MUT="#5f6f7c",LINE="#dde5ea",SOFT="#eef6f7";
- var F='font-family:"Readex Pro","Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",Arial,sans-serif;';
+function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0F172A",INK="#14202b",MUT="#5f6f7c",LINE="#dde5ea",SOFT="#F1F5F9";
+ var F='font-family:"Cairo","Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",Arial,sans-serif;';
  var g=org(),sub=orgSub(),host=pe("div","position:fixed;left:-20000px;top:0;width:"+W+"px;z-index:-1;"+F);document.body.appendChild(host);
  var now=new Date(),stamp=dmyG(today())+" · "+String(now.getHours()).padStart(2,"0")+":"+String(now.getMinutes()).padStart(2,"0");
  var pages=[],pg=null;
@@ -1612,7 +1672,7 @@ function pdfRange(a,b){if(!ACC())return;if(!a||!b){toast("اختر التاري�
   if(!it[x.i]){it[x.i]={q:0,c:0,s:0,r:0,nc:0};io.push(x.i)}var I=it[x.i];I.q+=x.n;I.c+=c;I.s+=s;I.r++;if(r.c==null)I.nc++;
   if(!dy[x.d]){dy[x.d]={q:0,c:0,s:0,L:[]};dyo.push(x.d)}dy[x.d].q+=x.n;dy[x.d].c+=c;dy[x.d].s+=s;dy[x.d].L.push(r);
   if(!em[x.e]){em[x.e]={q:0,c:0,s:0,r:0};emo.push(x.e)}em[x.e].q+=x.n;em[x.e].c+=c;em[x.e].s+=s;em[x.e].r++});
- var D="—",OK="#1b8a4b",TEAL="#0e7c86";
+ var D="—",OK="#1b8a4b",TEAL="#0F172A";
  var s1={h:"📦 مجموع كل مادة",cols:[{h:"#",w:30},{h:"المادة"},{h:"الكمية",w:70,a:"c",n:1},{h:"الكلفة",w:120,a:"l",n:1},{h:"مبلغ الخدمة",w:120,a:"l",n:1}],rows:[]};
  io.sort(function(x,y){return it[y].q-it[x].q||it[y].c-it[x].c}).forEach(function(n,i){var I=it[n];s1.rows.push({c:[String(i+1),{t:n,s:cat[n]||"",b:1},{t:String(I.q),b:1},I.nc===I.r?D:nfm(I.c),I.s?{t:nfm(I.s),col:OK}:D]})});
  s1.rows.push({k:"tot",c:["",{t:"المجموع"},String(tq),nfm(tc),{t:nfm(ts),col:OK}]});
@@ -1650,7 +1710,7 @@ function pdfMat(o){var CS={};o.cats.forEach(function(n){CS[n]=1});var cat={},ite
  if(per){S.xall=true;try{T=allRecs().filter(function(x){return x.d>=a&&x.d<=b&&CS[cat[x.i]]}).sort(function(x,y){return x.d<y.d?-1:x.d>y.d?1:(x.t<y.t?-1:x.t>y.t?1:0)})
   .map(function(x){var u=rcUnit(x),v=usAt(x.i,x.d);return {x:x,c:u==null?null:rc(x),s:v==null?null:v*x.n}})}finally{S.xall=false}}
  if(!items.length){toast("ما أكو مواد بهذي الفئات");return}
- ensureOrg(function(){var D="—",OK="#1b8a4b",BAD="#c0392b",WARN="#b45309",TEAL="#0e7c86";
+ ensureOrg(function(){var D="—",OK="#1b8a4b",BAD="#c0392b",WARN="#b45309",TEAL="#0F172A";
  var out={};T.forEach(function(r){out[r.x.i]=(out[r.x.i]||0)+r.x.n});
  /* العدد والإكسباير — جدول بسيط لكل فئة */
  var nSt=0,nOut=0,nLow=0,nXo=0,nXs=0;
@@ -2030,7 +2090,7 @@ g("xExp").onclick=function(){var T=curT();if(!T)return;var all=ents().sort(funct
 g("xPdf").onclick=function(){var T=curT();if(!T)return;var r=rep();
  var rows=ents().filter(inR).sort(function(a,b){return a.date<b.date?-1:a.date>b.date?1:(a.ts||0)-(b.ts||0)});
  if(!rows.length){toast(X.rType?"ما بيها مصاريف «"+rtName(X.rType)+"» بهذي الفترة":"ما بيها حركات بهذي الفترة");return}
- ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",PC="#b45309",TEAL="#0e7c86",D="—";
+ ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",PC="#b45309",TEAL="#0F172A",D="—";
  function tn(e){return e.type===NOTYPE?"مؤقت (غير محدد)":(e.type||"أخرى")}
  var s1={h:"🗂️ حسب نوع المصروف",cols:[{h:"نوع المصروف"},{h:"العدد",w:70,a:"c",n:1},{h:"المبلغ",w:140,a:"l",n:1},{h:"النسبة",w:80,a:"c",n:1}],rows:[]};
  r.keys.forEach(function(k){s1.rows.push({c:[{t:iconOf(k)+" "+(k===NOTYPE?"مؤقت (غير محدد)":k),b:1},String(r.by[k].c),{t:fmn(r.by[k].v),b:1},Math.round(r.by[k].v/(r.to||1)*100)+"%"]})});
@@ -2241,8 +2301,8 @@ function pdfStatement(sid){var s=S.sup[sid],a=acct(sid);if(!a.M.length){toast("�
 function pdfStatement0(s,a){toast("⏳ جارِ تجهيز كشف الحساب PDF…");
  pdfLibs().then(function(){return buildPdf(s,a)}).then(function(r){pdfDeliver(r.blob,r.name)})
   .catch(function(e){console.error(e);toast("تعذّر تجهيز الـ PDF\nإذا أول مرة، تأكد من الإنترنت وجرب مرة ثانية")})}
-function buildPdf(s,a){var W=794,H=1123,PAD=40,TEAL="#0e7c86",INK="#14202b",MUT="#5f6f7c",LINE="#dde5ea",OK="#1b8a4b",BAD="#c0392b";
- var F='font-family:"Readex Pro","Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",Arial,sans-serif;';
+function buildPdf(s,a){var W=794,H=1123,PAD=40,TEAL="#0F172A",INK="#14202b",MUT="#5f6f7c",LINE="#dde5ea",OK="#1b8a4b",BAD="#c0392b";
+ var F='font-family:"Cairo","Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",Arial,sans-serif;';
  var host=pdfEl("div","position:fixed;left:-20000px;top:0;width:"+W+"px;z-index:-1;"+F);document.body.appendChild(host);
  var now=new Date(),stamp=dmy(tdy())+" · "+String(now.getHours()).padStart(2,"0")+":"+String(now.getMinutes()).padStart(2,"0"),un=a.M.filter(function(m){return !m.paid}).length;
  function newPage(first){var pg=pdfEl("div","width:"+W+"px;height:"+H+"px;background:#fff;color:"+INK+";direction:rtl;box-sizing:border-box;padding:"+PAD+"px "+PAD+"px 70px;position:relative;overflow:hidden;"+F);
@@ -2306,7 +2366,7 @@ g("spExp").onclick=expAll;
 /* 4.7v: كل قوائم الموردين PDF — ملخص الموردين، المتأخرة، وكل القوائم حسب المورد ويه حالتها */
 function pdfAll(){var L=sups().map(function(s){return {s:s,a:acct(s.id)}}).filter(function(x){return x.a.M.length});
  if(!L.length){toast("ما أكو قوائم حتى تتصدر");return}
- ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",TEAL="#0e7c86",D="—",ti=0,tp=0,tb=0,nu=0,ni=0,deb=0;
+ ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",TEAL="#0F172A",D="—",ti=0,tp=0,tb=0,nu=0,ni=0,deb=0;
  L.sort(function(x,y){return y.a.bal-x.a.bal||x.s.n.localeCompare(y.s.n,"ar")});
  var s1={h:"🏪 ملخص الموردين",cols:[{h:"#",w:28},{h:"المورد"},{h:"القوائم",w:70,a:"c",n:1},{h:"مجموع القوائم",w:112,a:"l",n:1},{h:"✓ المسدد",w:112,a:"l",n:1},{h:"غير المسدد",w:112,a:"l",n:1}],rows:[]};
  L.forEach(function(x,i){var a=x.a,un=a.M.filter(function(m){return !m.paid}).length;ti+=a.ti;tp+=a.tp;tb+=a.bal;nu+=un;ni+=a.M.length;if(a.bal>0)deb++;
@@ -2578,7 +2638,7 @@ function closeForm(){var mon=P.mon,st=(S.rvs||{})[mon]||{},f=el("div",{style:"di
   var o={R:r,ts:Date.now()};if(a!=null)o.act=a;if(nt.value.trim())o.note=nt.value.trim();S.rvs[mon]=o;save();render();setTimeout(function(){pdfMon(mon)},0)}}]);upd()}
 /* ---------- PDF المطابقة ---------- */
 function pdfMon(mon){var s=sum(mon);if(s.R==null&&!s.L.length){toast("ما أكو حركات ولا إيراد مسجّل لهذا الشهر");return}
- ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",TEAL="#0e7c86",MUT="#5f6f7c";
+ ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",TEAL="#0F172A",MUT="#5f6f7c";
   var ok=s.diff==null?null:Math.abs(s.diff)<1;
   var e={h:"🧮 المعادلة",cols:[{h:"البند"},{h:"العدد",w:70,a:"c",n:1},{h:"المبلغ",w:150,a:"l",n:1}],rows:[]};
   e.rows.push({bg:"#eef6f7",c:[{t:"💰 الإيراد الشهري الكامل",b:1,col:TEAL},"",s.R==null?{t:"ما مسجّل",col:BAD,b:1}:{t:fmn(s.R),b:1,col:TEAL}]});
