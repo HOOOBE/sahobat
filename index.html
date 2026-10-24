@@ -220,100 +220,100 @@ button.flash{animation:flash .5s ease-out}
 #homeb{min-height:44px;padding:4px 12px;font-size:22px}
 
 /* ===== مصاريف العيادة (3.1v) ===== */
-:is(#xv,#sv,#dv){position:fixed;inset:0;z-index:16;background:var(--bg);overflow-y:auto;--acs:color-mix(in srgb,var(--ac) 14%,var(--card));--out:var(--bad);--in:var(--ok);--xsh:0 1px 2px rgba(10,40,42,.06),0 6px 20px rgba(10,40,42,.06)}
-:is(:is(#xv,#sv,#dv),#sv) .xw{max-width:1180px;margin:0 auto;padding:calc(12px + env(safe-area-inset-top,0px)) 16px calc(40px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px}
-:is(:is(#xv,#sv,#dv),#sv) button{min-height:44px;padding:4px 14px;border-width:1px;border-radius:12px;font-size:15px;font-weight:700}
-:is(:is(#xv,#sv,#dv),#sv) .num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-:is(:is(#xv,#sv,#dv),#sv) .x-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv),#sv) .x-brand{flex:1 1 180px;min-width:0}
-:is(:is(#xv,#sv,#dv),#sv) .x-brand h1{font-size:22px;margin:0;font-weight:800}
-:is(:is(#xv,#sv,#dv),#sv) .x-brand div{color:var(--mut);font-size:14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-tre{background:var(--ac);color:var(--on);border-radius:20px;padding:18px 20px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;box-shadow:var(--xsh)}
-:is(:is(#xv,#sv,#dv),#sv) .x-lbl{font-size:13px;opacity:.85;font-weight:600}
-:is(:is(#xv,#sv,#dv),#sv) .x-tsel{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv),#sv) .x-tsel select{font:inherit;background:color-mix(in srgb,var(--on) 16%,transparent);border:1px solid color-mix(in srgb,var(--on) 35%,transparent);border-radius:10px;padding:6px 10px;font-weight:800;font-size:18px;max-width:100%;color:var(--on)}
-:is(:is(#xv,#sv,#dv),#sv) .x-tsel option{color:#13211f;background:#fff}
-:is(:is(#xv,#sv,#dv),#sv) .x-tdate{font-size:14px;opacity:.9}
-:is(:is(#xv,#sv,#dv),#sv) .x-big{font-size:clamp(34px,7vw,48px);font-weight:800;line-height:1.15;margin-top:10px}
-:is(:is(#xv,#sv,#dv),#sv) .x-big small{font-size:16px;font-weight:600;opacity:.85;margin-inline-start:6px}
-:is(:is(#xv,#sv,#dv),#sv) .x-big.neg{text-decoration:underline wavy}
-:is(:is(#xv,#sv,#dv),#sv) .x-bar{height:8px;border-radius:99px;background:color-mix(in srgb,var(--on) 22%,transparent);overflow:hidden;margin-top:12px}
-:is(:is(#xv,#sv,#dv),#sv) .x-bar b{display:block;height:100%;background:var(--on);border-radius:99px;transition:width .4s}
-:is(:is(#xv,#sv,#dv),#sv) .x-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-content:start}
-:is(:is(#xv,#sv,#dv),#sv) .x-meta div{background:color-mix(in srgb,var(--on) 12%,transparent);border-radius:14px;padding:10px 12px;min-width:0}
-:is(:is(#xv,#sv,#dv),#sv) .x-meta b{display:block;font-size:19px;font-weight:700;overflow-wrap:anywhere}
-:is(:is(#xv,#sv,#dv),#sv) .x-tact{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv),#sv) .x-tact button{border:1px solid color-mix(in srgb,var(--on) 40%,transparent);background:color-mix(in srgb,var(--on) 10%,transparent);color:var(--on)}
-:is(:is(#xv,#sv,#dv),#sv) .x-tact button.pri{background:var(--on);color:var(--ac);border-color:var(--on)}
-:is(:is(#xv,#sv,#dv),#sv) .x-meta b{white-space:nowrap;overflow-wrap:normal;font-size:clamp(14px,1.6vw + 6px,19px)}
-@media (max-width:900px){:is(:is(#xv,#sv,#dv),#sv) .x-tre{grid-template-columns:minmax(0,1fr)}:is(:is(#xv,#sv,#dv),#sv) .x-meta div{padding:10px 8px}}
-:is(:is(#xv,#sv,#dv),#sv) .x-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
-@media (max-width:860px){:is(:is(#xv,#sv,#dv),#sv) .x-cols{grid-template-columns:minmax(0,1fr)}}
-:is(:is(#xv,#sv,#dv),#sv) .x-card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:18px;box-shadow:var(--xsh);min-width:0}
-:is(:is(#xv,#sv,#dv),#sv) .x-card h2{font-size:17px;font-weight:800;margin:0 0 12px;color:var(--tx)}
-:is(:is(#xv,#sv,#dv),#sv) .x-card h3{font-size:14px;color:var(--mut);margin:16px 0 8px;font-weight:600}
-:is(:is(#xv,#sv,#dv),#sv) .x-amt{display:flex;align-items:center;border:2px solid var(--bd);border-radius:16px;background:var(--bg);padding:4px 14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-amt:focus-within{border-color:var(--ac)}
-:is(:is(#xv,#sv,#dv),#sv) .x-amt input{flex:1;min-width:0;border:0;background:transparent;color:var(--tx);font:inherit;font-size:32px;font-weight:800;padding:8px 0;outline:none;text-align:right;direction:ltr}
-:is(:is(#xv,#sv,#dv),#sv) .x-amt span{color:var(--mut);font-weight:600}
-:is(:is(#xv,#sv,#dv),#sv) .x-quick{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-:is(:is(#xv,#sv,#dv),#sv) .x-quick button{min-height:38px;padding:0 12px;font-size:14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-quick button.clr{color:var(--mut)}
-:is(:is(#xv,#sv,#dv),#sv) .x-types{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
-:is(:is(#xv,#sv,#dv),#sv) .x-ty{display:flex;align-items:center;gap:8px;min-height:52px;border:1.5px solid var(--bd);background:var(--card);border-radius:14px;padding:6px 10px;text-align:start;font-weight:600;font-size:14px;line-height:1.3}
-:is(:is(#xv,#sv,#dv),#sv) .x-ty .e{font-size:20px;flex:none}
-:is(:is(#xv,#sv,#dv),#sv) .x-ty.on{border-color:var(--ac);background:var(--acs);box-shadow:inset 0 0 0 1px var(--ac)}
-:is(:is(#xv,#sv,#dv),#sv) .x-ty.add{border-style:dashed;color:var(--mut);justify-content:center}
-:is(:is(#xv,#sv,#dv),#sv) .x-chosen{margin-top:10px;font-size:14px;color:var(--mut);min-height:22px}
-:is(:is(#xv,#sv,#dv),#sv) .x-chosen b{color:var(--ac)}
-:is(:is(#xv,#sv,#dv),#sv) .x-row2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:8px;margin-top:6px}
-:is(:is(#xv,#sv,#dv),#sv) .x-fld,#xm .x-fld{width:100%;font:inherit;font-size:16px;color:var(--tx);border:1.5px solid var(--bd);background:var(--bg);border-radius:12px;padding:11px 12px;min-height:48px}
-:is(:is(#xv,#sv,#dv),#sv) .x-go{width:100%;margin-top:14px;min-height:58px;border:0;border-radius:16px;background:var(--ac);color:var(--on);font-size:19px;font-weight:800}
-:is(:is(#xv,#sv,#dv),#sv) .x-go:disabled{opacity:.45;cursor:not-allowed}
-:is(:is(#xv,#sv,#dv),#sv) .x-after{font-size:14px;color:var(--mut);text-align:center;margin-top:8px;min-height:22px}
-:is(:is(#xv,#sv,#dv),#sv) .x-daynav{display:flex;gap:6px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv),#sv) .x-daynav input{flex:1 1 140px;min-width:0}
-:is(:is(#xv,#sv,#dv),#sv) .x-daynav button{font-size:14px;padding:0 12px}
-:is(:is(#xv,#sv,#dv),#sv) .x-daysum{display:flex;justify-content:space-between;align-items:baseline;background:var(--bg);border-radius:14px;padding:10px 14px;margin-bottom:6px;gap:8px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv),#sv) .x-daysum b{font-size:22px;color:var(--out)}
-:is(:is(#xv,#sv,#dv),#sv) .x-it{display:grid;grid-template-columns:40px minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--bd)}
-:is(:is(#xv,#sv,#dv),#sv) .x-it:last-child{border-bottom:0}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .e{width:40px;height:40px;border-radius:12px;background:var(--bg);display:grid;place-items:center;font-size:19px}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .t{font-weight:600;overflow-wrap:anywhere}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .s{font-size:13px;color:var(--mut);overflow-wrap:anywhere}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .a{font-weight:700;font-size:17px;color:var(--out)}
-:is(:is(#xv,#sv,#dv),#sv) .x-it.in .a{color:var(--in)}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .x{border:0;background:transparent;color:var(--mut);min-width:36px;min-height:36px;padding:0;font-size:16px}
-:is(:is(#xv,#sv,#dv),#sv) .x-empty{text-align:center;color:var(--mut);padding:26px 10px;font-size:15px}
-:is(:is(#xv,#sv,#dv),#sv) .x-rf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
-:is(:is(#xv,#sv,#dv),#sv) .x-rf label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mut);flex:1 1 170px}
-:is(:is(#xv,#sv,#dv),#sv) .x-rf label input{flex:1;min-width:0}
-:is(:is(#xv,#sv,#dv),#sv) .x-rf .x-rtl{flex:1 1 100%}
-:is(:is(#xv,#sv,#dv),#sv) .x-rf select{flex:1;min-width:0;font-weight:700;appearance:auto}
-:is(:is(#xv,#sv,#dv),#sv) .x-rnote{margin:-4px 0 12px;font-size:14px;font-weight:700;color:var(--ac)}
-:is(:is(#xv,#sv,#dv),#sv) .x-rf button{min-height:48px}
-:is(:is(#xv,#sv,#dv),#sv) .x-rf button.pri{background:var(--ac);color:var(--on);border-color:var(--ac)}
-:is(:is(#xv,#sv,#dv),#sv) .x-rgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px}
-@media (max-width:860px){:is(:is(#xv,#sv,#dv),#sv) .x-rgrid{grid-template-columns:minmax(0,1fr)}}
-:is(:is(#xv,#sv,#dv),#sv) .x-tb{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr) auto;gap:4px 10px;align-items:center;font-size:14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-tb .n{font-weight:600;overflow-wrap:anywhere}
-:is(:is(#xv,#sv,#dv),#sv) .x-tb .tr{height:12px;border-radius:6px;background:var(--bg);overflow:hidden}
-:is(:is(#xv,#sv,#dv),#sv) .x-tb .tr b{display:block;height:100%;background:var(--ac);border-radius:6px}
-:is(:is(#xv,#sv,#dv),#sv) .x-tb .v{font-weight:700;text-align:end;white-space:nowrap}
-:is(:is(#xv,#sv,#dv),#sv) .x-tb .v small{color:var(--mut);font-weight:500;margin-inline-start:4px}
-:is(:is(#xv,#sv,#dv),#sv) .x-tw{overflow-x:auto}
-:is(:is(#xv,#sv,#dv),#sv) table{width:100%;border-collapse:collapse;font-size:14px}
-:is(:is(#xv,#sv,#dv),#sv) th,:is(:is(#xv,#sv,#dv),#sv) td{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:start;white-space:nowrap}
-:is(:is(#xv,#sv,#dv),#sv) th{color:var(--mut);font-weight:600;font-size:13px}
-:is(:is(#xv,#sv,#dv),#sv) td.r,:is(:is(#xv,#sv,#dv),#sv) th.r{text-align:end}
-:is(:is(#xv,#sv,#dv),#sv) tfoot td{font-weight:700;border-bottom:0;border-top:2px solid var(--bd)}
-:is(:is(#xv,#sv,#dv),#sv) .x-tot{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-tot div{flex:1 1 140px;background:var(--bg);border-radius:14px;padding:10px 14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-tot span{display:block;font-size:13px;color:var(--mut)}
-:is(:is(#xv,#sv,#dv),#sv) .x-tot b{font-size:20px}
-:is(:is(#xv,#sv,#dv),#sv) .x-hero0{text-align:center;padding:30px 18px}
-:is(:is(#xv,#sv,#dv),#sv) .x-hero0 p{color:var(--mut);margin:0 auto 16px;max-width:42ch}
-:is(:is(#xv,#sv,#dv),#sv) .x-hero0 .x-go{max-width:320px}
+:is(#xv,#sv,#dv,#rv){position:fixed;inset:0;z-index:16;background:var(--bg);overflow-y:auto;--acs:color-mix(in srgb,var(--ac) 14%,var(--card));--out:var(--bad);--in:var(--ok);--xsh:0 1px 2px rgba(10,40,42,.06),0 6px 20px rgba(10,40,42,.06)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .xw{max-width:1180px;margin:0 auto;padding:calc(12px + env(safe-area-inset-top,0px)) 16px calc(40px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) button{min-height:44px;padding:4px 14px;border-width:1px;border-radius:12px;font-size:15px;font-weight:700}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-brand{flex:1 1 180px;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-brand h1{font-size:22px;margin:0;font-weight:800}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-brand div{color:var(--mut);font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tre{background:var(--ac);color:var(--on);border-radius:20px;padding:18px 20px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;box-shadow:var(--xsh)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-lbl{font-size:13px;opacity:.85;font-weight:600}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tsel{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tsel select{font:inherit;background:color-mix(in srgb,var(--on) 16%,transparent);border:1px solid color-mix(in srgb,var(--on) 35%,transparent);border-radius:10px;padding:6px 10px;font-weight:800;font-size:18px;max-width:100%;color:var(--on)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tsel option{color:#13211f;background:#fff}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tdate{font-size:14px;opacity:.9}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-big{font-size:clamp(34px,7vw,48px);font-weight:800;line-height:1.15;margin-top:10px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-big small{font-size:16px;font-weight:600;opacity:.85;margin-inline-start:6px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-big.neg{text-decoration:underline wavy}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-bar{height:8px;border-radius:99px;background:color-mix(in srgb,var(--on) 22%,transparent);overflow:hidden;margin-top:12px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-bar b{display:block;height:100%;background:var(--on);border-radius:99px;transition:width .4s}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-content:start}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-meta div{background:color-mix(in srgb,var(--on) 12%,transparent);border-radius:14px;padding:10px 12px;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-meta b{display:block;font-size:19px;font-weight:700;overflow-wrap:anywhere}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tact{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tact button{border:1px solid color-mix(in srgb,var(--on) 40%,transparent);background:color-mix(in srgb,var(--on) 10%,transparent);color:var(--on)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tact button.pri{background:var(--on);color:var(--ac);border-color:var(--on)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-meta b{white-space:nowrap;overflow-wrap:normal;font-size:clamp(14px,1.6vw + 6px,19px)}
+@media (max-width:900px){:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tre{grid-template-columns:minmax(0,1fr)}:is(:is(#xv,#sv,#dv,#rv),#sv) .x-meta div{padding:10px 8px}}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:860px){:is(:is(#xv,#sv,#dv,#rv),#sv) .x-cols{grid-template-columns:minmax(0,1fr)}}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:18px;box-shadow:var(--xsh);min-width:0}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-card h2{font-size:17px;font-weight:800;margin:0 0 12px;color:var(--tx)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-card h3{font-size:14px;color:var(--mut);margin:16px 0 8px;font-weight:600}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-amt{display:flex;align-items:center;border:2px solid var(--bd);border-radius:16px;background:var(--bg);padding:4px 14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-amt:focus-within{border-color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-amt input{flex:1;min-width:0;border:0;background:transparent;color:var(--tx);font:inherit;font-size:32px;font-weight:800;padding:8px 0;outline:none;text-align:right;direction:ltr}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-amt span{color:var(--mut);font-weight:600}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-quick{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-quick button{min-height:38px;padding:0 12px;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-quick button.clr{color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-types{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-ty{display:flex;align-items:center;gap:8px;min-height:52px;border:1.5px solid var(--bd);background:var(--card);border-radius:14px;padding:6px 10px;text-align:start;font-weight:600;font-size:14px;line-height:1.3}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-ty .e{font-size:20px;flex:none}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-ty.on{border-color:var(--ac);background:var(--acs);box-shadow:inset 0 0 0 1px var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-ty.add{border-style:dashed;color:var(--mut);justify-content:center}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-chosen{margin-top:10px;font-size:14px;color:var(--mut);min-height:22px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-chosen b{color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-row2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:8px;margin-top:6px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-fld,#xm .x-fld{width:100%;font:inherit;font-size:16px;color:var(--tx);border:1.5px solid var(--bd);background:var(--bg);border-radius:12px;padding:11px 12px;min-height:48px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-go{width:100%;margin-top:14px;min-height:58px;border:0;border-radius:16px;background:var(--ac);color:var(--on);font-size:19px;font-weight:800}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-go:disabled{opacity:.45;cursor:not-allowed}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-after{font-size:14px;color:var(--mut);text-align:center;margin-top:8px;min-height:22px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-daynav{display:flex;gap:6px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-daynav input{flex:1 1 140px;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-daynav button{font-size:14px;padding:0 12px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-daysum{display:flex;justify-content:space-between;align-items:baseline;background:var(--bg);border-radius:14px;padding:10px 14px;margin-bottom:6px;gap:8px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-daysum b{font-size:22px;color:var(--out)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it{display:grid;grid-template-columns:40px minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--bd)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it:last-child{border-bottom:0}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .e{width:40px;height:40px;border-radius:12px;background:var(--bg);display:grid;place-items:center;font-size:19px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .t{font-weight:600;overflow-wrap:anywhere}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .s{font-size:13px;color:var(--mut);overflow-wrap:anywhere}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .a{font-weight:700;font-size:17px;color:var(--out)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it.in .a{color:var(--in)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .x{border:0;background:transparent;color:var(--mut);min-width:36px;min-height:36px;padding:0;font-size:16px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-empty{text-align:center;color:var(--mut);padding:26px 10px;font-size:15px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rf label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mut);flex:1 1 170px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rf label input{flex:1;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rf .x-rtl{flex:1 1 100%}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rf select{flex:1;min-width:0;font-weight:700;appearance:auto}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rnote{margin:-4px 0 12px;font-size:14px;font-weight:700;color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rf button{min-height:48px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rf button.pri{background:var(--ac);color:var(--on);border-color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px}
+@media (max-width:860px){:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rgrid{grid-template-columns:minmax(0,1fr)}}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tb{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr) auto;gap:4px 10px;align-items:center;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tb .n{font-weight:600;overflow-wrap:anywhere}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tb .tr{height:12px;border-radius:6px;background:var(--bg);overflow:hidden}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tb .tr b{display:block;height:100%;background:var(--ac);border-radius:6px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tb .v{font-weight:700;text-align:end;white-space:nowrap}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tb .v small{color:var(--mut);font-weight:500;margin-inline-start:4px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tw{overflow-x:auto}
+:is(:is(#xv,#sv,#dv,#rv),#sv) table{width:100%;border-collapse:collapse;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) th,:is(:is(#xv,#sv,#dv,#rv),#sv) td{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:start;white-space:nowrap}
+:is(:is(#xv,#sv,#dv,#rv),#sv) th{color:var(--mut);font-weight:600;font-size:13px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) td.r,:is(:is(#xv,#sv,#dv,#rv),#sv) th.r{text-align:end}
+:is(:is(#xv,#sv,#dv,#rv),#sv) tfoot td{font-weight:700;border-bottom:0;border-top:2px solid var(--bd)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tot{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tot div{flex:1 1 140px;background:var(--bg);border-radius:14px;padding:10px 14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tot span{display:block;font-size:13px;color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-tot b{font-size:20px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-hero0{text-align:center;padding:30px 18px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-hero0 p{color:var(--mut);margin:0 auto 16px;max-width:42ch}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-hero0 .x-go{max-width:320px}
 #xm .mb{max-height:calc(100vh - 32px);overflow-y:auto;display:flex;flex-direction:column;gap:12px;max-width:440px}
 #xm h3{margin:0;font-size:18px}
 #xm label{display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--mut);font-weight:600}
@@ -331,50 +331,50 @@ button.flash{animation:flash .5s ease-out}
 #xm .x-tyr button{min-height:44px;padding:0;border-width:1px;border-radius:10px;color:var(--bad)}
 #xm .x-addt{min-height:44px;border-style:dashed;border-width:1px;font-weight:700}
 /* 3.3v: مؤقت + صور الفواتير */
-:is(:is(#xv,#sv,#dv),#sv) .x-pend{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;margin-top:10px;text-align:start;border:1.5px dashed var(--bd);background:var(--card);border-radius:14px;padding:10px 14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-pend b{font-size:15px}
-:is(:is(#xv,#sv,#dv),#sv) .x-pend span{font-size:13px;color:var(--mut);font-weight:500}
-:is(:is(#xv,#sv,#dv),#sv) .x-pend.on{border-style:solid;border-color:var(--pc);background:var(--pbg);box-shadow:inset 0 0 0 1px var(--pc)}
-:is(:is(#xv,#sv,#dv),#sv) .x-pend.on b{color:var(--pc)}
-:is(#xv,#sv,#dv),#xm{--pc:#b45309;--pbg:#fff4e0}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) :is(#xv,#sv,#dv),:root:not([data-theme="light"]) #xm{--pc:#f5b25a;--pbg:#3a2a12}}
-:root[data-theme="dark"] :is(#xv,#sv,#dv),:root[data-theme="dark"] #xm{--pc:#f5b25a;--pbg:#3a2a12}
-:is(:is(#xv,#sv,#dv),#sv) .x-inv,#xm .x-inv{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px;padding:10px 12px;border-radius:14px;background:var(--bg)}
-:is(:is(#xv,#sv,#dv),#sv) .x-invl,#xm .x-invl{font-weight:700;font-size:14px;flex:1 1 100%}
-:is(:is(#xv,#sv,#dv),#sv) .x-inv button,#xm .x-inv button{min-height:44px;padding:0 14px;font-size:15px;font-weight:700;border-width:1px;border-radius:12px}
-:is(:is(#xv,#sv,#dv),#sv) .x-th,#xm .x-th{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 100%}
-:is(:is(#xv,#sv,#dv),#sv) .x-th:empty,#xm .x-th:empty{display:none}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pend{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;margin-top:10px;text-align:start;border:1.5px dashed var(--bd);background:var(--card);border-radius:14px;padding:10px 14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pend b{font-size:15px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pend span{font-size:13px;color:var(--mut);font-weight:500}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pend.on{border-style:solid;border-color:var(--pc);background:var(--pbg);box-shadow:inset 0 0 0 1px var(--pc)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pend.on b{color:var(--pc)}
+:is(#xv,#sv,#dv,#rv),#xm{--pc:#b45309;--pbg:#fff4e0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) :is(#xv,#sv,#dv,#rv),:root:not([data-theme="light"]) #xm{--pc:#f5b25a;--pbg:#3a2a12}}
+:root[data-theme="dark"] :is(#xv,#sv,#dv,#rv),:root[data-theme="dark"] #xm{--pc:#f5b25a;--pbg:#3a2a12}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-inv,#xm .x-inv{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px;padding:10px 12px;border-radius:14px;background:var(--bg)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-invl,#xm .x-invl{font-weight:700;font-size:14px;flex:1 1 100%}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-inv button,#xm .x-inv button{min-height:44px;padding:0 14px;font-size:15px;font-weight:700;border-width:1px;border-radius:12px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-th,#xm .x-th{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 100%}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-th:empty,#xm .x-th:empty{display:none}
 .x-tm{position:relative;width:64px;height:64px;border-radius:10px;overflow:hidden;background:var(--card);border:1px solid var(--bd);flex:none}
 .x-tm img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
 .x-tm button{position:absolute;top:2px;inset-inline-end:2px;width:24px;height:24px;min-height:0!important;padding:0!important;border-radius:50%!important;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:12px;line-height:24px}
 .x-tm .ld{display:grid;place-items:center;width:100%;height:100%;font-size:12px;color:var(--mut)}
-:is(:is(#xv,#sv,#dv),#sv) .x-it{cursor:pointer;border-radius:12px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it{cursor:pointer;border-radius:12px}
 /* 3.9v: أزرار تعديل وحذف واضحة + كل المصاريف */
-:is(:is(#xv,#sv,#dv),#sv) .x-it{grid-template-columns:40px minmax(0,1fr) auto}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .acts{grid-column:2/-1;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-start}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .acts button{min-height:36px;padding:0 12px;font-size:14px;font-weight:700;border:1px solid var(--bd);background:var(--card);border-radius:10px}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .acts .dl{color:var(--bad)}
-:is(:is(#xv,#sv,#dv),#sv) .x-seg{display:flex;background:var(--bg);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-seg button{flex:1;border:0;background:transparent;min-height:42px;border-radius:10px;font-weight:700;color:var(--mut)}
-:is(:is(#xv,#sv,#dv),#sv) .x-seg button.on{background:var(--card);color:var(--tx);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-:is(:is(#xv,#sv,#dv),#sv) .x-af{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:10px}
-:is(:is(#xv,#sv,#dv),#sv) .x-af #xAQ{grid-column:1/-1}
-:is(:is(#xv,#sv,#dv),#sv) .x-af select{appearance:auto;min-width:0}
-:is(:is(#xv,#sv,#dv),#sv) .x-afc{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv),#sv) .x-dh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:14px 0 2px;padding:6px 10px;border-radius:10px;background:var(--bg);font-weight:800;font-size:14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-dh b{color:var(--out)}
-:is(:is(#xv,#sv,#dv),#sv) .x-more{width:100%;margin-top:10px;border-style:dashed}
-:is(:is(#xv,#sv,#dv),#sv) .x-it:hover{background:color-mix(in srgb,var(--ac) 5%,transparent)}
-:is(:is(#xv,#sv,#dv),#sv) .x-it.pd .e{background:var(--pbg)}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .bdg{display:inline-block;font-size:12px;font-weight:800;color:var(--pc);background:var(--pbg);border-radius:999px;padding:1px 8px;margin-inline-start:6px;vertical-align:middle}
-:is(:is(#xv,#sv,#dv),#sv) .x-it .iv{border:1px solid var(--bd);background:var(--card);min-width:40px;min-height:36px;padding:0 8px;font-size:15px;border-radius:10px}
-:is(:is(#xv,#sv,#dv),#sv) .x-pbox{background:var(--pbg);border:1.5px solid var(--pc);border-radius:20px;padding:14px 16px}
-:is(:is(#xv,#sv,#dv),#sv) .x-pbox h2{margin:0 0 4px;font-size:16px;font-weight:800;color:var(--pc)}
-:is(:is(#xv,#sv,#dv),#sv) .x-pbox p{margin:0 0 10px;font-size:14px;color:var(--mut)}
-:is(:is(#xv,#sv,#dv),#sv) .x-pl{display:flex;flex-direction:column;gap:6px}
-:is(:is(#xv,#sv,#dv),#sv) .x-pl button{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;text-align:start;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:8px 12px;min-height:48px;font-weight:600}
-:is(:is(#xv,#sv,#dv),#sv) .x-pl button small{display:block;color:var(--mut);font-weight:500;font-size:13px}
-:is(:is(#xv,#sv,#dv),#sv) .x-pl button b{color:var(--out);white-space:nowrap}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it{grid-template-columns:40px minmax(0,1fr) auto}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .acts{grid-column:2/-1;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-start}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .acts button{min-height:36px;padding:0 12px;font-size:14px;font-weight:700;border:1px solid var(--bd);background:var(--card);border-radius:10px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .acts .dl{color:var(--bad)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-seg{display:flex;background:var(--bg);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-seg button{flex:1;border:0;background:transparent;min-height:42px;border-radius:10px;font-weight:700;color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-seg button.on{background:var(--card);color:var(--tx);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-af{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:10px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-af #xAQ{grid-column:1/-1}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-af select{appearance:auto;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-afc{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-dh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:14px 0 2px;padding:6px 10px;border-radius:10px;background:var(--bg);font-weight:800;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-dh b{color:var(--out)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-more{width:100%;margin-top:10px;border-style:dashed}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it:hover{background:color-mix(in srgb,var(--ac) 5%,transparent)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it.pd .e{background:var(--pbg)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .bdg{display:inline-block;font-size:12px;font-weight:800;color:var(--pc);background:var(--pbg);border-radius:999px;padding:1px 8px;margin-inline-start:6px;vertical-align:middle}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-it .iv{border:1px solid var(--bd);background:var(--card);min-width:40px;min-height:36px;padding:0 8px;font-size:15px;border-radius:10px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pbox{background:var(--pbg);border:1.5px solid var(--pc);border-radius:20px;padding:14px 16px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pbox h2{margin:0 0 4px;font-size:16px;font-weight:800;color:var(--pc)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pbox p{margin:0 0 10px;font-size:14px;color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pl{display:flex;flex-direction:column;gap:6px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pl button{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;text-align:start;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:8px 12px;min-height:48px;font-weight:600}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pl button small{display:block;color:var(--mut);font-weight:500;font-size:13px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-pl button b{color:var(--out);white-space:nowrap}
 #xm select.x-fld{appearance:auto}
 #xm .x-ck{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;background:var(--pbg);color:var(--tx);font-weight:600}
 #xm .x-ck input{width:20px;height:20px;accent-color:var(--pc)}
@@ -404,15 +404,15 @@ button.flash{animation:flash .5s ease-out}
 .dfw.off>input.dfi{position:static;opacity:1;height:auto}
 .dfw.dfmi{width:100%;padding:14px;border-radius:12px;border:2px solid var(--bd);background:var(--bg);color:var(--tx);margin-bottom:12px}
 #rng .dfw{flex:1;font-size:16px;padding:8px;border-radius:10px;border:2px solid var(--bd);background:var(--bg);color:var(--tx);min-height:44px}
-:is(:is(#xv,#sv,#dv),#sv) .x-daynav .dfw{flex:1 1 140px;width:auto}
-:is(:is(#xv,#sv,#dv),#sv) .x-rf label .dfw{flex:1;width:auto}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-daynav .dfw{flex:1 1 140px;width:auto}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-rf label .dfw{flex:1;width:auto}
 /* 3.4v: منو انطى ومنو اشترى */
-:is(:is(#xv,#sv,#dv),#sv) .x-who h3{margin:14px 0 6px}
-:is(:is(#xv,#sv,#dv),#sv) .x-chips{display:flex;flex-wrap:wrap;gap:6px}
-:is(:is(#xv,#sv,#dv),#sv) .x-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--bd);background:var(--card);font-weight:600;font-size:14px}
-:is(:is(#xv,#sv,#dv),#sv) .x-chip.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
-:is(:is(#xv,#sv,#dv),#sv) .x-chip.add{border-style:dashed;color:var(--mut)}
-:is(:is(#xv,#sv,#dv),#sv) .x-chip.ed{color:var(--mut);padding:0 12px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-who h3{margin:14px 0 6px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-chips{display:flex;flex-wrap:wrap;gap:6px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--bd);background:var(--card);font-weight:600;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-chip.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-chip.add{border-style:dashed;color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .x-chip.ed{color:var(--mut);padding:0 12px}
 /* وجبات الشراء (3.8v) */
 #lotm .mb{max-height:calc(100vh - 32px);overflow-y:auto;max-width:460px}
 .lotinfo{background:var(--bg);border-radius:12px;padding:10px 12px;margin:6px 0 14px;font-size:15px;line-height:1.6}
@@ -495,32 +495,32 @@ button.flash{animation:flash .5s ease-out}
 #xm .sp-ps button.on.un{border-color:var(--bad);color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,var(--card))}
 
 /* 5.0v: سطر المصروف — النوع والأزرار فوق، الملاحظة كبيرة، الأسماء بألوان هادئة، والمبلغ */
-#xv .x-it.xr{display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:12px;margin-bottom:8px;border:1px solid var(--bd);border-radius:14px;background:var(--card)}
-#xv .x-it.xr:last-child{border-bottom:1px solid var(--bd)}
-#xv .x-it.xr.pd{border-color:color-mix(in srgb,var(--pc) 45%,var(--bd));background:color-mix(in srgb,var(--pbg) 55%,var(--card))}
-#xv .x-it.xr.in{border-color:color-mix(in srgb,var(--in) 40%,var(--bd))}
-#xv .xr-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
-#xv .xr-h .e{width:34px;height:34px;font-size:17px;border-radius:10px;flex:0 0 auto}
-#xv .xr-t{font-size:15px;font-weight:700;color:var(--mut)}
-#xv .xr-sp{flex:1 1 0}
-#xv .xr-b{display:flex;gap:6px;flex:0 0 auto}
-#xv .xr-b button{min-height:36px;padding:0 10px;font-size:13.5px;font-weight:700;border:1px solid var(--bd);background:var(--card);border-radius:10px;color:var(--tx)}
-#xv .xr-b .dl{color:var(--bad)}
-#xv .xr-n{font-size:19px;font-weight:600;line-height:1.55;color:var(--tx);overflow-wrap:anywhere;white-space:pre-line;padding-inline-start:2px}
-#xv .xr-n.em{font-size:14px;font-weight:400;color:var(--mut);font-style:italic}
-#xv .xr-f{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
-#xv .xr-w{display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap;min-width:0;font-size:13px;color:var(--mut)}
-#xv .xr-l{display:inline-flex;align-items:center;gap:3px}
-#xv .xr-m{font-size:13px;color:var(--mut)}
-#xv .xr-a{font-size:21px;font-weight:800;color:var(--out);white-space:nowrap;margin-inline-start:auto}
-#xv .x-it.xr.in .xr-a{color:var(--in)}
-#xv .bdg.lk{color:var(--ac);background:var(--acs)}
+:is(#xv,#rv) .x-it.xr{display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:12px;margin-bottom:8px;border:1px solid var(--bd);border-radius:14px;background:var(--card)}
+:is(#xv,#rv) .x-it.xr:last-child{border-bottom:1px solid var(--bd)}
+:is(#xv,#rv) .x-it.xr.pd{border-color:color-mix(in srgb,var(--pc) 45%,var(--bd));background:color-mix(in srgb,var(--pbg) 55%,var(--card))}
+:is(#xv,#rv) .x-it.xr.in{border-color:color-mix(in srgb,var(--in) 40%,var(--bd))}
+:is(#xv,#rv) .xr-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+:is(#xv,#rv) .xr-h .e{width:34px;height:34px;font-size:17px;border-radius:10px;flex:0 0 auto}
+:is(#xv,#rv) .xr-t{font-size:15px;font-weight:700;color:var(--mut)}
+:is(#xv,#rv) .xr-sp{flex:1 1 0}
+:is(#xv,#rv) .xr-b{display:flex;gap:6px;flex:0 0 auto}
+:is(#xv,#rv) .xr-b button{min-height:36px;padding:0 10px;font-size:13.5px;font-weight:700;border:1px solid var(--bd);background:var(--card);border-radius:10px;color:var(--tx)}
+:is(#xv,#rv) .xr-b .dl{color:var(--bad)}
+:is(#xv,#rv) .xr-n{font-size:19px;font-weight:600;line-height:1.55;color:var(--tx);overflow-wrap:anywhere;white-space:pre-line;padding-inline-start:2px}
+:is(#xv,#rv) .xr-n.em{font-size:14px;font-weight:400;color:var(--mut);font-style:italic}
+:is(#xv,#rv) .xr-f{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+:is(#xv,#rv) .xr-w{display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap;min-width:0;font-size:13px;color:var(--mut)}
+:is(#xv,#rv) .xr-l{display:inline-flex;align-items:center;gap:3px}
+:is(#xv,#rv) .xr-m{font-size:13px;color:var(--mut)}
+:is(#xv,#rv) .xr-a{font-size:21px;font-weight:800;color:var(--out);white-space:nowrap;margin-inline-start:auto}
+:is(#xv,#rv) .x-it.xr.in .xr-a{color:var(--in)}
+:is(#xv,#rv) .bdg.lk{color:var(--ac);background:var(--acs)}
 .nm{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:600;line-height:1.6;background:hsl(var(--h) 55% 94%);color:hsl(var(--h) 38% 30%);border:1px solid hsl(var(--h) 35% 84%)}
-:is(#xv,#sv,#dv) .x-chip.nmc{background:hsl(var(--h) 55% 95%);color:hsl(var(--h) 38% 28%);border-color:hsl(var(--h) 35% 82%)}
-:is(#xv,#sv,#dv) .x-chip.nmc.on{background:hsl(var(--h) 42% 44%);color:#fff;border-color:hsl(var(--h) 42% 44%)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nm,:root:not([data-theme="light"]) :is(#xv,#sv,#dv) .x-chip.nmc{background:hsl(var(--h) 22% 21%);color:hsl(var(--h) 55% 82%);border-color:hsl(var(--h) 20% 32%)}:root:not([data-theme="light"]) :is(#xv,#sv,#dv) .x-chip.nmc.on{background:hsl(var(--h) 40% 58%);color:#0b1216;border-color:hsl(var(--h) 40% 58%)}}
-:root[data-theme="dark"] .nm,:root[data-theme="dark"] :is(#xv,#sv,#dv) .x-chip.nmc{background:hsl(var(--h) 22% 21%);color:hsl(var(--h) 55% 82%);border-color:hsl(var(--h) 20% 32%)}
-:root[data-theme="dark"] :is(#xv,#sv,#dv) .x-chip.nmc.on{background:hsl(var(--h) 40% 58%);color:#0b1216;border-color:hsl(var(--h) 40% 58%)}
+:is(#xv,#sv,#dv,#rv) .x-chip.nmc{background:hsl(var(--h) 55% 95%);color:hsl(var(--h) 38% 28%);border-color:hsl(var(--h) 35% 82%)}
+:is(#xv,#sv,#dv,#rv) .x-chip.nmc.on{background:hsl(var(--h) 42% 44%);color:#fff;border-color:hsl(var(--h) 42% 44%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nm,:root:not([data-theme="light"]) :is(#xv,#sv,#dv,#rv) .x-chip.nmc{background:hsl(var(--h) 22% 21%);color:hsl(var(--h) 55% 82%);border-color:hsl(var(--h) 20% 32%)}:root:not([data-theme="light"]) :is(#xv,#sv,#dv,#rv) .x-chip.nmc.on{background:hsl(var(--h) 40% 58%);color:#0b1216;border-color:hsl(var(--h) 40% 58%)}}
+:root[data-theme="dark"] .nm,:root[data-theme="dark"] :is(#xv,#sv,#dv,#rv) .x-chip.nmc{background:hsl(var(--h) 22% 21%);color:hsl(var(--h) 55% 82%);border-color:hsl(var(--h) 20% 32%)}
+:root[data-theme="dark"] :is(#xv,#sv,#dv,#rv) .x-chip.nmc.on{background:hsl(var(--h) 40% 58%);color:#0b1216;border-color:hsl(var(--h) 40% 58%)}
 /* 5.0v: ديون الكادر */
 #dv .dv-mv.debt .a{color:var(--bad)}
 #dv .dv-mv.pay{background:color-mix(in srgb,var(--ok) 6%,transparent)}
@@ -532,9 +532,26 @@ button.flash{animation:flash .5s ease-out}
 #dv .sp-r .t .nm{font-size:16px}
 #xm .dv-who{font-size:18px;font-weight:800;padding:8px 12px;border-radius:12px;background:var(--bg)}
 #xm .dv-hint{font-size:13px;color:var(--mut)}
+/* 5.3v: الإيراد الشهري */
+#rv .rv-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 12px}
+#rv .rv-nav b{font-size:20px;font-weight:800;text-align:center;flex:1}
+#rv .rv-nav button{min-height:44px;padding:0 12px;font-size:14px;font-weight:700;border:1px solid var(--bd);border-radius:12px;background:var(--card)}
+#rv .rv-nav button:disabled{opacity:.4}
+#rv .rv-chk{border-width:2px}#rv .rv-chk.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 7%,var(--card))}#rv .rv-chk.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 6%,var(--card))}
+#rv .rv-chk>b{font-size:18px}#rv .rv-chk.ok>b{color:var(--ok)}#rv .rv-chk.bad>b{color:var(--bad)}#rv .rv-chk p{margin:6px 0 0;color:var(--mut)}
+#rv .rv-eq{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+#rv .rv-eq span{display:flex;flex-direction:column;padding:6px 12px;border-radius:12px;background:var(--bg);min-width:0}
+#rv .rv-eq small{font-size:12px;color:var(--mut)}#rv .rv-eq b{font-size:16px}
+#rv .rv-eq .r b,#rv .rv-eq .t b{color:var(--ac)}#rv .rv-eq .t{background:var(--acs)}
+#rv .rv-ks{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+#rv .rv-k{display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border-radius:10px;background:var(--bg);font-size:15px}
+#rv .rv-k b{color:var(--bad)}#rv .rv-k.k-in b{color:var(--ok)}
+#rv .x-it.xr.in{background:color-mix(in srgb,var(--ok) 6%,var(--card))}
+#xm .rv-kb .adv{border-style:dashed;color:var(--ac)}
+#xm .rv-prev{background:var(--bg);border-radius:12px;padding:10px 12px;line-height:1.8}#xm .rv-prev .ok{color:var(--ok);font-weight:800}#xm .rv-prev .bad{color:var(--bad);font-weight:800}
 /* زر الوضع الليلي/النهاري بكل الشاشات (3.2v) */
 .thb{min-height:44px;min-width:48px;padding:4px 12px;font-size:21px;line-height:1}
-:is(:is(#xv,#sv,#dv),#sv) .thb,.hmt .thb{font-size:21px;padding:4px 12px}
+:is(:is(#xv,#sv,#dv,#rv),#sv) .thb,.hmt .thb{font-size:21px;padding:4px 12px}
 .thl{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-start:12px;border-width:1px}
 </style>
 </head>
@@ -544,7 +561,7 @@ button.flash{animation:flash .5s ease-out}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 5.2v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد المحاسب</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 5.3v Online</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -592,7 +609,7 @@ button.flash{animation:flash .5s ease-out}
 <div class="tiles" id="tiles"></div>
 <button class="hmbk" id="hmBk" hidden><b>💾 النسخة الاحتياطية</b><small id="hmBkS"></small></button>
 <button class="hmv" id="hmOrg" hidden title="الاسم اللي ينكتب بأعلى ملفات PDF وExcel"></button>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.2v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.3v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -650,6 +667,13 @@ button.flash{animation:flash .5s ease-out}
 <div><h3 style="margin-top:0">حسب اليوم</h3><div class="x-tw"><table><thead><tr><th>اليوم</th><th class="r">العدد</th><th class="r">المصروف</th></tr></thead><tbody id="xRDays"></tbody><tfoot id="xRDaysF"></tfoot></table></div></div></div>
 </section>
 </div></div>
+<div id="rv" hidden><div class="xw">
+<div class="x-top"><button id="rvHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1>الإيراد الشهري</h1><div>حركات الإيراد والمطابقة</div></div><button id="rvPdf">📄 PDF</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
+<div class="rv-nav"><button id="rvPrev">→ الشهر السابق</button><b id="rvMon"></b><button id="rvNext">الشهر التالي ←</button></div>
+<section id="rvSum"></section>
+<section class="x-card rv-chk" id="rvChk"></section>
+<section class="x-card"><h2>الحركات على إيراد هذا الشهر</h2><div class="rv-ks" id="rvKinds"></div><div id="rvRows"></div></section>
+</div></div>
 <div id="dv" hidden><div class="xw">
 <div class="x-top"><button id="dvHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1>ديون الكادر</h1><div id="dvClock"></div></div><button id="dvExp">📊 Excel</button><button id="dvPdf">📄 PDF</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
 <div id="dvList">
@@ -697,7 +721,7 @@ button.flash{animation:flash .5s ease-out}
 <div style="color:var(--mut);margin-bottom:10px">اختر نوع الدخول</div>
 <button id="lgE" class="go" style="margin-bottom:10px">👷 موظف</button>
 <button id="lgA" style="width:100%;min-height:60px;font-size:20px;font-weight:800">🧮 الحسابات 🔒</button>
-<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">5.2v Online · ℹ️ شنو الجديد؟</button>
+<button id="lgR" class="mini" style="margin-top:14px;border:0;background:none;color:var(--mut);font-size:14px">نسيت باسوورد المحاسب؟</button><button id="ver" title="شنو الجديد بهذه النسخة؟">5.3v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -722,11 +746,14 @@ button.flash{animation:flash .5s ease-out}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 5.2v Online</div><div class="vd">تاريخ التحديث: 17/10/2026</div>
+<div class="vh">ℹ️ 5.3v Online</div><div class="vd">تاريخ التحديث: 24/10/2026</div>
 <ul class="vl">
-<li><b>📄 تقرير العدد والإكسباير صار بسيط:</b> جدول واحد لكل فئة: المادة، العدد، تاريخ الإكسباير، وكم يوم باقي. بدون مربعات وألوان زايدة — بس <b style="color:var(--bad)">الأحمر</b> للمنتهية أو اللي نفدت، و<b style="color:#b45309">البرتقالي</b> للقريبة الانتهاء أو القليلة.</li>
+<li><b>💰 برنامج جديد «الإيراد الشهري»:</b> بشاشة البرامج للحسابات. تسجل كل الأموال اللي طلعت من الإيراد: 💸 سحب، 🏦 إيداع، 👥 رواتب، 🧾 تسديد، و🔻 سلف للكادر (تنربط تلقائيًا ويه «ديون الكادر»). وتسديد الديون اللي رجع للإيراد يدخل تلقائيًا.</li>
+<li><b>📷 صورة الوصل:</b> لكل إيداع أو تسديد أو سحب أو سلفة تگدر تصوّر الوصل.</li>
+<li><b>🧮 مطابقة نهاية الشهر:</b> تكتب الإيراد الشهري الكامل (والموجود فعليًا إذا تريد)، والبرنامج يطابق: السحوبات + الإيداعات + الرواتب + السلف + التسديدات + الباقي = الإيراد الشهري، ويطلعلك تقرير PDF بالمطابقة.</li>
+<li><b>🗂️ إيراد أي شهر:</b> كل حركة تختار «من إيراد شهر» (مثلًا تسدد بشهر 9 من إيراد شهر 8).</li>
 </ul>
-<div class="vold"><b>5.1v Online</b>: «📄 تقرير المواد PDF» — العدد المتبقي والإكسباير ويه اختيار الفئات.<br><b>5.0v Online</b>: برنامج «ديون الكادر»، مصاريف اليوم أوضح، «مُسلِّم المبلغ / المُشتري»، ألوان الأسماء، وخط جديد.<br><b>4.9v Online</b>: زر «💾 النسخة الاحتياطية» الكاملة ويه الصور بشاشة البرامج.<br><b>4.8v Online</b>: أبعاد التاب، ما يطلع شي برا الشاشة.<br><b>4.7v Online</b>: زر «📄 PDF» لقوائم الموردين.</div>
+<div class="vold"><b>5.2v Online</b>: تقرير العدد والإكسباير PDF بسيط وواضح.<br><b>5.1v Online</b>: «📄 تقرير المواد PDF» — العدد المتبقي والإكسباير ويه اختيار الفئات.<br><b>5.0v Online</b>: برنامج «ديون الكادر»، مصاريف اليوم أوضح، «مُسلِّم المبلغ / المُشتري»، ألوان الأسماء، وخط جديد.<br><b>4.9v Online</b>: زر «💾 النسخة الاحتياطية» الكاملة ويه الصور بشاشة البرامج.<br><b>4.8v Online</b>: أبعاد التاب، ما يطلع شي برا الشاشة.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -743,7 +770,7 @@ var DEF=[
 ["تقشير وعناية",["تقشير اخضر بارد","هياليز مذوب فلر","بالميلادين","برايت اييز","فيوجن هير","ميزو شاين","ماسك ورقي","ميزو فلر فلوريكا","تقشير اخضر بارد للجسم","مقشر للجسم exo"]],
 ["سرنجات وإبر",["سرنجات 3 سيسي","نيدلات 30","سرنجات 1 مل","نيدلات 27","سرنجات 10 مل","مقشر اكسو للشهر القادم"]]];
 function defCats(){return DEF.map(function(d,i){return {n:d[0],c:i,items:d[1].slice()}})}
-var S={emp:null,cat:null,item:null,n:1,edit:false,pin:"",emps:["موظف 1","موظف 2","موظف 3"],cats:defCats(),log:[],stock:{},thr:5,ext:{},exe:{},exs:null,lots:{},sup:{},smv:{},stf:{},sdb:{}};
+var S={emp:null,cat:null,item:null,n:1,edit:false,pin:"",emps:["موظف 1","موظف 2","موظف 3"],cats:defCats(),log:[],stock:{},thr:5,ext:{},exe:{},exs:null,lots:{},sup:{},smv:{},stf:{},sdb:{},rvm:{},rvs:{}};
 var $=function(i){return document.getElementById(i)};
 function pad(v){return String(v).padStart(2,"0")}
 function fd(d){return pad(d.getDate())+"/"+pad(d.getMonth()+1)+"/"+d.getFullYear()}
@@ -752,12 +779,12 @@ function today(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)
 function tick(){var d=new Date();$("clock").textContent=fd(d)+" · "+ft(d)}
 S.day=today();S.exp=false;S.freq={};S.prev=null;S.hist=[];
 function load(){try{var v=JSON.parse(localStorage.getItem("wd_state")||"null");if(v){S.emps=v.emps||S.emps;S.emp=v.emp||null;S.log=v.log||[];S.pin=v.pin||"";S.stock=v.stock||{};S.thr=(typeof v.thr==="number")?v.thr:5;if(v.cats&&v.cats.length)S.cats=v.cats;
- S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.xpw=(v.xpw&&typeof v.xpw==="object")?v.xpw:{};S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];S.apps=Array.isArray(v.apps)?v.apps:null;S.ext=(v.ext&&typeof v.ext==="object")?v.ext:{};S.exe=(v.exe&&typeof v.exe==="object")?v.exe:{};S.exs=v.exs||null;S.lots=(v.lots&&typeof v.lots==="object")?v.lots:{};S.sup=(v.sup&&typeof v.sup==="object")?v.sup:{};S.spimp=v.spimp||null;S.spreset=v.spreset||null;S.spmig=v.spmig||null;S.org=(v.org&&typeof v.org==="object")?v.org:null;S.smv=(v.smv&&typeof v.smv==="object")?v.smv:{};S.stf=(v.stf&&typeof v.stf==="object")?v.stf:{};S.sdb=(v.sdb&&typeof v.sdb==="object")?v.sdb:{};S.stfseed=v.stfseed||null;
+ S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.xpw=(v.xpw&&typeof v.xpw==="object")?v.xpw:{};S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];S.apps=Array.isArray(v.apps)?v.apps:null;S.ext=(v.ext&&typeof v.ext==="object")?v.ext:{};S.exe=(v.exe&&typeof v.exe==="object")?v.exe:{};S.exs=v.exs||null;S.lots=(v.lots&&typeof v.lots==="object")?v.lots:{};S.sup=(v.sup&&typeof v.sup==="object")?v.sup:{};S.spimp=v.spimp||null;S.spreset=v.spreset||null;S.spmig=v.spmig||null;S.org=(v.org&&typeof v.org==="object")?v.org:null;S.smv=(v.smv&&typeof v.smv==="object")?v.smv:{};S.stf=(v.stf&&typeof v.stf==="object")?v.stf:{};S.sdb=(v.sdb&&typeof v.sdb==="object")?v.sdb:{};S.rvm=(v.rvm&&typeof v.rvm==="object")?v.rvm:{};S.rvs=(v.rvs&&typeof v.rvs==="object")?v.rvs:{};S.stfseed=v.stfseed||null;
  if(!v.hist&&S.prev&&S.prev.log)S.hist.push({day:S.prev.day,log:S.prev.log});
  if(v.freq){S.freq=v.freq}else{S.log.forEach(function(x){S.freq[x.i]=(S.freq[x.i]||0)+1})}
  if(v.day){S.day=v.day}else{var d=today(),old=S.log.filter(function(x){return x.d!==d});if(old.length)S.hist.push({day:old[0].d,log:old});S.log=S.log.filter(function(x){return x.d===d});S.day=d}}}catch(e){}}
 function save(){FC={};saveLocal();clPush()}
-function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd,xpw:S.xpw,apps:S.apps||null,ext:S.ext,exe:S.exe,exs:S.exs||null,lots:S.lots,sup:S.sup,smv:S.smv,stf:S.stf,sdb:S.sdb,stfseed:S.stfseed||null,spimp:S.spimp||null,spreset:S.spreset||null,spmig:S.spmig||null,org:S.org||null}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
+function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd,xpw:S.xpw,apps:S.apps||null,ext:S.ext,exe:S.exe,exs:S.exs||null,lots:S.lots,sup:S.sup,smv:S.smv,stf:S.stf,sdb:S.sdb,rvm:S.rvm,rvs:S.rvs,stfseed:S.stfseed||null,spimp:S.spimp||null,spreset:S.spreset||null,spmig:S.spmig||null,org:S.org||null}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
 function dayLbl(v){var p=v.split("-");return p[2]+"/"+p[1]+"/"+p[0]}
 function hasSt(n){return typeof S.stock[n]==="number"}
 function stLeft(n){return hasSt(n)?S.stock[n]:Infinity}
@@ -919,7 +946,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="5.2";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="5.3";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1095,7 +1122,7 @@ $("rsf").onchange=function(){var f=this.files&&this.files[0];if(!f)return;var r=
   sure("استرجاع نسخة "+fd(new Date(o.at))+" · "+ft(new Date(o.at))+(o.org?" — "+o.org:"")+"؟\n📦 "+c.wd+" سجل سحب"+("exe" in st?" · 🧾 "+c.ex+" مصروف":"")+("smv" in st?" · 🏪 "+c.inv+" قائمة":"")+(im.length?" · 📷 "+im.length+" صورة":"")+"\n⚠ ستُستبدل كل البيانات الحالية على هذا الجهاز بالنسخة.",function(){
    var put=im.length&&typeof XU!=="undefined"?im.reduce(function(p,id){return p.then(function(){return XU.imgPut(id,o.imgs[id]).catch(function(){})})},Promise.resolve()):Promise.resolve();
    put.then(function(){
-   try{if(!("ext" in st)){st.ext=S.ext;st.exe=S.exe;st.exs=S.exs}if(!("sup" in st)){st.sup=S.sup;st.smv=S.smv;st.spimp=S.spimp;st.spreset=S.spreset;st.spmig=S.spmig}if(!("org" in st))st.org=S.org;if(!("stf" in st)){st.stf=S.stf;st.sdb=S.sdb;st.stfseed=S.stfseed}localStorage.setItem("wd_state",JSON.stringify(st));location.reload()}catch(e){toast("تعذّر الاسترجاع")}})})};
+   try{if(!("ext" in st)){st.ext=S.ext;st.exe=S.exe;st.exs=S.exs}if(!("sup" in st)){st.sup=S.sup;st.smv=S.smv;st.spimp=S.spimp;st.spreset=S.spreset;st.spmig=S.spmig}if(!("org" in st))st.org=S.org;if(!("stf" in st)){st.stf=S.stf;st.sdb=S.sdb;st.stfseed=S.stfseed}if(!("rvm" in st)){st.rvm=S.rvm;st.rvs=S.rvs}localStorage.setItem("wd_state",JSON.stringify(st));location.reload()}catch(e){toast("تعذّر الاسترجاع")}})})};
  r.readAsText(f)};
 try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
 /* ===== المستخدمون والكلفة ===== */
@@ -1162,7 +1189,7 @@ function renCost(a,b){if(ACC()){if(a in S.cost){S.cost[b]=S.cost[a];delete S.cos
 function applyRen(){if(!S.ren||!S.ren.length)return;S.ren.forEach(function(r){if(r[0] in S.cost){S.cost[r[1]]=S.cost[r[0]];delete S.cost[r[0]]}svRen(r[0],r[1])});S.ren=[];saveCost()}
 function pwDlg(msg,cb){var i=$("mi");i.type="password";dlg(msg,"",true,function(v){i.type="text";cb(v)})}
 function enter(role){S.role=role;S.edit=false;$("login").hidden=true;renderAll();upd();drawLog();xpSync();sysNotify(false);if("Notification" in window&&Notification.permission==="granted")xpRegPeriodic();var l=xpList();if(l.length)setTimeout(function(){toast("⏳ "+l.length+" مادة قريبة الانتهاء أو منتهية — اضغط 🔔")},600);showHome()}
-function showLogin(){$("home").hidden=true;$("sv").hidden=true;$("dv").hidden=true;$("lotm").hidden=true;$("xv").hidden=true;$("xm").hidden=true;$("xiv").hidden=true;$("apm").hidden=true;S.hmEd=false;S.role=null;S.cost={};S.key=null;S.edit=false;$("hs").hidden=true;$("cm").hidden=true;$("login").hidden=false}
+function showLogin(){$("home").hidden=true;$("sv").hidden=true;$("dv").hidden=true;$("rv").hidden=true;$("lotm").hidden=true;$("xv").hidden=true;$("xm").hidden=true;$("xiv").hidden=true;$("apm").hidden=true;S.hmEd=false;S.role=null;S.cost={};S.key=null;S.edit=false;$("hs").hidden=true;$("cm").hidden=true;$("login").hidden=false}
 $("lgE").onclick=function(){enter("emp")};
 $("lgA").onclick=function(){
  if(!S.ce){pwDlg("أول دخول للمحاسب — اختر باسوورد (4 أحرف أو أكثر):",function(p){if(p===null)return;p=p.trim();if(p.length<4){toast("الباسوورد قصير");return}
@@ -1306,17 +1333,17 @@ var FBV="https://www.gstatic.com/firebasejs/12.19.0/";
 /* مشروع Firebase الخاص بالعيادة (هذه معرّفات عامة وليست باسوورد — الحماية برمز الربط السري) */
 var FBCFG={apiKey:"AIzaSyDNQ_O0nhh-FQlm_t2QeXQMi4t8BFMYvPg",authDomain:"sahobat-35dc1.firebaseapp.com",projectId:"sahobat-35dc1",storageBucket:"sahobat-35dc1.firebasestorage.app",messagingSenderId:"408946713435",appId:"1:408946713435:web:9d15ffaa5bb4e0e93df07e"};
 var CL={cfg:null,F:null,db:null,ref:null,mcol:null,base:null,sent:null,ready:false,exists:true,st:"",err:"",ce0:null,lastM:null,lastH:null,uns:[]};
-var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd","apps","exs","spimp","spreset","spmig","org","stfseed"],CLM=["stock","xp","freq","logm","xpw","ext","exe","lots","sup","smv","stf","sdb"];
+var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd","apps","exs","spimp","spreset","spmig","org","stfseed"],CLM=["stock","xp","freq","logm","xpw","ext","exe","lots","sup","smv","stf","sdb","rvm","rvs"];
 var CLD={emps:null,cats:null,day:null,thr:5,exp:false,prev:null,ce:null,cpub:null,ren:[],xpd:30,pin:"",apps:null,exs:null,spimp:null,spreset:null,spmig:null,org:null,stfseed:null};
 function srt(v){if(Array.isArray(v))return v.map(srt);if(v&&typeof v==="object"){var o={};Object.keys(v).sort().forEach(function(k){if(v[k]!==undefined)o[k]=srt(v[k])});return o}return v}
 function sStr(v){return JSON.stringify(srt(v===undefined?null:v))}
 function nrm(s){try{return sStr(JSON.parse(s))}catch(x){return sStr(null)}}
 function rid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
 function clIds(){S.log.forEach(function(x,i){if(!x.id)x.id=rid();if(typeof x.o!=="number")x.o=i})}
-function clEmpty(){return {j:{},m:{stock:{},xp:{},freq:{},logm:{},xpw:{},ext:{},exe:{},lots:{},sup:{},smv:{},stf:{},sdb:{}},h:{}}}
+function clEmpty(){return {j:{},m:{stock:{},xp:{},freq:{},logm:{},xpw:{},ext:{},exe:{},lots:{},sup:{},smv:{},stf:{},sdb:{},rvm:{},rvs:{}},h:{}}}
 function clEnc(){clIds();var e=clEmpty();
  CLJ.forEach(function(k){e.j[k]=sStr(S[k])});
- ["stock","xp","freq","xpw","ext","exe","lots","sup","smv","stf","sdb"].forEach(function(k){var src=S[k]||{};Object.keys(src).forEach(function(n){if(src[n]!==undefined&&src[n]!==null)e.m[k][n]=sStr(src[n])})});
+ ["stock","xp","freq","xpw","ext","exe","lots","sup","smv","stf","sdb","rvm","rvs"].forEach(function(k){var src=S[k]||{};Object.keys(src).forEach(function(n){if(src[n]!==undefined&&src[n]!==null)e.m[k][n]=sStr(src[n])})});
  S.log.forEach(function(x){e.m.logm[x.id]=sStr(x)});
  var h={};S.hist.forEach(function(x){var k=String(x.day).slice(0,7);(h[k]=h[k]||[]).push(x)});
  Object.keys(h).forEach(function(k){e.h[k]=sStr(h[k])});return e}
@@ -1327,13 +1354,13 @@ function m3(l,b,r){var o={},ks={};[l,b,r].forEach(function(x){Object.keys(x||{})
  Object.keys(ks).forEach(function(k){var lv=l[k],bv=(b||{})[k],v=lv!==bv?lv:r[k];if(v!==undefined)o[k]=v});return o}
 function clSetMain(e){
  CLJ.forEach(function(k){var v=JSON.parse(e.j[k]);if(v===null&&CLD[k]===null&&k!=="prev"&&k!=="ce"&&k!=="cpub")return;S[k]=v===null?CLD[k]:v});
- ["stock","xp","freq","xpw","ext","exe","lots","sup","smv","stf","sdb"].forEach(function(k){var o={};Object.keys(e.m[k]).forEach(function(n){o[n]=JSON.parse(e.m[k][n])});S[k]=o});
+ ["stock","xp","freq","xpw","ext","exe","lots","sup","smv","stf","sdb","rvm","rvs"].forEach(function(k){var o={};Object.keys(e.m[k]).forEach(function(n){o[n]=JSON.parse(e.m[k][n])});S[k]=o});
  S.log=Object.keys(e.m.logm).map(function(k){return JSON.parse(e.m.logm[k])}).sort(function(a,b){return (a.o-b.o)||(a.id<b.id?-1:1)});
  if(S.item&&!itemExists(S.item))S.item=null;if(S.emp&&S.emps.indexOf(S.emp)<0)S.emp=null}
 function clSetH(h){var a=[];Object.keys(h).sort().forEach(function(k){a=a.concat(JSON.parse(h[k])||[])});S.hist=a}
 function clSaveCfg(){try{if(CL.cfg)localStorage.setItem("wd_cloud",JSON.stringify(CL.cfg));else localStorage.removeItem("wd_cloud")}catch(e){}}
 function clSaveBase(){try{if(CL.base)localStorage.setItem("wd_cloud_base",JSON.stringify(CL.base));else localStorage.removeItem("wd_cloud_base")}catch(e){}}
-function clRender(){FC={};if(!$("home").hidden)drawHome();if(typeof xRender==="function")xRender();if(typeof spRender==="function")spRender();if(typeof dvRender==="function")dvRender();if(S.role){renderAll();upd();drawLog();if(!$("hs").hidden)drawCal()}dayCheck();bellUpd();xpSync()}
+function clRender(){FC={};if(!$("home").hidden)drawHome();if(typeof xRender==="function")xRender();if(typeof spRender==="function")spRender();if(typeof dvRender==="function")dvRender();if(typeof rvRender==="function")rvRender();if(S.role){renderAll();upd();drawLog();if(!$("hs").hidden)drawCal()}dayCheck();bellUpd();xpSync()}
 /* إرسال التغييرات المحلية: الفرق بين الحالة الحالية وآخر ما أُرسل */
 function clPush(){if(!CL.ready||!CL.F)return;var F=CL.F,l=clEnc(),b=CL.sent||CL.base,bt=F.writeBatch(CL.db),n=0;
  try{
@@ -1438,7 +1465,7 @@ cart:'<path d="M3 4h2.5l2.2 11h10.6l2-8H6.6"/><circle cx="9.5" cy="19" r="1.4"/>
 star:'<path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
 tooth:'<path d="M7.5 3.5c-2.5 0-4 2-4 4.5 0 2.2 1 3.4 1.6 5.4.7 2.4.8 7.1 2.6 7.1 1.6 0 1.6-4.5 4.3-4.5s2.7 4.5 4.3 4.5c1.8 0 1.9-4.7 2.6-7.1.6-2 1.6-3.2 1.6-5.4 0-2.5-1.5-4.5-4-4.5-1.9 0-2.8 1-4.5 1s-2.6-1-4.5-1z"/>',
 link:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>'};
-var DEF_APPS=[{id:"wd-emp",k:"wd",n:"تسجيل السحوبات",i:"box",c:0,w:"emp"},{id:"wd-acc",k:"wd",n:"تسجيل الحسابات",i:"calc",c:5,w:"acc"},{id:"exp",k:"xp",n:"مصاريف العيادة",i:"wallet",c:9,w:"acc"},{id:"sup",k:"sp",n:"الموردين والديون",i:"clip",c:3,w:"acc"},{id:"stf",k:"dv",n:"ديون الكادر",i:"users",c:7,w:"acc"}];
+var DEF_APPS=[{id:"wd-emp",k:"wd",n:"تسجيل السحوبات",i:"box",c:0,w:"emp"},{id:"wd-acc",k:"wd",n:"تسجيل الحسابات",i:"calc",c:5,w:"acc"},{id:"exp",k:"xp",n:"مصاريف العيادة",i:"wallet",c:9,w:"acc"},{id:"sup",k:"sp",n:"الموردين والديون",i:"clip",c:3,w:"acc"},{id:"stf",k:"dv",n:"ديون الكادر",i:"users",c:7,w:"acc"},{id:"rev",k:"rv",n:"الإيراد الشهري",i:"chart",c:1,w:"acc"}];
 function apps(){var l=(Array.isArray(S.apps)&&S.apps.length)?S.apps:DEF_APPS;
  /* 3.1v: «مصاريف العيادة» صار داخل البرنامج بدل رابط claude.ai */
  l=l.map(function(a){return a.id==="exp"&&a.k!=="xp"?{id:a.id,k:"xp",n:a.n,i:a.i,c:a.c,w:a.w}:a});
@@ -1457,6 +1484,7 @@ function drawHome(){if(!S.role)return;var acc=ACC(),T=$("tiles");T.innerHTML="";
   if(S.hmEd){var d=document.createElement("span");d.className="td";d.textContent="✎";d.setAttribute("aria-hidden","true");t.appendChild(d);t.onclick=function(){apEdit(a.id)}}
   else if(a.k==="wd")t.onclick=function(){$("home").hidden=true;window.scrollTo(0,0)};
   else if(a.k==="sp"){t.onclick=function(){spOpen()};var oc=typeof spOverdue==="function"?spOverdue():0;if(oc){var bo=document.createElement("span");bo.className="tbd";bo.textContent="⏰ "+oc;bo.title=oc+" قائمة متأخرة";t.appendChild(bo)}}
+  else if(a.k==="rv"){t.onclick=function(){rvOpen()}}
   else if(a.k==="dv"){t.onclick=function(){dvOpen()};var dn=0;try{Object.keys(S.stf||{}).forEach(function(k){var b=0;Object.keys(S.sdb||{}).forEach(function(i){var m=S.sdb[i];if(m.sid===k)b+=m.k==="debt"?m.amount:-m.amount});if(b>0)dn++})}catch(x){}if(dn){var bq=document.createElement("span");bq.className="tbd";bq.textContent="👤 "+dn;bq.title=dn+" عليهم دين";t.appendChild(bq)}}
   else if(a.k==="xp"){t.onclick=function(){xOpen()};var pc=typeof xPendCount==="function"?xPendCount():0;if(pc){var bd=document.createElement("span");bd.className="tbd";bd.textContent="⏳ "+pc;bd.title=pc+" مصروف مؤقت لازم تكمله";t.appendChild(bd)}}
   T.appendChild(t)});
@@ -1534,7 +1562,8 @@ function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0e7c86",INK="#14202
    pg.appendChild(tb);
    if(o.cards&&o.cards.length){var cs=pe("div","display:flex;gap:10px;margin:14px 0 4px");
     o.cards.forEach(function(c){cs.appendChild(pe("div","flex:1;min-width:0;border:1.5px solid "+LINE+";border-radius:12px;padding:10px 14px;background:"+(c[3]||"#fff"),null,[pe("div","font-size:12px;color:"+MUT+";font-weight:600",c[0]),pe("div","font-size:"+(String(c[1]).length>13?17:20)+"px;font-weight:800;margin-top:3px;direction:ltr;text-align:right;white-space:nowrap;color:"+(c[2]||INK),c[1])]))});
-    pg.appendChild(cs)}}
+    pg.appendChild(cs)}
+   if(o.lead)pg.appendChild(pe("div","margin:12px 0 0;padding:10px 14px;border-radius:12px;font-size:14px;font-weight:700;line-height:1.7;white-space:pre-line;background:"+(o.leadBg||"#eef6f7")+";color:"+(o.leadCol||INK),o.lead));}
   else pg.appendChild(pe("div","display:flex;justify-content:space-between;gap:12px;border-bottom:2px solid "+TEAL+";padding-bottom:8px;font-size:14px",null,[pe("b","color:"+TEAL,o.title),pe("span","color:"+MUT,g.n||"")]));
   host.appendChild(pg);pages.push(pg)}
  function bottom(){var l=pg.lastElementChild;return l?l.getBoundingClientRect().bottom-pg.getBoundingClientRect().top:0}
@@ -1657,7 +1686,7 @@ function pdfMat(o){var CS={};o.cats.forEach(function(n){CS[n]=1});var cat={},ite
  pdfReport({title:title,sub:sub,plain:!per,info:[(allCats?"كل الفئات":"الفئات: "+catTxt)+" · "+items.length+" مادة"+(per?" · "+T.length+" سحب بالفترة":"")],cards:cards,secs:secs,foot:foot,name:name})})}
 /* ===== 4.9v: نسخة احتياطية كاملة من شاشة البرامج — كل البيانات + صور الفواتير والوصولات ===== */
 function bkImgIds(){var ids={};function add(a){(a||[]).forEach(function(i){if(i)ids[i]=1})}
- Object.keys(S.exe||{}).forEach(function(k){add((S.exe[k]||{}).imgs)});Object.keys(S.smv||{}).forEach(function(k){var m=S.smv[k]||{};add(m.imgs);add(m.pimgs)});return Object.keys(ids)}
+ Object.keys(S.exe||{}).forEach(function(k){add((S.exe[k]||{}).imgs)});Object.keys(S.smv||{}).forEach(function(k){var m=S.smv[k]||{};add(m.imgs);add(m.pimgs)});[S.sdb,S.rvm].forEach(function(M){Object.keys(M||{}).forEach(function(k){add((M[k]||{}).imgs)})});return Object.keys(ids)}
 function bkCounts(st){var n=(st.log||[]).length;(st.hist||[]).forEach(function(h){n+=(h.log||[]).length});
  var ex=Object.keys(st.exe||{}).length,inv=Object.keys(st.smv||{}).length,sp=Object.keys(st.sup||{}).length;return {wd:n,ex:ex,inv:inv,sp:sp}}
 function bkAgo(){if(!S.bk)return null;return Math.floor((Date.now()-S.bk)/864e5)}
@@ -1668,7 +1697,7 @@ function bkFull(withImgs){S.bk=Date.now();save();var st=JSON.parse(localStorage.
   return {name:name,miss:miss,ni:Object.keys(imgs).length,json:JSON.stringify(o)}})}
 function bkOpen(){if(!ACC())return;var U=XU,el=U.el,st=JSON.parse(localStorage.getItem("wd_state")||"{}"),c=bkCounts(st),ni=bkImgIds().length,ag=bkAgo(),f=el("div",{class:"bk-box"});
  f.appendChild(el("p",{text:"تحفظ كل بيانات البرامج بملف واحد، وتگدر ترجعها بأي وقت أو على أي جهاز:"}));
- f.appendChild(el("ul",{},[el("li",{text:"📦 السحوبات: "+c.wd+" سجل (اليوم والأيام السابقة)، المواد والأرصدة والكلف ووجبات الشراء"}),el("li",{text:"🧾 مصاريف العيادة: "+c.ex+" حركة ويه الخزائن والأنواع"}),el("li",{text:"🏪 الموردين: "+c.sp+" مورد · "+c.inv+" قائمة ويه التسديدات"}),el("li",{text:"📷 صور الفواتير والوصولات: "+ni+" صورة"}),el("li",{text:"👥 ديون الكادر: "+Object.keys(st.sdb||{}).length+" حركة"}),el("li",{text:"⚙️ الموظفين والباسووردات والإعدادات وترويسة الملفات"})]));
+ f.appendChild(el("ul",{},[el("li",{text:"📦 السحوبات: "+c.wd+" سجل (اليوم والأيام السابقة)، المواد والأرصدة والكلف ووجبات الشراء"}),el("li",{text:"🧾 مصاريف العيادة: "+c.ex+" حركة ويه الخزائن والأنواع"}),el("li",{text:"🏪 الموردين: "+c.sp+" مورد · "+c.inv+" قائمة ويه التسديدات"}),el("li",{text:"📷 صور الفواتير والوصولات: "+ni+" صورة"}),el("li",{text:"👥 ديون الكادر: "+Object.keys(st.sdb||{}).length+" حركة"}),el("li",{text:"💰 الإيراد الشهري: "+Object.keys(st.rvm||{}).length+" حركة"}),el("li",{text:"⚙️ الموظفين والباسووردات والإعدادات وترويسة الملفات"})]));
  f.appendChild(el("div",{class:"bk-last "+(ag==null||ag>=7?"warn":"ok"),text:S.bk?"آخر نسخة: "+fd(new Date(S.bk))+" · "+ft(new Date(S.bk))+(ag?" (قبل "+ag+" يوم)":" (اليوم)"):"⚠ ما مسوي نسخة احتياطية بعد"}));
  var cb=el("input",{type:"checkbox",id:"bkImg"});cb.checked=true;
  if(ni)f.appendChild(el("label",{class:"bk-chk"},[cb,el("span",{text:"ويه الصور ("+ni+" صورة) — الملف يصير أكبر"})]));
@@ -2306,7 +2335,7 @@ g("spPdf").onclick=pdfAll;
    S.sdb = {id:{sid:الموظف, k:"debt"|"pay", amount, date, type:نوع الدين, src:"tr"|"rev" (الدين: من الخزينة/الإيراد),
                 to:"tr"|"rev"|"sal" (التسديد: رجع للخزينة/للإيراد/خصم من الراتب), note, xe:حركة الخزينة المربوطة, ts}}
    الدين «من الخزينة» ينزل كمصروف بالخزينة الحالية، والتسديد «رجع للخزينة» ينزل إيداع — حتى يبقى رصيد الخزينة صحيح. */
-var dvOpen,dvRender,dvBack;
+var dvOpen,dvRender,dvBack,dvForms;
 (function(){
 var U=XU,el=U.el,fmn=U.fmn,num=U.num,dmy=U.dmy,wd=U.wd,tdy=U.tdy;
 var P={view:"list",sid:null,q:"",all:false};
@@ -2319,7 +2348,7 @@ function mvs(sid){return Object.keys(S.sdb||{}).map(function(id){return Object.a
 function byTime(a,b){return a.date<b.date?-1:a.date>b.date?1:(a.ts||0)-(b.ts||0)}
 function acct(sid){var M=mvs(sid).sort(byTime),td=0,tp=0,tr=0,rv=0;M.forEach(function(m){if(m.k==="debt"){td+=m.amount||0;if(m.src==="tr")tr+=m.amount||0;else rv+=m.amount||0}else tp+=m.amount||0});
  return {M:M,td:td,tp:tp,bal:td-tp,tr:tr,rv:rv,last:M.length?M[M.length-1].date:null}}
-function commit(){save();render();if(typeof xRender==="function")xRender()}
+function commit(){save();render();if(typeof xRender==="function")xRender();if(typeof rvRender==="function")rvRender()}
 /* أول مرة: أسماء الكادر بمعرّفات ثابتة حتى ما تتكرر من جهازين */
 function seed(){if(S.stfseed==="s1"||!ACC())return;if(CL.cfg&&!CL.ready)return;var have={};stf().forEach(function(x){have[x.n.replace(/\s+/g," ").trim()]=1});
  STF0.forEach(function(n,i){var id="st"+String(i+1).padStart(2,"0");if(!S.stf[id]&&!have[n])S.stf[id]={n:n,ts:1792000000000+i}});S.stfseed="s1";save()}
@@ -2366,17 +2395,18 @@ function drawP(){var s=S.stf[P.sid];if(!s){P.view="list";return drawList()}var a
     m.note?el("div",{class:"dv-n",text:m.note}):null,
     el("div",{class:"s",text:[wd(m.date)+" "+dmy(m.date),"الرصيد بعدها: "+fmn(run[m.id]),m.xe&&S.exe[m.xe]?"🔗 مسجّل بالخزينة":""].filter(Boolean).join(" · ")})]),
    el("span",{class:"a num",text:(d?"+":"−")+fmn(m.amount)}),
-   el("div",{class:"acts"},[el("button",{text:"✎ تعديل",on:{click:function(e){e.stopPropagation();d?debtForm(m.id,m.sid):payForm(m.id,m.sid)}}}),el("button",{class:"dl",text:"🗑 حذف",on:{click:function(e){e.stopPropagation();delMv(m)}}})])]))})}
+   el("div",{class:"acts"},[(m.imgs||[]).length?el("button",{class:"iv",text:"🖼️ الصورة"+(m.imgs.length>1?" ("+m.imgs.length+")":""),on:{click:function(e){e.stopPropagation();U.viewer(m.imgs,0)}}}):null,el("button",{text:"✎ تعديل",on:{click:function(e){e.stopPropagation();d?debtForm(m.id,m.sid):payForm(m.id,m.sid)}}}),el("button",{class:"dl",text:"🗑 حذف",on:{click:function(e){e.stopPropagation();delMv(m)}}})])]))})}
 /* ---------- النوافذ ---------- */
 function stfSel(id,cur){var s=el("select",{class:"x-fld",id:id});s.appendChild(el("option",{value:"",text:"اختر الموظف…"}));
  stf().filter(function(x){return !x.off||x.id===cur}).sort(function(a,b){return a.n.localeCompare(b.n,"ar")}).forEach(function(x){s.appendChild(el("option",{value:x.id,text:x.n}))});s.value=cur||"";return s}
+function photoBox(imgs,label){var b=U.invBox(imgs);b.classList.add("big");b.querySelector(".x-invl").textContent=label;return b}
 function chips(list,cur,onPick){var box=el("div",{class:"sp-qb"});list.forEach(function(o){var b=el("button",{type:"button",text:o[1],class:o[0]===cur?"on":"",on:{click:function(){Array.prototype.forEach.call(box.children,function(c){c.classList.toggle("on",c===b)});onPick(o[0])}}});box.appendChild(b)});return box}
-function debtForm(mid,sid){var m=mid?S.sdb[mid]:null,f=el("div",{style:"display:flex;flex-direction:column;gap:12px"});
+function debtForm(mid,sid,opt){opt=opt||{};var m=mid?S.sdb[mid]:null,f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),imgs=m&&m.imgs?m.imgs.slice():[];
  var sel=stfSel("dvfS",m?m.sid:sid),am=U.amtField("dvfA",m?m.amount:null),d=el("input",{class:"x-fld",id:"dvfD",type:"date"}),nt=el("input",{class:"x-fld",id:"dvfN",autocomplete:"off",placeholder:"مثلًا: سلفة لحد الراتب / شنو اشترى"}),ot=el("input",{class:"x-fld",id:"dvfT",autocomplete:"off",placeholder:"اكتب نوع الدين"});
- d.value=m?m.date:tdy();nt.value=m&&m.note||"";var ty=m?m.type:DTYPES[0],src=m?(m.src==="tr"?"tr":"rev"):"tr";
+ d.value=m?m.date:tdy();nt.value=m&&m.note||"";var ty=m?m.type:DTYPES[0],src=m?(m.src==="tr"?"tr":"rev"):(opt.src||"tr");
  if(ty&&DTYPES.indexOf(ty)<0){ot.value=ty;ty="أخرى"}
  if(!m&&sid)f.appendChild(el("div",{class:"dv-who"},["👤 ",S.stf[sid].n]));else f.appendChild(el("label",{},["الموظف",sel]));
- f.appendChild(el("label",{},["مبلغ الدين (دينار)",am]));
+ f.appendChild(photoBox(imgs,"📷 صوّر وصل السلفة / الدين"));f.appendChild(el("label",{},["مبلغ الدين (دينار)",am]));
  var ow=el("label",{},["نوع آخر",ot]);ow.hidden=ty!=="أخرى";
  f.appendChild(el("div",{class:"sp-pw"},[el("span",{class:"sp-pl",text:"نوع الدين"}),chips(DTYPES.map(function(t){return [t,t]}),ty,function(v){ty=v;ow.hidden=v!=="أخرى";if(v==="أخرى")setTimeout(function(){ot.focus()},30)})]));f.appendChild(ow);
  var sw=el("div",{class:"sp-ps"}),b1=el("button",{type:"button",text:SRC.tr}),b2=el("button",{type:"button",text:SRC.rev});sw.appendChild(b1);sw.appendChild(b2);
@@ -2387,26 +2417,29 @@ function debtForm(mid,sid){var m=mid?S.sdb[mid]:null,f=el("div",{style:"display:
  var btns=[{t:"إلغاء"},{t:"حفظ",cls:"ok",fn:function(){var a=num(am.value);if(!(a>0)){toast("اكتب مبلغ الدين");return false}var s2=m?sel.value||m.sid:(sid||sel.value);if(!s2){toast("اختر الموظف");return false}
   var t2=ty==="أخرى"?(ot.value.trim()||"أخرى"):ty,id=mid||"d"+rid();
   var o=Object.assign({},m||{ts:Date.now()},{sid:s2,k:"debt",amount:a,date:d.value||tdy(),type:t2,src:src,note:nt.value.trim()});if(!o.note)delete o.note;
-  var ok=link(id,o);S.sdb[id]=o;commit();if(!m&&P.view!=="p")openP(s2);toast((m?"✔ انحفظ الدين":"✔ انسجل دين "+fmn(a)+" على "+S.stf[s2].n)+(o.xe&&ok?"\n🏦 ونزل بالخزينة":""))}}];
+  if(m)U.imgDrop((m.imgs||[]).filter(function(x){return imgs.indexOf(x)<0}));if(imgs.length)o.imgs=imgs.slice();else delete o.imgs;
+  if(opt.rmon&&src==="rev"&&opt.rmon!==(o.date||"").slice(0,7))o.rmon=opt.rmon;else if(src!=="rev"||(o.rmon&&o.rmon===(o.date||"").slice(0,7)))delete o.rmon;
+  var ok=link(id,o);S.sdb[id]=o;commit();U.imgFlush();if(opt.after)opt.after();else if(!m&&P.view!=="p")openP(s2);toast((m?"✔ انحفظ الدين":"✔ انسجل دين "+fmn(a)+" على "+S.stf[s2].n)+(o.xe&&ok?"\n🏦 ونزل بالخزينة":""))}}];
  if(m)btns.unshift({t:"حذف",cls:"del",fn:function(){setTimeout(function(){delMv(Object.assign({id:mid},m))},0)}});
  U.modal(m?"تعديل الدين":"🔻 دين جديد",f,btns)}
-function payForm(mid,sid){var m=mid?S.sdb[mid]:null,f=el("div",{style:"display:flex;flex-direction:column;gap:12px"});
+function payForm(mid,sid,opt){opt=opt||{};var m=mid?S.sdb[mid]:null,f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),imgs=m&&m.imgs?m.imgs.slice():[];
  var sel=stfSel("dvpS",m?m.sid:sid),am=U.amtField("dvpA",m?m.amount:null),d=el("input",{class:"x-fld",id:"dvpD",type:"date"}),nt=el("input",{class:"x-fld",id:"dvpN",autocomplete:"off",placeholder:"اختياري"}),info=el("div",{class:"sp-info"});
- d.value=m?m.date:tdy();nt.value=m&&m.note||"";var to=m&&m.to||"tr";
+ d.value=m?m.date:tdy();nt.value=m&&m.note||"";var to=m&&m.to||opt.to||"tr";
  function upd(){var s2=m?m.sid:(sid||sel.value);info.innerHTML="";if(!s2)return;var b=acct(s2).bal+(m?m.amount:0);info.appendChild(el("span",{text:"الباقي عليه: "}));info.appendChild(el("b",{class:"num",text:fmn(b)}));
   if(b>0&&!m)info.appendChild(el("button",{type:"button",text:"سدد الكل",on:{click:function(){am.value=fmn(b)}}}))}
  sel.onchange=upd;
  if(!(m||sid))f.appendChild(el("label",{},["الموظف",sel]));else f.appendChild(el("div",{class:"dv-who"},["👤 ",S.stf[m?m.sid:sid].n]));
- f.appendChild(info);f.appendChild(el("label",{},["مبلغ التسديد (دينار)",am]));
+ f.appendChild(info);f.appendChild(photoBox(imgs,"📷 صوّر وصل التسديد"));f.appendChild(el("label",{},["مبلغ التسديد (دينار)",am]));
  f.appendChild(el("div",{class:"sp-pw"},[el("span",{class:"sp-pl",text:"وين راحت الفلوس؟"}),chips([["tr",DST.tr],["rev",DST.rev],["sal",DST.sal]],to,function(v){to=v})]));
  f.appendChild(el("label",{},["التاريخ",d]));f.appendChild(el("label",{},["ملاحظة",nt]));
  var btns=[{t:"إلغاء"},{t:"حفظ",cls:"ok",fn:function(){var a=num(am.value);if(!(a>0)){toast("اكتب مبلغ التسديد");return false}var s2=m?m.sid:(sid||sel.value);if(!s2){toast("اختر الموظف");return false}
   var id=mid||"p"+rid(),o=Object.assign({},m||{ts:Date.now()},{sid:s2,k:"pay",amount:a,date:d.value||tdy(),to:to,note:nt.value.trim()});if(!o.note)delete o.note;
-  link(id,o);S.sdb[id]=o;commit();if(!m&&P.view!=="p")openP(s2);var b=acct(s2).bal;toast("✔ انسجل التسديد "+fmn(a)+"\n"+(b>0?"الباقي عليه "+fmn(b):b<0?"إله "+fmn(-b):"✓ انسدد كامل"))}}];
+  if(m)U.imgDrop((m.imgs||[]).filter(function(x){return imgs.indexOf(x)<0}));if(imgs.length)o.imgs=imgs.slice();else delete o.imgs;
+  link(id,o);S.sdb[id]=o;commit();U.imgFlush();if(opt.after)opt.after();else if(!m&&P.view!=="p")openP(s2);var b=acct(s2).bal;toast("✔ انسجل التسديد "+fmn(a)+"\n"+(b>0?"الباقي عليه "+fmn(b):b<0?"إله "+fmn(-b):"✓ انسدد كامل"))}}];
  if(m)btns.unshift({t:"حذف",cls:"del",fn:function(){setTimeout(function(){delMv(Object.assign({id:mid},m))},0)}});
  U.modal(m?"تعديل التسديد":"💵 تسديد دين",f,btns);upd()}
 function delMv(m){var d=m.k==="debt";U.modal("حذف "+(d?"الدين":"التسديد")+"؟",el("p",{style:"margin:0;white-space:pre-line",text:((S.stf[m.sid]||{}).n||"")+" · "+fmn(m.amount)+" دينار · "+dmy(m.date)+(m.xe&&S.exe[m.xe]?"\nوتنحذف حركته من الخزينة هم.":"")}),
- [{t:"رجوع"},{t:"حذف",cls:"bad",fn:function(){if(m.xe)delete S.exe[m.xe];delete S.sdb[m.id];commit();toast("انحذف")}}])}
+ [{t:"رجوع"},{t:"حذف",cls:"bad",fn:function(){if(m.xe)delete S.exe[m.xe];U.imgDrop(m.imgs);delete S.sdb[m.id];commit();toast("انحذف");if(typeof rvRender==="function")rvRender()}}])}
 function staffForm(id){var s=id?S.stf[id]:null,f=el("div",{style:"display:flex;flex-direction:column;gap:12px"});
  var n=el("input",{class:"x-fld",id:"dvsN",autocomplete:"off",placeholder:"الاسم الكامل"}),ph=el("input",{class:"x-fld",id:"dvsP",autocomplete:"off",inputmode:"tel",dir:"ltr",placeholder:"07xx xxx xxxx"}),no=el("input",{class:"x-fld",id:"dvsT",autocomplete:"off",placeholder:"مثلًا: طبيبة / استقبال"});
  if(s){n.value=s.n;ph.value=s.ph||"";no.value=s.note||""}
@@ -2414,7 +2447,7 @@ function staffForm(id){var s=id?S.stf[id]:null,f=el("div",{style:"display:flex;f
  var btns=[{t:"إلغاء"},{t:"حفظ",cls:"ok",fn:function(){var nm=n.value.trim();if(!nm){toast("اكتب الاسم");return false}if(stf().some(function(x){return x.n===nm&&x.id!==id})){toast("أكو موظف بنفس الاسم");return false}
   var nid=id||"s"+rid();S.stf[nid]=Object.assign({},s||{ts:Date.now()},{n:nm,ph:ph.value.trim(),note:no.value.trim()});delete S.stf[nid].off;commit();toast(id?"✔ انحفظ":"✔ انضاف «"+nm+"»");if(!id)openP(nid)}}];
  if(id)btns.unshift({t:"حذف",cls:"del",fn:function(){var k=mvs(id).length;setTimeout(function(){U.modal("حذف «"+s.n+"»؟",el("p",{style:"margin:0;white-space:pre-line",text:k?"عنده "+k+" حركة. تنحذف وياه (وحركاتها بالخزينة).\nإذا ترك العمل وبس تريد تخفيه، اختار «إخفاء».":"ما عنده حركات."}),
-  [{t:"رجوع"}].concat(k?[{t:"إخفاء",fn:function(){S.stf[id]=Object.assign({},S.stf[id],{off:true});P.view="list";commit();toast("انخفى من القائمة")}}]:[]).concat([{t:"حذف",cls:"bad",fn:function(){mvs(id).forEach(function(m){if(m.xe)delete S.exe[m.xe];delete S.sdb[m.id]});delete S.stf[id];P.view="list";commit();toast("انحذف")}}]))},0)}});
+  [{t:"رجوع"}].concat(k?[{t:"إخفاء",fn:function(){S.stf[id]=Object.assign({},S.stf[id],{off:true});P.view="list";commit();toast("انخفى من القائمة")}}]:[]).concat([{t:"حذف",cls:"bad",fn:function(){mvs(id).forEach(function(m){if(m.xe)delete S.exe[m.xe];U.imgDrop(m.imgs);delete S.sdb[m.id]});delete S.stf[id];P.view="list";commit();toast("انحذف")}}]))},0)}});
  U.modal(id?"تعديل الموظف":"موظف جديد",f,btns)}
 /* ---------- PDF و Excel ---------- */
 function mvRows(a,OK,BAD){var rows=[],bal=0;a.M.forEach(function(m){var d=m.k==="debt";bal+=d?m.amount:-m.amount;
@@ -2447,7 +2480,7 @@ function expAll(){var L=stf().map(function(s){return {s:s,a:acct(s.id)}}).filter
  pickExport([{name:"ملخص الكادر",rows:s1,w:[24,16,16,16,16,16,14],total:true,mc:[1,2,3,4,5]},{name:"كل الحركات",rows:s2,w:[13,11,22,9,20,18,14,14,16,30],mc:[6,7,8]}],"staff-debts-"+tdy()+".xlsx")}
 /* ---------- عرض ---------- */
 function render(){if(g("dv").hidden)return;seed();g("dvList").hidden=P.view!=="list";g("dvP").hidden=P.view!=="p";g("dvClock").textContent=wd(tdy())+" "+dmy(tdy());if(P.view==="p")drawP();else drawList()}
-dvRender=render;
+dvRender=render;dvForms={debt:debtForm,pay:payForm};
 dvOpen=function(){if(!ACC())return;P.view="list";g("home").hidden=true;g("dv").hidden=false;g("dv").scrollTop=0;render()};
 dvBack=function(){if(P.view==="p"){P.view="list";render();return true}return false};
 g("dvHome").onclick=function(){g("dv").hidden=true;U.close();showHome()};
@@ -2456,6 +2489,127 @@ g("dvEdit").onclick=function(){staffForm(P.sid)};
 g("dvQ").addEventListener("input",function(){P.q=g("dvQ").value;drawList()});
 g("dvDebt").onclick=function(){P.all=false;drawList()};g("dvAll").onclick=function(){P.all=true;drawList()};
 g("dvExp").onclick=expAll;g("dvPdf").onclick=pdfAll;
+})();
+
+/* ===== الإيراد الشهري (5.3v): حركات الإيراد ومطابقة نهاية الشهر =====
+   S.rvm = {id:{k:"wd"|"dep"|"sal"|"pay"|"oth", amount, date, mon:"YYYY-MM" (إيراد أي شهر), who, note, imgs, ts}}
+   S.rvs = {"YYYY-MM":{R:الإيراد الشهري الكامل, act:الباقي الموجود فعليًا, note, ts}}
+   السلف من الإيراد = ديون الكادر (S.sdb) بـ src:"rev"، وتسديد الديون للإيراد (to:"rev") يدخل للإيراد — تنحسب تلقائيًا بشهرها (rmon أو تاريخها). */
+var rvOpen,rvRender,rvBack;
+(function(){
+var U=XU,el=U.el,fmn=U.fmn,num=U.num,dmy=U.dmy,wd=U.wd,tdy=U.tdy;
+var MONS=["كانون الثاني","شباط","آذار","نيسان","أيار","حزيران","تموز","آب","أيلول","تشرين الأول","تشرين الثاني","كانون الأول"];
+var KD={wd:{n:"سحب",i:"💸",h:"منو سحب؟",ph:"مثلًا: الدكتور"},dep:{n:"إيداع",i:"🏦",h:"وين انودع؟",ph:"مثلًا: البنك / الخزنة / حساب الدكتور"},sal:{n:"رواتب",i:"👥",h:"راتب منو؟",ph:"اسم الموظف أو «رواتب الكل»"},pay:{n:"تسديد",i:"🧾",h:"تسديد لمنو؟",ph:"مثلًا: مورد / إيجار / كهرباء"},oth:{n:"أخرى",i:"📌",h:"تفاصيل",ph:""}};
+var KO=["wd","dep","sal","pay","oth"];
+var P={mon:tdy().slice(0,7)};
+function g(i){return document.getElementById(i)}
+function mName(m){var p=m.split("-");return MONS[+p[1]-1]+" "+p[0]}
+function mShift(m,n){var p=m.split("-"),d=new Date(+p[0],+p[1]-1+n,1);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")}
+function mOf(x){return x.mon||x.rmon||(x.date||"").slice(0,7)}
+function photoBox(imgs,label){var b=U.invBox(imgs);b.classList.add("big");b.querySelector(".x-invl").textContent=label;return b}
+/* كل حركات الشهر: حركات الإيراد + السلف من الإيراد + تسديد الديون للإيراد */
+function rows(mon){var L=[];
+ Object.keys(S.rvm||{}).forEach(function(id){var x=S.rvm[id];if(mOf(x)===mon)L.push(Object.assign({id:id,src:"rv",out:true},x))});
+ Object.keys(S.sdb||{}).forEach(function(id){var x=S.sdb[id];if(!S.stf[x.sid])return;var n=S.stf[x.sid].n;
+  if(x.k==="debt"&&x.src==="rev"&&mOf(x)===mon)L.push({id:id,src:"dv",out:true,k:"adv",amount:x.amount,date:x.date,who:n,note:[x.type,x.note].filter(Boolean).join(" · "),imgs:x.imgs,ts:x.ts,sid:x.sid});
+  if(x.k==="pay"&&x.to==="rev"&&mOf(x)===mon)L.push({id:id,src:"dv",out:false,k:"in",amount:x.amount,date:x.date,who:n,note:["تسديد دين"+(x.note?" · "+x.note:"")].join(""),imgs:x.imgs,ts:x.ts,sid:x.sid})});
+ return L.sort(function(a,b){return a.date<b.date?-1:a.date>b.date?1:(a.ts||0)-(b.ts||0)})}
+function sum(mon){var L=rows(mon),t={wd:0,dep:0,sal:0,pay:0,oth:0,adv:0,in:0,out:0},c={};L.forEach(function(x){t[x.k]=(t[x.k]||0)+(x.amount||0);c[x.k]=(c[x.k]||0)+1;if(x.out)t.out+=x.amount||0});
+ var st=(S.rvs||{})[mon]||{},R=typeof st.R==="number"?st.R:null,act=typeof st.act==="number"?st.act:null,rem=R==null?null:R+t.in-t.out;
+ return {L:L,t:t,c:c,R:R,act:act,rem:rem,diff:act==null||rem==null?null:act-rem,st:st}}
+var KL={wd:["💸","السحوبات"],dep:["🏦","الإيداعات"],sal:["👥","الرواتب"],adv:["🔻","السلف (ديون الكادر)"],pay:["🧾","التسديدات"],oth:["📌","أخرى"],in:["↩️","تسديد ديون رجع للإيراد"]};
+/* ---------- الشاشة ---------- */
+function draw(){var mon=P.mon,s=sum(mon);g("rvMon").textContent=mName(mon);g("rvNext").disabled=mon>=tdy().slice(0,7);
+ var B=g("rvSum");B.innerHTML="";
+ B.appendChild(el("div",{class:"x-tre"},[el("div",{},[el("div",{class:"x-lbl",text:s.R==null?"الخارج من الإيراد هذا الشهر":"الباقي بالإيراد (محسوب)"}),el("div",{class:"x-big num"},[fmn(s.R==null?s.t.out:s.rem),el("small",{text:"دينار"})])]),
+  el("div",{style:"min-width:0"},[el("div",{class:"x-meta"},[el("div",{},[el("span",{class:"x-lbl",text:"الإيراد الشهري"}),el("b",{class:"num",text:s.R==null?"ما مسجّل":fmn(s.R)})]),el("div",{},[el("span",{class:"x-lbl",text:"مجموع الخارج"}),el("b",{class:"num",text:fmn(s.t.out)})]),el("div",{},[el("span",{class:"x-lbl",text:"رجع للإيراد"}),el("b",{class:"num",text:fmn(s.t.in)})])])]),
+  el("div",{class:"x-tact"},[el("button",{class:"pri",text:"+ حركة",on:{click:function(){mvForm(null)}}}),el("button",{text:"🔻 سلفة لموظف",on:{click:advNew}}),el("button",{text:"🧮 مطابقة نهاية الشهر",on:{click:closeForm}}),el("button",{text:"📄 تقرير المطابقة PDF",on:{click:function(){pdfMon(P.mon)}}})])]));
+ /* بطاقة المطابقة */
+ var C=g("rvChk");C.innerHTML="";
+ if(s.R==null){C.className="x-card rv-chk none";C.appendChild(el("div",{},[el("b",{text:"🧮 مطابقة نهاية الشهر"}),el("p",{text:"بنهاية الشهر اضغط «مطابقة نهاية الشهر» واكتب الإيراد الشهري الكامل، وإذا تريد اكتب الموجود فعليًا بالإيراد، حتى يطابق كل الحركات."})]))}
+ else{var ok=s.diff==null?null:Math.abs(s.diff)<1;C.className="x-card rv-chk "+(ok===null?"none":ok?"ok":"bad");
+  C.appendChild(el("b",{text:ok===null?"🧮 المعادلة":ok?"✓ مطابق":"⚠ أكو فرق "+fmn(Math.abs(s.diff))+(s.diff>0?" (زيادة بالموجود)":" (نقص بالموجود)")}));
+  C.appendChild(el("div",{class:"rv-eq"},eqParts(s).map(function(p){return el("span",{class:p[2]||""},[el("small",{text:p[0]}),el("b",{class:"num",text:p[1]})])})))}
+ /* أرقام حسب النوع */
+ var K=g("rvKinds");K.innerHTML="";["wd","dep","sal","adv","pay","oth","in"].forEach(function(k){if(!s.t[k])return;K.appendChild(el("div",{class:"rv-k k-"+k},[el("span",{text:KL[k][0]+" "+KL[k][1]+" ("+s.c[k]+")"}),el("b",{class:"num",text:(k==="in"?"+":"−")+fmn(s.t[k])})]))});
+ var R=g("rvRows");R.innerHTML="";
+ if(!s.L.length){R.appendChild(el("div",{class:"x-empty",text:"ما أكو حركات على إيراد "+mName(mon)+" بعد. اضغط «+ حركة»."}));return}
+ var last=null;s.L.slice().reverse().forEach(function(x){if(x.date!==last){last=x.date;R.appendChild(el("div",{class:"x-dh"},[el("span",{text:wd(x.date)+" "+dmy(x.date)})]))}R.appendChild(rowOf(x))})}
+function eqParts(s){var p=[["الإيراد الشهري",fmn(s.R),"r"]];if(s.t.in)p.push(["+ رجع للإيراد",fmn(s.t.in)]);
+ ["wd","dep","sal","adv","pay","oth"].forEach(function(k){if(s.t[k])p.push(["− "+KL[k][1],fmn(s.t[k])])});p.push(["= الباقي المحسوب",fmn(s.rem),"t"]);if(s.act!=null)p.push(["الموجود فعليًا",fmn(s.act),"a"]);return p}
+function rowOf(x){var dv=x.src==="dv",kd=KL[x.k]||["📌",""],ni=(x.imgs||[]).length;
+ function edit(){if(dv){if(x.k==="adv")dvForms.debt(x.id,x.sid,{after:render});else dvForms.pay(x.id,x.sid,{after:render})}else mvForm(x.id)}
+ var r=el("div",{class:"x-it xr rv-it"+(x.out?"":" in"),role:"button",tabindex:"0",on:{click:edit,keydown:function(e){if(e.target===r&&e.key==="Enter")edit()}}},[
+  el("div",{class:"xr-h"},[el("span",{class:"e",text:x.k==="adv"?"🔻":x.k==="in"?"↩️":(KD[x.k]||KD.oth).i}),el("b",{class:"xr-t",text:(x.k==="adv"?"سلفة":x.k==="in"?"رجع للإيراد":(KD[x.k]||KD.oth).n)}),x.who?nmChip(x.who):null,dv?el("span",{class:"bdg lk",text:"👥 ديون الكادر"}):null,x.mon&&x.mon!==(x.date||"").slice(0,7)||x.rmon?el("span",{class:"bdg",text:"من إيراد "+mName(mOf(x))}):null,el("span",{class:"xr-sp"}),
+   el("div",{class:"xr-b"},[ni?el("button",{class:"iv",text:"🖼️"+(ni>1?" "+ni:""),on:{click:function(e){e.stopPropagation();U.viewer(x.imgs,0)}}}):null,el("button",{text:"✎ تعديل",on:{click:function(e){e.stopPropagation();edit()}}}),dv?null:el("button",{class:"dl",text:"🗑 حذف",on:{click:function(e){e.stopPropagation();del(x)}}})])]),
+  x.note?el("div",{class:"xr-n",text:x.note}):null,
+  el("div",{class:"xr-f"},[el("span",{class:"xr-m",text:dv?"تتعدل من «ديون الكادر»":""}),el("b",{class:"xr-a num",text:(x.out?"−":"+")+fmn(x.amount)})])]);
+ return r}
+/* ---------- النوافذ ---------- */
+function monSel(id,cur){var s=el("select",{class:"x-fld",id:id}),m=tdy().slice(0,7);for(var i=0;i<6;i++){var v=mShift(m,-i);s.appendChild(el("option",{value:v,text:"إيراد "+mName(v)}))}if(cur&&!s.querySelector('option[value="'+cur+'"]'))s.appendChild(el("option",{value:cur,text:"إيراد "+mName(cur)}));s.value=cur||P.mon;return s}
+function mvForm(id,k0){var m=id?S.rvm[id]:null,k=m?m.k:(k0||"wd"),f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),imgs=m&&m.imgs?m.imgs.slice():[];
+ var am=U.amtField("rvA",m?m.amount:null),who=el("input",{class:"x-fld",id:"rvW",autocomplete:"off",list:"rvWL"}),nt=el("input",{class:"x-fld",id:"rvN",autocomplete:"off",placeholder:"اختياري"}),d=el("input",{class:"x-fld",id:"rvD",type:"date"}),ms=monSel("rvM",m?m.mon:P.mon);
+ who.value=m&&m.who||"";nt.value=m&&m.note||"";d.value=m?m.date:(P.mon===tdy().slice(0,7)?tdy():P.mon+"-"+String(new Date(+P.mon.slice(0,4),+P.mon.slice(5),0).getDate()).padStart(2,"0"));
+ var dl=el("datalist",{id:"rvWL"});function fillDL(){dl.innerHTML="";var seen={};(k==="sal"?Object.keys(S.stf||{}).map(function(i){return S.stf[i].n}).concat(["رواتب الكل"]):[]).concat(Object.keys(S.rvm||{}).filter(function(i){return S.rvm[i].k===k&&S.rvm[i].who}).map(function(i){return S.rvm[i].who})).forEach(function(n){if(!seen[n]){seen[n]=1;dl.appendChild(el("option",{value:n}))}})}
+ var wl=el("span"),kb=el("div",{class:"sp-qb rv-kb"});
+ function setK(v){k=v;Array.prototype.forEach.call(kb.children,function(c){c.classList.toggle("on",c.dataset.k===k)});wl.textContent=KD[k].h;who.placeholder=KD[k].ph;fillDL()}
+ KO.forEach(function(v){var b=el("button",{type:"button",text:KD[v].i+" "+KD[v].n,on:{click:function(){setK(v)}}});b.dataset.k=v;kb.appendChild(b)});
+ kb.appendChild(el("button",{type:"button",class:"adv",text:"🔻 سلفة لموظف",on:{click:function(){U.close();setTimeout(advNew,0)}}}));
+ f.appendChild(el("div",{class:"sp-pw"},[el("span",{class:"sp-pl",text:"نوع الحركة"}),kb]));
+ f.appendChild(photoBox(imgs,"📷 صوّر الوصل / الإيصال"));
+ f.appendChild(el("label",{},["المبلغ (دينار)",am]));f.appendChild(el("label",{},[wl,who]));f.appendChild(dl);
+ f.appendChild(el("label",{},["من إيراد شهر",ms]));f.appendChild(el("label",{},["التاريخ",d]));f.appendChild(el("label",{},["ملاحظة",nt]));setK(k);
+ var btns=[{t:"إلغاء"},{t:"حفظ",cls:"ok",fn:function(){var a=num(am.value);if(!(a>0)){toast("اكتب المبلغ");return false}
+  var o=Object.assign({},m||{ts:Date.now()},{k:k,amount:a,date:d.value||tdy(),mon:ms.value||P.mon,who:who.value.trim(),note:nt.value.trim()});["who","note"].forEach(function(x){if(!o[x])delete o[x]});
+  if(m)U.imgDrop((m.imgs||[]).filter(function(x){return imgs.indexOf(x)<0}));if(imgs.length)o.imgs=imgs.slice();else delete o.imgs;
+  S.rvm[id||"r"+rid()]=o;save();U.imgFlush();P.mon=o.mon;render();toast("✔ انسجل "+KD[k].n+" "+fmn(a)+"\nمن إيراد "+mName(o.mon))}}];
+ if(m)btns.unshift({t:"حذف",cls:"del",fn:function(){setTimeout(function(){del(Object.assign({id:id,src:"rv"},m))},0)}});
+ U.modal(m?"تعديل حركة الإيراد":"💰 حركة على الإيراد",f,btns)}
+function advNew(){if(typeof dvForms!=="object"||!dvForms){toast("افتح «ديون الكادر» مرة");return}if(!Object.keys(S.stf||{}).length){toast("ما أكو أسماء كادر — ضيفهم من «ديون الكادر»");return}
+ dvForms.debt(null,null,{src:"rev",rmon:P.mon,after:render})}
+function del(x){U.modal("حذف الحركة؟",el("p",{style:"margin:0",text:(KD[x.k]||KD.oth).n+" · "+fmn(x.amount)+" دينار · "+dmy(x.date)+(x.who?" · "+x.who:"")}),[{t:"رجوع"},{t:"حذف",cls:"bad",fn:function(){U.imgDrop(x.imgs);delete S.rvm[x.id];save();render();toast("انحذفت")}}])}
+function closeForm(){var mon=P.mon,st=(S.rvs||{})[mon]||{},f=el("div",{style:"display:flex;flex-direction:column;gap:12px"});
+ var R=U.amtField("rvR",typeof st.R==="number"?st.R:null),A=U.amtField("rvAct",typeof st.act==="number"?st.act:null),nt=el("input",{class:"x-fld",id:"rvCN",autocomplete:"off",placeholder:"اختياري"});nt.value=st.note||"";
+ var prev=el("div",{class:"rv-prev"});function upd(){var s=sum(mon),r=num(R.value),a=num(A.value);prev.innerHTML="";if(r==null){prev.textContent="اكتب الإيراد الشهري حتى تطلع المعادلة.";return}
+  var rem=r+s.t.in-s.t.out;prev.appendChild(el("div",{},["الإيراد ",el("b",{class:"num",text:fmn(r)})," − الخارج ",el("b",{class:"num",text:fmn(s.t.out)}),s.t.in?" + الراجع "+fmn(s.t.in):""," = الباقي ",el("b",{class:"num",text:fmn(rem)})]));
+  if(a!=null){var df=a-rem;prev.appendChild(el("div",{class:Math.abs(df)<1?"ok":"bad",text:Math.abs(df)<1?"✓ مطابق — الموجود فعليًا يساوي الباقي":"⚠ فرق "+fmn(Math.abs(df))+(df>0?" زيادة":" نقص")}))}}
+ R.addEventListener("input",upd);A.addEventListener("input",upd);
+ f.appendChild(el("p",{style:"margin:0;color:var(--mut)",text:"إيراد "+mName(mon)+": اكتب الإيراد الشهري الكامل، وإذا تريد اكتب الموجود فعليًا بالإيراد هسه حتى يتأكد البرنامج إن كلشي مطابق."}));
+ f.appendChild(el("label",{},["💰 الإيراد الشهري الكامل (دينار)",R]));f.appendChild(el("label",{},["💵 الموجود فعليًا بالإيراد (اختياري)",A]));f.appendChild(prev);f.appendChild(el("label",{},["ملاحظة",nt]));
+ U.modal("🧮 مطابقة إيراد "+mName(mon),f,[{t:"إلغاء"},{t:"حفظ",cls:"ok",fn:function(){var r=num(R.value),a=num(A.value);if(r==null){toast("اكتب الإيراد الشهري");return false}
+  var o={R:r,ts:Date.now()};if(a!=null)o.act=a;if(nt.value.trim())o.note=nt.value.trim();S.rvs[mon]=o;save();render();toast("✔ انحفظ إيراد "+mName(mon))}},{t:"حفظ وتصدير PDF",cls:"ok",fn:function(){var r=num(R.value),a=num(A.value);if(r==null){toast("اكتب الإيراد الشهري");return false}
+  var o={R:r,ts:Date.now()};if(a!=null)o.act=a;if(nt.value.trim())o.note=nt.value.trim();S.rvs[mon]=o;save();render();setTimeout(function(){pdfMon(mon)},0)}}]);upd()}
+/* ---------- PDF المطابقة ---------- */
+function pdfMon(mon){var s=sum(mon);if(s.R==null&&!s.L.length){toast("ما أكو حركات ولا إيراد مسجّل لهذا الشهر");return}
+ ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",TEAL="#0e7c86",MUT="#5f6f7c";
+  var ok=s.diff==null?null:Math.abs(s.diff)<1;
+  var e={h:"🧮 المعادلة",cols:[{h:"البند"},{h:"العدد",w:70,a:"c",n:1},{h:"المبلغ",w:150,a:"l",n:1}],rows:[]};
+  e.rows.push({bg:"#eef6f7",c:[{t:"💰 الإيراد الشهري الكامل",b:1,col:TEAL},"",s.R==null?{t:"ما مسجّل",col:BAD,b:1}:{t:fmn(s.R),b:1,col:TEAL}]});
+  if(s.t.in)e.rows.push({c:[{t:"+ "+KL.in[0]+" "+KL.in[1]},String(s.c.in||0),{t:"+"+fmn(s.t.in),col:OK,b:1}]});
+  ["wd","dep","sal","adv","pay","oth"].forEach(function(k){if(s.t[k])e.rows.push({c:["− "+KL[k][0]+" "+KL[k][1],String(s.c[k]||0),{t:"−"+fmn(s.t[k]),b:1}]})});
+  e.rows.push({k:"tot",c:["مجموع الخارج من الإيراد",String(s.L.filter(function(x){return x.out}).length),fmn(s.t.out)]});
+  if(s.R!=null)e.rows.push({k:"tot",c:["= الباقي بالإيراد (محسوب)","",{t:fmn(s.rem),col:s.rem<0?BAD:TEAL}]});
+  if(s.act!=null){e.rows.push({c:[{t:"💵 الموجود فعليًا بالإيراد",b:1},"",{t:fmn(s.act),b:1}]});e.rows.push({bg:ok?"#eef8f1":"#fdf1ef",c:[{t:ok?"✓ مطابق":"⚠ الفرق ("+(s.diff>0?"زيادة بالموجود":"نقص بالموجود")+")",b:1,col:ok?OK:BAD},"",{t:ok?"0":fmn(Math.abs(s.diff)),b:1,col:ok?OK:BAD}]})}
+  var secs=[e];
+  ["wd","dep","sal","adv","pay","oth","in"].forEach(function(k){var L=s.L.filter(function(x){return x.k===k});if(!L.length)return;
+   var sec={h:KL[k][0]+" "+KL[k][1],cols:[{h:"التاريخ",w:84,n:1},{h:k==="dep"?"وين انودع":k==="sal"||k==="adv"||k==="in"?"الاسم":"التفاصيل"},{h:"صورة",w:46,a:"c"},{h:"المبلغ",w:120,a:"l",n:1}],rows:[]};
+   L.forEach(function(x){sec.rows.push({c:[dmy(x.date),{t:x.who||(x.note||"—"),b:1,s:x.who?(x.note||""):""},(x.imgs||[]).length?"📷":"",{t:fmn(x.amount),b:1,col:x.out?"":OK}]})});
+   sec.rows.push({k:"tot",c:["","المجموع ("+L.length+")","",fmn(s.t[k])]});secs.push(sec)});
+  var parts=["wd","dep","sal","adv","pay","oth"].filter(function(k){return s.t[k]}).map(function(k){return KL[k][1]+" "+fmn(s.t[k])});
+  var line=s.R==null?"":parts.join(" + ")+(s.t.in?" − الراجع "+fmn(s.t.in):"")+" + الباقي "+fmn(s.act!=null?s.act:s.rem)+" = "+fmn((s.act!=null?s.act:s.rem)+s.t.out-s.t.in)+(ok===false?"  ≠ الإيراد الشهري "+fmn(s.R):"  = الإيراد الشهري");
+  var cards=[["الإيراد الشهري",s.R==null?"—":fmn(s.R)+" د.ع",TEAL,"#eef6f7"],["مجموع الخارج",fmn(s.t.out)+" د.ع",BAD],["الباقي المحسوب",s.rem==null?"—":fmn(s.rem)+" د.ع"]];
+  cards.push(s.act==null?["الموجود فعليًا","ما مسجّل",MUT]:[ok?"✓ مطابق":"⚠ فرق",ok?"مطابق":fmn(Math.abs(s.diff))+" د.ع",ok?OK:BAD,ok?"#eef8f1":"#fdf1ef"]);
+  pdfReport({title:"مطابقة إيراد شهر "+mName(mon),sub:"السحوبات والإيداعات والرواتب والسلف والتسديدات مقابل الإيراد الشهري",info:[s.L.length+" حركة"+(s.st.note?" · "+s.st.note:"")],cards:cards,secs:secs,
+   lead:line?(ok===false?"⚠ ":"✓ ")+line:"",leadBg:ok===false?"#fdf1ef":"#eef8f1",leadCol:ok===false?BAD:OK,
+   foot:s.R==null?"⚠ الإيراد الشهري ما مسجّل — سجّله من «🧮 مطابقة نهاية الشهر» حتى تكتمل المعادلة.":"",name:"مطابقة الإيراد - "+mName(mon)})})}
+/* ---------- عرض ---------- */
+function render(){if(g("rv").hidden)return;draw()}
+rvRender=render;
+rvOpen=function(){if(!ACC())return;g("home").hidden=true;g("rv").hidden=false;g("rv").scrollTop=0;render()};
+rvBack=function(){return false};
+g("rvHome").onclick=function(){g("rv").hidden=true;U.close();showHome()};
+g("rvPrev").onclick=function(){P.mon=mShift(P.mon,-1);render()};g("rvNext").onclick=function(){if(P.mon<tdy().slice(0,7)){P.mon=mShift(P.mon,1);render()}};
+g("rvPdf").onclick=function(){pdfMon(P.mon)};
 })();
 
 /* ===== حقول التاريخ (3.3v): نعرض التاريخ بالعربي بنفسنا (اليوم + يوم/شهر/سنة) حتى ما يطلع مقلوب بالمتصفحات العربية ===== */
@@ -2508,6 +2662,7 @@ function backStep(){
  if(V("login"))return false;
  if(V("sv")){if(!spBack())$("spHome").click();return true}
  if(V("dv")){if(!dvBack())$("dvHome").click();return true}
+ if(V("rv")){$("rvHome").click();return true}
  if(V("xv")){$("xHome").click();return true}
  if(V("home"))return false;
  if(S.role){if(S.edit){toggleEdit();return true}showHome();return true}
