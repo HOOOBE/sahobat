@@ -206,6 +206,7 @@ button.flash{animation:flash .5s ease-out}
 #xm label.bk-chk{display:flex;flex-direction:row;align-items:center;gap:10px;font-weight:700;margin-bottom:8px;cursor:pointer}#xm .bk-chk input{width:22px;height:22px;flex:0 0 auto;margin:0}
 #xm .bk-acts{display:flex;flex-direction:column;gap:8px;margin-top:4px}#xm .bk-acts button{min-height:52px;font-size:16px;font-weight:800;border-radius:14px;border:1.5px solid var(--bd);background:var(--card);color:var(--tx)}#xm .bk-acts button.ok{background:var(--ok);border-color:var(--ok);color:#fff}#xm .bk-acts button.rs{color:var(--ac)}
 #xm .bk-tip{color:var(--mut);font-size:14px}
+#xm .bk-dk{border:1.5px solid var(--bd);border-radius:14px;padding:12px;margin:4px 0 12px}#xm .bk-dk>b{display:block;margin-bottom:6px}#xm .bk-dk .bk-last{word-break:break-all}
 .hmv{display:block;margin:22px auto 0;background:none;border:0;color:var(--mut);font-size:13px;min-height:auto;padding:6px 10px;text-decoration:underline dotted}
 #apm .mb{max-height:calc(100vh - 32px);overflow-y:auto;max-width:460px}
 .apl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700;color:var(--mut);margin-bottom:12px}
@@ -666,7 +667,7 @@ button{border-width:1px;border-radius:12px}
 <div class="tiles" id="tiles"></div>
 <button class="hmbk" id="hmBk" hidden><b>💾 النسخة الاحتياطية</b><small id="hmBkS"></small></button>
 <button class="hmv" id="hmOrg" hidden title="الاسم اللي ينكتب بأعلى ملفات PDF وExcel"></button>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.7v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.8v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -783,7 +784,7 @@ button{border-width:1px;border-radius:12px}
 <div class="hab lg-ab"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
 <div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
 <div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b></div></div>
-<button id="ver" title="شنو الجديد بهذه النسخة؟">5.7v Online · ℹ️ شنو الجديد؟</button>
+<button id="ver" title="شنو الجديد بهذه النسخة؟">5.8v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -808,16 +809,12 @@ button{border-width:1px;border-radius:12px}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 5.7v Online</div><div class="vd">تاريخ التحديث: 24/10/2026</div>
+<div class="vh">ℹ️ 5.8v Online</div><div class="vd">تاريخ التحديث: 02/11/2026</div>
 <ul class="vl">
-<li><b>✨ اسم جديد: Manar Derma OS</b> ويه أيقونة جديدة للبرنامج (حرف M الفضي من شعار العيادة ويه «DERMA OS» ذهبي).</li>
-<li><b>🏥 حقوق البرنامج:</b> «تم تصميم هذا البرنامج من قبل Manar Derma Clinic» صارت بشاشة الدخول تحت الحسابات، بدل الشاشة الرئيسية.</li>
-<li><b>🔒 «الحسابات» صار اسمها «الإدارة»</b> — نفس الباسوورد.</li>
-<li><b>🎯 أيقونات جديدة:</b> نفس أيقونات برنامج الحضور (الوضع الليلي، البيت، التعديل، الحذف، PDF، Excel…).</li>
-<li><b>⌨️ لوحة المفاتيح:</b> انحلت مشكلة لوحة المفاتيح «الآمنة» اللي چانت تطلع من تكتب رقم (مثل عدد الخزين) بعد ما تكتب الباسوورد.</li>
-<li><b>☁️ حجم البيانات:</b> نافذة النسخة الاحتياطية تبين حجم البيانات الأونلاين حتى ننتبه قبل لا توصل للحد.</li>
+<li><b>🖥️ برنامج للحاسبة (exe):</b> «Manar Derma OS» صار ينزل كبرنامج ويندوز، والموبايل والتاب يبقون على نفس الرابط.</li>
+<li><b>💾 حفظ تلقائي على الهارد:</b> ببرنامج الحاسبة تختار مجلد (هارد أو فلاشة) من «💾 النسخة الاحتياطية»، والبرنامج يحفظ كل البيانات ويه الصور بيه تلقائيًا كل يوم.</li>
 </ul>
-<div class="vold"><b>5.6v Online</b>: ثيم مثل برنامج الحضور، مربعات برامج بألوان هادئة، وشعار العيادة.<br><b>5.5v Online</b>: حذف حركات الإيراد المضافة من الشيت.<br><b>5.4v Online</b>: أنواع «سلفة» و«مصاريف» بالإيراد، وخانة «مُسلِّم المبلغ».<br><b>5.3v Online</b>: برنامج «الإيراد الشهري» — حركات الإيراد ويه صور الوصولات، ومطابقة نهاية الشهر PDF.<br><b>5.2v Online</b>: تقرير العدد والإكسباير PDF بسيط وواضح.</div>
+<div class="vold"><b>5.7v Online</b>: اسم جديد Manar Derma OS، «الإدارة» بدل «الحسابات»، أيقونات جديدة، وتصليح لوحة المفاتيح.<br><b>5.6v Online</b>: ثيم مثل برنامج الحضور، مربعات برامج بألوان هادئة، وشعار العيادة.<br><b>5.5v Online</b>: حذف حركات الإيراد المضافة من الشيت.<br><b>5.4v Online</b>: أنواع «سلفة» و«مصاريف» بالإيراد، وخانة «مُسلِّم المبلغ».<br><b>5.3v Online</b>: برنامج «الإيراد الشهري» — حركات الإيراد ويه صور الوصولات، ومطابقة نهاية الشهر PDF.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -1011,7 +1008,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="5.7";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="5.8";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1781,10 +1778,10 @@ function bkImgIds(){var ids={};function add(a){(a||[]).forEach(function(i){if(i)
 function bkCounts(st){var n=(st.log||[]).length;(st.hist||[]).forEach(function(h){n+=(h.log||[]).length});
  var ex=Object.keys(st.exe||{}).length,inv=Object.keys(st.smv||{}).length,sp=Object.keys(st.sup||{}).length;return {wd:n,ex:ex,inv:inv,sp:sp}}
 function bkAgo(){if(!S.bk)return null;return Math.floor((Date.now()-S.bk)/864e5)}
-function bkFull(withImgs){S.bk=Date.now();save();var st=JSON.parse(localStorage.getItem("wd_state")||"{}"),ids=withImgs?bkImgIds():[],imgs={},miss=0,k=0;
- return ids.reduce(function(p,id){return p.then(function(){k++;if(k%3===1||k===ids.length)toast("⏳ جارِ تجهيز الصور "+k+"/"+ids.length);return XU.imgGet(id).then(function(d){if(d)imgs[id]=d;else miss++})})},Promise.resolve()).then(function(){
+function bkFull(withImgs,auto){var at=Date.now();if(!auto){S.bk=at;save()}var st=JSON.parse(localStorage.getItem("wd_state")||"{}"),ids=withImgs?bkImgIds():[],imgs={},miss=0,k=0;
+ return ids.reduce(function(p,id){return p.then(function(){k++;if(!auto&&(k%3===1||k===ids.length))toast("⏳ جارِ تجهيز الصور "+k+"/"+ids.length);return XU.imgGet(id).then(function(d){if(d)imgs[id]=d;else miss++})})},Promise.resolve()).then(function(){
   var now=new Date(),name="clinic-backup-"+today()+"-"+pad(now.getHours())+pad(now.getMinutes());
-  var o={app:"wd",v:2,at:S.bk,org:org().n||"",counts:bkCounts(st),state:st};if(withImgs)o.imgs=imgs;
+  var o={app:"wd",v:2,at:at,org:org().n||"",counts:bkCounts(st),state:st};if(withImgs)o.imgs=imgs;
   return {name:name,miss:miss,ni:Object.keys(imgs).length,json:JSON.stringify(o)}})}
 function cloudKB(){try{var l=clEnc(),n=0;Object.keys(l.j).forEach(function(k){n+=k.length+(l.j[k]||"").length});Object.keys(l.m).forEach(function(k){Object.keys(l.m[k]).forEach(function(x){n+=x.length+l.m[k][x].length+4})});return Math.round(n/1024)}catch(e){return null}}
 function bkOpen(){if(!ACC())return;var U=XU,el=U.el,st=JSON.parse(localStorage.getItem("wd_state")||"{}"),c=bkCounts(st),ni=bkImgIds().length,ag=bkAgo(),f=el("div",{class:"bk-box"});
@@ -1794,6 +1791,7 @@ function bkOpen(){if(!ACC())return;var U=XU,el=U.el,st=JSON.parse(localStorage.g
  var cb=el("input",{type:"checkbox",id:"bkImg"});cb.checked=true;
  if(ni)f.appendChild(el("label",{class:"bk-chk"},[cb,el("span",{text:"ويه الصور ("+ni+" صورة) — الملف يصير أكبر"})]));
  var kb=cloudKB();if(kb!=null)f.appendChild(el("div",{class:"bk-last "+(kb>700?"warn":"ok"),text:"☁️ حجم البيانات الأونلاين: "+kb+" KB من 1024 KB"+(kb>700?" — قرب الحد، بلّغ حتى ننقل البيانات القديمة":"")}));
+ if(DK.on())f.appendChild(DK.box(el,function(){U.close()}));
  f.appendChild(el("p",{class:"bk-tip",text:"💡 دز النسخة لنفسك بالواتساب أو احفظها بـ Google Drive، حتى لو الجهاز ضاع أو انمسح تبقى بياناتك."}));
  function go(share){var wi=ni&&cb.checked;toast("⏳ جارِ تجهيز النسخة الاحتياطية…");
   bkFull(wi).then(function(r){var blob=new Blob([r.json],{type:"application/json"}),extra=(r.miss?"\n⚠ "+r.miss+" صورة ما تحمّلت (تأكد من النت)":"");
@@ -1801,8 +1799,38 @@ function bkOpen(){if(!ACC())return;var U=XU,el=U.el,st=JSON.parse(localStorage.g
    bkDownload({name:r.name+".json",blob:blob});if(extra)setTimeout(function(){toast(extra.trim())},2500);if(typeof drawHome==="function")drawHome()}).catch(function(e){console.error(e);toast("تعذّر تجهيز النسخة")})}
  f.appendChild(el("div",{class:"bk-acts"},[el("button",{type:"button",class:"ok",text:"📤 إرسال النسخة (واتساب / Drive)",on:{click:function(){U.close();go(true)}}}),el("button",{type:"button",text:"💾 تنزيل النسخة على الجهاز",on:{click:function(){U.close();go(false)}}}),el("button",{type:"button",class:"rs",text:"📂 استرجاع نسخة سابقة",on:{click:function(){U.close();setTimeout(function(){$("rsb").onclick()},0)}}})]));
  U.modal("💾 النسخة الاحتياطية",f,[{t:"إغلاق"}])}
-function bkHome(){var b=$("hmBk");if(!b)return;b.hidden=!ACC();if(!ACC())return;var ag=bkAgo();
+function bkHome(){var b=$("hmBk");if(!b)return;b.hidden=!ACC();if(!ACC())return;var ag=bkAgo(),d=window.DK&&DK.st();
+ if(d){b.classList.toggle("warn",!!d.warn);$("hmBkS").textContent=d.txt;b.onclick=bkOpen;return}
  b.classList.toggle("warn",ag==null||ag>=7);$("hmBkS").textContent=S.bk?"آخر نسخة "+(ag?"قبل "+ag+" يوم":"اليوم")+" · "+fd(new Date(S.bk)):"ما مسوي نسخة بعد — سوّي وحدة هسه";b.onclick=bkOpen}
+/* ===== 5.8v: برنامج الحاسبة (Manar Derma OS.exe، مجلد desktop/) — حفظ تلقائي لكل البيانات ويه الصور بمجلد يختاره المستخدم على الهارد.
+   window.mdDesk يجي من desktop/preload.js بس؛ بالموبايل والتاب ما موجود وكلشي يبقى مثل ما هو.
+   ملف لكل يوم ManarDerma-backup-YYYY-MM-DD.json (ينكتب من جديد إذا تغيرت البيانات)، والبرنامج يخلي آخر 90 يوم. ===== */
+var DK=(function(){var D=window.mdDesk,last="",busy=false,err="";
+ function on(){return !!(D&&D.isDesk)}
+ function at(){return +(localStorage.getItem("wd_dkat")||0)}
+ function run(force){if(!on()||busy)return Promise.resolve(null);return D.getDir().then(function(dir){if(!dir)return null;
+  var raw=localStorage.getItem("wd_state")||"{}",day=today();if(!force&&raw+day===last)return null;busy=true;
+  return bkFull(true,true).then(function(r){return D.write("ManarDerma-backup-"+day+".json",r.json)}).then(function(w){busy=false;
+   if(!w||!w.ok){err=(w&&w.err)||"?";if(force)toast("⚠ ما انحفظت النسخة على الهارد — "+(err==="missing"?"المجلد مو موجود (الهارد مفصول؟)":err));bkHome();return w}
+   err="";last=raw+day;try{localStorage.setItem("wd_dkat",String(Date.now()))}catch(e){}if(force)toast("✔ انحفظت النسخة على الهارد");bkHome();return w})
+  .catch(function(e){busy=false;err=String(e&&e.message||e);console.error(e);bkHome();return null})})}
+ function st(){if(!on())return null;var a=at();
+  if(err)return {warn:true,txt:"⚠ الحفظ التلقائي على الهارد ما اشتغل — "+(err==="missing"?"المجلد مو موجود، شبّك الهارد":"افتح النافذة")};
+  if(!DK.dir)return {warn:true,txt:"🖥️ اختار مكان الحفظ التلقائي على الهارد"};
+  return {warn:a&&Date.now()-a>2*864e5,txt:"🖥️ حفظ تلقائي على الهارد"+(a?" · آخر حفظ "+fd(new Date(a))+" "+ft(new Date(a)):"")}}
+ function box(el,close){var w=el("div",{class:"bk-dk"});
+  w.appendChild(el("b",{text:"🖥️ الحفظ التلقائي على الهارد (برنامج الحاسبة)"}));
+  w.appendChild(el("p",{class:"bk-tip",text:"البرنامج يحفظ كل البيانات ويه الصور بالمجلد اللي تختاره، أول ما ينفتح وكل 5 دقايق إذا صار تغيير — ملف لكل يوم، ويبقى آخر 90 يوم."}));
+  var pth=el("div",{class:"bk-last "+(DK.dir?"ok":"warn"),text:DK.dir?"📁 "+DK.dir:"⚠ ما محدد مكان الحفظ بعد"});w.appendChild(pth);
+  var a=at();if(a)w.appendChild(el("div",{class:"bk-tip",text:"آخر حفظ تلقائي: "+fd(new Date(a))+" · "+ft(new Date(a))}));
+  w.appendChild(el("div",{class:"bk-acts"},[
+   el("button",{type:"button",class:"ok",text:DK.dir?"📁 تغيير مكان الحفظ":"📁 اختيار مكان الحفظ (الهارد)",on:{click:function(){D.pickDir().then(function(p){if(!p)return;DK.dir=p;pth.className="bk-last ok";pth.textContent="📁 "+p;close();run(true)})}}}),
+   el("button",{type:"button",text:"💾 احفظ هسه على الهارد",on:{click:function(){if(!DK.dir){toast("اختار مكان الحفظ أول");return}close();toast("⏳ جارِ الحفظ على الهارد…");run(true)}}}),
+   el("button",{type:"button",text:"📂 فتح مجلد النسخ",on:{click:function(){if(DK.dir)D.openDir()}}})]));
+  return w}
+ function init(){if(!on())return;D.getDir().then(function(p){DK.dir=p||"";bkHome();setTimeout(function(){run(false)},8000);setInterval(function(){run(false)},5*60e3)})}
+ return {on:on,run:run,st:st,box:box,init:init,dir:""}})();
+DK.init();
 /* ===== مصاريف العيادة (3.1v+) — الخزينة والمصاريف اليومية، تتزامن بنفس الربط (S.ext / S.exe / S.exs) ===== */
 var xOpen,xRender,xPendCount,XU;
 (function(){
