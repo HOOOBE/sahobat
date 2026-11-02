@@ -45,7 +45,8 @@ html{overflow-x:hidden}
 img,video,canvas,table{max-width:100%}
 #who2{max-width:100%;overflow:hidden;text-overflow:ellipsis}
 #gear,#theme,#bell,#histb,#who2{min-height:44px;padding:4px 12px;font-size:22px}
-.sysl{display:flex;flex-direction:column;gap:8px;margin-top:12px}.sysl button{min-height:50px;font-size:16px;font-weight:700;border-radius:14px;text-align:start;padding:0 14px}
+#sysm .mb{max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:auto;max-width:460px}
+.sysl{display:flex;flex-direction:column;gap:8px;margin-top:6px}.sysl button{min-height:52px;font-size:16px;font-weight:700;border-radius:14px;text-align:start;padding:8px 14px;display:block;width:100%}.sysl button small{display:block;font-size:12.5px;font-weight:600;color:var(--mut);margin-top:2px;line-height:1.4}.sysl button small.warn{color:#b45309}.sysl button small.ok{color:var(--ok)}.sysl .sysd{color:var(--bad)}.sysh{font-size:13px;font-weight:800;color:var(--mut);margin:10px 4px 0}
 #edbar{background:#fff3cd;color:#5c4400;border-radius:14px;padding:10px 14px;margin-bottom:8px;font-size:16px}
 h2{font-size:15px;color:var(--mut);margin:14px 4px 8px;font-weight:700}
 .row{display:flex;flex-wrap:wrap;gap:8px}
@@ -197,6 +198,7 @@ button.flash{animation:flash .5s ease-out}
 .tl.add{background:transparent;border:2px dashed var(--bd);color:var(--mut);align-items:center;justify-content:center;box-shadow:none;font-size:16px;gap:4px}
 .tl.add .ti{width:auto;height:auto;font-size:28px;font-weight:400}
 .hmbk{display:flex;flex-direction:column;align-items:center;gap:2px;margin:20px auto 0;width:min(420px,100%);min-height:60px;padding:10px 16px;border:2px solid color-mix(in srgb,var(--ok) 55%,var(--bd));border-radius:16px;background:color-mix(in srgb,var(--ok) 9%,var(--card));color:var(--tx);font-size:17px}
+.hmbk.hmsys{margin-top:12px;border-color:var(--bd);background:var(--card)}
 .hmbk small{font-size:13px;color:var(--mut);font-weight:600}
 .hmbk.warn{border-color:color-mix(in srgb,#e08a00 65%,var(--bd));background:color-mix(in srgb,#e08a00 10%,var(--card))}
 .hmbk.warn small{color:#b45309}
@@ -620,7 +622,7 @@ button{border-width:1px;border-radius:12px}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="sysb">⚙️ إعدادات السستم</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -657,7 +659,25 @@ button{border-width:1px;border-radius:12px}
 <div class="rr"><span style="width:34px">من</span><input type="date" id="rf"></div><div class="rr"><span style="width:34px">إلى</span><input type="date" id="rt"></div>
 <button id="rpdf" style="width:100%;margin-top:8px;font-weight:800">📄 تصدير PDF للفترة (الصادر اليومي)</button><button id="rmat" style="width:100%;margin-top:8px;font-weight:800">📦 PDF الصادر + العدد والإكسباير (اختار الفئات)</button><button id="rexp" style="width:100%;margin-top:8px;font-weight:800">📊 تصدير ملف Excel للفترة</button></div><div class="row" style="margin-top:12px"><button id="hexp" hidden>تصدير هذا اليوم Excel</button><button id="hx">إغلاق</button></div></div></div>
 <div class="md" id="sysm" hidden><div class="mb"><div class="vh">⚙️ إعدادات السستم</div>
-<div class="sysl"><button id="bke">💾 حفظ نسخة احتياطية</button><button id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button id="apw" hidden>🔑 باسوورد الإدارة</button><button id="pinb">🔒 رمز التعديل</button><button id="clb" hidden>☁️ الربط أونلاين</button><button id="verb">ℹ️ الإصدار 5.8v Online</button><button id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button></div>
+<div class="sysl">
+<div class="sysh">البيانات</div>
+<button id="bke">💾 النسخة الاحتياطية<small id="sysBkS"></small></button>
+<button id="rsb">📂 استرجاع نسخة احتياطية<small>من ملف نسخة محفوظ على الجهاز أو الهارد</small></button>
+<button id="sysSt">🗂 التخزين وحماية البيانات<small id="sysStS"></small></button>
+<input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden>
+<div class="sysh">الأمان والدخول</div>
+<button id="apw" hidden>🔑 باسوورد الإدارة<small>تغيير باسوورد دخول الإدارة</small></button>
+<button id="pinb">🔒 رمز التعديل<small>ينطلب عند «نسيت باسوورد الإدارة؟»</small></button>
+<button id="sysLk">⏰ القفل التلقائي<small id="sysLkS"></small></button>
+<div class="sysh">الربط والملفات</div>
+<button id="clb" hidden>☁️ الربط أونلاين<small id="sysClS"></small></button>
+<button id="sysOrg">🏥 ترويسة الملفات<small id="sysOrgS"></small></button>
+<button id="sysNt">🔔 إشعارات الصلاحية<small id="sysNtS"></small></button>
+<div class="sysh">البرنامج</div>
+<button id="sysUp">↩ تحديث البرنامج<small>يجيب آخر نسخة من النت ويعيد الفتح</small></button>
+<button id="verb">ℹ️ الإصدار 5.8v Online<small>شنو الجديد بهذه النسخة</small></button>
+<button id="wipe" hidden class="sysd">🧹 تصفير البيانات<small>يمسح البيانات اللي تختارها — سوّي نسخة احتياطية قبلها</small></button>
+</div>
 <div class="row" style="margin-top:12px"><button id="sysx" class="mini" style="width:100%">إغلاق</button></div></div></div>
 <div class="md" id="bkm" hidden><div class="mb"><div id="bkt" style="font-weight:700;margin-bottom:12px;line-height:1.6;white-space:pre-line"></div>
 <button id="bksh" class="go" style="width:100%;margin-bottom:8px">📤 إرسال النسخة للواتساب</button>
@@ -670,7 +690,7 @@ button{border-width:1px;border-radius:12px}
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
 <button class="hmbk" id="hmBk" hidden><b>💾 النسخة الاحتياطية</b><small id="hmBkS"></small></button>
-<button class="hmv" id="hmOrg" hidden title="الاسم اللي ينكتب بأعلى ملفات PDF وExcel"></button>
+ <button class="hmbk hmsys" id="hmSys" hidden><b>⚙️ إعدادات السستم</b><small>النسخ والاسترجاع، الباسووردات، الربط، القفل التلقائي، التحديث…</small></button>
 <button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">5.8v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
@@ -816,7 +836,8 @@ button{border-width:1px;border-radius:12px}
 <div class="vh">ℹ️ 5.8v Online</div><div class="vd">تاريخ التحديث: 02/11/2026</div>
 <ul class="vl">
 <li><b>🖥️ برنامج للحاسبة (exe):</b> «Manar Derma OS» صار ينزل كبرنامج ويندوز، والموبايل والتاب يبقون على نفس الرابط.</li>
-<li><b>⚙️ إعدادات السستم:</b> بوضع التعديل، النسخة الاحتياطية والاسترجاع وباسوورد الإدارة ورمز التعديل والربط أونلاين والإصدار وتصفير البيانات صارت كلها بخانة وحدة «⚙️ إعدادات السستم».</li>
+<li><b>⚙️ إعدادات السستم:</b> مربع جديد «⚙️ إعدادات السستم» بشاشة البرامج (للإدارة) بيه كلشي بمكان واحد: النسخة الاحتياطية والاسترجاع، باسوورد الإدارة ورمز التعديل، الربط أونلاين، ترويسة الملفات، الإصدار وتصفير البيانات.</li>
+<li><b>🆕 إعدادات جديدة:</b> ⏰ القفل التلقائي إذا البرنامج ما انستخدم، 🗂 التخزين وحماية البيانات من المسح، 🔔 إشعارات الصلاحية، و↩ تحديث البرنامج.</li>
 <li><b>💾 حفظ تلقائي على الهارد:</b> ببرنامج الحاسبة تختار مجلد (هارد أو فلاشة) من «💾 النسخة الاحتياطية»، والبرنامج يحفظ كل البيانات ويه الصور بيه تلقائيًا كل يوم.</li>
 </ul>
 <div class="vold"><b>5.7v Online</b>: اسم جديد Manar Derma OS، «الإدارة» بدل «الحسابات»، أيقونات جديدة، وتصليح لوحة المفاتيح.<br><b>5.6v Online</b>: ثيم مثل برنامج الحضور، مربعات برامج بألوان هادئة، وشعار العيادة.<br><b>5.5v Online</b>: حذف حركات الإيراد المضافة من الشيت.<br><b>5.4v Online</b>: أنواع «سلفة» و«مصاريف» بالإيراد، وخانة «مُسلِّم المبلغ».<br><b>5.3v Online</b>: برنامج «الإيراد الشهري» — حركات الإيراد ويه صور الوصولات، ومطابقة نهاية الشهر PDF.</div>
@@ -1014,7 +1035,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
 var APPV="5.8";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
-$("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysb").onclick=function(){$("sysm").hidden=false};$("sysx").onclick=function(){$("sysm").hidden=true};
+$("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("hmSys").onclick=function(){sysOpen()};$("sysx").onclick=function(){$("sysm").hidden=true};
 $("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
@@ -1570,7 +1591,7 @@ function tileFill(t,a){var g=GR[(a.c|0)%GR.length],p=TP[(a.c|0)%TP.length];t.sty
 function okUrl(u){return /^https?:\/\/[^\s]+\.[^\s]+/i.test(u||"")}
 function showHome(){if(!S.role)return;S.hmEd=false;$("home").hidden=false;drawHome();$("home").scrollTop=0}
 function drawHome(){if(!S.role)return;var acc=ACC(),T=$("tiles");T.innerHTML="";
- $("hmWho").textContent=acc?"الإدارة":"موظف";$("hmOrg").hidden=!acc;bkHome();$("hmOrg").textContent="🏥 ترويسة الملفات: "+(org().n||"اكتب اسم العيادة")+" ✎";$("hmOrg").onclick=function(){orgForm(null,false)};$("hmAdd").hidden=!acc;$("hmEd").hidden=!acc;if(!acc)S.hmEd=false;
+ $("hmWho").textContent=acc?"الإدارة":"موظف";$("hmSys").hidden=!acc;bkHome();$("hmAdd").hidden=!acc;$("hmEd").hidden=!acc;if(!acc)S.hmEd=false;
  $("hmEd").textContent=S.hmEd?"✔ تم":"✎ تعديل";$("hmEd").classList.toggle("on",!!S.hmEd);$("hmN").hidden=!S.hmEd;
  apps().forEach(function(a){if(!(a.w==="all"||a.w===S.role))return;
   var link=a.k==="link"&&!S.hmEd,t=document.createElement(link?"a":"button");t.className="tl";tileFill(t,a);
@@ -1837,6 +1858,37 @@ var DK=(function(){var D=window.mdDesk,last="",busy=false,err="";
  function init(){if(!on())return;D.getDir().then(function(p){DK.dir=p||"";bkHome();setTimeout(function(){run(false)},8000);setInterval(function(){run(false)},5*60e3)})}
  return {on:on,run:run,st:st,box:box,init:init,dir:""}})();
 DK.init();
+/* ===== 5.8v: «⚙️ إعدادات السستم» بشاشة البرامج (#hmSys → #sysm) — للإدارة بس. القفل التلقائي (wd_lock) خاص بكل جهاز ===== */
+function sysOpen(){if(!ACC())return;var a=bkAgo(),d=DK.st(),bs=$("sysBkS");
+ bs.textContent=d?d.txt:(S.bk?"آخر نسخة "+(a?"قبل "+a+" يوم":"اليوم")+" · "+fd(new Date(S.bk)):"⚠ ما مسوي نسخة بعد");bs.className=(d?d.warn:(a==null||a>=7))?"warn":"ok";
+ var kb=cloudKB();$("sysStS").textContent="الأونلاين "+(kb==null?"—":kb+" KB من 1024")+" · "+bkImgIds().length+" صورة";$("sysStS").className=kb>700?"warn":"";
+ var lk=lockMin();$("sysLkS").textContent=lk?"يقفل البرنامج بعد "+lk+" دقيقة بدون استخدام (بهذا الجهاز)":"مطفي — البرنامج يبقى مفتوح";
+ $("sysClS").textContent=CL.cfg?"✓ مربوط"+(CL.err?" — ⚠ "+CL.err:""):"⚠ مو مربوط — البيانات بس على هذا الجهاز";$("sysClS").className=CL.cfg&&!CL.err?"ok":"warn";
+ $("sysOrgS").textContent=org().n?org().n+(org().d?" · "+org().d:""):"الاسم اللي ينكتب بأعلى ملفات PDF وExcel";
+ var np=("Notification" in window)?Notification.permission:"no";$("sysNtS").textContent=np==="granted"?"✓ مفعّلة بهذا الجهاز":np==="no"?"الجهاز ما يدعم الإشعارات":"مطفية — اضغط حتى تتفعّل";$("sysNtS").className=np==="granted"?"ok":"";
+ $("sysm").hidden=false}
+function lockMin(){try{return +(localStorage.getItem("wd_lock")||0)}catch(e){return 0}}
+var LKT=Date.now();["pointerdown","keydown","touchstart","wheel"].forEach(function(t){document.addEventListener(t,function(){LKT=Date.now()},{passive:true,capture:true})});
+setInterval(function(){var m=lockMin();if(!m||!S.role||$("login")&&!$("login").hidden)return;if(Date.now()-LKT>m*60e3){LKT=Date.now();showLogin();toast("🔒 انقفل البرنامج تلقائيًا — سجّل دخول من جديد")}},20e3);
+$("sysLk").onclick=function(){var el=XU.el,f=el("div",{class:"bk-box"}),cur=lockMin();
+ f.appendChild(el("p",{text:"إذا ما أحد استخدم البرنامج هالمدة، يرجع لشاشة الدخول وينطلب الباسوورد من جديد. الإعداد خاص بهذا الجهاز بس."}));
+ var w=el("div",{class:"bk-acts"});[[0,"مطفي"],[5,"بعد 5 دقايق"],[15,"بعد 15 دقيقة"],[30,"بعد 30 دقيقة"],[60,"بعد ساعة"]].forEach(function(o){
+  w.appendChild(el("button",{type:"button",class:o[0]===cur?"ok":"",text:(o[0]===cur?"✓ ":"")+o[1],on:{click:function(){try{localStorage.setItem("wd_lock",String(o[0]))}catch(e){}LKT=Date.now();XU.close();toast(o[0]?"✔ القفل التلقائي بعد "+o[0]+" دقيقة":"✔ انطفى القفل التلقائي")}}}))});
+ f.appendChild(w);XU.modal("⏰ القفل التلقائي",f,[{t:"إغلاق"}])};
+$("sysOrg").onclick=function(){orgForm(null,false)};
+$("sysNt").onclick=function(){if(("Notification" in window)&&Notification.permission==="granted"){toast("✔ الإشعارات مفعّلة — تطفيها من إعدادات المتصفح");return}$("ntb").onclick()};
+$("sysUp").onclick=function(){if(!navigator.onLine){toast("⚠ ماكو نت — اتصل وجرّب مرة ثانية");return}toast("⏳ جارِ التحديث…");
+ var r=navigator.serviceWorker&&navigator.serviceWorker.getRegistration?navigator.serviceWorker.getRegistration().then(function(g){return g&&g.update()}).catch(function(){}):Promise.resolve();
+ r.then(function(){setTimeout(function(){location.reload()},600)})};
+$("sysSt").onclick=function(){var el=XU.el,f=el("div",{class:"bk-box"}),kb=cloudKB(),lc=0;try{lc=Math.round((localStorage.getItem("wd_state")||"").length/1024)}catch(e){}
+ var ul=el("ul",{},[el("li",{text:"☁️ البيانات الأونلاين: "+(kb==null?"—":kb+" KB من 1024 KB"+(kb>700?" ⚠ قرب الحد":""))}),el("li",{text:"📱 البيانات بهذا الجهاز: "+lc+" KB"}),el("li",{text:"📷 صور الفواتير والوصولات: "+bkImgIds().length+" صورة"})]),est=el("li",{text:"💽 مساحة المتصفح المستخدمة: …"}),ps=el("div",{class:"bk-last warn",text:"…"});
+ ul.appendChild(est);f.appendChild(ul);f.appendChild(ps);
+ f.appendChild(el("p",{class:"bk-tip",text:"💡 «الحماية» تمنع المتصفح يمسح بيانات البرنامج (خصوصًا الصور) إذا امتلت ذاكرة الجهاز. الصور اللي ما انرفعت أونلاين تنفقد إذا انمسحت."}));
+ var sg=navigator.storage;
+ if(sg&&sg.estimate)sg.estimate().then(function(e){est.textContent="💽 مساحة المتصفح المستخدمة: "+(e.usage/1048576).toFixed(1)+" MB"}).catch(function(){});
+ function chk(){if(!(sg&&sg.persisted)){ps.textContent="الجهاز ما يدعم الحماية";return}sg.persisted().then(function(on){ps.className="bk-last "+(on?"ok":"warn");ps.textContent=on?"🛡️ البيانات محمية من المسح التلقائي":"⚠ البيانات مو محمية — المتصفح ممكن يمسحها إذا امتلت الذاكرة"})}
+ chk();var acts=[];if(sg&&sg.persist)acts.push({t:"🛡️ احمي البيانات",cls:"ok",fn:function(){sg.persist().then(function(on){toast(on?"✔ صارت البيانات محمية":"⚠ المتصفح ما وافق — ثبّت البرنامج على الشاشة الرئيسية وجرّب مرة ثانية")})}});acts.push({t:"إغلاق"});
+ XU.modal("🗂 التخزين وحماية البيانات",f,acts)};
 /* ===== مصاريف العيادة (3.1v+) — الخزينة والمصاريف اليومية، تتزامن بنفس الربط (S.ext / S.exe / S.exs) ===== */
 var xOpen,xRender,xPendCount,XU;
 (function(){
