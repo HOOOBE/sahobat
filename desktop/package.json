@@ -1,0 +1,50 @@
+{
+  "name": "manar-derma-os",
+  "productName": "Manar Derma OS",
+  "version": "5.8.0",
+  "description": "Manar Derma OS — برنامج الحاسبة (ويندوز) مع حفظ تلقائي على الهارد",
+  "author": "Manar Derma Clinic",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "33.4.11",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.manarderma.os",
+    "productName": "Manar Derma OS",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "build/icon.png"
+    ],
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Manar Derma OS",
+      "artifactName": "Manar-Derma-OS-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "Manar-Derma-OS-Portable-${version}.${ext}"
+    },
+    "publish": null
+  }
+}
