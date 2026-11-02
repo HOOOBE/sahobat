@@ -45,6 +45,7 @@ html{overflow-x:hidden}
 img,video,canvas,table{max-width:100%}
 #who2{max-width:100%;overflow:hidden;text-overflow:ellipsis}
 #gear,#theme,#bell,#histb,#who2{min-height:44px;padding:4px 12px;font-size:22px}
+.sysl{display:flex;flex-direction:column;gap:8px;margin-top:12px}.sysl button{min-height:50px;font-size:16px;font-weight:700;border-radius:14px;text-align:start;padding:0 14px}
 #edbar{background:#fff3cd;color:#5c4400;border-radius:14px;padding:10px 14px;margin-bottom:8px;font-size:16px}
 h2{font-size:15px;color:var(--mut);margin:14px 4px 8px;font-weight:700}
 .row{display:flex;flex-wrap:wrap;gap:8px}
@@ -619,7 +620,7 @@ button{border-width:1px;border-radius:12px}
   <div id="dayw" hidden><div id="daywt"></div><button id="dayb">إنهاء اليوم وبدء يوم جديد</button></div>
   <div id="edbar" hidden>
     <b>وضع التعديل:</b> ✎ لتغيير الاسم، ✕ للحذف، 🎨 لتغيير لون الفئة، و«+» للإضافة.
-    <div class="row" style="margin-top:8px"><button class="mini" id="bke">💾 حفظ نسخة احتياطية</button><button class="mini" id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button class="mini" id="apw" hidden>🔑 باسوورد الإدارة</button><button class="mini" id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button><button class="mini" id="pinb">🔒 رمز التعديل</button><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="clb" hidden>☁️ الربط أونلاين</button><button class="mini" id="verb">ℹ️ 5.7v Online</button><button class="mini" id="done">✔ تم</button></div>
+    <div class="row" style="margin-top:8px"><button class="mini" id="thb">⚠ حد التنبيه</button><button class="mini" id="xpb" hidden>⏳ تحذير الانتهاء</button><button class="mini" id="sysb">⚙️ إعدادات السستم</button><button class="mini" id="done">✔ تم</button></div>
   </div>
 
   <div class="cols"><div class="main">
@@ -655,6 +656,9 @@ button{border-width:1px;border-radius:12px}
 <div id="rng" hidden><b>🧮 تصدير فترة (الإدارة)</b>
 <div class="rr"><span style="width:34px">من</span><input type="date" id="rf"></div><div class="rr"><span style="width:34px">إلى</span><input type="date" id="rt"></div>
 <button id="rpdf" style="width:100%;margin-top:8px;font-weight:800">📄 تصدير PDF للفترة (الصادر اليومي)</button><button id="rmat" style="width:100%;margin-top:8px;font-weight:800">📦 PDF الصادر + العدد والإكسباير (اختار الفئات)</button><button id="rexp" style="width:100%;margin-top:8px;font-weight:800">📊 تصدير ملف Excel للفترة</button></div><div class="row" style="margin-top:12px"><button id="hexp" hidden>تصدير هذا اليوم Excel</button><button id="hx">إغلاق</button></div></div></div>
+<div class="md" id="sysm" hidden><div class="mb"><div class="vh">⚙️ إعدادات السستم</div>
+<div class="sysl"><button id="bke">💾 حفظ نسخة احتياطية</button><button id="rsb">📂 استرجاع نسخة احتياطية</button><input type="file" id="rsf" accept=".json,.txt,application/json,text/plain" hidden><button id="apw" hidden>🔑 باسوورد الإدارة</button><button id="pinb">🔒 رمز التعديل</button><button id="clb" hidden>☁️ الربط أونلاين</button><button id="verb">ℹ️ الإصدار 5.8v Online</button><button id="wipe" hidden style="color:var(--bad)">🧹 تصفير البيانات</button></div>
+<div class="row" style="margin-top:12px"><button id="sysx" class="mini" style="width:100%">إغلاق</button></div></div></div>
 <div class="md" id="bkm" hidden><div class="mb"><div id="bkt" style="font-weight:700;margin-bottom:12px;line-height:1.6;white-space:pre-line"></div>
 <button id="bksh" class="go" style="width:100%;margin-bottom:8px">📤 إرسال النسخة للواتساب</button>
 <button id="bkd" style="width:100%;margin-bottom:8px;font-weight:700">💾 تنزيل النسخة على الجهاز</button>
@@ -812,6 +816,7 @@ button{border-width:1px;border-radius:12px}
 <div class="vh">ℹ️ 5.8v Online</div><div class="vd">تاريخ التحديث: 02/11/2026</div>
 <ul class="vl">
 <li><b>🖥️ برنامج للحاسبة (exe):</b> «Manar Derma OS» صار ينزل كبرنامج ويندوز، والموبايل والتاب يبقون على نفس الرابط.</li>
+<li><b>⚙️ إعدادات السستم:</b> بوضع التعديل، النسخة الاحتياطية والاسترجاع وباسوورد الإدارة ورمز التعديل والربط أونلاين والإصدار وتصفير البيانات صارت كلها بخانة وحدة «⚙️ إعدادات السستم».</li>
 <li><b>💾 حفظ تلقائي على الهارد:</b> ببرنامج الحاسبة تختار مجلد (هارد أو فلاشة) من «💾 النسخة الاحتياطية»، والبرنامج يحفظ كل البيانات ويه الصور بيه تلقائيًا كل يوم.</li>
 </ul>
 <div class="vold"><b>5.7v Online</b>: اسم جديد Manar Derma OS، «الإدارة» بدل «الحسابات»، أيقونات جديدة، وتصليح لوحة المفاتيح.<br><b>5.6v Online</b>: ثيم مثل برنامج الحضور، مربعات برامج بألوان هادئة، وشعار العيادة.<br><b>5.5v Online</b>: حذف حركات الإيراد المضافة من الشيت.<br><b>5.4v Online</b>: أنواع «سلفة» و«مصاريف» بالإيراد، وخانة «مُسلِّم المبلغ».<br><b>5.3v Online</b>: برنامج «الإيراد الشهري» — حركات الإيراد ويه صور الوصولات، ومطابقة نهاية الشهر PDF.</div>
@@ -1009,7 +1014,8 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
 var APPV="5.8";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
-$("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("vmx").onclick=function(){$("vm").hidden=true};
+$("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysb").onclick=function(){$("sysm").hidden=false};$("sysx").onclick=function(){$("sysm").hidden=true};
+$("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
 $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه «قربت تنفذ» عندما يصل الخزين إلى هذا العدد أو أقل:",String(S.thr),true,function(v){m.inputMode="";if(v===null)return;var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();if(!/^\d+$/.test(t)||+t>9999){toast("اكتب رقمًا صحيحًا");return}S.thr=+t;save();renderAll()})};
 $("gear").onclick=toggleEdit;$("done").onclick=toggleEdit;
@@ -2785,7 +2791,7 @@ function push(){try{history.pushState({wdg:Date.now()},"");onGuard=true}catch(e)
 function backStep(){
  if(V("xiv")){$("xiv").hidden=true;return true}
  if(V("md")){(!$("mno").hidden?$("mno"):$("mok")).click();return true}
- var M=[["vm","vmx"],["cm","cmX"],["wm","wno"],["lotm","lotX"],["xm",null],["apm","apX"],["al","alx"],["bkm","bkx"],["hs","hx"]];
+ var M=[["vm","vmx"],["cm","cmX"],["wm","wno"],["lotm","lotX"],["xm",null],["apm","apX"],["al","alx"],["bkm","bkx"],["sysm","sysx"],["hs","hx"]];
  for(var i=0;i<M.length;i++){if(V(M[i][0])){if(M[i][1])$(M[i][1]).click();else{$(M[i][0]).hidden=true;$("xmb").innerHTML=""}return true}}
  if(V("login"))return false;
  if(V("sv")){if(!spBack())$("spHome").click();return true}
