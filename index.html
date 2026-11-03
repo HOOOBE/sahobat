@@ -749,7 +749,9 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
  .sb-x{display:grid}
  .ck-ft{display:none}
 }
+.tb-search{min-width:0}
 @media (max-width:420px){.tb-st{font-size:13px}}
+@media (max-width:380px){.tb-st{display:none}.tb-search{flex:0 0 40px;width:40px;padding:0;justify-content:center}.tb-act{gap:4px}}
 /* 6.1v–6.2v: صورة المادة وطريقة السحب — بطاقة كبيرة يم لوحة الأرقام، وصورة بمربع المادة */
 .minf{display:flex;flex-direction:column;background:var(--card);border:1.5px solid color-mix(in srgb,var(--lime) 70%,var(--bd));border-radius:14px;overflow:hidden;margin-bottom:8px;text-align:start}
 .minf[hidden]{display:none}
@@ -1028,6 +1030,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="vh">ℹ️ 6.3v Online</div><div class="vd">تاريخ التحديث: 03/11/2026</div>
 <ul class="vl">
 <li><b>☁️ تصليح المزامنة:</b> من 6.1v جان يطلع «خطأ بالمزامنة: cannot convert undefined or null to object» والتغييرات ما توصل للأجهزة الثانية. انصلح، وكل اللي سجلتوه بهالفترة محفوظ بكل جهاز وينرسل تلقائيًا أول ما يتحدث البرنامج.</li>
+<li><b>📱 الموبايلات الصغيرة:</b> زر الوضع الليلي بالشريط العلوي جان يطلع برا الشاشة بالموبايلات الصغيرة (عرض 320)، هسه البحث يصير أيقونة بس وكلشي يبين.</li>
 </ul>
 <div class="vold"><b>6.2v Online</b>: صور المواد أكبر — بطاقات بالصورة، وصورة كبيرة يم لوحة الأرقام.<br><b>6.1v Online</b>: صورة المادة وطريقة السحب، وشاشة برامج أنظف.<br><b>6.0v Online</b>: شريط جانبي وعلوي مثل برنامج الحضور، والبحث السريع Ctrl K.<br><b>5.9v Online</b>: برنامج «التقارير»، المستخدمين والصلاحيات.<br><b>5.8v Online</b>: برنامج الحاسبة (exe) ويه حفظ تلقائي على الهارد.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
