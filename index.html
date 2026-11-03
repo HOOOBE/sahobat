@@ -750,18 +750,29 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
  .ck-ft{display:none}
 }
 @media (max-width:420px){.tb-st{font-size:13px}}
-/* 6.1v: صورة المادة وطريقة السحب (يم لوحة الأرقام) */
-.minf{display:flex;align-items:center;gap:10px;background:color-mix(in srgb,var(--lime) 22%,var(--card));border:1px solid color-mix(in srgb,var(--lime) 60%,var(--bd));border-radius:14px;padding:6px;margin-bottom:8px;text-align:start}
+/* 6.1v–6.2v: صورة المادة وطريقة السحب — بطاقة كبيرة يم لوحة الأرقام، وصورة بمربع المادة */
+.minf{display:flex;flex-direction:column;background:var(--card);border:1.5px solid color-mix(in srgb,var(--lime) 70%,var(--bd));border-radius:14px;overflow:hidden;margin-bottom:8px;text-align:start}
 .minf[hidden]{display:none}
-.mi-ph{width:64px;height:64px;min-height:0;padding:0;border-radius:10px;border:1px solid var(--bd);background:var(--card);overflow:hidden;flex:0 0 auto;display:grid;place-items:center;cursor:zoom-in;box-shadow:none}
+.mi-ph{width:100%;height:clamp(84px,17vh,160px);min-height:0;padding:0;border:0;border-radius:0;background:#fff;display:block;cursor:zoom-in;box-shadow:none;position:relative}
 .mi-ph[hidden]{display:none}
-.mi-ph img{width:100%;height:100%;object-fit:cover;display:block}
-.mi-tx{flex:1;min-width:0;padding-inline-end:4px}.mi-tx small{display:block;font-size:12px;font-weight:700;color:var(--mut)}.mi-tx b{display:block;font-size:16px;font-weight:800;line-height:1.35;color:var(--tx);overflow-wrap:anywhere}
-.minf.nonote .mi-tx small{display:none}.minf.nonote .mi-tx b{font-size:13px;font-weight:600;color:var(--mut)}
-.item{position:relative}.item .mi-mk{position:absolute;top:6px;left:8px;font-size:13px;opacity:.75;line-height:1}
-@media (max-height:600px){.mi-ph{width:44px;height:44px}.minf{padding:4px;margin-bottom:6px}.mi-tx b{font-size:14px}}
-.mi-tx b{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
-@media (max-width:899px){.mi-ph{width:44px;height:44px;border-radius:8px}.minf{gap:6px;padding:5px}.mi-tx small{font-size:11px}.mi-tx b{font-size:13px;line-height:1.35}}
+.mi-ph img{width:100%;height:100%;object-fit:contain;display:block}
+.mi-ph::after{content:"⤢";position:absolute;bottom:6px;left:6px;width:26px;height:26px;border-radius:8px;background:rgba(15,23,42,.6);color:#fff;font-size:14px;display:grid;place-items:center}
+.mi-tx{padding:7px 10px 8px;background:color-mix(in srgb,var(--lime) 24%,var(--card))}.mi-tx small{display:block;font-size:11.5px;font-weight:700;color:var(--mut)}
+.mi-tx b{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;font-size:16px;font-weight:800;line-height:1.4;color:var(--tx);overflow-wrap:anywhere}
+.minf.nonote .mi-tx{display:none}
+@media (max-width:899px){.mi-ph{height:clamp(72px,13vh,110px)}.mi-tx{padding:5px 8px 6px}.mi-tx b{font-size:13.5px}}
+@media (max-height:600px){.mi-ph{height:70px}}
+/* مربعات المواد بصورة (إذا بالفئة مادة وحدة على الأقل إلها صورة) */
+.grid.ph{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.grid.ph .item{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:0 8px 9px;overflow:hidden;min-height:0;gap:2px}
+.it-ph{display:grid;place-items:center;height:104px;margin:0 -8px 6px;background:color-mix(in srgb,var(--c) 9%,#fff);border-bottom:1px solid color-mix(in srgb,var(--c) 30%,var(--bd));color:color-mix(in srgb,var(--c) 55%,var(--mut))}
+.it-ph{position:relative;overflow:hidden}.it-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.it-ph svg{width:30px;height:30px;opacity:.45}
+.it-ph.ld{background:linear-gradient(90deg,color-mix(in srgb,var(--c) 8%,#fff),color-mix(in srgb,var(--c) 16%,#fff),color-mix(in srgb,var(--c) 8%,#fff))}
+.item.on .it-ph{border-bottom-color:transparent}
+.item .mi-nt{display:block;font-size:12px;font-weight:700;opacity:.8;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-theme="dark"] .it-ph,[data-theme="dark"] .mi-ph{background:#1b2430}
+@media (max-width:560px){.grid.ph{grid-template-columns:repeat(2,minmax(0,1fr))}.it-ph{height:88px}}
 #xm .mi-f{display:flex;flex-direction:column;gap:10px}
 #xm .mi-lb{font-weight:800;font-size:14px;color:var(--tx)}
 #xm .mi-pv{height:180px;border:1.5px dashed var(--bd);border-radius:14px;display:grid;place-items:center;overflow:hidden;background:var(--bg);color:var(--mut);font-weight:700}
@@ -852,7 +863,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 </div></section>
 <section class="sys-s" style="--sc:#d97706"><h3>البرنامج</h3><div class="sysl">
 <button id="sysUp">↩ تحديث البرنامج<small>يجيب آخر نسخة من النت ويعيد الفتح</small></button>
-<button id="verb">ℹ️ الإصدار 6.1v Online<small>شنو الجديد بهذه النسخة</small></button>
+<button id="verb">ℹ️ الإصدار 6.2v Online<small>شنو الجديد بهذه النسخة</small></button>
 <button id="wipe" hidden class="sysd">🧹 تصفير البيانات<small>يمسح البيانات اللي تختارها — سوّي نسخة احتياطية قبلها</small></button>
 </div></section>
 </div></div></div>
@@ -866,7 +877,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hmt"><h1><img src="icon-192.png" alt="" class="hm-ic" width="44" height="44"><span class="hm-tt">Manar Derma OS<small id="hmWho"></small></span></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">6.1v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">6.2v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -989,7 +1000,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hab lg-ab"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
 <div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
 <div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b></div></div>
-<button id="ver" title="شنو الجديد بهذه النسخة؟">6.1v Online · ℹ️ شنو الجديد؟</button>
+<button id="ver" title="شنو الجديد بهذه النسخة؟">6.2v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -1014,12 +1025,13 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 6.1v Online</div><div class="vd">تاريخ التحديث: 03/11/2026</div>
+<div class="vh">ℹ️ 6.2v Online</div><div class="vd">تاريخ التحديث: 03/11/2026</div>
 <ul class="vl">
-<li><b>📷 صورة المادة وطريقة السحب:</b> من وضع التعديل بالسحوبات، زر «🖼 الصورة» تحت كل مادة: تصوّر المادة وتكتب طريقة سحبها (بالفيال، بالكت، بالكارتون…). أول ما الموظف يختار المادة تطلع الصورة والملاحظة يم لوحة الأرقام، والضغط على الصورة يكبرها. المواد اللي إلها صورة يبين عليها 📷 صغيرة.</li>
-<li><b>🧹 شاشة البرامج أنظف:</b> انشال مربع «النسخة الاحتياطية» ومربع «إعدادات السستم» لأنهم موجودين بـ «الإعدادات» بالشريط الجانبي. وإذا النسخة الاحتياطية قديمة تطلع نقطة برتقالية يم «الإعدادات».</li>
+<li><b>🖼 صور المواد أكبر وأوضح:</b> الفئة اللي بيها صور صارت مربعاتها بطاقات بالصورة فوق والاسم تحت، والمواد اللي بعد ما إلها صورة يطلع مكانها رسم خفيف حتى يبقى الشكل متناسق.</li>
+<li><b>📷 يم لوحة الأرقام:</b> صورة المادة صارت كبيرة بعرض اللوحة، وطريقة السحب تحتها، والضغط عليها يكبرها.</li>
+<li><b>⚠ إذا الصورة ما تنقرا</b> (مثل صور الآيفون HEIC بالحاسبة) تطلع رسالة واضحة بدل ما ما يصير شي.</li>
 </ul>
-<div class="vold"><b>6.0v Online</b>: شريط جانبي وعلوي مثل برنامج الحضور، بطاقة الحساب، والبحث السريع Ctrl K.<br><b>5.9v Online</b>: برنامج «التقارير» (15 تقرير ومنها المواد الراكدة)، المستخدمين والصلاحيات، ونافذة إعدادات مرتبة.<br><b>5.8v Online</b>: برنامج الحاسبة (exe) ويه حفظ تلقائي على الهارد، و«⚙️ إعدادات السستم».<br><b>5.7v Online</b>: اسم جديد Manar Derma OS، «الإدارة» بدل «الحسابات»، أيقونات جديدة.<br><b>5.6v Online</b>: ثيم مثل برنامج الحضور، مربعات برامج بألوان هادئة، وشعار العيادة.</div>
+<div class="vold"><b>6.1v Online</b>: صورة المادة وطريقة السحب، وشاشة برامج أنظف.<br><b>6.0v Online</b>: شريط جانبي وعلوي مثل برنامج الحضور، بطاقة الحساب، والبحث السريع Ctrl K.<br><b>5.9v Online</b>: برنامج «التقارير»، المستخدمين والصلاحيات، ونافذة إعدادات مرتبة.<br><b>5.8v Online</b>: برنامج الحاسبة (exe) ويه حفظ تلقائي على الهارد.<br><b>5.7v Online</b>: اسم جديد Manar Derma OS، «الإدارة» بدل «الحسابات»، أيقونات جديدة.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -1135,7 +1147,7 @@ function drawAcc(){var A=$("acc");A.innerHTML="";var q=$("q").value.trim().toLow
    hr.appendChild(btn("🎨","mini",function(){cat.c=(cat.c+1)%PAL.length;save();drawAcc()}));
    hr.appendChild(btn("✕","mini",function(){sure("حذف فئة «"+cat.n+"» مع كل موادها؟",function(){cat.items.forEach(function(i){delete S.xp[i];delete S.xpw[i];delete S.stock[i];minfDel(i);lotsOf(i).forEach(function(l){delete S.lots[l.id]})});S.cats.splice(ci,1);S.cat=null;save();drawAcc()})}))}
   box.appendChild(hr);
-  if(open){var g=document.createElement("div");g.className="grid"+(S.edit?" ed":"");
+  if(open){var hasPh=catHasPh(items),g=document.createElement("div");g.className="grid"+(S.edit?" ed":"")+(hasPh?" ph":"");
    items.forEach(function(name){
     var real=cat.items.indexOf(name);
     var main=btn(name,"item"+(S.item===name?" on":""),function(){S.item=name;S.n=1;S.fresh=true;drawAcc();upd()});
@@ -1143,7 +1155,7 @@ function drawAcc(){var A=$("acc");A.innerHTML="";var q=$("q").value.trim().toLow
     if(hasXp(name)){var xs=document.createElement("small"),st=xpState(name);xs.className="xpt "+st;xs.textContent=xpTxt(name);main.appendChild(xs)}
     if(ACC()){var cs=document.createElement("small");cs.className="cst";var LQ=lotQ(name);if(LQ&&LQ.length){cs.textContent="💰 "+money(LQ[0].c)+(LQ.length>1?" · باقي "+LQ[0].r+" بهذا السعر، بعدها "+money(LQ[1].c):"")}else cs.textContent=uc(name)!=null?"💰 "+money(uc(name))+(ucSince(name)?" (من "+dayLbl(ucSince(name)).slice(0,5)+")":""):"💰 بدون كلفة";main.appendChild(cs);
      var ss=document.createElement("small");ss.className="cst sv";ss.textContent=us(name)!=null?"🛠 خدمة: "+money(us(name))+(usSince(name)?" (من "+dayLbl(usSince(name)).slice(0,5)+")":""):"🛠 بدون سعر خدمة";main.appendChild(ss)}
-    var mf=minfOf(name);if(mf&&!S.edit){var mm=document.createElement("span");mm.className="mi-mk";mm.textContent=mf.im?"📷":"📝";mm.title=mf.nt||"صورة المادة";main.appendChild(mm)}
+    var mf=minfOf(name);if(hasPh)minfPh(main,name);if(mf&&mf.nt&&!S.edit){var mm=document.createElement("small");mm.className="mi-nt";mm.textContent=mf.nt;main.appendChild(mm)}
     if(S.edit){var xw=document.createElement("small");xw.className="xwt"+(hasXw(name)?" own":"");xw.textContent="⏰ التحذير قبل "+xpW(name)+" يوم"+(hasXw(name)?" (خاص)":" (عام)");main.appendChild(xw)}
     if(!S.edit){g.appendChild(main);return}
     var w=document.createElement("div");w.className="tile";w.appendChild(main);var r=document.createElement("div");r.className="r";
@@ -1215,7 +1227,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="6.1";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="6.2";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysx").onclick=function(){$("sysm").hidden=true};
 $("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
@@ -1423,8 +1435,15 @@ function uList(){return Object.keys(S.usr||{}).map(function(id){return Object.as
 function uHash(pw,salt,alg){if(alg!=="h"&&SUB)return crypto.subtle.digest("SHA-256",new TextEncoder().encode(salt+"|"+pw)).then(function(b){return b64(b)});return Promise.resolve(hsh(salt+"|"+pw))}
 /* ===== 6.1v: صورة المادة وطريقة السحب — S.minf (ضمن CLM) = {اسم المادة:{im:معرف الصورة, nt:الملاحظة}}، الصورة بنفس نظام صور الفواتير (IndexedDB + مستند أونلاين) ===== */
 var MI_Q=["بالفيال","بالأمبولة","بالكت","بالكارتون","بالعلبة","بالقطعة","بالسرنجة","بالشريط"];
+function catHasPh(items){return items.some(function(i){var m=minfOf(i);return m&&m.im})}
 function minfOf(n){var m=S.minf&&S.minf[n];return m&&(m.im||m.nt)?m:null}
 function minfDel(n){var m=S.minf&&S.minf[n];if(!m)return;if(m.im&&typeof XU!=="undefined")XU.imgDrop([m.im]);delete S.minf[n]}
+var TH={};
+function thumbOf(id){if(TH[id])return TH[id];TH[id]=XU.imgGet(id).then(function(d){if(!d){delete TH[id];return null}return new Promise(function(res){var im=new Image();im.onload=function(){var M=320,sc=Math.min(1,M/Math.max(im.naturalWidth,im.naturalHeight)),c=document.createElement("canvas");c.width=Math.max(1,Math.round(im.naturalWidth*sc));c.height=Math.max(1,Math.round(im.naturalHeight*sc));c.getContext("2d").drawImage(im,0,0,c.width,c.height);res(c.toDataURL("image/jpeg",.82))};im.onerror=function(){res(d)};im.src=d})});return TH[id]}
+function minfPh(btnEl,name){var m=minfOf(name),w=document.createElement("span");w.className="it-ph";w.setAttribute("aria-hidden","true");
+ if(m&&m.im){w.classList.add("ld");thumbOf(m.im).then(function(d){w.classList.remove("ld");if(d){var im=document.createElement("img");im.src=d;im.alt="";w.innerHTML="";w.appendChild(im)}else w.innerHTML=typeof biSvg==="function"?biSvg("image"):""})}
+ else w.innerHTML=typeof biSvg==="function"?biSvg("box-seam"):"";
+ btnEl.insertBefore(w,btnEl.firstChild)}
 function minfDraw(){var w=$("minf");if(!w)return;var m=S.item&&minfOf(S.item);w.hidden=!m;if(!m)return;
  var ph=$("miPh");ph.hidden=!m.im;ph.innerHTML="";ph.dataset.id=m.im||"";
  if(m.im&&typeof XU!=="undefined")XU.imgGet(m.im).then(function(d){if(ph.dataset.id!==m.im)return;ph.innerHTML="";if(d){var im=document.createElement("img");im.src=d;im.alt="صورة "+S.item;ph.appendChild(im)}else ph.textContent="📷"});
@@ -2239,7 +2258,7 @@ var pickCb=null;
 function pickImg(cam,cb){pickCb=cb;var i=g(cam?"xFileC":"xFileG");i.value="";i.click()}
 ["xFileC","xFileG"].forEach(function(id){g(id).onchange=function(){var fs=Array.prototype.slice.call(this.files||[]),cb=pickCb;if(!fs.length||!cb)return;toast("جارِ حفظ الصورة…");
  fs.reduce(function(p,f){return p.then(function(){return shrink(f).then(function(d){var o={id:"i"+rid(),d:d,up:false,t:Date.now()};IMC[o.id]=d;return idbPut(o).then(function(){cb(o.id)})})})},Promise.resolve())
-  .then(function(){toast(fs.length>1?"✔ انحفظت "+fs.length+" صور":"✔ انحفظت الصورة");imgFlush()}).catch(function(){toast("تعذّر حفظ الصورة، جرب مرة ثانية")})}});
+  .then(function(){toast(fs.length>1?"✔ انحفظت "+fs.length+" صور":"✔ انحفظت الصورة");imgFlush()}).catch(function(){var heic=fs.some(function(f){return /heic|heif/i.test((f.type||"")+" "+(f.name||""))});var msg=heic?"⚠ الصورة بصيغة HEIC (من الآيفون) والجهاز ما يكدر يقراها.\nحوّلها لـ JPG، أو صوّرها مباشرة من زر 📷 تصوير":"⚠ تعذّر قراءة الصورة — جرّب صورة ثانية (JPG أو PNG)";if(typeof sure==="function"&&typeof dlg==="function")dlg(msg,"",false,function(){});else toast(msg)})}});
 function thumbs(box,ids,onDel){box.innerHTML="";ids.forEach(function(id,ix){var t=el("div",{class:"x-tm"},[el("span",{class:"ld",text:"…"})]);box.appendChild(t);
  imgGet(id).then(function(d){t.innerHTML="";if(!d){t.appendChild(el("span",{class:"ld",text:"ما تحمّلت"}));return}var im=el("img",{src:d,alt:"صورة الفاتورة "+(ix+1)});im.onclick=function(){viewer(ids,ix)};t.appendChild(im);
   if(onDel)t.appendChild(el("button",{text:"✕","aria-label":"حذف الصورة",on:{click:function(){onDel(ix)}}}))})})}
