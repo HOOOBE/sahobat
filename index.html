@@ -749,7 +749,9 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
  .sb-x{display:grid}
  .ck-ft{display:none}
 }
+.tb-search{min-width:0}
 @media (max-width:420px){.tb-st{font-size:13px}}
+@media (max-width:380px){.tb-st{display:none}.tb-search{flex:0 0 40px;width:40px;padding:0;justify-content:center}.tb-act{gap:4px}}
 /* 6.1v–6.2v: صورة المادة وطريقة السحب — بطاقة كبيرة يم لوحة الأرقام، وصورة بمربع المادة */
 .minf{display:flex;flex-direction:column;background:var(--card);border:1.5px solid color-mix(in srgb,var(--lime) 70%,var(--bd));border-radius:14px;overflow:hidden;margin-bottom:8px;text-align:start}
 .minf[hidden]{display:none}
@@ -863,7 +865,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 </div></section>
 <section class="sys-s" style="--sc:#d97706"><h3>البرنامج</h3><div class="sysl">
 <button id="sysUp">↩ تحديث البرنامج<small>يجيب آخر نسخة من النت ويعيد الفتح</small></button>
-<button id="verb">ℹ️ الإصدار 6.2v Online<small>شنو الجديد بهذه النسخة</small></button>
+<button id="verb">ℹ️ الإصدار 6.3v Online<small>شنو الجديد بهذه النسخة</small></button>
 <button id="wipe" hidden class="sysd">🧹 تصفير البيانات<small>يمسح البيانات اللي تختارها — سوّي نسخة احتياطية قبلها</small></button>
 </div></section>
 </div></div></div>
@@ -877,7 +879,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hmt"><h1><img src="icon-192.png" alt="" class="hm-ic" width="44" height="44"><span class="hm-tt">Manar Derma OS<small id="hmWho"></small></span></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">6.2v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">6.3v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -1000,7 +1002,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hab lg-ab"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
 <div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
 <div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b></div></div>
-<button id="ver" title="شنو الجديد بهذه النسخة؟">6.2v Online · ℹ️ شنو الجديد؟</button>
+<button id="ver" title="شنو الجديد بهذه النسخة؟">6.3v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -1025,13 +1027,12 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 6.2v Online</div><div class="vd">تاريخ التحديث: 03/11/2026</div>
+<div class="vh">ℹ️ 6.3v Online</div><div class="vd">تاريخ التحديث: 03/11/2026</div>
 <ul class="vl">
-<li><b>🖼 صور المواد أكبر وأوضح:</b> الفئة اللي بيها صور صارت مربعاتها بطاقات بالصورة فوق والاسم تحت، والمواد اللي بعد ما إلها صورة يطلع مكانها رسم خفيف حتى يبقى الشكل متناسق.</li>
-<li><b>📷 يم لوحة الأرقام:</b> صورة المادة صارت كبيرة بعرض اللوحة، وطريقة السحب تحتها، والضغط عليها يكبرها.</li>
-<li><b>⚠ إذا الصورة ما تنقرا</b> (مثل صور الآيفون HEIC بالحاسبة) تطلع رسالة واضحة بدل ما ما يصير شي.</li>
+<li><b>☁️ تصليح المزامنة:</b> من 6.1v جان يطلع «خطأ بالمزامنة: cannot convert undefined or null to object» والتغييرات ما توصل للأجهزة الثانية. انصلح، وكل اللي سجلتوه بهالفترة محفوظ بكل جهاز وينرسل تلقائيًا أول ما يتحدث البرنامج.</li>
+<li><b>📱 الموبايلات الصغيرة:</b> زر الوضع الليلي بالشريط العلوي جان يطلع برا الشاشة بالموبايلات الصغيرة (عرض 320)، هسه البحث يصير أيقونة بس وكلشي يبين.</li>
 </ul>
-<div class="vold"><b>6.1v Online</b>: صورة المادة وطريقة السحب، وشاشة برامج أنظف.<br><b>6.0v Online</b>: شريط جانبي وعلوي مثل برنامج الحضور، بطاقة الحساب، والبحث السريع Ctrl K.<br><b>5.9v Online</b>: برنامج «التقارير»، المستخدمين والصلاحيات، ونافذة إعدادات مرتبة.<br><b>5.8v Online</b>: برنامج الحاسبة (exe) ويه حفظ تلقائي على الهارد.<br><b>5.7v Online</b>: اسم جديد Manar Derma OS، «الإدارة» بدل «الحسابات»، أيقونات جديدة.</div>
+<div class="vold"><b>6.2v Online</b>: صور المواد أكبر — بطاقات بالصورة، وصورة كبيرة يم لوحة الأرقام.<br><b>6.1v Online</b>: صورة المادة وطريقة السحب، وشاشة برامج أنظف.<br><b>6.0v Online</b>: شريط جانبي وعلوي مثل برنامج الحضور، والبحث السريع Ctrl K.<br><b>5.9v Online</b>: برنامج «التقارير»، المستخدمين والصلاحيات.<br><b>5.8v Online</b>: برنامج الحاسبة (exe) ويه حفظ تلقائي على الهارد.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -1227,7 +1228,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="6.2";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="6.3";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysx").onclick=function(){$("sysm").hidden=true};
 $("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
@@ -1678,10 +1679,11 @@ function sStr(v){return JSON.stringify(srt(v===undefined?null:v))}
 function nrm(s){try{return sStr(JSON.parse(s))}catch(x){return sStr(null)}}
 function rid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
 function clIds(){S.log.forEach(function(x,i){if(!x.id)x.id=rid();if(typeof x.o!=="number")x.o=i})}
-function clEmpty(){return {j:{},m:{stock:{},xp:{},freq:{},logm:{},xpw:{},ext:{},exe:{},lots:{},sup:{},smv:{},stf:{},sdb:{},rvm:{},rvs:{}},h:{}}}
+/* 6.3v: القالب ينبني من CLM نفسها — قبل جان مكتوب باليد وانسى منه minf فوقفت المزامنة */
+function clEmpty(){var m={};CLM.forEach(function(k){m[k]={}});return {j:{},m:m,h:{}}}
 function clEnc(){clIds();var e=clEmpty();
  CLJ.forEach(function(k){e.j[k]=sStr(S[k])});
- ["stock","xp","freq","xpw","ext","exe","lots","sup","smv","stf","sdb","rvm","rvs","minf"].forEach(function(k){var src=S[k]||{};Object.keys(src).forEach(function(n){if(src[n]!==undefined&&src[n]!==null)e.m[k][n]=sStr(src[n])})});
+ CLM.filter(function(k){return k!=="logm"}).forEach(function(k){var src=S[k]||{};Object.keys(src).forEach(function(n){if(src[n]!==undefined&&src[n]!==null)e.m[k][n]=sStr(src[n])})});
  S.log.forEach(function(x){e.m.logm[x.id]=sStr(x)});
  var h={};S.hist.forEach(function(x){var k=String(x.day).slice(0,7);(h[k]=h[k]||[]).push(x)});
  Object.keys(h).forEach(function(k){e.h[k]=sStr(h[k])});return e}
@@ -1692,7 +1694,7 @@ function m3(l,b,r){var o={},ks={};[l,b,r].forEach(function(x){Object.keys(x||{})
  Object.keys(ks).forEach(function(k){var lv=l[k],bv=(b||{})[k],v=lv!==bv?lv:r[k];if(v!==undefined)o[k]=v});return o}
 function clSetMain(e){
  CLJ.forEach(function(k){var v=JSON.parse(e.j[k]);if(v===null&&CLD[k]===null&&k!=="prev"&&k!=="ce"&&k!=="cpub")return;S[k]=v===null?CLD[k]:v});
- ["stock","xp","freq","xpw","ext","exe","lots","sup","smv","stf","sdb","rvm","rvs","minf"].forEach(function(k){var o={};Object.keys(e.m[k]).forEach(function(n){o[n]=JSON.parse(e.m[k][n])});S[k]=o});
+ CLM.filter(function(k){return k!=="logm"}).forEach(function(k){var o={};Object.keys(e.m[k]||{}).forEach(function(n){o[n]=JSON.parse(e.m[k][n])});S[k]=o});
  S.log=Object.keys(e.m.logm).map(function(k){return JSON.parse(e.m.logm[k])}).sort(function(a,b){return (a.o-b.o)||(a.id<b.id?-1:1)});
  if(S.item&&!itemExists(S.item))S.item=null;if(S.emp&&S.emps.indexOf(S.emp)<0)S.emp=null}
 function clSetH(h){var a=[];Object.keys(h).sort().forEach(function(k){a=a.concat(JSON.parse(h[k])||[])});S.hist=a}
@@ -1705,7 +1707,7 @@ function clPush(){if(!CL.ready||!CL.F)return;var F=CL.F,l=clEnc(),b=CL.sent||CL.
   if(!CL.exists){var full={};CLJ.forEach(function(k){full[k]=l.j[k]});CLM.forEach(function(k){var o={};Object.keys(l.m[k]).forEach(function(x){o[x]=JSON.parse(l.m[k][x])});full[k]=o});
    bt.set(CL.ref,full);n++;CL.exists=true}
   else{var a=[];CLJ.forEach(function(k){if(l.j[k]!==b.j[k])a.push(k,l.j[k])});
-   CLM.forEach(function(k){var lm=l.m[k],bm=b.m[k]||{},ks={};Object.keys(lm).concat(Object.keys(bm)).forEach(function(x){ks[x]=1});
+   CLM.forEach(function(k){var lm=l.m[k]||{},bm=(b.m||{})[k]||{},ks={};Object.keys(lm).concat(Object.keys(bm)).forEach(function(x){ks[x]=1});
     Object.keys(ks).forEach(function(x){if(lm[x]!==bm[x])a.push(new F.FieldPath(k,x),lm[x]===undefined?F.deleteField():JSON.parse(lm[x]))})});
    if(a.length){bt.update.apply(bt,[CL.ref].concat(a));n++}}
   var bh=b.h||{},hk={};Object.keys(l.h).concat(Object.keys(bh)).forEach(function(x){hk[x]=1});
