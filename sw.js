@@ -1,6 +1,6 @@
 // يحفظ ملفات التطبيق على الجهاز حتى يشتغل بدون نت.
 // عند وجود نت يجلب أحدث نسخة، وعند انقطاعه يفتح النسخة المحفوظة.
-const CACHE = "withdrawals-v6.1";
+const CACHE = "withdrawals-v6.2";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./lib/html2canvas.min.js", "./lib/jspdf.umd.min.js", "./fonts/cairo-arabic-400-normal.woff2", "./fonts/cairo-latin-400-normal.woff2", "./fonts/cairo-arabic-500-normal.woff2", "./fonts/cairo-latin-500-normal.woff2", "./fonts/cairo-arabic-600-normal.woff2", "./fonts/cairo-latin-600-normal.woff2", "./fonts/cairo-arabic-700-normal.woff2", "./fonts/cairo-latin-700-normal.woff2", "./fonts/cairo-arabic-800-normal.woff2", "./fonts/cairo-latin-800-normal.woff2", "./logo.webp", "./apple-touch-icon.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener("activate", e => {
