@@ -285,100 +285,100 @@ button.flash{animation:flash .5s ease-out}
 #homeb{min-height:44px;padding:4px 12px;font-size:22px}
 
 /* ===== مصاريف العيادة (3.1v) ===== */
-:is(#xv,#sv,#dv,#rv,#rp){position:fixed;inset:0;z-index:16;background:var(--bg);overflow-y:auto;--acs:color-mix(in srgb,var(--ac) 14%,var(--card));--out:var(--bad);--in:var(--ok);--xsh:0 1px 2px rgba(10,40,42,.06),0 6px 20px rgba(10,40,42,.06)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .xw{max-width:1180px;margin:0 auto;padding:calc(12px + env(safe-area-inset-top,0px)) 16px calc(40px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) button{min-height:44px;padding:4px 14px;border-width:1px;border-radius:12px;font-size:15px;font-weight:700}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-brand{flex:1 1 180px;min-width:0}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-brand h1{font-size:22px;margin:0;font-weight:800}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-brand div{color:var(--mut);font-size:14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tre{background:var(--ac);color:var(--on);border-radius:20px;padding:18px 20px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;box-shadow:var(--xsh)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-lbl{font-size:13px;opacity:.85;font-weight:600}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tsel{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tsel select{font:inherit;background:color-mix(in srgb,var(--on) 16%,transparent);border:1px solid color-mix(in srgb,var(--on) 35%,transparent);border-radius:10px;padding:6px 10px;font-weight:800;font-size:18px;max-width:100%;color:var(--on)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tsel option{color:#13211f;background:#fff}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tdate{font-size:14px;opacity:.9}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-big{font-size:clamp(34px,7vw,48px);font-weight:800;line-height:1.15;margin-top:10px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-big small{font-size:16px;font-weight:600;opacity:.85;margin-inline-start:6px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-big.neg{text-decoration:underline wavy}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-bar{height:8px;border-radius:99px;background:color-mix(in srgb,var(--on) 22%,transparent);overflow:hidden;margin-top:12px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-bar b{display:block;height:100%;background:var(--on);border-radius:99px;transition:width .4s}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-content:start}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-meta div{background:color-mix(in srgb,var(--on) 12%,transparent);border-radius:14px;padding:10px 12px;min-width:0}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-meta b{display:block;font-size:19px;font-weight:700;overflow-wrap:anywhere}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tact{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tact button{border:1px solid color-mix(in srgb,var(--on) 40%,transparent);background:color-mix(in srgb,var(--on) 10%,transparent);color:var(--on)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tact button.pri{background:var(--on);color:var(--ac);border-color:var(--on)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-meta b{white-space:nowrap;overflow-wrap:normal;font-size:clamp(14px,1.6vw + 6px,19px)}
-@media (max-width:900px){:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tre{grid-template-columns:minmax(0,1fr)}:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-meta div{padding:10px 8px}}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
-@media (max-width:860px){:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-cols{grid-template-columns:minmax(0,1fr)}}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:18px;box-shadow:var(--xsh);min-width:0}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-card h2{font-size:17px;font-weight:800;margin:0 0 12px;color:var(--tx)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-card h3{font-size:14px;color:var(--mut);margin:16px 0 8px;font-weight:600}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-amt{display:flex;align-items:center;border:2px solid var(--bd);border-radius:16px;background:var(--bg);padding:4px 14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-amt:focus-within{border-color:var(--ac)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-amt input{flex:1;min-width:0;border:0;background:transparent;color:var(--tx);font:inherit;font-size:32px;font-weight:800;padding:8px 0;outline:none;text-align:right;direction:ltr}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-amt span{color:var(--mut);font-weight:600}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-quick{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-quick button{min-height:38px;padding:0 12px;font-size:14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-quick button.clr{color:var(--mut)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-types{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-ty{display:flex;align-items:center;gap:8px;min-height:52px;border:1.5px solid var(--bd);background:var(--card);border-radius:14px;padding:6px 10px;text-align:start;font-weight:600;font-size:14px;line-height:1.3}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-ty .e{font-size:20px;flex:none}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-ty.on{border-color:var(--ac);background:var(--acs);box-shadow:inset 0 0 0 1px var(--ac)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-ty.add{border-style:dashed;color:var(--mut);justify-content:center}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-chosen{margin-top:10px;font-size:14px;color:var(--mut);min-height:22px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-chosen b{color:var(--ac)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-row2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:8px;margin-top:6px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-fld,#xm .x-fld{width:100%;font:inherit;font-size:16px;color:var(--tx);border:1.5px solid var(--bd);background:var(--bg);border-radius:12px;padding:11px 12px;min-height:48px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-go{width:100%;margin-top:14px;min-height:58px;border:0;border-radius:16px;background:var(--ac);color:var(--on);font-size:19px;font-weight:800}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-go:disabled{opacity:.45;cursor:not-allowed}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-after{font-size:14px;color:var(--mut);text-align:center;margin-top:8px;min-height:22px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-daynav{display:flex;gap:6px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-daynav input{flex:1 1 140px;min-width:0}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-daynav button{font-size:14px;padding:0 12px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-daysum{display:flex;justify-content:space-between;align-items:baseline;background:var(--bg);border-radius:14px;padding:10px 14px;margin-bottom:6px;gap:8px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-daysum b{font-size:22px;color:var(--out)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it{display:grid;grid-template-columns:40px minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--bd)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it:last-child{border-bottom:0}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .e{width:40px;height:40px;border-radius:12px;background:var(--bg);display:grid;place-items:center;font-size:19px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .t{font-weight:600;overflow-wrap:anywhere}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .s{font-size:13px;color:var(--mut);overflow-wrap:anywhere}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .a{font-weight:700;font-size:17px;color:var(--out)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it.in .a{color:var(--in)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .x{border:0;background:transparent;color:var(--mut);min-width:36px;min-height:36px;padding:0;font-size:16px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-empty{text-align:center;color:var(--mut);padding:26px 10px;font-size:15px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rf label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mut);flex:1 1 170px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rf label input{flex:1;min-width:0}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rf .x-rtl{flex:1 1 100%}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rf select{flex:1;min-width:0;font-weight:700;appearance:auto}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rnote{margin:-4px 0 12px;font-size:14px;font-weight:700;color:var(--ac)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rf button{min-height:48px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rf button.pri{background:var(--ac);color:var(--on);border-color:var(--ac)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px}
-@media (max-width:860px){:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rgrid{grid-template-columns:minmax(0,1fr)}}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tb{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr) auto;gap:4px 10px;align-items:center;font-size:14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tb .n{font-weight:600;overflow-wrap:anywhere}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tb .tr{height:12px;border-radius:6px;background:var(--bg);overflow:hidden}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tb .tr b{display:block;height:100%;background:var(--ac);border-radius:6px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tb .v{font-weight:700;text-align:end;white-space:nowrap}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tb .v small{color:var(--mut);font-weight:500;margin-inline-start:4px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tw{overflow-x:auto}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) table{width:100%;border-collapse:collapse;font-size:14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) th,:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) td{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:start;white-space:nowrap}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) th{color:var(--mut);font-weight:600;font-size:13px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) td.r,:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) th.r{text-align:end}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) tfoot td{font-weight:700;border-bottom:0;border-top:2px solid var(--bd)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tot{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tot div{flex:1 1 140px;background:var(--bg);border-radius:14px;padding:10px 14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tot span{display:block;font-size:13px;color:var(--mut)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-tot b{font-size:20px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-hero0{text-align:center;padding:30px 18px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-hero0 p{color:var(--mut);margin:0 auto 16px;max-width:42ch}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-hero0 .x-go{max-width:320px}
+:is(#xv,#sv,#dv,#rv,#rp,#jd){position:fixed;inset:0;z-index:16;background:var(--bg);overflow-y:auto;--acs:color-mix(in srgb,var(--ac) 14%,var(--card));--out:var(--bad);--in:var(--ok);--xsh:0 1px 2px rgba(10,40,42,.06),0 6px 20px rgba(10,40,42,.06)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .xw{max-width:1180px;margin:0 auto;padding:calc(12px + env(safe-area-inset-top,0px)) 16px calc(40px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) button{min-height:44px;padding:4px 14px;border-width:1px;border-radius:12px;font-size:15px;font-weight:700}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-brand{flex:1 1 180px;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-brand h1{font-size:22px;margin:0;font-weight:800}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-brand div{color:var(--mut);font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tre{background:var(--ac);color:var(--on);border-radius:20px;padding:18px 20px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;box-shadow:var(--xsh)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-lbl{font-size:13px;opacity:.85;font-weight:600}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tsel{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tsel select{font:inherit;background:color-mix(in srgb,var(--on) 16%,transparent);border:1px solid color-mix(in srgb,var(--on) 35%,transparent);border-radius:10px;padding:6px 10px;font-weight:800;font-size:18px;max-width:100%;color:var(--on)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tsel option{color:#13211f;background:#fff}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tdate{font-size:14px;opacity:.9}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-big{font-size:clamp(34px,7vw,48px);font-weight:800;line-height:1.15;margin-top:10px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-big small{font-size:16px;font-weight:600;opacity:.85;margin-inline-start:6px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-big.neg{text-decoration:underline wavy}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-bar{height:8px;border-radius:99px;background:color-mix(in srgb,var(--on) 22%,transparent);overflow:hidden;margin-top:12px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-bar b{display:block;height:100%;background:var(--on);border-radius:99px;transition:width .4s}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-content:start}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-meta div{background:color-mix(in srgb,var(--on) 12%,transparent);border-radius:14px;padding:10px 12px;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-meta b{display:block;font-size:19px;font-weight:700;overflow-wrap:anywhere}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tact{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tact button{border:1px solid color-mix(in srgb,var(--on) 40%,transparent);background:color-mix(in srgb,var(--on) 10%,transparent);color:var(--on)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tact button.pri{background:var(--on);color:var(--ac);border-color:var(--on)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-meta b{white-space:nowrap;overflow-wrap:normal;font-size:clamp(14px,1.6vw + 6px,19px)}
+@media (max-width:900px){:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tre{grid-template-columns:minmax(0,1fr)}:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-meta div{padding:10px 8px}}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:860px){:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-cols{grid-template-columns:minmax(0,1fr)}}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:18px;box-shadow:var(--xsh);min-width:0}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-card h2{font-size:17px;font-weight:800;margin:0 0 12px;color:var(--tx)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-card h3{font-size:14px;color:var(--mut);margin:16px 0 8px;font-weight:600}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-amt{display:flex;align-items:center;border:2px solid var(--bd);border-radius:16px;background:var(--bg);padding:4px 14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-amt:focus-within{border-color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-amt input{flex:1;min-width:0;border:0;background:transparent;color:var(--tx);font:inherit;font-size:32px;font-weight:800;padding:8px 0;outline:none;text-align:right;direction:ltr}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-amt span{color:var(--mut);font-weight:600}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-quick{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-quick button{min-height:38px;padding:0 12px;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-quick button.clr{color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-types{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-ty{display:flex;align-items:center;gap:8px;min-height:52px;border:1.5px solid var(--bd);background:var(--card);border-radius:14px;padding:6px 10px;text-align:start;font-weight:600;font-size:14px;line-height:1.3}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-ty .e{font-size:20px;flex:none}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-ty.on{border-color:var(--ac);background:var(--acs);box-shadow:inset 0 0 0 1px var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-ty.add{border-style:dashed;color:var(--mut);justify-content:center}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-chosen{margin-top:10px;font-size:14px;color:var(--mut);min-height:22px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-chosen b{color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-row2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:8px;margin-top:6px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-fld,#xm .x-fld{width:100%;font:inherit;font-size:16px;color:var(--tx);border:1.5px solid var(--bd);background:var(--bg);border-radius:12px;padding:11px 12px;min-height:48px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-go{width:100%;margin-top:14px;min-height:58px;border:0;border-radius:16px;background:var(--ac);color:var(--on);font-size:19px;font-weight:800}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-go:disabled{opacity:.45;cursor:not-allowed}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-after{font-size:14px;color:var(--mut);text-align:center;margin-top:8px;min-height:22px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-daynav{display:flex;gap:6px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-daynav input{flex:1 1 140px;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-daynav button{font-size:14px;padding:0 12px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-daysum{display:flex;justify-content:space-between;align-items:baseline;background:var(--bg);border-radius:14px;padding:10px 14px;margin-bottom:6px;gap:8px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-daysum b{font-size:22px;color:var(--out)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it{display:grid;grid-template-columns:40px minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--bd)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it:last-child{border-bottom:0}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .e{width:40px;height:40px;border-radius:12px;background:var(--bg);display:grid;place-items:center;font-size:19px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .t{font-weight:600;overflow-wrap:anywhere}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .s{font-size:13px;color:var(--mut);overflow-wrap:anywhere}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .a{font-weight:700;font-size:17px;color:var(--out)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it.in .a{color:var(--in)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .x{border:0;background:transparent;color:var(--mut);min-width:36px;min-height:36px;padding:0;font-size:16px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-empty{text-align:center;color:var(--mut);padding:26px 10px;font-size:15px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rf label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mut);flex:1 1 170px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rf label input{flex:1;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rf .x-rtl{flex:1 1 100%}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rf select{flex:1;min-width:0;font-weight:700;appearance:auto}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rnote{margin:-4px 0 12px;font-size:14px;font-weight:700;color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rf button{min-height:48px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rf button.pri{background:var(--ac);color:var(--on);border-color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px}
+@media (max-width:860px){:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rgrid{grid-template-columns:minmax(0,1fr)}}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tb{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr) auto;gap:4px 10px;align-items:center;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tb .n{font-weight:600;overflow-wrap:anywhere}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tb .tr{height:12px;border-radius:6px;background:var(--bg);overflow:hidden}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tb .tr b{display:block;height:100%;background:var(--ac);border-radius:6px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tb .v{font-weight:700;text-align:end;white-space:nowrap}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tb .v small{color:var(--mut);font-weight:500;margin-inline-start:4px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tw{overflow-x:auto}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) table{width:100%;border-collapse:collapse;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) th,:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) td{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:start;white-space:nowrap}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) th{color:var(--mut);font-weight:600;font-size:13px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) td.r,:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) th.r{text-align:end}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) tfoot td{font-weight:700;border-bottom:0;border-top:2px solid var(--bd)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tot{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tot div{flex:1 1 140px;background:var(--bg);border-radius:14px;padding:10px 14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tot span{display:block;font-size:13px;color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-tot b{font-size:20px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-hero0{text-align:center;padding:30px 18px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-hero0 p{color:var(--mut);margin:0 auto 16px;max-width:42ch}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-hero0 .x-go{max-width:320px}
 #xm .mb{max-height:calc(100vh - 32px);overflow-y:auto;display:flex;flex-direction:column;gap:12px;max-width:440px}
 #xm h3{margin:0;font-size:18px}
 #xm label{display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--mut);font-weight:600}
@@ -396,50 +396,50 @@ button.flash{animation:flash .5s ease-out}
 #xm .x-tyr button{min-height:44px;padding:0;border-width:1px;border-radius:10px;color:var(--bad)}
 #xm .x-addt{min-height:44px;border-style:dashed;border-width:1px;font-weight:700}
 /* 3.3v: مؤقت + صور الفواتير */
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pend{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;margin-top:10px;text-align:start;border:1.5px dashed var(--bd);background:var(--card);border-radius:14px;padding:10px 14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pend b{font-size:15px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pend span{font-size:13px;color:var(--mut);font-weight:500}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pend.on{border-style:solid;border-color:var(--pc);background:var(--pbg);box-shadow:inset 0 0 0 1px var(--pc)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pend.on b{color:var(--pc)}
-:is(#xv,#sv,#dv,#rv,#rp),#xm{--pc:#b45309;--pbg:#fff4e0}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) :is(#xv,#sv,#dv,#rv,#rp),:root:not([data-theme="light"]) #xm{--pc:#f5b25a;--pbg:#3a2a12}}
-:root[data-theme="dark"] :is(#xv,#sv,#dv,#rv,#rp),:root[data-theme="dark"] #xm{--pc:#f5b25a;--pbg:#3a2a12}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-inv,#xm .x-inv{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px;padding:10px 12px;border-radius:14px;background:var(--bg)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-invl,#xm .x-invl{font-weight:700;font-size:14px;flex:1 1 100%}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-inv button,#xm .x-inv button{min-height:44px;padding:0 14px;font-size:15px;font-weight:700;border-width:1px;border-radius:12px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-th,#xm .x-th{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 100%}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-th:empty,#xm .x-th:empty{display:none}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pend{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;margin-top:10px;text-align:start;border:1.5px dashed var(--bd);background:var(--card);border-radius:14px;padding:10px 14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pend b{font-size:15px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pend span{font-size:13px;color:var(--mut);font-weight:500}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pend.on{border-style:solid;border-color:var(--pc);background:var(--pbg);box-shadow:inset 0 0 0 1px var(--pc)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pend.on b{color:var(--pc)}
+:is(#xv,#sv,#dv,#rv,#rp,#jd),#xm{--pc:#b45309;--pbg:#fff4e0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) :is(#xv,#sv,#dv,#rv,#rp,#jd),:root:not([data-theme="light"]) #xm{--pc:#f5b25a;--pbg:#3a2a12}}
+:root[data-theme="dark"] :is(#xv,#sv,#dv,#rv,#rp,#jd),:root[data-theme="dark"] #xm{--pc:#f5b25a;--pbg:#3a2a12}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-inv,#xm .x-inv{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px;padding:10px 12px;border-radius:14px;background:var(--bg)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-invl,#xm .x-invl{font-weight:700;font-size:14px;flex:1 1 100%}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-inv button,#xm .x-inv button{min-height:44px;padding:0 14px;font-size:15px;font-weight:700;border-width:1px;border-radius:12px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-th,#xm .x-th{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 100%}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-th:empty,#xm .x-th:empty{display:none}
 .x-tm{position:relative;width:64px;height:64px;border-radius:10px;overflow:hidden;background:var(--card);border:1px solid var(--bd);flex:none}
 .x-tm img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
 .x-tm button{position:absolute;top:2px;inset-inline-end:2px;width:24px;height:24px;min-height:0!important;padding:0!important;border-radius:50%!important;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:12px;line-height:24px}
 .x-tm .ld{display:grid;place-items:center;width:100%;height:100%;font-size:12px;color:var(--mut)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it{cursor:pointer;border-radius:12px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it{cursor:pointer;border-radius:12px}
 /* 3.9v: أزرار تعديل وحذف واضحة + كل المصاريف */
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it{grid-template-columns:40px minmax(0,1fr) auto}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .acts{grid-column:2/-1;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-start}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .acts button{min-height:36px;padding:0 12px;font-size:14px;font-weight:700;border:1px solid var(--bd);background:var(--card);border-radius:10px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .acts .dl{color:var(--bad)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-seg{display:flex;background:var(--bg);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-seg button{flex:1;border:0;background:transparent;min-height:42px;border-radius:10px;font-weight:700;color:var(--mut)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-seg button.on{background:var(--card);color:var(--tx);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-af{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:10px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-af #xAQ{grid-column:1/-1}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-af select{appearance:auto;min-width:0}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-afc{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-dh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:14px 0 2px;padding:6px 10px;border-radius:10px;background:var(--bg);font-weight:800;font-size:14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-dh b{color:var(--out)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-more{width:100%;margin-top:10px;border-style:dashed}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it:hover{background:color-mix(in srgb,var(--ac) 5%,transparent)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it.pd .e{background:var(--pbg)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .bdg{display:inline-block;font-size:12px;font-weight:800;color:var(--pc);background:var(--pbg);border-radius:999px;padding:1px 8px;margin-inline-start:6px;vertical-align:middle}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-it .iv{border:1px solid var(--bd);background:var(--card);min-width:40px;min-height:36px;padding:0 8px;font-size:15px;border-radius:10px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pbox{background:var(--pbg);border:1.5px solid var(--pc);border-radius:20px;padding:14px 16px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pbox h2{margin:0 0 4px;font-size:16px;font-weight:800;color:var(--pc)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pbox p{margin:0 0 10px;font-size:14px;color:var(--mut)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pl{display:flex;flex-direction:column;gap:6px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pl button{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;text-align:start;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:8px 12px;min-height:48px;font-weight:600}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pl button small{display:block;color:var(--mut);font-weight:500;font-size:13px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-pl button b{color:var(--out);white-space:nowrap}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it{grid-template-columns:40px minmax(0,1fr) auto}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .acts{grid-column:2/-1;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-start}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .acts button{min-height:36px;padding:0 12px;font-size:14px;font-weight:700;border:1px solid var(--bd);background:var(--card);border-radius:10px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .acts .dl{color:var(--bad)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-seg{display:flex;background:var(--bg);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-seg button{flex:1;border:0;background:transparent;min-height:42px;border-radius:10px;font-weight:700;color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-seg button.on{background:var(--card);color:var(--tx);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-af{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:10px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-af #xAQ{grid-column:1/-1}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-af select{appearance:auto;min-width:0}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-afc{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-dh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:14px 0 2px;padding:6px 10px;border-radius:10px;background:var(--bg);font-weight:800;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-dh b{color:var(--out)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-more{width:100%;margin-top:10px;border-style:dashed}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it:hover{background:color-mix(in srgb,var(--ac) 5%,transparent)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it.pd .e{background:var(--pbg)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .bdg{display:inline-block;font-size:12px;font-weight:800;color:var(--pc);background:var(--pbg);border-radius:999px;padding:1px 8px;margin-inline-start:6px;vertical-align:middle}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-it .iv{border:1px solid var(--bd);background:var(--card);min-width:40px;min-height:36px;padding:0 8px;font-size:15px;border-radius:10px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pbox{background:var(--pbg);border:1.5px solid var(--pc);border-radius:20px;padding:14px 16px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pbox h2{margin:0 0 4px;font-size:16px;font-weight:800;color:var(--pc)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pbox p{margin:0 0 10px;font-size:14px;color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pl{display:flex;flex-direction:column;gap:6px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pl button{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;text-align:start;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:8px 12px;min-height:48px;font-weight:600}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pl button small{display:block;color:var(--mut);font-weight:500;font-size:13px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-pl button b{color:var(--out);white-space:nowrap}
 #xm select.x-fld{appearance:auto}
 #xm .x-ck{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;background:var(--pbg);color:var(--tx);font-weight:600}
 #xm .x-ck input{width:20px;height:20px;accent-color:var(--pc)}
@@ -469,15 +469,15 @@ button.flash{animation:flash .5s ease-out}
 .dfw.off>input.dfi{position:static;opacity:1;height:auto}
 .dfw.dfmi{width:100%;padding:14px;border-radius:12px;border:2px solid var(--bd);background:var(--bg);color:var(--tx);margin-bottom:12px}
 #rng .dfw{flex:1;font-size:16px;padding:8px;border-radius:10px;border:2px solid var(--bd);background:var(--bg);color:var(--tx);min-height:44px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-daynav .dfw{flex:1 1 140px;width:auto}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-rf label .dfw{flex:1;width:auto}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-daynav .dfw{flex:1 1 140px;width:auto}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-rf label .dfw{flex:1;width:auto}
 /* 3.4v: منو انطى ومنو اشترى */
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-who h3{margin:14px 0 6px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-chips{display:flex;flex-wrap:wrap;gap:6px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--bd);background:var(--card);font-weight:600;font-size:14px}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-chip.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-chip.add{border-style:dashed;color:var(--mut)}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .x-chip.ed{color:var(--mut);padding:0 12px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-who h3{margin:14px 0 6px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-chips{display:flex;flex-wrap:wrap;gap:6px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--bd);background:var(--card);font-weight:600;font-size:14px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-chip.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-chip.add{border-style:dashed;color:var(--mut)}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .x-chip.ed{color:var(--mut);padding:0 12px}
 /* وجبات الشراء (3.8v) */
 #lotm .mb{max-height:calc(100vh - 32px);overflow-y:auto;max-width:460px}
 .lotinfo{background:var(--bg);border-radius:12px;padding:10px 12px;margin:6px 0 14px;font-size:15px;line-height:1.6}
@@ -581,11 +581,11 @@ button.flash{animation:flash .5s ease-out}
 :is(#xv,#rv) .x-it.xr.in .xr-a{color:var(--in)}
 :is(#xv,#rv) .bdg.lk{color:var(--ac);background:var(--acs)}
 .nm{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:600;line-height:1.6;background:hsl(var(--h) 55% 94%);color:hsl(var(--h) 38% 30%);border:1px solid hsl(var(--h) 35% 84%)}
-:is(#xv,#sv,#dv,#rv,#rp) .x-chip.nmc{background:hsl(var(--h) 55% 95%);color:hsl(var(--h) 38% 28%);border-color:hsl(var(--h) 35% 82%)}
-:is(#xv,#sv,#dv,#rv,#rp) .x-chip.nmc.on{background:hsl(var(--h) 42% 44%);color:#fff;border-color:hsl(var(--h) 42% 44%)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nm,:root:not([data-theme="light"]) :is(#xv,#sv,#dv,#rv,#rp) .x-chip.nmc{background:hsl(var(--h) 22% 21%);color:hsl(var(--h) 55% 82%);border-color:hsl(var(--h) 20% 32%)}:root:not([data-theme="light"]) :is(#xv,#sv,#dv,#rv,#rp) .x-chip.nmc.on{background:hsl(var(--h) 40% 58%);color:#0b1216;border-color:hsl(var(--h) 40% 58%)}}
-:root[data-theme="dark"] .nm,:root[data-theme="dark"] :is(#xv,#sv,#dv,#rv,#rp) .x-chip.nmc{background:hsl(var(--h) 22% 21%);color:hsl(var(--h) 55% 82%);border-color:hsl(var(--h) 20% 32%)}
-:root[data-theme="dark"] :is(#xv,#sv,#dv,#rv,#rp) .x-chip.nmc.on{background:hsl(var(--h) 40% 58%);color:#0b1216;border-color:hsl(var(--h) 40% 58%)}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-chip.nmc{background:hsl(var(--h) 55% 95%);color:hsl(var(--h) 38% 28%);border-color:hsl(var(--h) 35% 82%)}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-chip.nmc.on{background:hsl(var(--h) 42% 44%);color:#fff;border-color:hsl(var(--h) 42% 44%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nm,:root:not([data-theme="light"]) :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-chip.nmc{background:hsl(var(--h) 22% 21%);color:hsl(var(--h) 55% 82%);border-color:hsl(var(--h) 20% 32%)}:root:not([data-theme="light"]) :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-chip.nmc.on{background:hsl(var(--h) 40% 58%);color:#0b1216;border-color:hsl(var(--h) 40% 58%)}}
+:root[data-theme="dark"] .nm,:root[data-theme="dark"] :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-chip.nmc{background:hsl(var(--h) 22% 21%);color:hsl(var(--h) 55% 82%);border-color:hsl(var(--h) 20% 32%)}
+:root[data-theme="dark"] :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-chip.nmc.on{background:hsl(var(--h) 40% 58%);color:#0b1216;border-color:hsl(var(--h) 40% 58%)}
 /* 5.0v: ديون الكادر */
 #dv .dv-mv.debt .a{color:var(--bad)}
 #dv .dv-mv.pay{background:color-mix(in srgb,var(--ok) 6%,transparent)}
@@ -616,7 +616,7 @@ button.flash{animation:flash .5s ease-out}
 #xm .rv-prev{background:var(--bg);border-radius:12px;padding:10px 12px;line-height:1.8}#xm .rv-prev .ok{color:var(--ok);font-weight:800}#xm .rv-prev .bad{color:var(--bad);font-weight:800}
 /* زر الوضع الليلي/النهاري بكل الشاشات (3.2v) */
 .thb{min-height:44px;min-width:48px;padding:4px 12px;font-size:21px;line-height:1}
-:is(:is(#xv,#sv,#dv,#rv,#rp),#sv) .thb,.hmt .thb{font-size:21px;padding:4px 12px}
+:is(:is(#xv,#sv,#dv,#rv,#rp,#jd),#sv) .thb,.hmt .thb{font-size:21px;padding:4px 12px}
 .thl{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-start:12px;border-width:1px}
 
 /* ===== 5.6v: الثيم العام مثل برنامج الحضور (TQAttendance): خط Cairo، رمادي فاتح وأبيض، أسود للأزرار الأساسية، لمسة ليموني خفيفة ===== */
@@ -625,10 +625,16 @@ button{border-width:1px;border-radius:12px}
 .top{border-radius:16px;box-shadow:var(--sh)}
 .go{background:var(--ac);border-color:var(--ac);color:var(--on);border-radius:12px}
 .toast{background:var(--ac);color:var(--on);box-shadow:0 8px 24px rgba(15,23,42,.18);border-radius:12px}
-:is(#xv,#sv,#dv,#rv,#rp){--xsh:var(--sh)}
-:is(#xv,#sv,#dv,#rv,#rp) .x-card{border-radius:16px}
-:is(#xv,#sv,#dv,#rv,#rp) .x-tre{--ac:var(--hero);--on:var(--hero-tx);background:var(--hero);color:var(--hero-tx);border-radius:16px}
-:is(#xv,#sv,#dv,#rv,#rp) .x-tre .x-tact button.pri{background:var(--lime);color:#0F172A;border-color:var(--lime)}
+:is(#xv,#sv,#dv,#rv,#rp,#jd){--xsh:var(--sh)}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-card{border-radius:16px}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-tre{--ac:var(--hero);--on:var(--hero-tx);background:var(--hero);color:var(--hero-tx);border-radius:16px}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-tre .x-tact button.pri{background:var(--lime);color:#0F172A;border-color:var(--lime)}
+/* 6.7v: أرقام البطاقات الصغيرة تصغر حسب عرض البطاقة نفسها حتى ما تطلع برا الإطار */
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div{container-type:inline-size;overflow:hidden}
+@supports (font-size:1cqi){:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b{font-size:clamp(11px,12.5cqi,19px)}}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b.two{display:flex;flex-direction:column;gap:2px;white-space:nowrap}
+@supports (font-size:1cqi){:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b.two{font-size:clamp(11px,10cqi,16px)}}
 #xm .mb{border-radius:16px}
 /* مربعات البرامج */
 .tl{--tc:var(--tcl,#475569);background:color-mix(in srgb,var(--tc) 7%,var(--card));border:1px solid color-mix(in srgb,var(--tc) 16%,var(--bd));color:var(--tx);box-shadow:var(--sh);border-radius:16px;padding:14px 16px;font-weight:700;aspect-ratio:1.45}
@@ -718,7 +724,7 @@ button{border-width:1px;border-radius:12px}
 .tb-bc{position:absolute;top:-5px;left:-5px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--bad);color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;box-sizing:border-box}
 .tb-bc[hidden]{display:none}
 body.has-sb{padding-top:var(--tbh);padding-right:var(--sbw)}
-body.has-sb #home,body.has-sb :is(#xv,#sv,#dv,#rv,#rp){top:var(--tbh);right:var(--sbw)}
+body.has-sb #home,body.has-sb :is(#xv,#sv,#dv,#rv,#rp,#jd){top:var(--tbh);right:var(--sbw)}
 body.has-sb :is(#xHome,#spHome,#dvHome,#rvHome,#rpHome,#homeb,#hmOut){display:none}
 body.has-sb :is(.hmt,.top,.x-top) .thb{display:none}
 body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var(--tbh) - 16px)}
@@ -740,7 +746,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 @media (max-width:900px){
  :root{--tbh:56px}
  body.has-sb{padding-right:0}
- body.has-sb #home,body.has-sb :is(#xv,#sv,#dv,#rv,#rp){right:0}
+ body.has-sb #home,body.has-sb :is(#xv,#sv,#dv,#rv,#rp,#jd){right:0}
  .tb{right:0;padding:0 10px;gap:8px}
  .tb-ham{display:grid}
  .tb-search{flex:1 1 auto}.tb-search kbd{display:none}
@@ -782,6 +788,32 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 #xm .mi-ac{display:flex;gap:8px;flex-wrap:wrap}#xm .mi-ac button{flex:1 1 auto;min-height:44px;border-radius:12px;font-weight:800}#xm .mi-ac button.del{color:var(--bad);flex:0 1 auto}
 #xm .mi-ch{display:flex;gap:6px;flex-wrap:wrap}#xm .mi-ch button{min-height:36px;padding:2px 12px;border-radius:999px;font-weight:700;font-size:14px}
 #xm .mi-f textarea{font:inherit;font-size:16px;font-weight:600;border:1.5px solid var(--bd);border-radius:12px;padding:10px;background:var(--card);color:var(--tx);resize:vertical;min-height:64px}
+
+/* 6.7v: جرد المخزن */
+#jd .jd-tools{display:flex;flex-direction:column;gap:10px;padding:12px}
+#jd .jd-tools .x-seg{margin:0}
+#jd .jd-cat h2 small{color:var(--mut);font-weight:700;font-size:14px}
+#jd .jd-r{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--bd)}
+#jd .jd-r:last-child{border-bottom:0}
+#jd .jd-r.done{background:color-mix(in srgb,var(--ok) 5%,transparent)}
+#jd .jd-r.bad{background:color-mix(in srgb,var(--bad) 6%,transparent)}
+#jd .jd-n b{display:block;font-size:16px;overflow-wrap:anywhere}
+#jd .jd-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;font-size:13px;color:var(--mut);margin-top:2px}
+#jd .jd-sub b{display:inline;font-size:14px;color:var(--tx)}
+#jd .jd-xp{min-height:30px!important;padding:0 10px!important;font-size:12.5px!important;font-weight:700;border:1px solid var(--bd);background:var(--card);border-radius:999px!important;color:var(--mut)}
+#jd .jd-xp.new{color:var(--pc);border-color:var(--pc)}
+#jd .jd-ctl{display:flex;align-items:center;gap:4px}
+#jd .jd-pm{min-width:40px;min-height:44px;padding:0!important;font-size:20px!important;font-weight:800;border:1px solid var(--bd);background:var(--card);border-radius:12px}
+#jd .jd-in{width:76px;min-height:44px;text-align:center;font-size:19px;font-weight:800;padding:6px 4px}
+#jd .jd-cv{font-size:19px;min-width:50px;text-align:center}
+#jd .jd-tg{min-width:92px;text-align:center}
+#jd .jd-d{display:inline-block;font-size:12.5px;font-weight:800;border-radius:999px;padding:3px 10px;background:var(--bg);color:var(--mut);white-space:nowrap}
+#jd .jd-d.ok{background:color-mix(in srgb,var(--ok) 13%,var(--card));color:var(--ok)}
+#jd .jd-d.sh{background:color-mix(in srgb,var(--bad) 12%,var(--card));color:var(--bad)}
+#jd .jd-d.ov{background:var(--pbg);color:var(--pc)}
+#jd .jd-d.todo{opacity:.75}
+@media (max-width:560px){#jd .jd-r{grid-template-columns:minmax(0,1fr) auto}#jd .jd-tg{grid-column:1/-1;text-align:start}#jd .jd-in{width:64px}}
+#jd .jd-meta{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}
 </style>
 </head>
 <body>
@@ -865,7 +897,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 </div></section>
 <section class="sys-s" style="--sc:#d97706"><h3>البرنامج</h3><div class="sysl">
 <button id="sysUp">↩ تحديث البرنامج<small>يجيب آخر نسخة من النت ويعيد الفتح</small></button>
-<button id="verb">ℹ️ الإصدار 6.6v Online<small>شنو الجديد بهذه النسخة</small></button>
+<button id="verb">ℹ️ الإصدار 6.7v Online<small>شنو الجديد بهذه النسخة</small></button>
 <button id="wipe" hidden class="sysd">🧹 تصفير البيانات<small>يمسح البيانات اللي تختارها — سوّي نسخة احتياطية قبلها</small></button>
 </div></section>
 </div></div></div>
@@ -879,7 +911,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hmt"><h1><img src="icon-192.png" alt="" class="hm-ic" width="44" height="44"><span class="hm-tt">Manar Derma OS<small id="hmWho"></small></span></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">6.6v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">6.7v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -936,6 +968,11 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="x-rgrid"><div><h3 style="margin-top:0">حسب نوع المصروف</h3><div class="x-tb" id="xRTypes"></div><h3>حسب المُشتري</h3><div class="x-tw"><table><thead><tr><th>الاسم</th><th class="r">العدد</th><th class="r">المبلغ</th><th class="r">منها مؤقت</th></tr></thead><tbody id="xRBuy"></tbody></table></div></div>
 <div><h3 style="margin-top:0">حسب اليوم</h3><div class="x-tw"><table><thead><tr><th>اليوم</th><th class="r">العدد</th><th class="r">المصروف</th></tr></thead><tbody id="xRDays"></tbody><tfoot id="xRDaysF"></tfoot></table></div></div></div>
 </section>
+</div></div>
+<div id="jd" hidden><div class="xw">
+<div class="x-top"><button id="jdHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><button id="jdBk" hidden>→ الجرودات</button><div class="x-brand"><h1 id="jdT">جرد المخزن</h1><div id="jdS">الجرد الشهري للبضاعة</div></div><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
+<div id="jdList" style="display:flex;flex-direction:column;gap:14px"></div>
+<div id="jdRun" style="display:flex;flex-direction:column;gap:14px" hidden></div>
 </div></div>
 <div id="rp" hidden><div class="xw">
 <div class="x-top"><button id="rpHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1 id="rpT">التقارير</h1><div id="rpS"></div></div><button id="rpBk" hidden>☰ كل التقارير</button><button id="rpXls" hidden>📊 Excel</button><button id="rpPdf" hidden>📄 PDF</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
@@ -1002,7 +1039,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hab lg-ab"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
 <div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
 <div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b></div></div>
-<button id="ver" title="شنو الجديد بهذه النسخة؟">6.6v Online · ℹ️ شنو الجديد؟</button>
+<button id="ver" title="شنو الجديد بهذه النسخة؟">6.7v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -1027,13 +1064,14 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 6.6v Online</div><div class="vd">تاريخ التحديث: 03/11/2026</div>
+<div class="vh">ℹ️ 6.7v Online</div><div class="vd">تاريخ التحديث: 09/11/2026</div>
 <ul class="vl">
-<li><b>📄 تقارير PDF بصفحات A4 مرتبة:</b> رجعت صفحات عادية (حتى التكبير يكون مريح)، بس كل قسم يبدي بصفحة جديدة إذا ما يكفيه الباقي من الصفحة — ما ينقطع الشرح ويكمل بالصفحة اللي بعدها.</li>
-<li><b>📑 الأقسام الطويلة:</b> إذا القسم نفسه أطول من صفحة، ينقسم عند بداية يوم أو مورد أو موظف جديد بدل ما ينقطع بالنص.</li>
-<li><b>🖼 الصور</b> تبقى صغيرة داخل صف الحركة وتتكبر بوضوح.</li>
+<li><b>📋 برنامج جديد «جرد المخزن»:</b> تبدي جرد شهري، تختار الفئات، وتحسب البضاعة مادة مادة (بأزرار − و+ أو تكتب العدد). البرنامج يقارن ويه الخزين بالنظام ويبين «✓ مطابق» أو «نقص» أو «زيادة»، وتگدر تصحح تاريخ الإكسباير. بالآخر «إنهاء واعتماد» يصحح الخزين، ويطلع تقرير PDF وExcel. أكثر من جهاز يگدر يجرد سوه، والسحب يستمر عادي أثناء الجرد.</li>
+<li><b>🏪 تقارير الموردين:</b> القوائم المسددة صارت «✓ مسددة مسبقًا» وتنعرض بعد غير المسددة تحت عنوان «قوائم مسددة مسبقًا» ويه مجموعها — بكشف حساب المورد وتقرير كل الموردين والإكسل.</li>
+<li><b>🔢 الأرقام بالبطاقات:</b> الأرقام الكبيرة (مثل مجموع الديون) ما تطلع برا الإطار بعد، تصغر حسب حجم البطاقة.</li>
+<li><b>🔒 خروج تلقائي:</b> إذا انترك حساب الإدارة مفتوح 5 دقايق بدون استخدام، البرنامج يطلع لشاشة الدخول (حتى ما تنشاف الكلف). تغيّر المدة أو تطفيه من الإعدادات ← القفل التلقائي.</li>
 </ul>
-<div class="vold"><b>6.5v Online</b>: صور الحركات بالـ PDF صغيرة داخل الصف وتتكبر بوضوح.<br><b>6.4v Online</b>: تقارير PDF بصفحة وحدة متصلة.<br><b>6.3v Online</b>: تصليح خطأ المزامنة، وفحص كامل للبرنامج.<br><b>6.2v Online</b>: صور المواد أكبر — بطاقات بالصورة، وصورة كبيرة يم لوحة الأرقام.<br><b>6.1v Online</b>: صورة المادة وطريقة السحب، وشاشة برامج أنظف.</div>
+<div class="vold"><b>6.6v Online</b>: تقارير PDF رجعت صفحات A4، وكل قسم يبدي بصفحة جديدة إذا ما يكفيه الباقي.<br><b>6.5v Online</b>: صور الحركات بالـ PDF صغيرة داخل الصف وتتكبر بوضوح.<br><b>6.4v Online</b>: تقارير PDF بصفحة وحدة متصلة.<br><b>6.3v Online</b>: تصليح خطأ المزامنة، وفحص كامل للبرنامج.<br><b>6.2v Online</b>: صور المواد أكبر — بطاقات بالصورة، وصورة كبيرة يم لوحة الأرقام.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -1050,7 +1088,7 @@ var DEF=[
 ["تقشير وعناية",["تقشير اخضر بارد","هياليز مذوب فلر","بالميلادين","برايت اييز","فيوجن هير","ميزو شاين","ماسك ورقي","ميزو فلر فلوريكا","تقشير اخضر بارد للجسم","مقشر للجسم exo"]],
 ["سرنجات وإبر",["سرنجات 3 سيسي","نيدلات 30","سرنجات 1 مل","نيدلات 27","سرنجات 10 مل","مقشر اكسو للشهر القادم"]]];
 function defCats(){return DEF.map(function(d,i){return {n:d[0],c:i,items:d[1].slice()}})}
-var S={emp:null,cat:null,item:null,n:1,edit:false,pin:"",emps:["موظف 1","موظف 2","موظف 3"],cats:defCats(),log:[],stock:{},thr:5,ext:{},exe:{},exs:null,lots:{},sup:{},smv:{},stf:{},sdb:{},rvm:{},rvs:{}};
+var S={emp:null,cat:null,item:null,n:1,edit:false,pin:"",emps:["موظف 1","موظف 2","موظف 3"],cats:defCats(),log:[],stock:{},thr:5,ext:{},exe:{},exs:null,lots:{},sup:{},smv:{},stf:{},sdb:{},rvm:{},rvs:{},jrd:{},jri:{}};
 var $=function(i){return document.getElementById(i)};
 function pad(v){return String(v).padStart(2,"0")}
 function fd(d){return pad(d.getDate())+"/"+pad(d.getMonth()+1)+"/"+d.getFullYear()}
@@ -1059,12 +1097,12 @@ function today(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)
 function tick(){var d=new Date();$("clock").textContent=fd(d)+" · "+ft(d)}
 S.day=today();S.exp=false;S.freq={};S.prev=null;S.hist=[];
 function load(){try{var v=JSON.parse(localStorage.getItem("wd_state")||"null");if(v){S.emps=v.emps||S.emps;S.emp=v.emp||null;S.log=v.log||[];S.pin=v.pin||"";S.stock=v.stock||{};S.thr=(typeof v.thr==="number")?v.thr:5;if(v.cats&&v.cats.length)S.cats=v.cats;
- S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.xpw=(v.xpw&&typeof v.xpw==="object")?v.xpw:{};S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];S.apps=Array.isArray(v.apps)?v.apps:null;S.ext=(v.ext&&typeof v.ext==="object")?v.ext:{};S.exe=(v.exe&&typeof v.exe==="object")?v.exe:{};S.exs=v.exs||null;S.lots=(v.lots&&typeof v.lots==="object")?v.lots:{};S.sup=(v.sup&&typeof v.sup==="object")?v.sup:{};S.spimp=v.spimp||null;S.spreset=v.spreset||null;S.spmig=v.spmig||null;S.org=(v.org&&typeof v.org==="object")?v.org:null;S.usr=(v.usr&&typeof v.usr==="object")?v.usr:null;S.cpend=v.cpend||0;S.smv=(v.smv&&typeof v.smv==="object")?v.smv:{};S.stf=(v.stf&&typeof v.stf==="object")?v.stf:{};S.sdb=(v.sdb&&typeof v.sdb==="object")?v.sdb:{};S.rvm=(v.rvm&&typeof v.rvm==="object")?v.rvm:{};S.rvs=(v.rvs&&typeof v.rvs==="object")?v.rvs:{};S.minf=(v.minf&&typeof v.minf==="object")?v.minf:{};S.rvimp=v.rvimp||null;S.stfseed=v.stfseed||null;
+ S.exp=!!v.exp;S.bk=v.bk||0;S.xp=v.xp||{};S.xpd=(typeof v.xpd==="number")?v.xpd:30;S.xpw=(v.xpw&&typeof v.xpw==="object")?v.xpw:{};S.ce=v.ce||null;S.cpub=v.cpub||null;S.ren=v.ren||[];S.prev=v.prev||null;S.hist=v.hist||[];S.apps=Array.isArray(v.apps)?v.apps:null;S.ext=(v.ext&&typeof v.ext==="object")?v.ext:{};S.exe=(v.exe&&typeof v.exe==="object")?v.exe:{};S.exs=v.exs||null;S.lots=(v.lots&&typeof v.lots==="object")?v.lots:{};S.sup=(v.sup&&typeof v.sup==="object")?v.sup:{};S.spimp=v.spimp||null;S.spreset=v.spreset||null;S.spmig=v.spmig||null;S.org=(v.org&&typeof v.org==="object")?v.org:null;S.usr=(v.usr&&typeof v.usr==="object")?v.usr:null;S.cpend=v.cpend||0;S.smv=(v.smv&&typeof v.smv==="object")?v.smv:{};S.stf=(v.stf&&typeof v.stf==="object")?v.stf:{};S.sdb=(v.sdb&&typeof v.sdb==="object")?v.sdb:{};S.rvm=(v.rvm&&typeof v.rvm==="object")?v.rvm:{};S.rvs=(v.rvs&&typeof v.rvs==="object")?v.rvs:{};S.minf=(v.minf&&typeof v.minf==="object")?v.minf:{};S.jrd=(v.jrd&&typeof v.jrd==="object")?v.jrd:{};S.jri=(v.jri&&typeof v.jri==="object")?v.jri:{};S.rvimp=v.rvimp||null;S.stfseed=v.stfseed||null;
  if(!v.hist&&S.prev&&S.prev.log)S.hist.push({day:S.prev.day,log:S.prev.log});
  if(v.freq){S.freq=v.freq}else{S.log.forEach(function(x){S.freq[x.i]=(S.freq[x.i]||0)+1})}
  if(v.day){S.day=v.day}else{var d=today(),old=S.log.filter(function(x){return x.d!==d});if(old.length)S.hist.push({day:old[0].d,log:old});S.log=S.log.filter(function(x){return x.d===d});S.day=d}}}catch(e){}}
 function save(){FC={};saveLocal();clPush()}
-function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd,xpw:S.xpw,apps:S.apps||null,ext:S.ext,exe:S.exe,exs:S.exs||null,lots:S.lots,sup:S.sup,smv:S.smv,stf:S.stf,sdb:S.sdb,rvm:S.rvm,rvs:S.rvs,minf:S.minf||{},rvimp:S.rvimp||null,stfseed:S.stfseed||null,spimp:S.spimp||null,spreset:S.spreset||null,spmig:S.spmig||null,org:S.org||null,usr:S.usr||null,cpend:S.cpend||0}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
+function saveLocal(){clIds();try{localStorage.setItem("wd_state",JSON.stringify({emps:S.emps,emp:S.emp,log:S.log,pin:S.pin,cats:S.cats,stock:S.stock,thr:S.thr,day:S.day,exp:S.exp,freq:S.freq,prev:S.prev,hist:S.hist,bk:S.bk||0,ce:S.ce,cpub:S.cpub||null,ren:S.ren,xp:S.xp,xpd:S.xpd,xpw:S.xpw,apps:S.apps||null,ext:S.ext,exe:S.exe,exs:S.exs||null,lots:S.lots,sup:S.sup,smv:S.smv,stf:S.stf,sdb:S.sdb,rvm:S.rvm,rvs:S.rvs,minf:S.minf||{},jrd:S.jrd||{},jri:S.jri||{},rvimp:S.rvimp||null,stfseed:S.stfseed||null,spimp:S.spimp||null,spreset:S.spreset||null,spmig:S.spmig||null,org:S.org||null,usr:S.usr||null,cpend:S.cpend||0}))}catch(e){toast("⚠ الذاكرة ممتلئة — صدّر ملفاتك")}}
 function dayLbl(v){var p=v.split("-");return p[2]+"/"+p[1]+"/"+p[0]}
 function hasSt(n){return typeof S.stock[n]==="number"}
 function stLeft(n){return hasSt(n)?S.stock[n]:Infinity}
@@ -1108,6 +1146,8 @@ function showAlerts(){var L=$("alist"),a=lowList(),xl=xpList();L.innerHTML="";
  $("ntb").hidden=!("Notification" in window)||Notification.permission==="granted";
  $("al").hidden=false;L.scrollTop=0}
 function alertModal(msg){var no=$("mno");no.hidden=true;dlg(msg,"",false,function(){no.hidden=false});try{if(navigator.vibrate)navigator.vibrate([200,100,200])}catch(e){}}
+/* 6.7v: تعيين الخزين لعدد معين ويه تصحيح وجبات FIFO (نفس «تصحيح الرصيد») — يستخدمه الجرد */
+function stockSet(name,t){t=Math.max(0,Math.round(+t));var Q=lotQ(name);if(Q){var R=0;Q.forEach(function(h){R+=h.r});var df=t-R;if(df){var ct=Q.length?Q[Q.length-1].c:(lotsOf(name).slice(-1)[0]||{}).c;S.lots["l"+rid()]={i:name,d:today(),ts:Date.now(),q:df,c:df>0?(ct==null?ucNow(name):ct):null,adj:1}}}S.stock[name]=t;if(typeof FC==="object")FC={}}
 function editStock(name){var m=$("mi");m.inputMode="numeric";
  dlg("عدد الخزين في المخزن لـ «"+name+"» (اتركه فارغًا لإلغاء تتبع الخزين):",hasSt(name)?String(S.stock[name]):"",true,function(v){m.inputMode="";if(v===null)return;
   var t=String(v).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).trim();
@@ -1229,7 +1269,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="6.6";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="6.7";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysx").onclick=function(){$("sysm").hidden=true};
 $("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
@@ -1384,6 +1424,7 @@ document.addEventListener("pointerdown",function(e){var b=e.target.closest&&e.ta
 var BI={"list":"<path fill-rule=\"evenodd\" d=\"M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5\"/>","chevron-down":"<path fill-rule=\"evenodd\" d=\"M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708\"/>","chevron-left":"<path fill-rule=\"evenodd\" d=\"M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0\"/>","bar-chart":"<path d=\"M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z\"/>","alarm":"<path d=\"M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z\"/> <path d=\"M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1\"/>","arrow-counterclockwise":"<path fill-rule=\"evenodd\" d=\"M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z\"/> <path d=\"M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466\"/>","arrow-down-circle":"<path fill-rule=\"evenodd\" d=\"M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z\"/>","arrow-right":"<path fill-rule=\"evenodd\" d=\"M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8\"/>","bank":"<path d=\"m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z\"/>","bell":"<path d=\"M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6\"/>","box-arrow-right":"<path fill-rule=\"evenodd\" d=\"M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z\"/> <path fill-rule=\"evenodd\" d=\"M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z\"/>","box-seam":"<path d=\"M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z\"/>","calculator":"<path d=\"M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z\"/> <path d=\"M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z\"/>","calendar-event":"<path d=\"M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z\"/> <path d=\"M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z\"/>","camera":"<path d=\"M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z\"/> <path d=\"M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0\"/>","card-list":"<path d=\"M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z\"/> <path d=\"M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0\"/>","cart3":"<path d=\"M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2\"/>","cash-coin":"<path fill-rule=\"evenodd\" d=\"M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0\"/> <path d=\"M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z\"/> <path d=\"M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z\"/> <path d=\"M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567\"/>","cash-stack":"<path d=\"M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4\"/> <path d=\"M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z\"/>","check2":"<path d=\"M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0\"/>","check2-square":"<path d=\"M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z\"/> <path d=\"m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0\"/>","cloud":"<path d=\"M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z\"/>","credit-card":"<path d=\"M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z\"/> <path d=\"M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z\"/>","eraser":"<path d=\"M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293z\"/>","exclamation-triangle":"<path d=\"M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z\"/> <path d=\"M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z\"/>","file-earmark-pdf":"<path d=\"M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z\"/> <path d=\"M4.603 14.087a.8.8 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.7 7.7 0 0 1 1.482-.645 20 20 0 0 0 1.062-2.227 7.3 7.3 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a11 11 0 0 0 .98 1.686 5.8 5.8 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.86.86 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.7 5.7 0 0 1-.911-.95 11.7 11.7 0 0 0-1.997.406 11.3 11.3 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.8.8 0 0 1-.58.029m1.379-1.901q-.25.115-.459.238c-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361q.016.032.026.044l.035-.012c.137-.056.355-.235.635-.572a8 8 0 0 0 .45-.606m1.64-1.33a13 13 0 0 1 1.01-.193 12 12 0 0 1-.51-.858 21 21 0 0 1-.5 1.05zm2.446.45q.226.245.435.41c.24.19.407.253.498.256a.1.1 0 0 0 .07-.015.3.3 0 0 0 .094-.125.44.44 0 0 0 .059-.2.1.1 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a4 4 0 0 0-.612-.053zM8.078 7.8a7 7 0 0 0 .2-.828q.046-.282.038-.465a.6.6 0 0 0-.032-.198.5.5 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822q.036.167.09.346z\"/>","file-earmark-spreadsheet":"<path d=\"M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5zM3 12v-2h2v2zm0 1h2v2H4a1 1 0 0 1-1-1zm3 2v-2h3v2zm4 0v-2h3v1a1 1 0 0 1-1 1zm3-3h-3v-2h3zm-7 0v-2h3v2z\"/>","floppy":"<path d=\"M11 2H9v3h2z\"/> <path d=\"M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z\"/>","folder":"<path d=\"M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z\"/>","folder2-open":"<path d=\"M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7z\"/>","gear":"<path d=\"M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0\"/> <path d=\"M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z\"/>","graph-up-arrow":"<path fill-rule=\"evenodd\" d=\"M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5\"/>","heart-pulse":"<path d=\"m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5\"/> <path d=\"M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z\"/>","hospital":"<path d=\"M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1zM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25z\"/> <path d=\"M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1zm2 14h2v-3H7zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1zm0-14H6v1h4zm2 7v7h3V8zm-8 7V8H1v7z\"/>","hourglass-split":"<path d=\"M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z\"/>","house":"<path d=\"M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z\"/>","image":"<path d=\"M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0\"/> <path d=\"M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z\"/>","info-circle":"<path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16\"/> <path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0\"/>","key":"<path d=\"M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5\"/> <path d=\"M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0\"/>","lightbulb":"<path d=\"M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1\"/>","link-45deg":"<path d=\"M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z\"/> <path d=\"M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z\"/>","lock":"<path d=\"M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1\"/>","moon-stars":"<path d=\"M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286\"/> <path d=\"M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z\"/>","palette":"<path d=\"M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3\"/> <path d=\"M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7\"/>","pencil":"<path d=\"M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325\"/>","people":"<path d=\"M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4\"/>","person":"<path d=\"M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z\"/>","person-badge":"<path d=\"M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0\"/> <path d=\"M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492z\"/>","pin":"<path d=\"M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224 1.5-.5 1.5s-.5-1.224-.5-1.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.189A6 6 0 0 1 5 6.708V2.277a3 3 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354m1.58 1.408-.002-.001zm-.002-.001.002.001A.5.5 0 0 1 6 2v5a.5.5 0 0 1-.276.447h-.002l-.012.007-.054.03a5 5 0 0 0-.827.58c-.318.278-.585.596-.725.936h7.792c-.14-.34-.407-.658-.725-.936a5 5 0 0 0-.881-.61l-.012-.006h-.002A.5.5 0 0 1 10 7V2a.5.5 0 0 1 .295-.458 1.8 1.8 0 0 0 .351-.271c.08-.08.155-.17.214-.271H5.14q.091.15.214.271a1.8 1.8 0 0 0 .37.282\"/>","plus-lg":"<path fill-rule=\"evenodd\" d=\"M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2\"/>","receipt":"<path d=\"M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27m.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0z\"/> <path d=\"M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5\"/>","search":"<path d=\"M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0\"/>","send":"<path d=\"M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z\"/>","shop":"<path d=\"M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z\"/>","square":"<path d=\"M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z\"/>","star":"<path d=\"M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z\"/>","sun":"<path d=\"M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708\"/>","telephone":"<path d=\"M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z\"/>","tools":"<path d=\"M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z\"/>","trash3":"<path d=\"M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5\"/>","truck":"<path d=\"M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2\"/>","wallet2":"<path d=\"M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z\"/>","x-lg":"<path d=\"M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z\"/>"};
 var BIE={"✎":"pencil","📄":"file-earmark-pdf","💵":"cash-coin","👥":"people","🌙":"moon-stars","☀":"sun","🏠":"house","💾":"floppy","⏳":"hourglass-split","📊":"file-earmark-spreadsheet","📤":"send","🗑":"trash3","🖼":"image","🧮":"calculator","📷":"camera","✕":"x-lg","🧾":"receipt","✓":"check2","📅":"calendar-event","📦":"box-seam","📋":"card-list","💰":"wallet2","🔔":"bell","☁":"cloud","⚙":"gear","📂":"folder2-open","↩":"arrow-counterclockwise","👷":"person-badge","🏦":"bank","💳":"credit-card","🏪":"shop","⏰":"alarm","🔑":"key","🧹":"eraser","🔒":"lock","⚠":"exclamation-triangle","✔":"check2","🚪":"box-arrow-right","🔍":"search","🛒":"cart3","🆕":"plus-lg","🔗":"link-45deg","☑":"check2-square","☐":"square","💡":"lightbulb","👤":"person","🔻":"arrow-down-circle","🛠":"tools","💸":"cash-stack","📌":"pin","🏥":"hospital","ℹ":"info-circle","🎨":"palette","📞":"telephone","＋":"plus-lg","🗂":"folder","🔙":"arrow-right"};
 var BIRE=/^\s*([\u2190-\u2BFF\u2600-\u27BF\uFF0B]|[\uD83C-\uD83E][\uDC00-\uDFFF])\uFE0F?\s*/;
+BI["clipboard2-check"]='<path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z"/><path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z"/><path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>';
 function biSvg(n){return '<svg class="bi" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">'+(BI[n]||"")+'</svg>'}
 function biFix(el){var t=el.firstChild;if(!t)return;if(t.nodeType===1&&t.tagName==="B")return biFix(t);if(t.nodeType!==3)return;var m=t.nodeValue.match(BIRE);if(!m)return;var n=BIE[m[1]];if(!n||!BI[n])return;
  var sp=document.createElement("span");sp.className="bic";sp.innerHTML=biSvg(n);t.nodeValue=t.nodeValue.slice(m[0].length);el.insertBefore(sp,t);if(!t.nodeValue.trim())sp.classList.add("solo")}
@@ -1417,7 +1458,7 @@ $("rsf").onchange=function(){var f=this.files&&this.files[0];if(!f)return;var r=
   sure("استرجاع نسخة "+fd(new Date(o.at))+" · "+ft(new Date(o.at))+(o.org?" — "+o.org:"")+"؟\n📦 "+c.wd+" سجل سحب"+("exe" in st?" · 🧾 "+c.ex+" مصروف":"")+("smv" in st?" · 🏪 "+c.inv+" قائمة":"")+(im.length?" · 📷 "+im.length+" صورة":"")+"\n⚠ ستُستبدل كل البيانات الحالية على هذا الجهاز بالنسخة.",function(){
    var put=im.length&&typeof XU!=="undefined"?im.reduce(function(p,id){return p.then(function(){return XU.imgPut(id,o.imgs[id]).catch(function(){})})},Promise.resolve()):Promise.resolve();
    put.then(function(){
-   try{if(!("ext" in st)){st.ext=S.ext;st.exe=S.exe;st.exs=S.exs}if(!("sup" in st)){st.sup=S.sup;st.smv=S.smv;st.spimp=S.spimp;st.spreset=S.spreset;st.spmig=S.spmig}if(!("org" in st))st.org=S.org;if(!("stf" in st)){st.stf=S.stf;st.sdb=S.sdb;st.stfseed=S.stfseed}if(!("rvm" in st)){st.rvm=S.rvm;st.rvs=S.rvs;st.rvimp=S.rvimp}localStorage.setItem("wd_state",JSON.stringify(st));location.reload()}catch(e){toast("تعذّر الاسترجاع")}})})};
+   try{if(!("ext" in st)){st.ext=S.ext;st.exe=S.exe;st.exs=S.exs}if(!("sup" in st)){st.sup=S.sup;st.smv=S.smv;st.spimp=S.spimp;st.spreset=S.spreset;st.spmig=S.spmig}if(!("org" in st))st.org=S.org;if(!("stf" in st)){st.stf=S.stf;st.sdb=S.sdb;st.stfseed=S.stfseed}if(!("rvm" in st)){st.rvm=S.rvm;st.rvs=S.rvs;st.rvimp=S.rvimp}if(!("jrd" in st)){st.jrd=S.jrd;st.jri=S.jri}localStorage.setItem("wd_state",JSON.stringify(st));location.reload()}catch(e){toast("تعذّر الاسترجاع")}})})};
  r.readAsText(f)};
 try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
 /* ===== المستخدمون والكلفة ===== */
@@ -1529,7 +1570,7 @@ function renCost(a,b){if(CK()){if(a in S.cost){S.cost[b]=S.cost[a];delete S.cost
 function applyRen(){if(!S.ren||!S.ren.length)return;S.ren.forEach(function(r){if(r[0] in S.cost){S.cost[r[1]]=S.cost[r[0]];delete S.cost[r[0]]}svRen(r[0],r[1])});S.ren=[];saveCost()}
 function pwDlg(msg,cb){var i=$("mi");PWF=true;dlg(msg,"",true,function(v){i.type="text";i.setAttribute("autocomplete","off");cb(v)})}
 function enter(role){S.role=role;S.edit=false;$("login").hidden=true;renderAll();upd();drawLog();xpSync();sysNotify(false);if("Notification" in window&&Notification.permission==="granted")xpRegPeriodic();var l=xpList();if(l.length)setTimeout(function(){toast("⏳ "+l.length+" مادة قريبة الانتهاء أو منتهية — اضغط 🔔")},600);showHome()}
-function showLogin(){$("home").hidden=true;$("sv").hidden=true;$("dv").hidden=true;$("rv").hidden=true;$("lotm").hidden=true;$("xv").hidden=true;$("xm").hidden=true;$("xiv").hidden=true;$("apm").hidden=true;S.hmEd=false;S.role=null;S.cost={};S.key=null;S.edit=false;$("hs").hidden=true;$("cm").hidden=true;$("rp").hidden=true;S.uid=null;lgUpd();$("login").hidden=false}
+function showLogin(){$("home").hidden=true;$("sv").hidden=true;$("dv").hidden=true;$("rv").hidden=true;$("lotm").hidden=true;$("xv").hidden=true;$("xm").hidden=true;$("xiv").hidden=true;$("apm").hidden=true;S.hmEd=false;S.role=null;S.cost={};S.key=null;S.edit=false;$("hs").hidden=true;$("cm").hidden=true;$("rp").hidden=true;$("jd").hidden=true;S.uid=null;lgUpd();$("login").hidden=false}
 $("lgE").onclick=function(){enter("emp")};
 $("lgA").onclick=function(){
  if(!S.ce){pwDlg("أول دخول للمحاسب — اختر باسوورد (4 أحرف أو أكثر):",function(p){if(p===null)return;p=p.trim();if(p.length<4){toast("الباسوورد قصير");return}
@@ -1673,7 +1714,7 @@ var FBV="https://www.gstatic.com/firebasejs/12.19.0/";
 /* مشروع Firebase الخاص بالعيادة (هذه معرّفات عامة وليست باسوورد — الحماية برمز الربط السري) */
 var FBCFG={apiKey:"AIzaSyDNQ_O0nhh-FQlm_t2QeXQMi4t8BFMYvPg",authDomain:"sahobat-35dc1.firebaseapp.com",projectId:"sahobat-35dc1",storageBucket:"sahobat-35dc1.firebasestorage.app",messagingSenderId:"408946713435",appId:"1:408946713435:web:9d15ffaa5bb4e0e93df07e"};
 var CL={cfg:null,F:null,db:null,ref:null,mcol:null,base:null,sent:null,ready:false,exists:true,st:"",err:"",ce0:null,lastM:null,lastH:null,uns:[]};
-var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd","apps","exs","spimp","spreset","spmig","org","stfseed","rvimp","usr","cpend"],CLM=["stock","xp","freq","logm","xpw","ext","exe","lots","sup","smv","stf","sdb","rvm","rvs","minf"];
+var CLJ=["emps","pin","cats","thr","day","exp","prev","ce","cpub","ren","xpd","apps","exs","spimp","spreset","spmig","org","stfseed","rvimp","usr","cpend"],CLM=["stock","xp","freq","logm","xpw","ext","exe","lots","sup","smv","stf","sdb","rvm","rvs","minf","jrd","jri"];
 var CLD={emps:null,cats:null,day:null,thr:5,exp:false,prev:null,ce:null,cpub:null,ren:[],xpd:30,pin:"",apps:null,exs:null,spimp:null,spreset:null,spmig:null,org:null,stfseed:null,rvimp:null,usr:null,cpend:0};
 function srt(v){if(Array.isArray(v))return v.map(srt);if(v&&typeof v==="object"){var o={};Object.keys(v).sort().forEach(function(k){if(v[k]!==undefined)o[k]=srt(v[k])});return o}return v}
 function sStr(v){return JSON.stringify(srt(v===undefined?null:v))}
@@ -1701,7 +1742,7 @@ function clSetMain(e){
 function clSetH(h){var a=[];Object.keys(h).sort().forEach(function(k){a=a.concat(JSON.parse(h[k])||[])});S.hist=a}
 function clSaveCfg(){try{if(CL.cfg)localStorage.setItem("wd_cloud",JSON.stringify(CL.cfg));else localStorage.removeItem("wd_cloud")}catch(e){}}
 function clSaveBase(){try{if(CL.base)localStorage.setItem("wd_cloud_base",JSON.stringify(CL.base));else localStorage.removeItem("wd_cloud_base")}catch(e){}}
-function clRender(){FC={};if(!$("home").hidden)drawHome();if(typeof xRender==="function")xRender();if(typeof spRender==="function")spRender();if(typeof dvRender==="function")dvRender();if(typeof rvRender==="function")rvRender();if(S.role){renderAll();upd();drawLog();if(!$("hs").hidden)drawCal()}dayCheck();bellUpd();xpSync()}
+function clRender(){FC={};if(!$("home").hidden)drawHome();if(typeof xRender==="function")xRender();if(typeof spRender==="function")spRender();if(typeof dvRender==="function")dvRender();if(typeof rvRender==="function")rvRender();if(typeof jdRender==="function")jdRender();if(S.role){renderAll();upd();drawLog();if(!$("hs").hidden)drawCal()}dayCheck();bellUpd();xpSync()}
 /* إرسال التغييرات المحلية: الفرق بين الحالة الحالية وآخر ما أُرسل */
 function clPush(){if(!CL.ready||!CL.F)return;var F=CL.F,l=clEnc(),b=CL.sent||CL.base,bt=F.writeBatch(CL.db),n=0;
  try{
@@ -1806,18 +1847,18 @@ cart:'<path d="M3 4h2.5l2.2 11h10.6l2-8H6.6"/><circle cx="9.5" cy="19" r="1.4"/>
 star:'<path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
 tooth:'<path d="M7.5 3.5c-2.5 0-4 2-4 4.5 0 2.2 1 3.4 1.6 5.4.7 2.4.8 7.1 2.6 7.1 1.6 0 1.6-4.5 4.3-4.5s2.7 4.5 4.3 4.5c1.8 0 1.9-4.7 2.6-7.1.6-2 1.6-3.2 1.6-5.4 0-2.5-1.5-4.5-4-4.5-1.9 0-2.8 1-4.5 1s-2.6-1-4.5-1z"/>',
 link:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>'};
-var DEF_APPS=[{id:"wd-emp",k:"wd",n:"تسجيل السحوبات",i:"box",c:0,w:"emp"},{id:"wd-acc",k:"wd",n:"السحوبات والمخزن",i:"calc",c:5,w:"acc"},{id:"exp",k:"xp",n:"مصاريف العيادة",i:"wallet",c:9,w:"acc"},{id:"sup",k:"sp",n:"الموردين والديون",i:"clip",c:3,w:"acc"},{id:"stf",k:"dv",n:"ديون الكادر",i:"users",c:7,w:"acc"},{id:"rev",k:"rv",n:"الإيراد الشهري",i:"chart",c:1,w:"acc"},{id:"rep",k:"rp",n:"التقارير",i:"rep",c:2,w:"acc"}];
+var DEF_APPS=[{id:"wd-emp",k:"wd",n:"تسجيل السحوبات",i:"box",c:0,w:"emp"},{id:"wd-acc",k:"wd",n:"السحوبات والمخزن",i:"calc",c:5,w:"acc"},{id:"exp",k:"xp",n:"مصاريف العيادة",i:"wallet",c:9,w:"acc"},{id:"sup",k:"sp",n:"الموردين والديون",i:"clip",c:3,w:"acc"},{id:"stf",k:"dv",n:"ديون الكادر",i:"users",c:7,w:"acc"},{id:"rev",k:"rv",n:"الإيراد الشهري",i:"chart",c:1,w:"acc"},{id:"rep",k:"rp",n:"التقارير",i:"rep",c:2,w:"acc"},{id:"jard",k:"jd",n:"جرد المخزن",i:"jard",c:6,w:"all"}];
 function apps(){var l=(Array.isArray(S.apps)&&S.apps.length)?S.apps:DEF_APPS;
  /* 3.1v: «مصاريف العيادة» صار داخل البرنامج بدل رابط claude.ai */
  l=l.map(function(a){return a.id==="wd-acc"&&a.n==="تسجيل الحسابات"?Object.assign({},a,{n:"السحوبات والمخزن"}):a});
  l=l.map(function(a){return a.id==="exp"&&a.k!=="xp"?{id:a.id,k:"xp",n:a.n,i:a.i,c:a.c,w:a.w}:a});
  /* 4.0v: البرامج الأساسية الجديدة تنضاف تلقائيًا يم البقية */
  DEF_APPS.forEach(function(d){if(!l.some(function(a){return a.id===d.id}))l=l.concat([d])});return l}
-var ICOBI={"rep": "bar-chart", "box": "box-seam", "calc": "calculator", "wallet": "wallet2", "chart": "graph-up-arrow", "users": "people", "cal": "calendar-event", "clip": "truck", "med": "heart-pulse", "cart": "cart3", "star": "star", "link": "link-45deg"};
+var ICOBI={"jard": "clipboard2-check", "rep": "bar-chart", "box": "box-seam", "calc": "calculator", "wallet": "wallet2", "chart": "graph-up-arrow", "users": "people", "cal": "calendar-event", "clip": "truck", "med": "heart-pulse", "cart": "cart3", "star": "star", "link": "link-45deg"};
 function icoEl(k){var s=document.createElement("span");if(ICOBI[k]&&typeof BI==="object"&&BI[ICOBI[k]]){s.className="ti";s.innerHTML=biSvg(ICOBI[k]);return s}if(ICO[k]){s.className="ti";s.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICO[k]+'</svg>'}else{s.className="te";s.textContent=k||"⭐"}return s}
 /* 5.6v: مربعات البرامج بألوان هادئة + رسمة شفافة تدل على شغل كل برنامج */
 var TP=[["#7C3AED","#A78BFA"],["#047857","#34D399"],["#BE185D","#F472B6"],["#C2410C","#FB923C"],["#0E7490","#22D3EE"],["#1D4ED8","#60A5FA"],["#B45309","#FBBF24"],["#B91C1C","#F87171"],["#92400E","#D6A36A"],["#0F766E","#2DD4BF"],["#475569","#94A3B8"],["#0369A1","#38BDF8"]];
-var WMK={wde:'<path d="M10 24l22-10 22 10v22L32 56 10 46z"/><path d="M10 24l22 10 22-10M32 34v22"/><path d="M21 19l22 10"/>',
+var WMK={jd:'<rect x="14" y="8" width="36" height="50" rx="5"/><path d="M24 8V5h16v3"/><path d="M21 24l3 3 6-6M21 38l3 3 6-6M34 25h10M34 39h10M21 50h23"/>',wde:'<path d="M10 24l22-10 22 10v22L32 56 10 46z"/><path d="M10 24l22 10 22-10M32 34v22"/><path d="M21 19l22 10"/>',
  wda:'<rect x="14" y="6" width="36" height="52" rx="6"/><rect x="20" y="12" width="24" height="10" rx="2"/><path d="M22 31h4M30 31h4M38 31h4M22 39h4M30 39h4M38 39h4M22 47h4M30 47h12"/>',
  xp:'<path d="M8 20h44a4 4 0 0 1 4 4v26a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4z"/><path d="M8 20l34-11 4 11"/><path d="M56 31H45a5 5 0 0 0 0 10h11"/><circle cx="46" cy="36" r="1.6"/>',
  sp:'<path d="M4 15h34v29H4z"/><path d="M38 25h12l10 10v9H38z"/><circle cx="15" cy="48" r="5"/><circle cx="49" cy="48" r="5"/><path d="M11 24h18M11 32h12"/>',
@@ -1826,7 +1867,7 @@ var WMK={wde:'<path d="M10 24l22-10 22 10v22L32 56 10 46z"/><path d="M10 24l22 1
  rv:'<path d="M8 56h50"/><rect x="12" y="38" width="8" height="14" rx="1.5"/><rect x="26" y="29" width="8" height="23" rx="1.5"/><rect x="40" y="20" width="8" height="32" rx="1.5"/><path d="M10 26l14-10 10 6 18-14"/><path d="M44 8h8v8"/>',
  link:'<circle cx="32" cy="32" r="22"/><path d="M10 32h44M32 10c7 7 7 37 0 44M32 10c-7 7-7 37 0 44"/>',
  def:'<path d="M32 8l7 15 16 2-12 11 3 16-14-8-14 8 3-16L9 25l16-2z"/>'};
-function tileDesc(a){return a.k==="wd"?(a.w==="emp"?"تسجيل سحب المواد":"السحوبات والأرصدة والكلف"):a.k==="xp"?"الخزينة والمصاريف اليومية":a.k==="sp"?"قوائم الموردين والتسديدات":a.k==="dv"?"سلف وديون الكادر":a.k==="rv"?"حركات الإيراد والمطابقة":a.k==="rp"?"المخزون والإكسباير والمصاريف والموردين":a.k==="link"?(function(){try{return new URL(a.u).hostname.replace(/^www\./,"")}catch(e){return "رابط"}})():""}
+function tileDesc(a){return a.k==="wd"?(a.w==="emp"?"تسجيل سحب المواد":"السحوبات والأرصدة والكلف"):a.k==="xp"?"الخزينة والمصاريف اليومية":a.k==="sp"?"قوائم الموردين والتسديدات":a.k==="dv"?"سلف وديون الكادر":a.k==="rv"?"حركات الإيراد والمطابقة":a.k==="rp"?"المخزون والإكسباير والمصاريف والموردين":a.k==="jd"?"الجرد الشهري للمخزن":a.k==="link"?(function(){try{return new URL(a.u).hostname.replace(/^www\./,"")}catch(e){return "رابط"}})():""}
 function tileFill(t,a){var g=GR[(a.c|0)%GR.length],p=TP[(a.c|0)%TP.length];t.style.setProperty("--g1",g[0]);t.style.setProperty("--g2",g[1]);t.style.setProperty("--tcl",p[0]);t.style.setProperty("--tcd",p[1]);t.innerHTML="";
  var wk=a.k==="wd"?(a.w==="emp"?"wde":"wda"):a.k==="link"?"link":WMK[a.k]?a.k:"def",w=document.createElement("span");w.className="twm";w.setAttribute("aria-hidden","true");w.innerHTML='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">'+WMK[wk]+'</svg>';t.appendChild(w);
  t.appendChild(icoEl(a.i));var tt=document.createElement("span");tt.className="ttx";var n=document.createElement("span");n.className="tn";n.textContent=a.n||"برنامج";tt.appendChild(n);var dsc=tileDesc(a);if(dsc){var d=document.createElement("span");d.className="tds";d.textContent=dsc;tt.appendChild(d)}t.appendChild(tt)}
@@ -1843,6 +1884,7 @@ function drawHome(){if(!S.role)return;var acc=ACC(),T=$("tiles");T.innerHTML="";
   else if(a.k==="sp"){t.onclick=function(){spOpen()};var oc=typeof spOverdue==="function"?spOverdue():0;if(oc){var bo=document.createElement("span");bo.className="tbd";bo.textContent="⏰ "+oc;bo.title=oc+" قائمة متأخرة";t.appendChild(bo)}}
   else if(a.k==="rv"){t.onclick=function(){rvOpen()}}
   else if(a.k==="rp"){t.onclick=function(){rpOpen()}}
+  else if(a.k==="jd"){t.onclick=function(){jdOpen()};var jo=0;try{Object.keys(S.jrd||{}).forEach(function(k){if(S.jrd[k].st==="open")jo++})}catch(x){}if(jo){var bj=document.createElement("span");bj.className="tbd";bj.textContent="🟢 جاري";bj.title="أكو جرد مفتوح";t.appendChild(bj)}}
   else if(a.k==="dv"){t.onclick=function(){dvOpen()};var dn=0;try{Object.keys(S.stf||{}).forEach(function(k){var b=0;Object.keys(S.sdb||{}).forEach(function(i){var m=S.sdb[i];if(m.sid===k)b+=m.k==="debt"?m.amount:-m.amount});if(b>0)dn++})}catch(x){}if(dn){var bq=document.createElement("span");bq.className="tbd";bq.textContent="👤 "+dn;bq.title=dn+" عليهم دين";t.appendChild(bq)}}
   else if(a.k==="xp"){t.onclick=function(){xOpen()};var pc=typeof xPendCount==="function"?xPendCount():0;if(pc){var bd=document.createElement("span");bd.className="tbd";bd.textContent="⏳ "+pc;bd.title=pc+" مصروف مؤقت لازم تكمله";t.appendChild(bd)}}
   T.appendChild(t)});
@@ -1934,7 +1976,7 @@ function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0F172A",INK="#14202
  function cell(v,col,k){var c=v&&typeof v==="object"?v:{t:v==null?"":String(v)};
   var st="padding:"+(k==="grp"?"8px 8px":"7px 6px")+";vertical-align:top;overflow-wrap:anywhere;text-align:"+(col.a==="l"?"left":col.a==="c"?"center":"right")+";"+(col.n?"direction:ltr;white-space:nowrap;":"")+(c.b||col.b||k==="tot"?"font-weight:800;":"")+(c.col?"color:"+c.col+";":"");
   var td=pe("td",st);
-  if(c.pill)td.appendChild(pe("span","display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:800;color:"+c.pill[0]+";background:"+c.pill[1],c.t));else td.appendChild(document.createTextNode(c.t));
+  if(c.pill)td.appendChild(pe("span","display:inline-block;white-space:nowrap;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:800;color:"+c.pill[0]+";background:"+c.pill[1],c.t));else td.appendChild(document.createTextNode(c.t));
   if(c.s)td.appendChild(pe("div","color:"+MUT+";font-size:11px;font-weight:400;margin-top:1px;direction:rtl;white-space:normal",c.s));
   return td}
  function mkRow(r,sec,i){if(r.k==="grp"){var tr=pe("tr","background:"+SOFT+";border-top:2px solid "+TEAL);tr.dataset.k="grp";
@@ -2135,11 +2177,14 @@ function sysOpen(){if(!canSys())return;var hi=document.querySelector(".sys-hi");
  $("sysOrgS").textContent=org().n?org().n+(org().d?" · "+org().d:""):"الاسم اللي ينكتب بأعلى ملفات PDF وExcel";
  var np=("Notification" in window)?Notification.permission:"no";$("sysNtS").textContent=np==="granted"?"✓ مفعّلة بهذا الجهاز":np==="no"?"الجهاز ما يدعم الإشعارات":"مطفية — اضغط حتى تتفعّل";$("sysNtS").className=np==="granted"?"ok":"";
  $("sysm").hidden=false}
-function lockMin(){try{return +(localStorage.getItem("wd_lock")||0)}catch(e){return 0}}
+/* 6.7v: القفل التلقائي صار مشغّل افتراضيًا بعد 5 دقايق لحساب الإدارة (حتى ما تنشاف الكلف إذا انترك الحساب مفتوح). يتغير أو ينطفي من الإعدادات */
+try{if(!localStorage.getItem("wd_lockv")){if(!+(localStorage.getItem("wd_lock")||0))localStorage.setItem("wd_lock","5");localStorage.setItem("wd_lockv","1")}}catch(e){}
+function lockMin(){try{var v=localStorage.getItem("wd_lock");return v===null?5:+v}catch(e){return 5}}
 var LKT=Date.now();["pointerdown","keydown","touchstart","wheel"].forEach(function(t){document.addEventListener(t,function(){LKT=Date.now()},{passive:true,capture:true})});
-setInterval(function(){var m=lockMin();if(!m||!S.role||$("login")&&!$("login").hidden)return;if(Date.now()-LKT>m*60e3){LKT=Date.now();showLogin();toast("🔒 انقفل البرنامج تلقائيًا — سجّل دخول من جديد")}},20e3);
+function lockChk(){var m=lockMin();if(!m||!S.role||!ACC()||$("login")&&!$("login").hidden)return;if(Date.now()-LKT>m*60e3){LKT=Date.now();try{XU.close()}catch(e){}showLogin();toast("🔒 انقفل البرنامج تلقائيًا بعد "+m+" دقايق بدون استخدام\nسجّل دخول من جديد")}}
+setInterval(lockChk,15e3);document.addEventListener("visibilitychange",function(){if(!document.hidden)lockChk()});window.addEventListener("pageshow",lockChk);window.addEventListener("focus",lockChk);
 $("sysLk").onclick=function(){var el=XU.el,f=el("div",{class:"bk-box"}),cur=lockMin();
- f.appendChild(el("p",{text:"إذا ما أحد استخدم البرنامج هالمدة، يرجع لشاشة الدخول وينطلب الباسوورد من جديد. الإعداد خاص بهذا الجهاز بس."}));
+ f.appendChild(el("p",{text:"إذا انترك حساب الإدارة مفتوح بدون استخدام هالمدة، البرنامج يطلع لشاشة الدخول وينطلب الباسوورد من جديد (حتى ما تنشاف الكلف). حساب «موظف» ما يتقفل. الإعداد خاص بهذا الجهاز بس."}));
  var w=el("div",{class:"bk-acts"});[[0,"مطفي"],[5,"بعد 5 دقايق"],[15,"بعد 15 دقيقة"],[30,"بعد 30 دقيقة"],[60,"بعد ساعة"]].forEach(function(o){
   w.appendChild(el("button",{type:"button",class:o[0]===cur?"ok":"",text:(o[0]===cur?"✓ ":"")+o[1],on:{click:function(){try{localStorage.setItem("wd_lock",String(o[0]))}catch(e){}LKT=Date.now();XU.close();toast(o[0]?"✔ القفل التلقائي بعد "+o[0]+" دقيقة":"✔ انطفى القفل التلقائي")}}}))});
  f.appendChild(w);XU.modal("⏰ القفل التلقائي",f,[{t:"إغلاق"}])};
@@ -2727,7 +2772,7 @@ function payForm(){}
 function delMv(m){U.modal("حذف القائمة؟",el("p",{style:"margin:0;white-space:pre-line",text:(S.sup[m.sid]?S.sup[m.sid].n+" · ":"")+fmn(m.amount)+" دينار · "+dmy(m.date)+(m.no?" · رقم "+m.no:"")+"\nتنحذف ويه صورها."}),
  [{t:"رجوع"},{t:"حذف",cls:"bad",fn:function(){U.imgDrop(m.imgs);U.imgDrop(m.pimgs);delete S.smv[m.id];commit();toast("انحذفت القائمة")}}])}
 /* ---------- Excel ---------- */
-function mvRow(m,a){var st=a.st[m.id];return [dmy(m.date),wd(m.date),m.no||"",m.amount,m.paid?"تم التسديد":st.late?"غير مسدد (متأخرة)":"غير مسدد",m.paid&&m.pdate?dmy(m.pdate):"",m.paid?(m.pm||""):"",m.paid?(m.pnote||""):"",!m.paid&&m.due?dmy(m.due):"",m.note||"",((m.imgs||[]).length+(m.pimgs||[]).length)||""]}
+function mvRow(m,a){var st=a.st[m.id];return [dmy(m.date),wd(m.date),m.no||"",m.amount,m.paid?"مسددة مسبقًا":st.late?"غير مسدد (متأخرة)":"غير مسدد",m.paid&&m.pdate?dmy(m.pdate):"",m.paid?(m.pm||""):"",m.paid?(m.pnote||""):"",!m.paid&&m.due?dmy(m.due):"",m.note||"",((m.imgs||[]).length+(m.pimgs||[]).length)||""]}
 var MVH=["تاريخ القائمة","اليوم","رقم القائمة","المبلغ","الحالة","تاريخ التسديد","طريقة الدفع","ملاحظة التسديد","موعد التسديد","المواد / ملاحظة","صور"];
 function expStatement(sid){var s=S.sup[sid],a=acct(sid);if(!a.M.length){toast("ما أكو قوائم للتصدير");return}
  var r=[MVH.slice()];a.M.forEach(function(m){r.push(mvRow(m,a))});r.push(["المجموع","","",a.ti,"مسدد: "+fmn(a.tp)+" · غير مسدد: "+fmn(a.bal),"","","","","",""]);
@@ -2753,26 +2798,29 @@ function buildPdf(s,a){var W=794,H=1123,PAD=40,TEAL="#0F172A",INK="#14202b",MUT=
    pg.appendChild(hd);
    var cards=pdfEl("div","display:flex;gap:12px;margin:16px 0 18px");
    function card(l,v,c,bg){return pdfEl("div","flex:1;border:1.5px solid "+LINE+";border-radius:14px;padding:12px 16px;background:"+(bg||"#fff"),null,[pdfEl("div","font-size:13px;color:"+MUT+";font-weight:600",l),pdfEl("div","font-size:22px;font-weight:800;margin-top:4px;color:"+(c||INK),v)])}
-   cards.appendChild(card("مجموع القوائم",fmn(a.ti)+" د.ع"));cards.appendChild(card("✓ تم التسديد",fmn(a.tp)+" د.ع",OK,"#eef8f1"));
+   cards.appendChild(card("مجموع القوائم",fmn(a.ti)+" د.ع"));cards.appendChild(card("✓ مسدد مسبقًا",fmn(a.tp)+" د.ع",OK,"#eef8f1"));
    cards.appendChild(a.bal>0?card("غير مسدد (الباقي عليك)",fmn(a.bal)+" د.ع",BAD,"#fdf1ef"):card("الرصيد","✓ كل القوائم مسددة",OK,"#eef8f1"));
    pg.appendChild(cards)}
   else pg.appendChild(pdfEl("div","display:flex;justify-content:space-between;border-bottom:2px solid "+TEAL+";padding-bottom:8px;margin-bottom:12px;font-size:15px",null,[pdfEl("b","color:"+TEAL,"كشف حساب: "+s.n),pdfEl("span","color:"+MUT,"تكملة")]));
   var tb=pdfEl("table","width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed");
-  var cw=[34,82,null,104,118,124],hh=["#","التاريخ","القائمة","المبلغ","الحالة","التسديد"],tr=pdfEl("tr","background:#eef6f7");
+  var cw=[34,82,null,104,128,114],hh=["#","التاريخ","القائمة","المبلغ","الحالة","التسديد"],tr=pdfEl("tr","background:#eef6f7");
   hh.forEach(function(h,i){tr.appendChild(pdfEl("th","padding:9px 6px;text-align:"+(i===3?"left":"right")+";color:"+TEAL+";font-weight:800;border-bottom:2px solid "+TEAL+";"+(cw[i]?"width:"+cw[i]+"px;":""),h))});
   tb.appendChild(pdfEl("thead","",null,[tr]));var body=pdfEl("tbody");tb.appendChild(body);pg.appendChild(tb);
   host.appendChild(pg);return {pg:pg,body:body}}
  var pages=[],cur=newPage(true);pages.push(cur);var i=0,LIM=H-70;
  function fits(){return cur.body.parentNode.getBoundingClientRect().bottom-cur.pg.getBoundingClientRect().top<=LIM}
  function addRow(r){cur.body.appendChild(r);if(!fits()&&cur.body.children.length>1){cur.body.removeChild(r);cur=newPage(false);pages.push(cur);cur.body.appendChild(r)}}
- a.M.forEach(function(m){i++;var x=a.st[m.id]||{},stt=m.paid?["✓ تم التسديد",OK,"#eef8f1"]:x.late?["غير مسدد · متأخرة",BAD,"#fdf1ef"]:["غير مسدد",BAD,"#fdf1ef"];
+ /* 6.7v: غير المسددة أول، وبعدها «قوائم مسددة مسبقًا» تحت عنوان منفصل */
+ var MU=a.M.filter(function(m){return !m.paid}),MP=a.M.filter(function(m){return m.paid}),sepDone=false;
+ MU.concat(MP).forEach(function(m){if(m.paid&&!sepDone){sepDone=true;var sd=pdfEl("td","padding:10px 8px;font-weight:800;color:"+OK+";font-size:14px;border-top:2px solid "+OK,"✓ قوائم مسددة مسبقًا ("+MP.length+") — مجموعها "+fmn(a.tp)+" د.ع");sd.colSpan=6;addRow(pdfEl("tr","background:#eef8f1",null,[sd]))}
+  i++;var x=a.st[m.id]||{},stt=m.paid?["✓ مسددة مسبقًا",OK,"#eef8f1"]:x.late?["غير مسدد · متأخرة",BAD,"#fdf1ef"]:["غير مسدد",BAD,"#fdf1ef"];
   var desc=pdfEl("td","padding:8px 6px;vertical-align:top;overflow-wrap:anywhere",null,[pdfEl("div","font-weight:700","قائمة"+(m.no?" رقم "+m.no:"")),m.note?pdfEl("div","color:"+MUT+";font-size:12px;margin-top:2px",m.note):null,!m.paid&&m.due?pdfEl("div","color:"+(x.late?BAD:MUT)+";font-size:12px","موعد التسديد: "+dmy(m.due)):null]);
   var pc=pdfEl("td","padding:8px 6px;vertical-align:top;font-size:12px;overflow-wrap:anywhere",null,m.paid?[pdfEl("div","font-weight:700;color:"+OK,m.pdate?dmy(m.pdate):"—"),m.pm?pdfEl("div","color:"+MUT,m.pm):null,m.pnote?pdfEl("div","color:"+MUT,m.pnote):null]:[pdfEl("div","color:#9aa7b1","—")]);
   var r=pdfEl("tr","border-bottom:1px solid "+LINE+";"+(m.paid?"background:#f3faf5":(i%2?"":"background:#fafcfd")),null,[pdfEl("td","padding:8px 6px;color:"+MUT+";vertical-align:top",String(i)),pdfEl("td","padding:8px 6px;vertical-align:top;white-space:nowrap",dmy(m.date)),desc,
    pdfEl("td","padding:8px 6px;text-align:left;direction:ltr;vertical-align:top;font-weight:800;color:"+(m.paid?OK:BAD),fmn(m.amount)),
-   pdfEl("td","padding:8px 4px;vertical-align:top",null,[pdfEl("span","display:inline-block;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:800;color:"+stt[1]+";background:"+stt[2],stt[0])]),pc]);
+   pdfEl("td","padding:8px 4px;vertical-align:top",null,[pdfEl("span","display:inline-block;white-space:nowrap;padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:800;color:"+stt[1]+";background:"+stt[2],stt[0])]),pc]);
   addRow(r)});
- var tot=pdfEl("tr","background:#eef6f7;font-weight:800",null,[pdfEl("td","padding:10px 6px",""),pdfEl("td","padding:10px 6px",""),pdfEl("td","padding:10px 6px;color:"+TEAL,"المجموع"),pdfEl("td","padding:10px 6px;direction:ltr;text-align:left",fmn(a.ti)),pdfEl("td","padding:10px 6px;color:"+OK+";font-size:12px","مسدد: "+fmn(a.tp)),pdfEl("td","padding:10px 6px;color:"+(a.bal>0?BAD:OK)+";font-size:12px",a.bal>0?"غير مسدد: "+fmn(a.bal):"✓ كله مسدد")]);
+ var tot=pdfEl("tr","background:#eef6f7;font-weight:800",null,[pdfEl("td","padding:10px 6px",""),pdfEl("td","padding:10px 6px",""),pdfEl("td","padding:10px 6px;color:"+TEAL,"المجموع"),pdfEl("td","padding:10px 6px;direction:ltr;text-align:left",fmn(a.ti)),pdfEl("td","padding:10px 6px;color:"+OK+";font-size:12px","مسدد مسبقًا: "+fmn(a.tp)),pdfEl("td","padding:10px 6px;color:"+(a.bal>0?BAD:OK)+";font-size:12px",a.bal>0?"غير مسدد: "+fmn(a.bal):"✓ كله مسدد")]);
  addRow(tot);
  pages.forEach(function(p,k){p.pg.appendChild(pdfEl("div","position:absolute;left:"+PAD+"px;right:"+PAD+"px;bottom:26px;display:flex;justify-content:space-between;font-size:12px;color:"+MUT+";border-top:1px solid "+LINE+";padding-top:8px",null,[pdfEl("span","",[org().n,orgSub(),"كشف حساب «"+s.n+"»"].filter(Boolean).join(" · ")),pdfEl("span","","صفحة "+(k+1)+" من "+pages.length)]))});
  var pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4",orientation:"portrait"});
@@ -2808,20 +2856,21 @@ function pdfAll(){var L=sups().map(function(s){return {s:s,a:acct(s.id)}}).filte
  if(!L.length){toast("ما أكو قوائم حتى تتصدر");return}
  ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",TEAL="#0F172A",D="—",ti=0,tp=0,tb=0,nu=0,ni=0,deb=0;
  L.sort(function(x,y){return y.a.bal-x.a.bal||x.s.n.localeCompare(y.s.n,"ar")});
- var s1={h:"🏪 ملخص الموردين",cols:[{h:"#",w:28},{h:"المورد"},{h:"القوائم",w:70,a:"c",n:1},{h:"مجموع القوائم",w:112,a:"l",n:1},{h:"✓ المسدد",w:112,a:"l",n:1},{h:"غير المسدد",w:112,a:"l",n:1}],rows:[]};
+ var s1={h:"🏪 ملخص الموردين",cols:[{h:"#",w:28},{h:"المورد"},{h:"القوائم",w:70,a:"c",n:1},{h:"مجموع القوائم",w:112,a:"l",n:1},{h:"✓ المسدد مسبقًا",w:112,a:"l",n:1},{h:"غير المسدد",w:112,a:"l",n:1}],rows:[]};
  L.forEach(function(x,i){var a=x.a,un=a.M.filter(function(m){return !m.paid}).length;ti+=a.ti;tp+=a.tp;tb+=a.bal;nu+=un;ni+=a.M.length;if(a.bal>0)deb++;
   s1.rows.push({c:[String(i+1),{t:x.s.n,b:1,s:[x.s.ph,un?un+" غير مسددة":"كلها مسددة"].filter(Boolean).join(" · ")},String(a.M.length),fmn(a.ti),{t:fmn(a.tp),col:OK},a.bal>0?{t:fmn(a.bal),col:BAD,b:1}:{t:"✓ مسدد",col:OK,b:1}]})});
  s1.rows.push({k:"tot",c:["","المجموع ("+L.length+" مورد)",String(ni),fmn(ti),{t:fmn(tp),col:OK},{t:fmn(tb),col:BAD}]});
  var od=allOverdue(),s2={h:"⏰ القوائم المتأخرة (فات موعد تسديدها)",cols:[{h:"المورد"},{h:"رقم القائمة",w:90},{h:"تاريخ القائمة",w:96,n:1},{h:"موعد التسديد",w:96,n:1},{h:"المبلغ",w:112,a:"l",n:1}],rows:[]};
  od.forEach(function(o){s2.rows.push({c:[{t:o.s.n,b:1},o.m.no||D,dmy(o.m.date),{t:dmy(o.m.due),col:BAD,b:1},{t:fmn(o.rem),col:BAD,b:1}]})});
  if(od.length)s2.rows.push({k:"tot",c:["المجموع ("+od.length+" قائمة)","","","",{t:fmn(od.reduce(function(t,o){return t+o.rem},0)),col:BAD}]});
- var s3={h:"🧾 كل القوائم حسب المورد",cols:[{h:"التاريخ",w:80,n:1},{h:"القائمة"},{h:"الحالة",w:100},{h:"التسديد",w:126},{h:"المبلغ",w:100,a:"l",n:1}],rows:[]};
+ var s3={h:"🧾 كل القوائم حسب المورد",cols:[{h:"التاريخ",w:80,n:1},{h:"القائمة"},{h:"الحالة",w:122},{h:"التسديد",w:112},{h:"المبلغ",w:96,a:"l",n:1}],rows:[]};
  function cut(t,n){t=(t||"").trim();return t.length>n?t.slice(0,n-1)+"…":t}
  L.forEach(function(x){var a=x.a;s3.rows.push({k:"grp",c:["🏪 "+x.s.n,a.bal>0?"غير مسدد: "+fmn(a.bal):"✓ كله مسدد"]});
-  a.M.forEach(function(m){var st=a.st[m.id]||{};s3.rows.push({bg:m.paid?"#f3faf5":"",im:(m.imgs||[]).concat(m.pimgs||[]),cap:x.s.n+" · قائمة"+(m.no?" رقم "+m.no:"")+" · "+dmy(m.date)+" · "+fmn(m.amount)+(m.paid?" · مسددة":""),c:[dmy(m.date),{t:"قائمة"+(m.no?" رقم "+m.no:""),b:1,s:[m.note,!m.paid&&m.due?"موعدها "+dmy(m.due):""].filter(Boolean).join(" · ")},
-   m.paid?{t:"✓ تم التسديد",pill:[OK,"#eef8f1"]}:{t:st.late?"⏰ متأخرة":"غير مسدد",pill:[BAD,"#fdf1ef"]},m.paid?{t:m.pdate?dmy(m.pdate):D,col:OK,s:[m.pm,cut(m.pnote,34)].filter(Boolean).join(" · ")}:{t:D,col:"#9aa7b1"},{t:fmn(m.amount),b:1,col:m.paid?OK:BAD}]})})});
+  var MU=a.M.filter(function(m){return !m.paid}),MP=a.M.filter(function(m){return m.paid}),sep=false;
+  MU.concat(MP).forEach(function(m){var st=a.st[m.id]||{};if(m.paid&&!sep){sep=true;s3.rows.push({bg:"#eef8f1",c:["",{t:"✓ قوائم مسددة مسبقًا ("+MP.length+")",b:1,col:OK},"","",{t:fmn(a.tp),b:1,col:OK}]})}s3.rows.push({bg:m.paid?"#f3faf5":"",im:(m.imgs||[]).concat(m.pimgs||[]),cap:x.s.n+" · قائمة"+(m.no?" رقم "+m.no:"")+" · "+dmy(m.date)+" · "+fmn(m.amount)+(m.paid?" · مسددة":""),c:[dmy(m.date),{t:"قائمة"+(m.no?" رقم "+m.no:""),b:1,s:[m.note,!m.paid&&m.due?"موعدها "+dmy(m.due):""].filter(Boolean).join(" · ")},
+   m.paid?{t:"✓ مسددة مسبقًا",pill:[OK,"#eef8f1"]}:{t:st.late?"⏰ متأخرة":"غير مسدد",pill:[BAD,"#fdf1ef"]},m.paid?{t:m.pdate?dmy(m.pdate):D,col:OK,s:[m.pm,cut(m.pnote,34)].filter(Boolean).join(" · ")}:{t:D,col:"#9aa7b1"},{t:fmn(m.amount),b:1,col:m.paid?OK:BAD}]})})});
  pdfReport({title:"تقرير قوائم الموردين والديون",sub:"لغاية "+wd(tdy())+" "+dmy(tdy()),info:[L.length+" مورد · "+ni+" قائمة · "+nu+" غير مسددة"+(od.length?" · "+od.length+" متأخرة":"")],
-  cards:[["مجموع القوائم",fmn(ti)+" د.ع"],["✓ تم التسديد",fmn(tp)+" د.ع",OK,"#eef8f1"],["غير مسدد (الباقي عليك)",fmn(tb)+" د.ع",BAD,"#fdf1ef"],["موردين عليهم دين",String(deb),TEAL]],
+  cards:[["مجموع القوائم",fmn(ti)+" د.ع"],["✓ مسدد مسبقًا",fmn(tp)+" د.ع",OK,"#eef8f1"],["غير مسدد (الباقي عليك)",fmn(tb)+" د.ع",BAD,"#fdf1ef"],["موردين عليهم دين",String(deb),TEAL]],
   secs:[s1,s2,s3],name:"قوائم الموردين - "+tdy()})})}
 g("spPdf").onclick=pdfAll;
 })();
@@ -2880,7 +2929,7 @@ function drawP(){var s=S.stf[P.sid];if(!s){P.view="list";return drawList()}var a
  g("dvName").textContent=s.n;g("dvInfo").textContent=[s.ph?"📞 "+s.ph:"",s.note].filter(Boolean).join(" · ");
  var B=g("dvPSum");B.innerHTML="";
  B.appendChild(el("div",{class:"x-tre"},[el("div",{},[el("div",{class:"x-lbl",text:a.bal>=0?"الباقي عليه":"إله (سدد زيادة)"}),el("div",{class:"x-big num"},[fmn(Math.abs(a.bal)),el("small",{text:"دينار"})])]),
-  el("div",{style:"min-width:0"},[el("div",{class:"x-meta"},[el("div",{},[el("span",{class:"x-lbl",text:"مجموع الديون"}),el("b",{class:"num",text:fmn(a.td)})]),el("div",{},[el("span",{class:"x-lbl",text:"المسدد"}),el("b",{class:"num",text:fmn(a.tp)})]),el("div",{},[el("span",{class:"x-lbl",text:"منين انطى"}),el("b",{class:"num",text:"🏦 "+fmn(a.tr)+" · 💰 "+fmn(a.rv)})])])]),
+  el("div",{style:"min-width:0"},[el("div",{class:"x-meta"},[el("div",{},[el("span",{class:"x-lbl",text:"مجموع الديون"}),el("b",{class:"num",text:fmn(a.td)})]),el("div",{},[el("span",{class:"x-lbl",text:"المسدد"}),el("b",{class:"num",text:fmn(a.tp)})]),el("div",{},[el("span",{class:"x-lbl",text:"منين انطى"}),el("b",{class:"num two"},[el("span",{text:"🏦 خزينة "+fmn(a.tr)}),el("span",{text:"💰 إيراد "+fmn(a.rv)})])])])]),
   el("div",{class:"x-tact"},[el("button",{class:"pri",text:"+ دين",on:{click:function(){debtForm(null,P.sid)}}}),el("button",{text:"💵 تسديد",on:{click:function(){payForm(null,P.sid)}}}),el("button",{text:"📄 كشف PDF",on:{click:function(){pdfOne(P.sid)}}}),el("button",{text:"📊 Excel",on:{click:function(){expOne(P.sid)}}})])]));
  var R=g("dvMv");R.innerHTML="";
  if(!a.M.length){R.appendChild(el("div",{class:"x-empty",text:"ما أكو ديون لهذا الموظف. اضغط «+ دين»."}));return}
@@ -3116,6 +3165,137 @@ g("rvPrev").onclick=function(){P.mon=mShift(P.mon,-1);render()};g("rvNext").oncl
 g("rvPdf").onclick=function(){pdfMon(P.mon)};
 })();
 
+/* ===== 6.7v: «جرد المخزن» (#jd، k:"jd") — الجرد الشهري للبضاعة =====
+   S.jrd = {id:{mon:"YYYY-MM", d:تاريخ البداية, st:"open"|"done", cats:[الفئات], blind:true/false, by, ts, done, ap:true إذا انطبقت الفروقات}}
+   S.jri = {"<id>|<المادة>":{c:العدد الفعلي, s:رقم النظام لحظة العد, t, by, x:إكسباير جديد}} — كل مادة مفتاح منفصل حتى يگدر أكثر من جهاز يجرد سوه بدون ما يمسح واحد الثاني.
+   الفرق = c − s. الاعتماد: الخزين الجديد = الخزين الحالي + الفرق (يعني السحوبات اللي صارت بعد العد تبقى محسوبة)، وتصحيح وجبات FIFO مثل «تصحيح الرصيد» (stockSet). */
+var jdOpen,jdRender,jdBack;
+(function(){
+var U=XU,el=U.el,fmn=U.fmn,dmy=U.dmy,wd=U.wd,tdy=U.tdy;
+var MONS=["كانون الثاني","شباط","آذار","نيسان","أيار","حزيران","تموز","آب","أيلول","تشرين الأول","تشرين الثاني","كانون الأول"];
+var P={view:"list",id:null,f:"all",q:""};
+function g(i){return document.getElementById(i)}
+function mName(m){var p=(m||"").split("-");return p.length<2?m:MONS[+p[1]-1]+" "+p[0]}
+function who(){var u=S.uid&&S.usr&&S.usr[S.uid];return u?u.n:(ACC()?"الإدارة":(S.emp||"موظف"))}
+function J(id){return (S.jrd||{})[id]}
+function items(j){var L=[];S.cats.forEach(function(c){if(j.cats&&j.cats.length&&j.cats.indexOf(c.n)<0)return;c.items.forEach(function(n){L.push({n:n,cat:c.n})})});return L}
+function rec(id,n){return (S.jri||{})[id+"|"+n]||null}
+function openId(){var o=null;Object.keys(S.jrd||{}).forEach(function(id){var j=S.jrd[id];if(j.st==="open"&&(!o||j.ts>S.jrd[o].ts))o=id});return o}
+function stat(id){var j=J(id),L=items(j),r={tot:L.length,cnt:0,ok:0,sh:0,ov:0,shq:0,ovq:0,shv:0,ovv:0,nos:0,L:L};
+ L.forEach(function(x){var q=rec(id,x.n);if(!q)return;r.cnt++;if(q.s==null){r.nos++;return}var d=q.c-q.s,u=CK()?ucNow(x.n):null;
+  if(!d)r.ok++;else if(d<0){r.sh++;r.shq+=-d;if(u!=null)r.shv+=-d*u}else{r.ov++;r.ovq+=d;if(u!=null)r.ovv+=d*u}});return r}
+function commit(){save();render()}
+/* ---------- القائمة ---------- */
+function drawList(){var B=g("jdList");B.innerHTML="";var oid=openId();
+ if(oid){var j=J(oid),r=stat(oid),pc=r.tot?Math.round(r.cnt/r.tot*100):0;
+  B.appendChild(el("div",{class:"x-tre"},[el("div",{},[el("div",{class:"x-lbl",text:"🟢 جرد جاري — "+mName(j.mon)}),el("div",{class:"x-big num"},[r.cnt+" / "+r.tot,el("small",{text:"مادة انحسبت"})]),el("div",{class:"x-bar"},[el("b",{style:"width:"+pc+"%"})])]),
+   el("div",{style:"min-width:0"},[el("div",{class:"x-meta"},[el("div",{},[el("span",{class:"x-lbl",text:"مطابق"}),el("b",{class:"num",text:String(r.ok)})]),el("div",{},[el("span",{class:"x-lbl",text:"نقص"}),el("b",{class:"num",text:String(r.sh)})]),el("div",{},[el("span",{class:"x-lbl",text:"زيادة"}),el("b",{class:"num",text:String(r.ov)})])])]),
+   el("div",{class:"x-tact"},[el("button",{class:"pri",text:"▶ كمّل الجرد",on:{click:function(){openRun(oid)}}})])]))}
+ else B.appendChild(el("div",{class:"x-card x-hero0"},[el("h2",{text:"📋 جرد المخزن"}),el("p",{text:"تحسب البضاعة الموجودة فعليًا بالمخزن مادة مادة، والبرنامج يقارنها ويه الخزين المسجل ويطلعلك النقص والزيادة. بالآخر تعتمد الجرد فيتصحح الخزين، وتطلع تقرير PDF."}),
+  ACC()?el("button",{class:"x-go",text:"＋ ابدأ جرد جديد",on:{click:newForm}}):el("p",{text:"ما أكو جرد مفتوح هسه — الإدارة تبدي الجرد."})]));
+ if(oid&&ACC())B.appendChild(el("div",{style:"display:flex;justify-content:flex-start"},[el("button",{text:"＋ جرد جديد ثاني",on:{click:newForm}})]));
+ var H=Object.keys(S.jrd||{}).filter(function(id){return S.jrd[id].st==="done"}).sort(function(a,b){return (S.jrd[b].done||"").localeCompare(S.jrd[a].done||"")||S.jrd[b].ts-S.jrd[a].ts});
+ var C=el("section",{class:"x-card"},[el("h2",{text:"📚 الجرودات السابقة"})]);
+ if(!H.length)C.appendChild(el("div",{class:"x-empty",text:"ما أكو جرد مكتمل بعد."}));
+ H.forEach(function(id){var j=J(id),r=stat(id);C.appendChild(el("div",{class:"x-it",role:"button",tabindex:"0",on:{click:function(){openRun(id)},keydown:function(e){if(e.key==="Enter")openRun(id)}}},[
+  el("span",{class:"e",text:"📋"}),el("div",{style:"min-width:0"},[el("div",{class:"t",text:"جرد "+mName(j.mon)}),el("div",{class:"s",text:[ "اكتمل "+dmy(j.done),r.cnt+" مادة",r.sh?"نقص "+r.sh:"",r.ov?"زيادة "+r.ov:"",!r.sh&&!r.ov?"كله مطابق ✓":"",j.ap?"انطبق على الخزين":"ما انطبق"].filter(Boolean).join(" · ")})]),
+  el("span",{class:"a num"+(r.sh?"":" ok"),text:r.sh?"−"+r.shq:"✓"})]))});
+ B.appendChild(C)}
+/* ---------- جرد جديد ---------- */
+function newForm(){if(!ACC())return;var f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),sel={},blind=false;S.cats.forEach(function(c){sel[c.n]=true});
+ var mon=el("input",{class:"x-fld",id:"jdM",type:"month"});mon.value=tdy().slice(0,7);
+ var cb=el("div",{class:"sp-qb"});function drawC(){cb.innerHTML="";S.cats.forEach(function(c){cb.appendChild(el("button",{type:"button",class:sel[c.n]?"on":"",text:(sel[c.n]?"✓ ":"")+c.n+" ("+c.items.length+")",on:{click:function(){sel[c.n]=!sel[c.n];drawC()}}}))})}drawC();
+ var bl=el("div",{class:"sp-ps"}),b0=el("button",{type:"button",text:"👁 يبين رقم النظام"}),b1=el("button",{type:"button",text:"🙈 جرد أعمى"});bl.appendChild(b0);bl.appendChild(b1);
+ var hint=el("div",{class:"dv-hint"});function ps(){b0.classList.toggle("on",!blind);b1.classList.toggle("on",blind);hint.textContent=blind?"اللي يحسب ما يشوف رقم النظام لحد ما يكتب العدد — أدق وأحسن للجرد.":"رقم النظام يبين يم كل مادة أثناء العد."}
+ b0.onclick=function(){blind=false;ps()};b1.onclick=function(){blind=true;ps()};ps();
+ f.appendChild(el("label",{},["شهر الجرد",mon]));
+ f.appendChild(el("div",{class:"sp-pw"},[el("span",{class:"sp-pl",text:"الفئات اللي تنجرد"}),cb]));
+ f.appendChild(el("div",{class:"sp-pw"},[el("span",{class:"sp-pl",text:"طريقة العد"}),bl,hint]));
+ f.appendChild(el("p",{style:"margin:0;color:var(--mut);font-size:14px",text:"رقم النظام ينحفظ لحظة ما تكتب عدد كل مادة، فالسحب يگدر يستمر عادي أثناء الجرد."}));
+ U.modal("📋 جرد جديد",f,[{t:"إلغاء"},{t:"▶ ابدأ الجرد",cls:"ok",fn:function(){var cats=S.cats.filter(function(c){return sel[c.n]}).map(function(c){return c.n});if(!cats.length){toast("اختر فئة وحدة على الأقل");return false}
+  var id="j"+rid();S.jrd[id]={mon:mon.value||tdy().slice(0,7),d:tdy(),st:"open",cats:cats.length===S.cats.length?[]:cats,blind:blind,by:who(),ts:Date.now()};save();toast("✔ بدأ جرد "+mName(S.jrd[id].mon));openRun(id)}}])}
+/* ---------- شاشة العد ---------- */
+function openRun(id){P.view="run";P.id=id;P.f="all";P.q="";render();g("jd").scrollTop=0}
+function setCount(id,n,v){var k=id+"|"+n,j=J(id);if(!j||j.st!=="open")return;
+ if(v===""||v==null){delete S.jri[k]}
+ else{var c=Math.max(0,Math.round(+v));if(isNaN(c))return;var o=S.jri[k]||{};S.jri[k]=Object.assign({},o,{c:c,s:hasSt(n)?S.stock[n]:null,t:Date.now(),by:who()})}
+ save()}
+function diffTag(q,blind){if(!q)return el("span",{class:"jd-d todo",text:"ما انحسبت"});if(q.s==null)return el("span",{class:"jd-d",text:"بدون خزين بالنظام"});var d=q.c-q.s;
+ return d===0?el("span",{class:"jd-d ok",text:"✓ مطابق"}):el("span",{class:"jd-d "+(d<0?"sh":"ov"),text:(d<0?"نقص ":"زيادة +")+Math.abs(d)})}
+function itemRow(id,x,open){var j=J(id),q=rec(id,x.n),sys=hasSt(x.n)?S.stock[x.n]:null,showSys=!j.blind||!!q||!open,xp=hasXp(x.n)?S.xp[x.n]:null;
+ var inp=el("input",{class:"x-fld jd-in num",type:"text",inputmode:"numeric",autocomplete:"off",placeholder:"العدد","aria-label":"العدد الفعلي لـ "+x.n});if(q)inp.value=String(q.c);
+ var tag=el("span",{class:"jd-tg"},[diffTag(q)]);
+ function upd(){var v=inp.value.replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).replace(/[^\d]/g,"");inp.value=v;setCount(id,x.n,v);var nq=rec(id,x.n);tag.innerHTML="";tag.appendChild(diffTag(nq));sysEl.textContent=!j.blind||nq?(nq&&nq.s!=null?String(nq.s):(sys==null?"—":String(sys))):"؟";r.classList.toggle("done",!!nq);r.classList.toggle("bad",!!(nq&&nq.s!=null&&nq.c!==nq.s));hdr()}
+ inp.addEventListener("change",upd);inp.addEventListener("keydown",function(e){if(e.key==="Enter"){upd();var all=Array.prototype.slice.call(g("jdRun").querySelectorAll(".jd-in")),i=all.indexOf(inp);if(all[i+1])all[i+1].focus();else inp.blur()}});
+ function bump(k){var c=inp.value===""?(q?q.c:(sys==null?0:sys)):+inp.value;inp.value=String(Math.max(0,c+k));upd()}
+ var sysEl=el("b",{class:"num",text:showSys?(q&&q.s!=null?String(q.s):(sys==null?"—":String(sys))):"؟"});
+ var xb=el("button",{type:"button",class:"jd-xp"+(q&&q.x?" new":""),text:"📅 "+(q&&q.x?dmy(q.x)+" (جديد)":xp?dmy(xp):"إكسباير"),on:{click:function(){if(!open)return;var di=el("input",{class:"x-fld",type:"date",id:"jdX"});di.value=q&&q.x||xp||"";
+  U.modal("📅 إكسباير «"+x.n+"»",el("div",{style:"display:flex;flex-direction:column;gap:10px"},[el("p",{style:"margin:0;color:var(--mut)",text:"إذا لگيت تاريخ إكسباير مختلف أثناء الجرد اكتبه هنا، وينطبق على المادة ويه اعتماد الجرد."}),el("label",{},["تاريخ الإكسباير",di])]),
+   [{t:"إلغاء"},{t:"حفظ",cls:"ok",fn:function(){var k=id+"|"+x.n,o=S.jri[k];if(!o){toast("اكتب العدد أول");return false}o=Object.assign({},o);if(di.value&&di.value!==xp)o.x=di.value;else delete o.x;S.jri[k]=o;save();render()}}])}}});
+ var r=el("div",{class:"jd-r"+(q?" done":"")+(q&&q.s!=null&&q.c!==q.s?" bad":"")},[
+  el("div",{class:"jd-n"},[el("b",{text:x.n}),el("div",{class:"jd-sub"},[el("span",{},["بالنظام: ",sysEl]),xb])]),
+  open?el("div",{class:"jd-ctl"},[el("button",{type:"button",class:"jd-pm",text:"−",on:{click:function(){bump(-1)}},"aria-label":"ناقص واحد"}),inp,el("button",{type:"button",class:"jd-pm",text:"+",on:{click:function(){bump(1)}},"aria-label":"زايد واحد"})]):el("b",{class:"jd-cv num",text:q?String(q.c):"—"}),
+  tag]);
+ return r}
+var hdr=function(){};
+function drawRun(){var id=P.id,j=J(id);if(!j){P.view="list";return drawList()}var open=j.st==="open",R=g("jdRun");R.innerHTML="";var r=stat(id);
+ g("jdT").textContent="جرد "+mName(j.mon);g("jdS").textContent=(open?"جاري · ":"مكتمل "+dmy(j.done)+" · ")+"بدأ "+dmy(j.d)+(j.by?" · "+j.by:"")+(j.cats&&j.cats.length?" · "+j.cats.join("، "):" · كل الفئات");
+ var H=el("div");R.appendChild(H);
+ hdr=function(){var r=stat(id),pc=r.tot?Math.round(r.cnt/r.tot*100):0;H.innerHTML="";
+  var meta=[["انحسبت",r.cnt+" / "+r.tot],["✓ مطابق",String(r.ok)],["نقص"+(r.shq?" ("+r.shq+" قطعة)":""),String(r.sh)],["زيادة"+(r.ovq?" ("+r.ovq+" قطعة)":""),String(r.ov)]];if(CK()&&(r.shv||r.ovv))meta.push(["قيمة النقص",fmn(r.shv)]);
+  H.appendChild(el("div",{class:"x-tre"},[el("div",{},[el("div",{class:"x-lbl",text:open?"التقدّم":"النتيجة"}),el("div",{class:"x-big num"},[pc+"%",el("small",{text:"من المواد"})]),el("div",{class:"x-bar"},[el("b",{style:"width:"+pc+"%"})])]),
+   el("div",{style:"min-width:0"},[el("div",{class:"x-meta jd-meta"},meta.map(function(m){return el("div",{},[el("span",{class:"x-lbl",text:m[0]}),el("b",{class:"num",text:m[1]})])}))]),
+   el("div",{class:"x-tact"},(open&&ACC()?[el("button",{class:"pri",text:"✓ إنهاء واعتماد الجرد",on:{click:function(){finish(id)}}})]:[]).concat([el("button",{text:"📄 تقرير PDF",on:{click:function(){pdf(id)}}}),el("button",{text:"📊 Excel",on:{click:function(){xls(id)}}})]).concat(ACC()?[el("button",{text:open?"🗑 إلغاء الجرد":"🗑 حذف",on:{click:function(){del(id)}}})]:[]))]))};
+ hdr();
+ var seg=el("div",{class:"x-seg"});[["all","الكل"],["todo","ما انحسبت"],["diff","بيها فرق"]].forEach(function(o){seg.appendChild(el("button",{type:"button",class:P.f===o[0]?"on":"",text:o[1],on:{click:function(){P.f=o[0];drawRun()}}}))});
+ var q=el("input",{class:"x-fld",type:"search",placeholder:"🔍 بحث عن مادة","aria-label":"بحث عن مادة",autocomplete:"off"});q.value=P.q;q.addEventListener("input",function(){P.q=q.value;list()});
+ R.appendChild(el("section",{class:"x-card jd-tools"},[seg,q,open&&j.blind?el("div",{class:"dv-hint",text:"🙈 جرد أعمى: رقم النظام يبين بعد ما تكتب العدد."}):null]));
+ var LW=el("div");R.appendChild(LW);
+ function list(){LW.innerHTML="";var qq=P.q.trim().toLowerCase(),any=false;
+  S.cats.forEach(function(c){if(j.cats&&j.cats.length&&j.cats.indexOf(c.n)<0)return;var rows=c.items.filter(function(n){var rr=rec(id,n);if(qq&&n.toLowerCase().indexOf(qq)<0)return false;if(P.f==="todo")return !rr;if(P.f==="diff")return rr&&rr.s!=null&&rr.c!==rr.s;return true});
+   if(!rows.length)return;any=true;var dn=c.items.filter(function(n){return rec(id,n)}).length;
+   var sec=el("section",{class:"x-card jd-cat"},[el("h2",{},[c.n,el("small",{text:" "+dn+" / "+c.items.length})])]);rows.forEach(function(n){sec.appendChild(itemRow(id,{n:n,cat:c.n},open))});LW.appendChild(sec)});
+  if(!any)LW.appendChild(el("div",{class:"x-card x-empty",text:P.f==="todo"?"✓ كل المواد انحسبت":P.f==="diff"?"✓ ما أكو فروقات":"ما أكو مواد تطابق البحث"}))}
+ list()}
+/* ---------- إنهاء واعتماد ---------- */
+function finish(id){if(!ACC())return;var j=J(id),r=stat(id),f=el("div",{class:"bk-box"});
+ var D=r.L.map(function(x){return {x:x,q:rec(id,x.n)}}).filter(function(o){return o.q&&(o.q.s==null||o.q.c!==o.q.s||o.q.x)});
+ f.appendChild(el("p",{text:"انحسبت "+r.cnt+" من "+r.tot+" مادة"+(r.cnt<r.tot?" — المواد اللي ما انحسبت تبقى مثل ما هي.":".")}));
+ if(D.length){var ul=el("ul");D.slice(0,40).forEach(function(o){var d=o.q.s==null?null:o.q.c-o.q.s;ul.appendChild(el("li",{text:o.x.n+": "+(d==null?"يصير "+o.q.c+" (ما چان بيه خزين)":d?(d<0?"نقص "+(-d):"زيادة +"+d)+" (النظام "+o.q.s+" ← الجرد "+o.q.c+")":"مطابق")+(o.q.x?" · إكسباير جديد "+dmy(o.q.x):"")}))});if(D.length>40)ul.appendChild(el("li",{text:"… و"+(D.length-40)+" غيرها"}));f.appendChild(ul)}
+ else f.appendChild(el("div",{class:"bk-last ok",text:"✓ كل المواد المحسوبة مطابقة للنظام"}));
+ var ap=true,cbx=el("input",{type:"checkbox",id:"jdAp"});cbx.checked=true;cbx.onchange=function(){ap=cbx.checked};
+ if(D.length)f.appendChild(el("label",{class:"bk-chk"},[cbx,el("span",{text:"صحّح الخزين بالنظام حسب الجرد (وطبّق تواريخ الإكسباير الجديدة)"})]));
+ U.modal("✓ إنهاء واعتماد الجرد",f,[{t:"رجوع"},{t:"✓ اعتماد",cls:"ok",fn:function(){var n=0;
+  if(ap&&D.length)D.forEach(function(o){var nm=o.x.n,q=o.q;if(q.s==null)stockSet(nm,q.c);else if(q.c!==q.s){var cur=hasSt(nm)?S.stock[nm]:q.s;stockSet(nm,Math.max(0,cur+(q.c-q.s)))}if(q.x){S.xp[nm]=q.x}n++});
+  S.jrd[id]=Object.assign({},j,{st:"done",done:tdy(),ap:!!(ap&&D.length),by2:who()});save();if(typeof drawAcc==="function")drawAcc();if(typeof upd==="function")upd();render();
+  toast("✔ انتهى الجرد"+(ap&&D.length?"\nانصحح خزين "+n+" مادة":""));setTimeout(function(){pdf(id)},300)}}])}
+function del(id){if(!ACC())return;var j=J(id);U.modal(j.st==="open"?"إلغاء الجرد؟":"حذف الجرد؟",el("p",{style:"margin:0",text:"جرد "+mName(j.mon)+" وكل الأعداد المسجلة بيه تنحذف."+(j.ap?"\nالتصحيحات اللي انطبقت على الخزين تبقى.":"")}),
+ [{t:"رجوع"},{t:"حذف",cls:"bad",fn:function(){Object.keys(S.jri).forEach(function(k){if(k.indexOf(id+"|")===0)delete S.jri[k]});delete S.jrd[id];P.view="list";commit();toast("انحذف")}}])}
+/* ---------- PDF و Excel ---------- */
+function model(id){var j=J(id),r=stat(id),ck=CK(),OK="#1b8a4b",BAD="#c0392b",WARN="#b45309",G="#9aa7b1";
+ var cols=[{h:"#",w:28},{h:"المادة"},{h:"النظام",w:66,a:"c",n:1},{h:"الجرد",w:66,a:"c",n:1},{h:"الفرق",w:76,a:"c"},{h:"الإكسباير",w:86,a:"c",n:1}];if(ck)cols.push({h:"قيمة الفرق",w:96,a:"l",n:1});
+ var s1={h:"📋 نتيجة الجرد",cols:cols,rows:[]},s2={h:"⚠ الفروقات",cols:cols.slice(1),rows:[]},s3={h:"⏳ مواد ما انحسبت",cols:[{h:"المادة"},{h:"الفئة",w:130},{h:"بالنظام",w:80,a:"c",n:1}],rows:[]};
+ S.cats.forEach(function(c){if(j.cats&&j.cats.length&&j.cats.indexOf(c.n)<0)return;var cn=c.items.filter(function(n){return rec(id,n)}).length;if(cn)s1.rows.push({k:"grp",c:[c.n,cn+" / "+c.items.length]});var k=0;
+  c.items.forEach(function(n){var q=rec(id,n),xp=q&&q.x?q.x:(hasXp(n)?S.xp[n]:null);if(!q){s3.rows.push({c:[{t:n,b:1},{t:c.n,col:"#5f6f7c"},hasSt(n)?String(S.stock[n]):"—"]});return}k++;
+   var d=q.s==null?null:q.c-q.s,u=ck?ucNow(n):null,dc=d==null?{t:"—",col:G}:d===0?{t:"✓",col:OK,b:1}:{t:(d>0?"+":"−")+Math.abs(d),col:d<0?BAD:WARN,b:1};
+   var row=[{t:String(k),col:G},{t:n,b:1,s:q.x?"إكسباير جديد":""},q.s==null?{t:"—",col:G}:String(q.s),{t:String(q.c),b:1},dc,{t:xp?dmy(xp):"—",col:xp?"":G}];if(ck)row.push(d&&u!=null?{t:(d>0?"+":"−")+fmn(Math.abs(d*u)),col:d<0?BAD:WARN}:{t:"—",col:G});
+   s1.rows.push({bg:d?"#fdf6f5":"",c:row});if(d)s2.rows.push({c:row.slice(1).map(function(v,i){return i===0?{t:n,b:1,s:c.n}:v})})})});
+ var cards=[["المواد اللي انحسبت",r.cnt+" / "+r.tot],["✓ مطابقة",String(r.ok),OK,"#eef8f1"],["نقص (مواد) — "+r.shq+" قطعة",String(r.sh),r.sh?BAD:"",r.sh?"#fdf1ef":""],["زيادة (مواد) — "+r.ovq+" قطعة",String(r.ov),r.ov?WARN:""]];if(ck&&r.shv)cards.push(["قيمة النقص (د.ع)",fmn(r.shv),BAD]);
+ return {title:"جرد المخزن — "+mName(j.mon),sub:(j.st==="open"?"جاري لغاية "+dmy(tdy()):"اكتمل "+dmy(j.done))+" · بدأ "+dmy(j.d),info:[(j.cats&&j.cats.length?"الفئات: "+j.cats.join("، "):"كل الفئات")+(j.by?" · "+j.by:"")+(j.st==="done"?(j.ap?" · انصحح الخزين حسب الجرد":" · ما انطبق على الخزين"):"")],cards:cards,
+  secs:[s1].concat(s2.rows.length?[s2]:[]).concat(s3.rows.length?[s3]:[]),foot:"النظام = رقم الخزين بالبرنامج لحظة عد المادة · الفرق = الجرد − النظام",name:"جرد المخزن - "+mName(j.mon)+" - "+tdy()}}
+function pdf(id){ensureOrg(function(){pdfReport(model(id))})}
+function xls(id){var m=model(id),sh=[];m.secs.forEach(function(sec){var rows=[sec.cols.map(function(c){return c.h})];sec.rows.forEach(function(r){rows.push(r.c.map(function(v){var t=v&&typeof v==="object"?v.t:v;return t==null?"":String(t)}))});sh.push({name:sec.h.replace(/[^؀-ۿa-zA-Z0-9 ]/g,"").trim().slice(0,28)||"جرد",rows:rows,w:sec.cols.map(function(c,i){return i===0&&c.h==="#"?5:c.h==="المادة"?30:14})})});
+ pickExport(sh,"stock-count-"+J(id).mon+".xlsx")}
+/* ---------- عرض ---------- */
+function render(){if(g("jd").hidden)return;var run=P.view==="run";g("jdList").hidden=run;g("jdRun").hidden=!run;g("jdBk").hidden=!run;
+ if(run)drawRun();else{g("jdT").textContent="جرد المخزن";g("jdS").textContent="الجرد الشهري للبضاعة";drawList()}}
+jdRender=render;
+jdOpen=function(){P.view="list";var oid=openId();g("home").hidden=true;g("jd").hidden=false;g("jd").scrollTop=0;if(oid&&!ACC()){P.view="run";P.id=oid}render()};
+jdBack=function(){if(P.view==="run"){P.view="list";render();return true}return false};
+g("jdHome").onclick=function(){g("jd").hidden=true;U.close();showHome()};
+g("jdBk").onclick=function(){P.view="list";render()};
+})();
+
 /* ===== حقول التاريخ (3.3v): نعرض التاريخ بالعربي بنفسنا (اليوم + يوم/شهر/سنة) حتى ما يطلع مقلوب بالمتصفحات العربية ===== */
 (function(){
 var VD=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,"value");
@@ -3288,8 +3468,8 @@ var R=[
  var A={},T={i:0,p:0,o:0},t=tdy();Object.keys(S.sup||{}).forEach(function(id){A[id]={n:S.sup[id].n,k:0,i:0,p:0,od:0,odn:0,last:null}});
  invs().forEach(function(m){var a=A[m.sid];if(!a)return;var v=m.amount||0;a.k++;a.i+=v;if(m.paid)a.p+=v;else if(m.due&&m.due<t){a.od+=v;a.odn++}if(!a.last||m.date>a.last)a.last=m.date});
  var L=Object.keys(A).map(function(k){return A[k]}).filter(function(a){return a.k}).sort(function(a,b){return (b.i-b.p)-(a.i-a.p)});L.forEach(function(a){T.i+=a.i;T.p+=a.p;T.o+=a.od});
- return {title:"أرصدة الموردين",sub:"لحد "+dmy(t),cards:[["مجموع القوائم",fmn(T.i)+" د.ع"],["المسدد",fmn(T.p)+" د.ع",OK],["الباقي علينا",fmn(T.i-T.p)+" د.ع",T.i-T.p>0?BAD:OK],["متأخر",fmn(T.o)+" د.ع",T.o?BAD:""]],
-  secs:[{h:"الموردين",cols:[{h:"المورد"},{h:"القوائم",w:60,a:"c"},{h:"المجموع",w:115,n:1,m:1},{h:"المسدد",w:115,n:1,m:1},{h:"الباقي",w:115,n:1,m:1},{h:"متأخر",w:105,n:1,m:1},{h:"آخر قائمة",w:90,a:"c"}],
+ return {title:"أرصدة الموردين",sub:"لحد "+dmy(t),cards:[["مجموع القوائم",fmn(T.i)+" د.ع"],["المسدد مسبقًا",fmn(T.p)+" د.ع",OK],["الباقي علينا",fmn(T.i-T.p)+" د.ع",T.i-T.p>0?BAD:OK],["متأخر",fmn(T.o)+" د.ع",T.o?BAD:""]],
+  secs:[{h:"الموردين",cols:[{h:"المورد"},{h:"القوائم",w:60,a:"c"},{h:"المجموع",w:115,n:1,m:1},{h:"المسدد مسبقًا",w:115,n:1,m:1},{h:"الباقي",w:115,n:1,m:1},{h:"متأخر",w:105,n:1,m:1},{h:"آخر قائمة",w:90,a:"c"}],
    rows:L.map(function(a){var b=a.i-a.p;return {c:[a.n,Q(a.k),N(a.i),N(a.p,{col:OK}),N(b,{col:b>0?BAD:OK,b:1}),a.od?N(a.od,{col:BAD,b:1,s:a.odn+" قائمة"}):{t:"—",col:G},D(a.last)]}}).concat(L.length?[{k:"tot",c:["المجموع","",N(T.i),N(T.p),N(T.i-T.p),N(T.o),""]}]:[])}],foot:L.length?"":"ماكو قوائم موردين مسجلة."}}},
 {id:"ag",g:"sup",i:"⏰",n:"أعمار ديون الموردين",d:"القوائم غير المسددة مقسمة حسب عمرها (30/60/90 يوم)",opts:[],run:function(){
  var t=tdy(),B=[[0,30,"0–30 يوم"],[31,60,"31–60"],[61,90,"61–90"],[91,1e9,"أكثر من 90"]],A={},TT=[0,0,0,0],tot=0,list=[];
@@ -3389,7 +3569,7 @@ g("rpBk").onclick=home;g("rpPdf").onclick=toPdf;g("rpXls").onclick=toXls;
    التنقل يسد كل الشاشات (#home/#xv/#sv/#dv/#rv/#rp) ويفتح المطلوب بنفس دوال المربعات. ===== */
 var sbSync,ckOpen;
 (function(){
-var SCR=[["rp","rp"],["rv","rv"],["dv","dv"],["sv","sp"],["xv","xp"]];
+var SCR=[["jd","jd"],["rp","rp"],["rv","rv"],["dv","dv"],["sv","sp"],["xv","xp"]];
 function g(i){return document.getElementById(i)}
 function bs(n){return typeof BI==="object"&&BI[n]?biSvg(n):""}
 function appIcon(a){var n=ICOBI[a.i];return n&&BI[n]?n:a.k==="link"?"link-45deg":"star"}
@@ -3403,7 +3583,7 @@ function go(a){menuClose();drawerClose();
  if(a==="sys"){sysOpen();return}
  if(a.k==="link"){window.open(a.u,"_blank","noopener");return}
  closeAll();
- if(a.k==="wd")window.scrollTo(0,0);else if(a.k==="xp")xOpen();else if(a.k==="sp")spOpen();else if(a.k==="dv")dvOpen();else if(a.k==="rv")rvOpen();else if(a.k==="rp")rpOpen();
+ if(a.k==="wd")window.scrollTo(0,0);else if(a.k==="xp")xOpen();else if(a.k==="sp")spOpen();else if(a.k==="dv")dvOpen();else if(a.k==="rv")rvOpen();else if(a.k==="rp")rpOpen();else if(a.k==="jd")jdOpen();
  draw()}
 function sbBkWarn(){var d=DK.st();if(d)return d.warn?d.txt:"";var a=bkAgo();return a==null||a>=7?(S.bk?"آخر نسخة احتياطية قبل "+a+" يوم":"ما مسوي نسخة احتياطية بعد"):""}
 function ini(n){var w=String(n||"").replace(/^د\.\s*/,"").trim().split(/\s+/);return ((w[0]||"").charAt(0)+(w[1]||"").charAt(0))||"؟"}
@@ -3434,7 +3614,7 @@ g("sbPw").onclick=function(){menuClose();var u=UA();if(!u){$("apw").click();retu
 g("tbBell").onclick=function(){showAlerts()};
 /* التحديث التلقائي للعنصر الفعّال */
 var mo=new MutationObserver(function(){if(S.role&&!g("sb").hidden)draw()});
-["home","xv","sv","dv","rv","rp","sysm"].forEach(function(id){mo.observe(g(id),{attributes:true,attributeFilter:["hidden"]})});
+["home","xv","sv","dv","rv","rp","jd","sysm"].forEach(function(id){mo.observe(g(id),{attributes:true,attributeFilter:["hidden"]})});
 new MutationObserver(sbSync).observe(g("login"),{attributes:true,attributeFilter:["hidden"]});
 
 /* ===== البحث السريع (Ctrl K) ===== */
@@ -3487,6 +3667,7 @@ function backStep(){
  if(V("dv")){if(!dvBack())$("dvHome").click();return true}
  if(V("rv")){$("rvHome").click();return true}
  if(V("rp")){if(!rpBack())$("rpHome").click();return true}
+ if(V("jd")){if(!jdBack())$("jdHome").click();return true}
  if(V("xv")){$("xHome").click();return true}
  if(V("home"))return false;
  if(S.role){if(S.edit){toggleEdit();return true}showHome();return true}
