@@ -88,7 +88,9 @@ h2{font-size:15px;color:var(--mut);margin:14px 4px 8px;font-weight:700}
 .emp.add{border-style:dashed}
 .mini{min-height:36px;padding:2px 10px;font-size:16px;border-radius:10px}
 .cat{margin-bottom:8px}
-.chrow{display:flex;gap:4px;align-items:stretch}
+.chrow{display:flex;gap:4px;align-items:stretch;min-width:0}
+.chd{min-width:0;gap:6px;text-align:start;overflow-wrap:anywhere}
+@media (max-width:420px){.chd{font-size:17px;padding-inline:8px}}
 .chd{flex:1;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:20px;border-inline-start:12px solid var(--c);background:color-mix(in srgb,var(--c) 10%,var(--card))}
 .chd.on{background:var(--c);color:var(--on)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:8px}
@@ -243,7 +245,8 @@ button.flash{animation:flash .5s ease-out}
 #rp .rp-cats{display:flex;flex-wrap:wrap;gap:6px}#rp .rp-ch{min-height:38px;padding:2px 12px;border-radius:999px;font-size:14px;background:var(--card);border:1px solid var(--bd);color:var(--tx)}
 #rp .rp-ch.on{background:var(--ac);color:var(--on,#fff);border-color:var(--ac)}
 #rp .rp-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:10px;margin-top:14px}
-#rp .rp-card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:12px 14px;box-shadow:var(--xsh);min-width:0}#rp .rp-card small{display:block;color:var(--mut);font-weight:700;font-size:13px}#rp .rp-card b{display:block;font-size:clamp(18px,2.4vw,24px);font-weight:800;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#rp .rp-card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:12px 14px;box-shadow:var(--xsh);min-width:0}#rp .rp-card small{display:block;color:var(--mut);font-weight:700;font-size:13px}#rp .rp-card{container-type:inline-size}#rp .rp-card b{display:block;font-size:clamp(18px,2.4vw,24px);font-weight:800;margin-top:2px;white-space:nowrap;overflow:hidden}
+@supports (font-size:1cqi){#rp .rp-card b{font-size:clamp(12px,10.5cqi,24px)}}
 #rp .rp-sec{margin-top:14px;padding:14px}#rp .rp-sec h2{margin:0 0 10px;font-size:17px;font-weight:800}
 #rp .rp-tw{overflow-x:auto;margin:0 -4px}
 #rp .rp-t{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
@@ -640,6 +643,12 @@ button{border-width:1px;border-radius:12px}
 :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b.two{display:flex;flex-direction:column;gap:2px;white-space:nowrap}
 :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b.two span{white-space:normal;line-height:1.3}
 @supports (font-size:1cqi){:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b.two{font-size:clamp(11px,10cqi,16px)}}
+/* 6.9v: بالشاشات الضيقة كلش (≤380px) مربعات الملخص تصير سطور (العنوان يمين والرقم يسار) حتى الرقم ينعرض كامل */
+@media (max-width:380px){:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta{grid-template-columns:minmax(0,1fr)!important}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div{display:flex;justify-content:space-between;align-items:center;gap:10px;container-type:normal}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div b{font-size:15px!important;flex:0 1 auto;min-width:0}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div b.two{font-size:13px!important;align-items:flex-end}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-row2 .dfw .dfw-w{display:none}}
 #xm .mb{border-radius:16px}
 /* مربعات البرامج */
 .tl{--tc:var(--tcl,#475569);background:color-mix(in srgb,var(--tc) 7%,var(--card));border:1px solid color-mix(in srgb,var(--tc) 16%,var(--bd));color:var(--tx);box-shadow:var(--sh);border-radius:16px;padding:14px 16px;font-weight:700;aspect-ratio:1.45}
@@ -902,7 +911,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 </div></section>
 <section class="sys-s" style="--sc:#d97706"><h3>البرنامج</h3><div class="sysl">
 <button id="sysUp">↩ تحديث البرنامج<small>يجيب آخر نسخة من النت ويعيد الفتح</small></button>
-<button id="verb">ℹ️ الإصدار 6.8v Online<small>شنو الجديد بهذه النسخة</small></button>
+<button id="verb">ℹ️ الإصدار 6.9v Online<small>شنو الجديد بهذه النسخة</small></button>
 <button id="wipe" hidden class="sysd">🧹 تصفير البيانات<small>يمسح البيانات اللي تختارها — سوّي نسخة احتياطية قبلها</small></button>
 </div></section>
 </div></div></div>
@@ -916,7 +925,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hmt"><h1><img src="icon-192.png" alt="" class="hm-ic" width="44" height="44"><span class="hm-tt">Manar Derma OS<small id="hmWho"></small></span></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">6.8v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">6.9v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -1044,7 +1053,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hab lg-ab"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
 <div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
 <div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b></div></div>
-<button id="ver" title="شنو الجديد بهذه النسخة؟">6.8v Online · ℹ️ شنو الجديد؟</button>
+<button id="ver" title="شنو الجديد بهذه النسخة؟">6.9v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -1069,12 +1078,12 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 6.8v Online</div><div class="vd">تاريخ التحديث: 11/11/2026</div>
+<div class="vh">ℹ️ 6.9v Online</div><div class="vd">تاريخ التحديث: 11/11/2026</div>
 <ul class="vl">
-<li><b>💆 جلسات الكادر على الحساب:</b> بـ «ديون الكادر» زر جديد «💆 جلسة على الحساب» — للجلسات اللي يسويها الموظف بالعيادة وما يدفعها كاش. تكتب اسم الجلسة وعددها والمبلغ، وتنسجل دين عليه بدون ما تأثر على الخزينة أو الإيراد.</li>
-<li><b>🖥 انسدد بسستم العيادة:</b> نوع تسديد جديد — لما الموظف يدفع جلساته بسستم العيادة، سجّل «💵 تسديد» واختار «🖥 انسدد بسستم العيادة» (ينختار تلقائيًا إذا آخر دين عليه جلسة). الجلسات تبين بكشف الموظف وPDF والإكسل.</li>
+<li><b>📄 أرقام تقارير PDF ما تتداخل بعد:</b> بكشف دين الموظف «منين انطى» صارت سطرين (🏦 خزينة / 💰 إيراد)، وبكل تقارير PDF أي رقم أعرض من مربعه يصغر خطه تلقائيًا بدل ما يطلع على اللي يمه.</li>
+<li><b>🔍 فحص كامل للسستم:</b> كل الشاشات والتقارير انفحصت بأرقام كبيرة من عرض 320 لحد 1920. تصلحت أرقام بطاقات «التقارير» اللي جانت تنقص بنقاط (…)، ومربعات الملخص بالموبايلات الصغيرة صارت سطور بالرقم الكامل، وأسماء الفئات الطويلة بشاشة السحب.</li>
 </ul>
-<div class="vold"><b>6.7v Online</b>: برنامج «جرد المخزن»، «مسددة مسبقًا» بتقارير الموردين، والخروج التلقائي بعد 5 دقايق.<br><b>6.6v Online</b>: تقارير PDF رجعت صفحات A4، وكل قسم يبدي بصفحة جديدة إذا ما يكفيه الباقي.<br><b>6.5v Online</b>: صور الحركات بالـ PDF صغيرة داخل الصف وتتكبر بوضوح.<br><b>6.4v Online</b>: تقارير PDF بصفحة وحدة متصلة.<br><b>6.3v Online</b>: تصليح خطأ المزامنة، وفحص كامل للبرنامج.</div>
+<div class="vold"><b>6.8v Online</b>: «جلسة على الحساب» بديون الكادر وتسديد «انسدد بسستم العيادة».<br><b>6.7v Online</b>: برنامج «جرد المخزن»، «مسددة مسبقًا» بتقارير الموردين، والخروج التلقائي بعد 5 دقايق.<br><b>6.6v Online</b>: تقارير PDF رجعت صفحات A4، وكل قسم يبدي بصفحة جديدة إذا ما يكفيه الباقي.<br><b>6.5v Online</b>: صور الحركات بالـ PDF صغيرة داخل الصف وتتكبر بوضوح.<br><b>6.4v Online</b>: تقارير PDF بصفحة وحدة متصلة.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -1272,7 +1281,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="6.8";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="6.9";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysx").onclick=function(){$("sysm").hidden=true};
 $("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
@@ -1943,6 +1952,11 @@ function wdN(s){try{var p=s.split("-");return new Date(+p[0],p[1]-1,+p[2]).toLoc
 function nfm(n){return Math.round(n||0).toLocaleString("en-US")}
 function pdfLib(src){return new Promise(function(res,rej){if(document.querySelector('script[data-lib="'+src+'"]'))return res();var x=document.createElement("script");x.src=src;x.dataset.lib=src;x.onload=function(){res()};x.onerror=function(){x.remove();rej(new Error(src))};document.head.appendChild(x)})}
 function pdfLibs(){return Promise.all([pdfLib("lib/html2canvas.min.js"),pdfLib("lib/jspdf.umd.min.js"),document.fonts&&document.fonts.load?Promise.all(["400","600","700","800"].map(function(w){return document.fonts.load(w+' 16px "Cairo"',"عربي 123").catch(function(){})})):null])}
+/* 6.9v: أي نص بسطر واحد (nowrap) أعرض من خانته يصغر خطه لحد ما يوسع — حتى ما يتداخل ويه اللي يمه بالـ PDF */
+function pdfFit(root){var bad=[];[].forEach.call(root.querySelectorAll("*"),function(e){var cs=getComputedStyle(e);if(cs.whiteSpace!=="nowrap"||cs.display==="inline"||!e.clientWidth)return;
+ var f=parseFloat(cs.fontSize),n=0;while(e.scrollWidth>e.clientWidth+1&&f>8&&n++<30){f-=0.5;e.style.fontSize=f+"px"}if(e.scrollWidth>e.clientWidth+1)bad.push(e.textContent.slice(0,40))});
+ var rr=root.getBoundingClientRect();[].forEach.call(root.querySelectorAll("*"),function(e){var r=e.getBoundingClientRect();if(r.width&&(r.right>rr.right+1||r.left<rr.left-1))bad.push("برا الصفحة: "+e.textContent.slice(0,40))});
+ window.__pdfOv=(window.__pdfOv||[]).concat(bad);return bad}
 function pe(t,st,txt,kids){var e=document.createElement(t);if(st)e.style.cssText=st;if(txt!=null)e.textContent=txt;(kids||[]).forEach(function(k){if(k)e.appendChild(k)});return e}
 /* تقرير PDF عام: o = {title, sub, info:[سطور], cards:[[عنوان,قيمة,لون,خلفية]], secs:[{h, cols:[{h,w,a:"l"|"c",n}], rows:[{c:[خلايا], k:"grp"|"tot"}]}], name}
    الخلية: نص، أو {t, s:سطر صغير, col:لون, b:عريض, pill:[لون,خلفية]} */
@@ -1969,7 +1983,7 @@ function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0F172A",INK="#14202
    if(!o.plain)(o.info||[]).forEach(function(t){tb.appendChild(pe("div","font-size:13px;margin-top:2px;opacity:.85",t))});
    pg.appendChild(tb);
    if(o.cards&&o.cards.length){var cs=pe("div","display:flex;gap:10px;margin:14px 0 4px");
-    o.cards.forEach(function(c){cs.appendChild(pe("div","flex:1;min-width:0;border:1.5px solid "+LINE+";border-radius:12px;padding:10px 14px;background:"+(c[3]||"#fff"),null,[pe("div","font-size:12px;color:"+MUT+";font-weight:600",c[0]),pe("div","font-size:"+(String(c[1]).length>13?17:20)+"px;font-weight:800;margin-top:3px;direction:ltr;text-align:right;white-space:nowrap;color:"+(c[2]||INK),c[1])]))});
+    o.cards.forEach(function(c){cs.appendChild(pe("div","flex:1;min-width:0;border:1.5px solid "+LINE+";border-radius:12px;padding:10px 14px;background:"+(c[3]||"#fff"),null,[pe("div","font-size:12px;color:"+MUT+";font-weight:600",c[0]),Array.isArray(c[1])?pe("div","margin-top:3px;display:flex;flex-direction:column;gap:2px",null,c[1].map(function(t){return pe("div","font-size:15px;font-weight:800;direction:rtl;text-align:right;white-space:nowrap;overflow:hidden;color:"+(c[2]||INK),t)})):pe("div","font-size:"+(String(c[1]).length>13?17:20)+"px;font-weight:800;margin-top:3px;direction:ltr;text-align:right;white-space:nowrap;overflow:hidden;color:"+(c[2]||INK),c[1])]))});
     pg.appendChild(cs)}
    if(o.lead)pg.appendChild(pe("div","margin:12px 0 0;padding:10px 14px;border-radius:12px;font-size:14px;font-weight:700;line-height:1.7;white-space:pre-line;background:"+(o.leadBg||"#eef6f7")+";color:"+(o.leadCol||INK),o.lead))}
   else pg.appendChild(pe("div","display:flex;justify-content:space-between;gap:12px;border-bottom:2px solid "+TEAL+";padding-bottom:8px;font-size:14px",null,[pe("b","color:"+TEAL,o.title),pe("span","color:"+MUT,g.n||"")]));
@@ -2016,6 +2030,7 @@ function pdfBuild(o){var W=794,H=1123,PAD=36,LIM=H-74,TEAL="#0F172A",INK="#14202
    newPage(false);cur=startSec(sec,!empty);carry.forEach(function(c){cur.body.appendChild(c)});cur.body.appendChild(tr)})});
  if(o.foot){pg.appendChild(pe("div","margin-top:14px;font-size:12px;line-height:1.7;white-space:pre-line;color:"+MUT,o.foot));if(bottom()>LIM){var ft=pg.lastElementChild;ft.remove();newPage(false);pg.appendChild(ft)}}
  pages.forEach(function(p,k){p.appendChild(pe("div","position:absolute;left:"+PAD+"px;right:"+PAD+"px;bottom:24px;display:flex;justify-content:space-between;gap:12px;font-size:11.5px;color:"+MUT+";border-top:1px solid "+LINE+";padding-top:8px",null,[pe("span","",[g.n,sub].filter(Boolean).join(" · ")||o.title),pe("span","white-space:nowrap","صفحة "+(k+1)+" من "+pages.length)]))});
+ pages.forEach(pdfFit);
  var kx=210/W,PH=marks.map(function(m){var p=m.el.closest("[data-pg]"),pr=p.getBoundingClientRect(),r=m.el.getBoundingClientRect();return {p:+p.dataset.pg,x:r.left-pr.left,y:r.top-pr.top,w:r.width,h:r.height,id:m.id}});
  var pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4",orientation:"portrait"});
  return pages.reduce(function(pr,p,k){return pr.then(function(){return window.html2canvas(p,{scale:2,backgroundColor:"#ffffff",logging:false,useCORS:true}).then(function(c){if(k)pdf.addPage();pdf.addImage(c.toDataURL("image/jpeg",0.9),"JPEG",0,0,210,297)})})},Promise.resolve())
@@ -2800,7 +2815,7 @@ function buildPdf(s,a){var W=794,H=1123,PAD=40,TEAL="#0F172A",INK="#14202b",MUT=
    var og=org();pg.appendChild(pdfEl("div","display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:10px;margin-bottom:14px;border-bottom:3px solid "+TEAL,null,[pdfEl("div","",null,[pdfEl("div","font-size:22px;font-weight:800;color:"+TEAL,og.n||"العيادة"),orgSub()?pdfEl("div","font-size:14px;color:"+MUT+";font-weight:600;margin-top:2px",orgSub()):null]),pdfEl("div","font-size:12px;color:"+MUT,"طُبع "+stamp)]));
    pg.appendChild(hd);
    var cards=pdfEl("div","display:flex;gap:12px;margin:16px 0 18px");
-   function card(l,v,c,bg){return pdfEl("div","flex:1;border:1.5px solid "+LINE+";border-radius:14px;padding:12px 16px;background:"+(bg||"#fff"),null,[pdfEl("div","font-size:13px;color:"+MUT+";font-weight:600",l),pdfEl("div","font-size:22px;font-weight:800;margin-top:4px;color:"+(c||INK),v)])}
+   function card(l,v,c,bg){return pdfEl("div","flex:1;min-width:0;border:1.5px solid "+LINE+";border-radius:14px;padding:12px 16px;background:"+(bg||"#fff"),null,[pdfEl("div","font-size:13px;color:"+MUT+";font-weight:600",l),pdfEl("div","font-size:22px;font-weight:800;margin-top:4px;white-space:nowrap;overflow:hidden;color:"+(c||INK),v)])}
    cards.appendChild(card("مجموع القوائم",fmn(a.ti)+" د.ع"));cards.appendChild(card("✓ مسدد مسبقًا",fmn(a.tp)+" د.ع",OK,"#eef8f1"));
    cards.appendChild(a.bal>0?card("غير مسدد (الباقي عليك)",fmn(a.bal)+" د.ع",BAD,"#fdf1ef"):card("الرصيد","✓ كل القوائم مسددة",OK,"#eef8f1"));
    pg.appendChild(cards)}
@@ -2825,6 +2840,7 @@ function buildPdf(s,a){var W=794,H=1123,PAD=40,TEAL="#0F172A",INK="#14202b",MUT=
   addRow(r)});
  var tot=pdfEl("tr","background:#eef6f7;font-weight:800",null,[pdfEl("td","padding:10px 6px",""),pdfEl("td","padding:10px 6px",""),pdfEl("td","padding:10px 6px;color:"+TEAL,"المجموع"),pdfEl("td","padding:10px 6px;direction:ltr;text-align:left",fmn(a.ti)),pdfEl("td","padding:10px 6px;color:"+OK+";font-size:12px","مسدد مسبقًا: "+fmn(a.tp)),pdfEl("td","padding:10px 6px;color:"+(a.bal>0?BAD:OK)+";font-size:12px",a.bal>0?"غير مسدد: "+fmn(a.bal):"✓ كله مسدد")]);
  addRow(tot);
+ pages.forEach(function(p){pdfFit(p.pg)});
  pages.forEach(function(p,k){p.pg.appendChild(pdfEl("div","position:absolute;left:"+PAD+"px;right:"+PAD+"px;bottom:26px;display:flex;justify-content:space-between;font-size:12px;color:"+MUT+";border-top:1px solid "+LINE+";padding-top:8px",null,[pdfEl("span","",[org().n,orgSub(),"كشف حساب «"+s.n+"»"].filter(Boolean).join(" · ")),pdfEl("span","","صفحة "+(k+1)+" من "+pages.length)]))});
  var pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4",orientation:"portrait"});
  return pages.reduce(function(pr,p,k){return pr.then(function(){return window.html2canvas(p.pg,{scale:2,backgroundColor:"#ffffff",logging:false,useCORS:true}).then(function(c){if(k)pdf.addPage();pdf.addImage(c.toDataURL("image/jpeg",0.9),"JPEG",0,0,210,297)})})},Promise.resolve())
@@ -3032,7 +3048,7 @@ var MCOLS=[{h:"التاريخ",w:78,n:1},{h:"البيان"},{h:"المصدر / �
 function pdfOne(sid){var s=S.stf[sid],a=acct(sid);if(!a.M.length){toast("ما أكو حركات");return}
  ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b";var rows=mvRows(a,OK,BAD);rows.push({k:"tot",c:["","المجموع","",fmn(a.td),fmn(a.tp),fmn(a.bal)]});
   pdfReport({title:"كشف دين موظف — "+s.n,sub:"لغاية "+wd(tdy())+" "+dmy(tdy()),info:[a.M.length+" حركة"+(s.ph?" · 📞 "+s.ph:"")],
-   cards:[["مجموع الديون",fmn(a.td)+" د.ع",BAD],["المسدد",fmn(a.tp)+" د.ع",OK,"#eef8f1"],["الباقي عليه",fmn(a.bal)+" د.ع",a.bal>0?BAD:OK,a.bal>0?"#fdf1ef":"#eef8f1"],a.tr||a.rv||!a.ss?["منين انطى (خزينة · إيراد)","🏦 "+fmn(a.tr)+" · 💰 "+fmn(a.rv)]:null,a.ss?["💆 جلسات على الحساب",fmn(a.ss)+" د.ع","#7b3f8c","#f8f0fa"]:null].filter(Boolean),
+   cards:[["مجموع الديون",fmn(a.td)+" د.ع",BAD],["المسدد",fmn(a.tp)+" د.ع",OK,"#eef8f1"],["الباقي عليه",fmn(a.bal)+" د.ع",a.bal>0?BAD:OK,a.bal>0?"#fdf1ef":"#eef8f1"],a.tr||a.rv||!a.ss?["منين انطى",["🏦 خزينة "+fmn(a.tr),"💰 إيراد "+fmn(a.rv)]]:null,a.ss?["💆 الجلسات",fmn(a.ss)+" د.ع","#7b3f8c","#f8f0fa"]:null].filter(Boolean),
    secs:[{h:"📒 الحركات",cols:MCOLS,rows:rows}],name:"كشف دين - "+s.n+" - "+tdy()})})}
 function pdfAll(){var L=stf().map(function(s){return {s:s,a:acct(s.id)}}).filter(function(x){return x.a.M.length});if(!L.length){toast("ما أكو ديون مسجلة");return}
  ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",T={td:0,tp:0,b:0,tr:0,rv:0,ss:0},deb=0;L.sort(function(x,y){return y.a.bal-x.a.bal||x.s.n.localeCompare(y.s.n,"ar")});
@@ -3043,7 +3059,7 @@ function pdfAll(){var L=stf().map(function(s){return {s:s,a:acct(s.id)}}).filter
   var s2={h:"📒 الحركات حسب الموظف",cols:MCOLS,rows:[]};
   L.forEach(function(x){s2.rows.push({k:"grp",c:["👤 "+x.s.n,x.a.bal>0?"الباقي: "+fmn(x.a.bal):"✓ ما عليه"]});s2.rows=s2.rows.concat(mvRows(x.a,OK,BAD))});
   pdfReport({title:"تقرير ديون الكادر",sub:"لغاية "+wd(tdy())+" "+dmy(tdy()),info:[L.length+" موظف عندهم حركات · "+deb+" عليهم دين"],
-   cards:[["الباقي على الكادر",fmn(T.b)+" د.ع",BAD,"#fdf1ef"],["مجموع الديون",fmn(T.td)+" د.ع"],["المسدد",fmn(T.tp)+" د.ع",OK,"#eef8f1"],T.tr||T.rv||!T.ss?["منين انطى (خزينة · إيراد)","🏦 "+fmn(T.tr)+" · 💰 "+fmn(T.rv)]:null,T.ss?["💆 جلسات على الحساب",fmn(T.ss)+" د.ع","#7b3f8c","#f8f0fa"]:null].filter(Boolean),
+   cards:[["الباقي على الكادر",fmn(T.b)+" د.ع",BAD,"#fdf1ef"],["مجموع الديون",fmn(T.td)+" د.ع"],["المسدد",fmn(T.tp)+" د.ع",OK,"#eef8f1"],T.tr||T.rv||!T.ss?["منين انطى",["🏦 خزينة "+fmn(T.tr),"💰 إيراد "+fmn(T.rv)]]:null,T.ss?["💆 الجلسات",fmn(T.ss)+" د.ع","#7b3f8c","#f8f0fa"]:null].filter(Boolean),
    secs:[s1,s2],name:"ديون الكادر - "+tdy()})})}
 var XH=["التاريخ","اليوم","الموظف","الحركة","نوع الدين","المصدر / الوجهة","دين","تسديد","الرصيد بعدها","ملاحظة"];
 function xRows(s,a){var r=[],bal=0;a.M.forEach(function(m){var d=m.k==="debt";bal+=d?m.amount:-m.amount;r.push([dmy(m.date),wd(m.date),s.n,d?(m.src==="ses"?"جلسة":"دين"):"تسديد",d?(m.type||"")+(m.cnt>1?" ×"+m.cnt:""):"",d?SRC[sk(m)]:(DST[m.to]||DST.rev),d?m.amount:"",d?"":m.amount,bal,m.note||""])});return r}
