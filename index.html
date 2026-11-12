@@ -643,12 +643,7 @@ button{border-width:1px;border-radius:12px}
 :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b.two{display:flex;flex-direction:column;gap:2px;white-space:nowrap}
 :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b.two span{white-space:normal;line-height:1.3}
 @supports (font-size:1cqi){:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta b.two{font-size:clamp(11px,10cqi,16px)}}
-/* 6.9v: بالشاشات الضيقة كلش (≤380px) مربعات الملخص تصير سطور (العنوان يمين والرقم يسار) حتى الرقم ينعرض كامل */
-@media (max-width:380px){:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta{grid-template-columns:minmax(0,1fr)!important}
-:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div{display:flex;justify-content:space-between;align-items:center;gap:10px;container-type:normal}
-:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div b{font-size:15px!important;flex:0 1 auto;min-width:0}
-:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div b.two{font-size:13px!important;align-items:flex-end}
-:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-row2 .dfw .dfw-w{display:none}}
+@media (max-width:380px){:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-row2 .dfw .dfw-w{display:none}}
 #xm .mb{border-radius:16px}
 /* مربعات البرامج */
 .tl{--tc:var(--tcl,#475569);background:color-mix(in srgb,var(--tc) 7%,var(--card));border:1px solid color-mix(in srgb,var(--tc) 16%,var(--bd));color:var(--tx);box-shadow:var(--sh);border-radius:16px;padding:14px 16px;font-weight:700;aspect-ratio:1.45}
@@ -828,6 +823,70 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 #jd .jd-d.todo{opacity:.75}
 @media (max-width:560px){#jd .jd-r{grid-template-columns:minmax(0,1fr) auto}#jd .jd-tg{grid-column:1/-1;text-align:start}#jd .jd-in{width:64px}}
 #jd .jd-meta{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}
+/* ===== 7.0v: ترتيب الشكل العام — نفس الثيم، بس كل شاشة بنفس النظام: ترويسة بسطر، مسافات ثابتة، أرقام واضحة، أزرار متساوية ===== */
+/* (1) الترويسة: [رجوع] العنوان ........ [أزرار التصدير] بسطر واحد، ما ينزل زر لحاله بسطر */
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-top{flex-wrap:nowrap;gap:8px}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-brand{flex:1 1 0;min-width:0}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-brand h1{line-height:1.3;overflow-wrap:anywhere}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-top>button{flex:none;white-space:nowrap}
+body.has-sb #jdHome{display:none}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) :is(.x-bk,.rv-nav button){display:inline-flex;align-items:center;justify-content:center;gap:6px}
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .ar{font-weight:800;font-size:17px;line-height:1}
+/* (2) كل قسم تحت اللي قبله بنفس المسافة (قبل جانت البطاقة لازگة بالمربع الغامق) */
+:is(#dvList,#dvP,#spList,#spSup,#rpList,#rpView,#jdList,#jdRun){display:flex;flex-direction:column;gap:14px;min-width:0}
+/* (3) ترويسة الصفحة الفرعية (مورد / موظف): رجوع، الاسم، تعديل — بسطر */
+:is(#sv,#dv) .sp-head{flex-wrap:nowrap}
+:is(#sv,#dv) .sp-hn{flex:1 1 0}
+:is(#sv,#dv) .sp-hn h2{font-size:20px;line-height:1.35}
+:is(#sv,#dv) .sp-head>button{flex:none;white-space:nowrap}
+/* (4) المربع الغامق: الرقم الكبير تحت عنوانه (يمين) */
+:is(#xv,#sv,#dv,#rv,#rp,#jd) .x-big{text-align:right}
+/* (5) تبديل الشهر بالإيراد: شريط واحد */
+#rv .rv-nav{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:6px;margin:0;box-shadow:var(--sh)}
+#rv .rv-nav b{font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#rv .rv-nav button{border-color:transparent;background:var(--bg);min-width:44px;flex:none}
+/* (6) النوافذ: أزرار الحفظ/الإلغاء ثابتة جوه وتبين دائمًا، والمحتوى هو اللي ينزل */
+#xm .mb{max-height:calc(100dvh - 32px)}
+#xm .mb:has(>.x-mbb:last-child){padding-bottom:0}
+#xm .mb>.x-mbb:last-child{position:sticky;bottom:0;z-index:2;margin:2px -18px 0;padding:12px 18px 16px;background:var(--card);border-top:1px solid var(--bd);border-radius:0 0 16px 16px}
+/* (7) الزر الأساسي بكل النوافذ نفس اللون (قبل جان أخضر بنوافذ وغامق بنوافذ) */
+.mb .row button.pri,#xm .bk-acts button.ok{background:var(--ac);border-color:var(--ac);color:var(--on);font-weight:800}
+/* (8) الرسالة السريعة: أصغر وما تغطي العنوان */
+.toast{padding:9px 18px;font-size:14.5px;line-height:1.6;max-width:min(92vw,460px);width:max-content}
+.toast{top:calc(9px + env(safe-area-inset-top,0px))}
+@media (max-width:560px){
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-brand h1{font-size:20px}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-brand div{font-size:13px}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-top>button{min-height:40px;padding:0 10px;font-size:13.5px}
+ :is(#sv,#dv) .sp-hn h2{font-size:18px}
+ :is(#sv,#dv) .sp-head>button{min-height:40px;padding:0 10px;font-size:13.5px}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) :is(.x-top,.sp-head,.rv-nav) .bt{display:none}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) :is(.x-bk,.rv-nav button){width:42px;min-width:42px;padding:0}
+ /* المربع الغامق بالموبايل: الأرقام الفرعية سطور (العنوان يمين والرقم كامل يسار) والأزرار متساوية */
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-tre{padding:16px;gap:14px}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta{grid-template-columns:minmax(0,1fr);gap:0;background:color-mix(in srgb,var(--on) 9%,transparent);border-radius:14px;padding:2px 14px}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div{display:flex;justify-content:space-between;align-items:center;gap:12px;background:none;border-radius:0;padding:10px 0;container-type:normal;font-size:14px;overflow:visible}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div+div{border-top:1px solid color-mix(in srgb,var(--on) 13%,transparent)}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div b{font-size:16px;flex:0 1 auto;min-width:0}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div b.two{font-size:13.5px;align-items:flex-end}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-tact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-tact>button{padding-inline:8px;font-size:14.5px;min-width:0}
+ :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-tact>button:first-child:nth-last-child(odd){grid-column:1/-1}
+ /* شاشة البرامج: الاسم والأزرار بسطر */
+ .hmt{flex-wrap:nowrap;margin-bottom:12px}
+ .hmt h1{flex:1 1 0;min-width:0;font-size:19px;gap:8px}
+ .hmt .hm-ic{width:38px;height:38px}
+ .hmt .hm-tt{min-width:0}
+ .hmt button{min-height:40px;padding:0 10px;font-size:13.5px;flex:none;white-space:nowrap}
+ /* شريط السحوبات: العنوان واسم الحساب بسطر، والساعة والأزرار بسطر */
+ .top{row-gap:8px}
+ .top::before{content:"";order:3;flex-basis:100%;height:0;margin:-4px 0}
+ .top .ttl{order:1;flex:1 1 0;min-width:0;line-height:1.35}
+ .top #who2{order:2;min-height:40px;padding:2px 10px;font-size:14px;flex:none;max-width:48%}
+ .top .clock{order:4}
+ .top>button:not(#who2){order:5}
+}
+@media (max-width:360px){.top .ttl{font-size:16px}.top #who2{font-size:13px;padding:2px 8px}}
 </style>
 </head>
 <body>
@@ -911,7 +970,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 </div></section>
 <section class="sys-s" style="--sc:#d97706"><h3>البرنامج</h3><div class="sysl">
 <button id="sysUp">↩ تحديث البرنامج<small>يجيب آخر نسخة من النت ويعيد الفتح</small></button>
-<button id="verb">ℹ️ الإصدار 6.9v Online<small>شنو الجديد بهذه النسخة</small></button>
+<button id="verb">ℹ️ الإصدار 7.0v Online<small>شنو الجديد بهذه النسخة</small></button>
 <button id="wipe" hidden class="sysd">🧹 تصفير البيانات<small>يمسح البيانات اللي تختارها — سوّي نسخة احتياطية قبلها</small></button>
 </div></section>
 </div></div></div>
@@ -925,7 +984,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hmt"><h1><img src="icon-192.png" alt="" class="hm-ic" width="44" height="44"><span class="hm-tt">Manar Derma OS<small id="hmWho"></small></span></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">6.9v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">7.0v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -984,18 +1043,18 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 </section>
 </div></div>
 <div id="jd" hidden><div class="xw">
-<div class="x-top"><button id="jdHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><button id="jdBk" hidden>→ الجرودات</button><div class="x-brand"><h1 id="jdT">جرد المخزن</h1><div id="jdS">الجرد الشهري للبضاعة</div></div><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
+<div class="x-top"><button id="jdHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><button id="jdBk" class="x-bk" hidden aria-label="الجرودات"><span class="ar">→</span><span class="bt">الجرودات</span></button><div class="x-brand"><h1 id="jdT">جرد المخزن</h1><div id="jdS">الجرد الشهري للبضاعة</div></div><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
 <div id="jdList" style="display:flex;flex-direction:column;gap:14px"></div>
 <div id="jdRun" style="display:flex;flex-direction:column;gap:14px" hidden></div>
 </div></div>
 <div id="rp" hidden><div class="xw">
-<div class="x-top"><button id="rpHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1 id="rpT">التقارير</h1><div id="rpS"></div></div><button id="rpBk" hidden>☰ كل التقارير</button><button id="rpXls" hidden>📊 Excel</button><button id="rpPdf" hidden>📄 PDF</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
+<div class="x-top"><button id="rpHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><button id="rpBk" class="x-bk" hidden aria-label="كل التقارير"><span class="ar">→</span><span class="bt">كل التقارير</span></button><div class="x-brand"><h1 id="rpT">التقارير</h1><div id="rpS"></div></div><button id="rpXls" hidden>📊 Excel</button><button id="rpPdf" hidden>📄 PDF</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
 <div id="rpList"></div>
 <div id="rpView" hidden><section class="x-card rp-f" id="rpF"></section><div id="rpOut"></div></div>
 </div></div>
 <div id="rv" hidden><div class="xw">
 <div class="x-top"><button id="rvHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1>الإيراد الشهري</h1><div>حركات الإيراد والمطابقة</div></div><button id="rvPdf">📄 PDF</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
-<div class="rv-nav"><button id="rvPrev">→ الشهر السابق</button><b id="rvMon"></b><button id="rvNext">الشهر التالي ←</button></div>
+<div class="rv-nav"><button id="rvPrev" aria-label="الشهر السابق"><span class="ar">→</span><span class="bt">الشهر السابق</span></button><b id="rvMon"></b><button id="rvNext" aria-label="الشهر التالي"><span class="bt">الشهر التالي</span><span class="ar">←</span></button></div>
 <section id="rvSum"></section>
 <section class="x-card rv-chk" id="rvChk"></section>
 <section class="x-card"><h2>الحركات على إيراد هذا الشهر</h2><div class="rv-ks" id="rvKinds"></div><div id="rvRows"></div></section>
@@ -1009,7 +1068,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div id="dvRows"></div></section>
 </div>
 <div id="dvP" hidden>
-<div class="sp-head"><button id="dvBackB">→ كل الكادر</button><div class="sp-hn"><h2 id="dvName"></h2><div id="dvInfo"></div></div><button id="dvEdit">✎ تعديل</button></div>
+<div class="sp-head"><button id="dvBackB" class="x-bk" aria-label="كل الكادر"><span class="ar">→</span><span class="bt">كل الكادر</span></button><div class="sp-hn"><h2 id="dvName"></h2><div id="dvInfo"></div></div><button id="dvEdit">✎ تعديل</button></div>
 <section id="dvPSum"></section>
 <section class="x-card"><h2>الديون والتسديدات</h2><div id="dvMv"></div></section>
 </div>
@@ -1024,7 +1083,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div id="spRows"></div></section>
 </div>
 <div id="spSup" hidden>
-<div class="sp-head"><button id="spBackB">→ كل الموردين</button><div class="sp-hn"><h2 id="spName"></h2><div id="spInfo"></div></div><button id="spEdit">✎ تعديل المورد</button></div>
+<div class="sp-head"><button id="spBackB" class="x-bk" aria-label="كل الموردين"><span class="ar">→</span><span class="bt">كل الموردين</span></button><div class="sp-hn"><h2 id="spName"></h2><div id="spInfo"></div></div><button id="spEdit">✎ تعديل<span class="bt">&nbsp;المورد</span></button></div>
 <section id="spSSum"></section>
 <section class="x-card"><h2>القوائم <small style="font-weight:600;color:var(--mut);font-size:14px">(✓ تم التسديد / غير مسدد)</small></h2><div id="spMv"></div></section>
 </div>
@@ -1053,7 +1112,7 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <div class="hab lg-ab"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
 <div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
 <div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b></div></div>
-<button id="ver" title="شنو الجديد بهذه النسخة؟">6.9v Online · ℹ️ شنو الجديد؟</button>
+<button id="ver" title="شنو الجديد بهذه النسخة؟">7.0v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -1078,15 +1137,16 @@ body.has-sb .side .panel{top:calc(var(--tbh) + 8px);max-height:calc(100dvh - var
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 6.9v Online</div><div class="vd">تاريخ التحديث: 11/11/2026</div>
+<div class="vh">ℹ️ 7.0v Online</div><div class="vd">تاريخ التحديث: 12/11/2026</div>
 <ul class="vl">
-<li><b>📄 أرقام تقارير PDF ما تتداخل بعد:</b> بكشف دين الموظف «منين انطى» صارت سطرين (🏦 خزينة / 💰 إيراد)، وبكل تقارير PDF أي رقم أعرض من مربعه يصغر خطه تلقائيًا بدل ما يطلع على اللي يمه.</li>
-<li><b>🔍 فحص كامل للسستم:</b> كل الشاشات والتقارير انفحصت بأرقام كبيرة من عرض 320 لحد 1920. تصلحت أرقام بطاقات «التقارير» اللي جانت تنقص بنقاط (…)، ومربعات الملخص بالموبايلات الصغيرة صارت سطور بالرقم الكامل، وأسماء الفئات الطويلة بشاشة السحب.</li>
+<li><b>🧹 ترتيب شكل النظام كله:</b> كل البرامج صارت بنفس النظام — العنوان يمين وأزرار Excel/PDF يسار بسطر واحد، ونفس المسافة بين كل قسم وقسم، وزر الرجوع (→) بنفس المكان بكل الشاشات.</li>
+<li><b>📱 بالموبايل:</b> أرقام المربع الغامق صارت سطور واضحة (العنوان يمين والرقم كامل يسار)، والأزرار جواه متساوية ومرتبة صفين، وتبديل الشهر بالإيراد صار شريط واحد بأسهم.</li>
+<li><b>🪟 النوافذ:</b> أزرار «حفظ / إلغاء» ثابتة جوه النافذة وتبين دائمًا بدون ما تنزل، والزر الأساسي نفس اللون بكل النوافذ، والرسالة السريعة صارت أصغر وما تغطي العنوان. شهر الجرد صار ينختار بالعربي.</li>
 </ul>
-<div class="vold"><b>6.8v Online</b>: «جلسة على الحساب» بديون الكادر وتسديد «انسدد بسستم العيادة».<br><b>6.7v Online</b>: برنامج «جرد المخزن»، «مسددة مسبقًا» بتقارير الموردين، والخروج التلقائي بعد 5 دقايق.<br><b>6.6v Online</b>: تقارير PDF رجعت صفحات A4، وكل قسم يبدي بصفحة جديدة إذا ما يكفيه الباقي.<br><b>6.5v Online</b>: صور الحركات بالـ PDF صغيرة داخل الصف وتتكبر بوضوح.<br><b>6.4v Online</b>: تقارير PDF بصفحة وحدة متصلة.</div>
-<div class="row" style="margin-top:12px"><button id="vmx" class="emp on k" style="--h:170">تمام</button></div>
+<div class="vold"><b>6.9v Online</b>: أرقام تقارير PDF ما تتداخل، وفحص كامل لكل الشاشات.<br><b>6.8v Online</b>: «جلسة على الحساب» بديون الكادر وتسديد «انسدد بسستم العيادة».<br><b>6.7v Online</b>: برنامج «جرد المخزن»، «مسددة مسبقًا» بتقارير الموردين، والخروج التلقائي بعد 5 دقايق.<br><b>6.6v Online</b>: تقارير PDF رجعت صفحات A4، وكل قسم يبدي بصفحة جديدة إذا ما يكفيه الباقي.<br><b>6.5v Online</b>: صور الحركات بالـ PDF صغيرة داخل الصف وتتكبر بوضوح.</div>
+<div class="row" style="margin-top:12px"><button id="vmx" class="pri">تمام</button></div>
 </div></div>
-<div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="emp on k" style="--h:170">موافق</button><button id="mno">إلغاء</button></div></div></div>
+<div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="pri">موافق</button><button id="mno">إلغاء</button></div></div></div>
 
 <script>
 var PAL=[200,155,275,18,335,45,175,230,95,0,300,60];
@@ -1281,7 +1341,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="6.9";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="7.0";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysx").onclick=function(){$("sysm").hidden=true};
 $("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
@@ -3249,7 +3309,8 @@ function drawList(){var B=g("jdList");B.innerHTML="";var oid=openId();
  B.appendChild(C)}
 /* ---------- جرد جديد ---------- */
 function newForm(){if(!ACC())return;var f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),sel={},blind=false;S.cats.forEach(function(c){sel[c.n]=true});
- var mon=el("input",{class:"x-fld",id:"jdM",type:"month"});mon.value=tdy().slice(0,7);
+ var mon=el("select",{class:"x-fld",id:"jdM"}),m0=tdy().slice(0,7);
+ (function(){var p=m0.split("-");for(var i=1;i>=-12;i--){var d=new Date(+p[0],+p[1]-1+i,1),v=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");mon.appendChild(el("option",{value:v,text:mName(v)}))}})();mon.value=m0;
  var cb=el("div",{class:"sp-qb"});function drawC(){cb.innerHTML="";S.cats.forEach(function(c){cb.appendChild(el("button",{type:"button",class:sel[c.n]?"on":"",text:(sel[c.n]?"✓ ":"")+c.n+" ("+c.items.length+")",on:{click:function(){sel[c.n]=!sel[c.n];drawC()}}}))})}drawC();
  var bl=el("div",{class:"sp-ps"}),b0=el("button",{type:"button",text:"👁 يبين رقم النظام"}),b1=el("button",{type:"button",text:"🙈 جرد أعمى"});bl.appendChild(b0);bl.appendChild(b1);
  var hint=el("div",{class:"dv-hint"});function ps(){b0.classList.toggle("on",!blind);b1.classList.toggle("on",blind);hint.textContent=blind?"اللي يحسب ما يشوف رقم النظام لحد ما يكتب العدد — أدق وأحسن للجرد.":"رقم النظام يبين يم كل مادة أثناء العد."}
