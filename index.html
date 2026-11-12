@@ -887,6 +887,26 @@ body.has-sb #jdHome{display:none}
  .top>button:not(#who2){order:5}
 }
 @media (max-width:360px){.top .ttl{font-size:16px}.top #who2{font-size:13px;padding:2px 8px}}
+/* 7.0v: شريط النوافذ (#wn) تحت الشريط العلوي — يطلع لما ينفتح برنامج، و--tbh يكبر بقدّه حتى الشاشات تنزل جواه */
+:root{--tb1:60px}
+.tb{height:var(--tb1)}
+body.has-wn{--tbh:calc(var(--tb1) + 46px)}
+.wn{position:fixed;top:var(--tb1);right:var(--sbw);left:0;height:46px;z-index:17;display:flex;align-items:center;gap:6px;padding:0 18px;box-sizing:border-box;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);overflow-x:auto;overflow-y:hidden;scrollbar-width:none;scroll-padding-inline:12px}
+.wn::-webkit-scrollbar{display:none}
+.wn[hidden]{display:none}
+.wn-t{flex:0 0 auto;display:flex;align-items:center;height:34px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--mut)}
+.wn button{min-height:0;border:0;background:none;box-shadow:none;color:inherit;font-size:13.5px;font-weight:700;cursor:pointer}
+.wn-b{display:flex;align-items:center;gap:7px;height:100%;padding:0 12px;border-radius:10px;max-width:200px}
+.wn-t:has(.wn-x) .wn-b{padding-inline-end:6px}
+.wn-n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wn-i{display:grid;place-items:center;flex:none}.wn-i svg{width:15px;height:15px}
+.wn-x{flex:none;width:24px;height:24px;padding:0;margin-inline-end:5px;border-radius:7px;display:grid;place-items:center;opacity:.7}.wn-x svg{width:10px;height:10px}
+.wn-x:hover{opacity:1;background:color-mix(in srgb,currentColor 14%,transparent)}
+.wn-t:hover{color:var(--tx)}
+.wn-t.on{background:var(--ac);border-color:var(--ac);color:var(--on,#fff)}
+.wn-t.on .wn-i{color:var(--lime)}
+.sb-opn{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 1px color-mix(in srgb,var(--tx) 30%,transparent);flex:0 0 auto;margin-inline-start:auto}
+@media (max-width:900px){:root{--tb1:56px}.wn{right:0;padding:0 10px}.wn-b{max-width:150px}}
 </style>
 </head>
 <body>
@@ -905,6 +925,7 @@ body.has-sb #jdHome{display:none}
  <button type="button" class="tb-search" id="tbSearch"><span class="tb-si"></span><span class="tb-st">ابحث عن برنامج، تقرير، إعداد…</span><kbd>Ctrl K</kbd></button>
  <div class="tb-act"><button type="button" class="tb-btn" id="tbBell" title="التنبيهات" aria-label="التنبيهات"><span class="tb-bc" id="tbBellC" hidden></span></button><button type="button" class="tb-btn thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
 </header>
+<nav id="wn" class="wn" hidden aria-label="النوافذ المفتوحة"></nav>
 <div id="ckp" class="ckp" hidden><div class="ck-box" role="dialog" aria-label="البحث السريع"><div class="ck-in"><span class="ck-si"></span><input type="text" id="ckIn" placeholder="ابحث عن برنامج، تقرير، إعداد…" autocomplete="off" spellcheck="false"><kbd>Esc</kbd></div><ul class="ck-l" id="ckL"></ul><div class="ck-ft"><span><kbd>↑</kbd><kbd>↓</kbd> تنقل</span><span><kbd>Enter</kbd> فتح</span><span><kbd>Esc</kbd> إغلاق</span></div></div></div>
 <div class="wrap">
   <div class="top"><div class="ttl">📦 تسجيل السحوبات</div><div class="clock" id="clock"></div><button id="theme" class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="histb" title="الأيام السابقة">📅</button><button id="bell" title="مواد قربت تنفذ">🔔<span id="bellc" hidden></span></button><button id="cloudb" title="المزامنة الأونلاين" hidden>☁️</button><button id="gear" title="تعديل">⚙️</button><button id="homeb" title="البرامج">🏠</button><button id="who2" title="تسجيل خروج"></button></div>
@@ -1139,6 +1160,7 @@ body.has-sb #jdHome{display:none}
 <div class="md" id="vm" hidden><div class="mb">
 <div class="vh">ℹ️ 7.0v Online</div><div class="vd">تاريخ التحديث: 12/11/2026</div>
 <ul class="vl">
+<li><b>🪟 النوافذ:</b> البرنامج اللي تفتحه يبقى مفتوح ومثل ما عفته (نفس الصفحة ونفس المكان واللي كاتبه بالخانات) لما تروح لبرنامج ثاني. شريط النوافذ فوق يبين كل المفتوح: اضغط عليه ترجعله، و✕ تسده. البرنامج المفتوح عليه نقطة خضرة بالشريط الجانبي، وإذا ضغطت على نفس البرنامج اللي أنت بيه يرجع لأوله.</li>
 <li><b>🧹 ترتيب شكل النظام كله:</b> كل البرامج صارت بنفس النظام — العنوان يمين وأزرار Excel/PDF يسار بسطر واحد، ونفس المسافة بين كل قسم وقسم، وزر الرجوع (→) بنفس المكان بكل الشاشات.</li>
 <li><b>📱 بالموبايل:</b> أرقام المربع الغامق صارت سطور واضحة (العنوان يمين والرقم كامل يسار)، والأزرار جواه متساوية ومرتبة صفين، وتبديل الشهر بالإيراد صار شريط واحد بأسهم.</li>
 <li><b>🪟 النوافذ:</b> أزرار «حفظ / إلغاء» ثابتة جوه النافذة وتبين دائمًا بدون ما تنزل، والزر الأساسي نفس اللون بكل النوافذ، والرسالة السريعة صارت أصغر وما تغطي العنوان. شهر الجرد صار ينختار بالعربي.</li>
@@ -1952,13 +1974,13 @@ function drawHome(){if(!S.role)return;var acc=ACC(),T=$("tiles");T.innerHTML="";
   var link=a.k==="link"&&!S.hmEd,t=document.createElement(link?"a":"button");t.className="tl";tileFill(t,a);
   if(link){t.href=a.u;t.target="_blank";t.rel="noopener";var x=document.createElement("span");x.className="tx";x.textContent="↗";x.setAttribute("aria-hidden","true");t.appendChild(x);t.title="يفتح "+a.n}
   if(S.hmEd){var d=document.createElement("span");d.className="td";d.textContent="✎";d.setAttribute("aria-hidden","true");t.appendChild(d);t.onclick=function(){apEdit(a.id)}}
-  else if(a.k==="wd")t.onclick=function(){$("home").hidden=true;window.scrollTo(0,0)};
-  else if(a.k==="sp"){t.onclick=function(){spOpen()};var oc=typeof spOverdue==="function"?spOverdue():0;if(oc){var bo=document.createElement("span");bo.className="tbd";bo.textContent="⏰ "+oc;bo.title=oc+" قائمة متأخرة";t.appendChild(bo)}}
-  else if(a.k==="rv"){t.onclick=function(){rvOpen()}}
-  else if(a.k==="rp"){t.onclick=function(){rpOpen()}}
-  else if(a.k==="jd"){t.onclick=function(){jdOpen()};var jo=0;try{Object.keys(S.jrd||{}).forEach(function(k){if(S.jrd[k].st==="open")jo++})}catch(x){}if(jo){var bj=document.createElement("span");bj.className="tbd";bj.textContent="🟢 جاري";bj.title="أكو جرد مفتوح";t.appendChild(bj)}}
-  else if(a.k==="dv"){t.onclick=function(){dvOpen()};var dn=0;try{Object.keys(S.stf||{}).forEach(function(k){var b=0;Object.keys(S.sdb||{}).forEach(function(i){var m=S.sdb[i];if(m.sid===k)b+=m.k==="debt"?m.amount:-m.amount});if(b>0)dn++})}catch(x){}if(dn){var bq=document.createElement("span");bq.className="tbd";bq.textContent="👤 "+dn;bq.title=dn+" عليهم دين";t.appendChild(bq)}}
-  else if(a.k==="xp"){t.onclick=function(){xOpen()};var pc=typeof xPendCount==="function"?xPendCount():0;if(pc){var bd=document.createElement("span");bd.className="tbd";bd.textContent="⏳ "+pc;bd.title=pc+" مصروف مؤقت لازم تكمله";t.appendChild(bd)}}
+  else if(a.k==="wd")t.onclick=function(){if(winGo)winGo("wd");else{$("home").hidden=true;window.scrollTo(0,0)}};
+  else if(a.k==="sp"){t.onclick=function(){if(winGo)winGo("sp");else spOpen()};var oc=typeof spOverdue==="function"?spOverdue():0;if(oc){var bo=document.createElement("span");bo.className="tbd";bo.textContent="⏰ "+oc;bo.title=oc+" قائمة متأخرة";t.appendChild(bo)}}
+  else if(a.k==="rv"){t.onclick=function(){if(winGo)winGo("rv");else rvOpen()}}
+  else if(a.k==="rp"){t.onclick=function(){if(winGo)winGo("rp");else rpOpen()}}
+  else if(a.k==="jd"){t.onclick=function(){if(winGo)winGo("jd");else jdOpen()};var jo=0;try{Object.keys(S.jrd||{}).forEach(function(k){if(S.jrd[k].st==="open")jo++})}catch(x){}if(jo){var bj=document.createElement("span");bj.className="tbd";bj.textContent="🟢 جاري";bj.title="أكو جرد مفتوح";t.appendChild(bj)}}
+  else if(a.k==="dv"){t.onclick=function(){if(winGo)winGo("dv");else dvOpen()};var dn=0;try{Object.keys(S.stf||{}).forEach(function(k){var b=0;Object.keys(S.sdb||{}).forEach(function(i){var m=S.sdb[i];if(m.sid===k)b+=m.k==="debt"?m.amount:-m.amount});if(b>0)dn++})}catch(x){}if(dn){var bq=document.createElement("span");bq.className="tbd";bq.textContent="👤 "+dn;bq.title=dn+" عليهم دين";t.appendChild(bq)}}
+  else if(a.k==="xp"){t.onclick=function(){if(winGo)winGo("xp");else xOpen()};var pc=typeof xPendCount==="function"?xPendCount():0;if(pc){var bd=document.createElement("span");bd.className="tbd";bd.textContent="⏳ "+pc;bd.title=pc+" مصروف مؤقت لازم تكمله";t.appendChild(bd)}}
   T.appendChild(t)});
  if(cs){var ad=document.createElement("button");ad.className="tl add";ad.innerHTML='<span class="ti">＋</span><span>إضافة برنامج</span>';ad.onclick=function(){apEdit(null)};T.appendChild(ad)}}
 $("homeb").onclick=showHome;
@@ -3440,7 +3462,7 @@ new MutationObserver(function(ms){ms.forEach(function(m){Array.prototype.forEach
 })();
 /* ===== 5.9v: «التقارير» (#rp، k:"rp") — كل تقرير يرجع نموذج واحد {title,sub,cards,secs,foot} ينعرض بالشاشة، وينطلع PDF (pdfReport) وExcel (buildXlsx).
    الخلية: نص أو {t, v:رقم للإكسل, col, b, s}. العمود: {h, w, a:"c"|"l", n:رقم, m:مبلغ}. ===== */
-var rpOpen,rpBack,rpList,rpGo;
+var rpOpen,rpBack,rpList,rpGo,rpRender;
 (function(){
 var U=XU,el=U.el,fmn=U.fmn,dmy=U.dmy,tdy=U.tdy,shift=U.shift,iso=U.iso;
 var BAD="#c0392b",WARN="#b45309",OK="#15803d",G="#9aa7b1";
@@ -3667,6 +3689,7 @@ rpOpen=function(){if(!ACC())return;g("rp").hidden=false;home()};
 rpList=function(){return R.map(function(r){return {id:r.id,n:r.n,d:r.d}})};
 rpGo=function(id){if(!ACC())return;g("rp").hidden=false;show(id)};
 rpBack=function(){if(P.cur){home();return true}return false};
+rpRender=function(){if(g("rp").hidden||!P.cur)return;try{run()}catch(e){}};
 g("rpHome").onclick=function(){g("rp").hidden=true;showHome()};
 g("rpBk").onclick=home;g("rpPdf").onclick=toPdf;g("rpXls").onclick=toXls;
 })();
@@ -3674,7 +3697,7 @@ g("rpBk").onclick=home;g("rpPdf").onclick=toPdf;g("rpXls").onclick=toXls;
 /* ===== 6.0v: الشريط الجانبي (#sb) والعلوي (#tb) مثل برنامج الحضور، والبحث السريع (#ckp، Ctrl K) =====
    يطلع بعد الدخول بس (body.has-sb). العناصر = «لوحة التحكم» + البرامج المسموحة (apps() + appOk) + «الإعدادات» لـ canSys().
    التنقل يسد كل الشاشات (#home/#xv/#sv/#dv/#rv/#rp) ويفتح المطلوب بنفس دوال المربعات. ===== */
-var sbSync,ckOpen;
+var sbSync,ckOpen,winGo;
 (function(){
 var SCR=[["jd","jd"],["rp","rp"],["rv","rv"],["dv","dv"],["sv","sp"],["xv","xp"]];
 function g(i){return document.getElementById(i)}
@@ -3685,26 +3708,56 @@ function curKey(){for(var i=0;i<SCR.length;i++)if(!g(SCR[i][0]).hidden)return SC
 function closeAll(){g("home").hidden=true;SCR.forEach(function(x){g(x[0]).hidden=true})}
 function drawerClose(){g("sb").classList.remove("open");g("sbBg").hidden=true}
 function menuClose(){g("sbMenu").hidden=true}
+/* ===== 7.0v: النوافذ — البرنامج اللي ينفتح يبقى مفتوح بحالته (الصفحة الفرعية، مكان النزول، اللي مكتوب بالخانات)، والتنقل من الشريط الجانبي أو شريط النوافذ #wn.
+   WN.open = مفاتيح البرامج المفتوحة بالترتيب (wd/xp/sp/dv/rv/rp/jd)، WN.sc = مكان النزول لكل نافذة، WN.who = منو داخل (تتصفر إذا دخل غيره).
+   winAct(k,fresh): fresh = يفتح البرنامج من أوله (دالة الفتح الأصلية)، وإلا يرجّع النافذة مثل ما هي ويعيد رسمها بـ xRender/spRender/… حتى تتحدث أرقامها. ===== */
+var WN={open:[],sc:{},who:""};
+var OPENER={xp:function(){xOpen()},sp:function(){spOpen()},dv:function(){dvOpen()},rv:function(){rvOpen()},rp:function(){rpOpen()},jd:function(){jdOpen()}};
+var RENDER={xp:function(){xRender()},sp:function(){spRender()},dv:function(){dvRender()},rv:function(){rvRender()},rp:function(){rpRender()},jd:function(){jdRender()}};
+function vid(k){for(var i=0;i<SCR.length;i++)if(SCR[i][1]===k)return SCR[i][0];return null}
+function appOf(k){return myApps().filter(function(a){return a.k===k})[0]}
+function wOpen(k){if(WN.open.indexOf(k)<0)WN.open.push(k)}
+function winAct(k,fresh){
+ if(k!=="home"&&!appOf(k)){wClose(k);return}
+ closeAll();
+ if(k==="home")showHome();
+ else if(k==="wd"){wOpen(k);if(fresh)window.scrollTo(0,0)}
+ else{var e=g(vid(k)),y=WN.sc[k]||0;
+  if(fresh||WN.open.indexOf(k)<0){OPENER[k]();if(!e.hidden)wOpen(k)}
+  else{e.hidden=false;try{RENDER[k]()}catch(x){console.error(x)}e.scrollTop=y;requestAnimationFrame(function(){if(!e.hidden)e.scrollTop=y})}}
+ draw()}
+function wClose(k){var i=WN.open.indexOf(k);if(i<0)return;var cur=curKey()===k;WN.open.splice(i,1);delete WN.sc[k];
+ if(cur){var nx=WN.open[i]||WN.open[i-1];winAct(nx||"home",false)}else draw()}
+function drawWn(){var W=g("wn"),k=curKey();WN.open=WN.open.filter(function(x){return appOf(x)});
+ var on=WN.open.length>0&&!g("sb").hidden;document.body.classList.toggle("has-wn",on);W.hidden=!on;W.innerHTML="";if(!on)return;
+ function tab(key,label,icon,cl){var t=document.createElement("div");t.className="wn-t"+(key===k?" on":"");
+  t.innerHTML='<button type="button" class="wn-b"><span class="wn-i">'+bs(icon)+'</span><span class="wn-n"></span></button>'+(cl?'<button type="button" class="wn-x" aria-label="إغلاق النافذة" title="إغلاق">'+bs("x-lg")+'</button>':"");
+  t.querySelector(".wn-n").textContent=label;t.querySelector(".wn-b").title=label;t.querySelector(".wn-b").onclick=function(){if(key!==curKey())winAct(key,false)};
+  if(cl)t.querySelector(".wn-x").onclick=function(ev){ev.stopPropagation();wClose(key)};W.appendChild(t);return t}
+ tab("home","لوحة التحكم","house",false);var act=null;
+ WN.open.forEach(function(x){var a=appOf(x),t=tab(x,a.n,appIcon(a),true);if(x===k)act=t});
+ if(act&&act.scrollIntoView)try{act.scrollIntoView({block:"nearest",inline:"nearest"})}catch(e){}}
+SCR.forEach(function(x){g(x[0]).addEventListener("scroll",function(){if(!this.hidden)WN.sc[x[1]]=this.scrollTop},{passive:true})});
+winGo=function(k){winAct(k,false)};
 function go(a){menuClose();drawerClose();
- if(a==="home"){closeAll();showHome();return}
+ if(a==="home"){winAct("home");return}
  if(a==="sys"){sysOpen();return}
  if(a.k==="link"){window.open(a.u,"_blank","noopener");return}
- closeAll();
- if(a.k==="wd")window.scrollTo(0,0);else if(a.k==="xp")xOpen();else if(a.k==="sp")spOpen();else if(a.k==="dv")dvOpen();else if(a.k==="rv")rvOpen();else if(a.k==="rp")rpOpen();else if(a.k==="jd")jdOpen();
- draw()}
+ winAct(a.k,a.k===curKey())}
 function sbBkWarn(){var d=DK.st();if(d)return d.warn?d.txt:"";var a=bkAgo();return a==null||a>=7?(S.bk?"آخر نسخة احتياطية قبل "+a+" يوم":"ما مسوي نسخة احتياطية بعد"):""}
 function ini(n){var w=String(n||"").replace(/^د\.\s*/,"").trim().split(/\s+/);return ((w[0]||"").charAt(0)+(w[1]||"").charAt(0))||"؟"}
 function draw(){var L=g("sbList"),k=curKey();L.innerHTML="";
  function item(label,icon,on,fn,extra){var li=document.createElement("li"),b=document.createElement("button");b.type="button";b.className="sb-it"+(on?" on":"");
   b.innerHTML='<span class="sbi">'+bs(icon)+'</span><span class="sbt"></span>'+(extra||"");b.querySelector(".sbt").textContent=label;b.title=label;b.onclick=fn;li.appendChild(b);L.appendChild(li)}
  item("لوحة التحكم","house",k==="home",function(){go("home")});
- myApps().forEach(function(a){item(a.n,appIcon(a),a.k===k,function(){go(a)},a.k==="link"?'<span class="sb-ext">↗</span>':"")});
+ myApps().forEach(function(a){item(a.n,appIcon(a),a.k===k,function(){go(a)},a.k==="link"?'<span class="sb-ext">↗</span>':a.k!==k&&WN.open.indexOf(a.k)>-1?'<span class="sb-opn" title="مفتوح"></span>':"")});
  if(canSys()){var sp=document.createElement("li");sp.className="sb-sep";sp.setAttribute("aria-hidden","true");L.appendChild(sp);var bw=sbBkWarn();item("الإعدادات","gear",!g("sysm").hidden,function(){go("sys")},(bw?'<span class="sb-dot" title="'+bw+'"></span>':"")+'<span class="sb-hint">'+bs("chevron-left")+'</span>')}
  var u=UA(),nm=u?u.n:ACC()?"الإدارة":(S.emp||"موظف");g("sbName").textContent=nm;g("sbRole").textContent=u?(u.r==="acc"?"إدارة":"موظف"):ACC()?"مدير النظام":"موظف";
  g("sbAv").textContent=ini(nm);g("sbAv").style.setProperty("--h",nmHue(nm));g("sbPw").hidden=!(u||ACC());
- if(typeof bellUpd==="function")try{bellUpd()}catch(e){}}
-function show(on){document.body.classList.toggle("has-sb",!!on);g("sb").hidden=g("tb").hidden=!on;if(!on){drawerClose();menuClose();ckClose()}}
-sbSync=function(){var on=!!S.role&&g("login").hidden;show(on);if(on)draw()};
+ if(typeof bellUpd==="function")try{bellUpd()}catch(e){}
+ drawWn()}
+function show(on){document.body.classList.toggle("has-sb",!!on);g("sb").hidden=g("tb").hidden=!on;if(!on){drawerClose();menuClose();ckClose();document.body.classList.remove("has-wn");g("wn").hidden=true}}
+sbSync=function(){var on=!!S.role&&g("login").hidden;if(on){var who=S.role+"|"+(S.uid||"");if(WN.who!==who){WN.open=[];WN.sc={};WN.who=who}}show(on);if(on)draw()};
 /* أيقونات ثابتة */
 g("sbPill").insertAdjacentHTML("afterbegin",bs("heart-pulse"));g("sbX").innerHTML=bs("x-lg");g("sbCv").innerHTML=bs("chevron-down");
 g("sbOut").innerHTML=bs("box-arrow-right")+"<span>تسجيل الخروج</span>";g("sbPw").innerHTML=bs("key")+"<span>تغيير الباسوورد</span>";g("sbLock").innerHTML=bs("lock")+"<span>قفل البرنامج</span>";
@@ -3720,7 +3773,7 @@ g("sbPw").onclick=function(){menuClose();var u=UA();if(!u){$("apw").click();retu
   var salt=b64(crypto.getRandomValues(new Uint8Array(9)));uHash(p,salt).then(function(h){var o=Object.assign({},S.usr);o[S.uid]=Object.assign({},o[S.uid],{s:salt,h:h,a:SUB?"s":"h",ts:Date.now()});S.usr=o;save();toast("✔ تغيّر الباسوورد")})})};
 g("tbBell").onclick=function(){showAlerts()};
 /* التحديث التلقائي للعنصر الفعّال */
-var mo=new MutationObserver(function(){if(S.role&&!g("sb").hidden)draw()});
+var mo=new MutationObserver(function(){if(S.role&&!g("sb").hidden){var k=curKey();if(k!=="home"&&appOf(k))wOpen(k);draw()}});
 ["home","xv","sv","dv","rv","rp","jd","sysm"].forEach(function(id){mo.observe(g(id),{attributes:true,attributeFilter:["hidden"]})});
 new MutationObserver(sbSync).observe(g("login"),{attributes:true,attributeFilter:["hidden"]});
 
