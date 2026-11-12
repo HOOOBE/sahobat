@@ -971,6 +971,32 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 #xm .ui-zm button{min-height:44px;min-width:48px;border-radius:12px;font-weight:800;font-size:18px}
 #xm .ui-zm b{flex:1;text-align:center;font-size:18px;direction:ltr}
 #xm .ui-rs{align-self:flex-start;min-height:38px;padding:0 14px;border-radius:10px;font-size:13.5px;font-weight:700;color:var(--mut)}
+/* 7.3v: تسديدات الشهر بالموردين */
+#sv .sp-plan{display:flex;flex-direction:column;gap:12px}
+#sv .sp-plh{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}#sv .sp-plh h2{margin:0}
+#sv .sp-pln{display:flex;align-items:center;gap:6px;background:var(--bg);border-radius:12px;padding:4px}
+#sv .sp-pln b{min-width:128px;text-align:center;font-size:15px;white-space:nowrap}
+#sv .sp-pln button{min-height:0;width:36px;height:36px;padding:0;border-radius:9px;font-weight:800;font-size:16px;background:var(--card)}
+#sv .sp-pls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#sv .sp-pls>div{background:var(--bg);border-radius:12px;padding:8px 12px;min-width:0;container-type:inline-size}
+#sv .sp-pls span{display:block;font-size:13px;color:var(--mut);font-weight:600}
+#sv .sp-pls b{display:block;font-size:19px;font-weight:800;white-space:nowrap;overflow:hidden}
+@supports (font-size:1cqi){#sv .sp-pls b{font-size:clamp(12px,13cqi,20px)}}
+@media (max-width:420px){#sv .sp-pls{grid-template-columns:minmax(0,1fr);gap:4px}#sv .sp-pls>div{display:flex;justify-content:space-between;align-items:center;gap:10px;container-type:normal}#sv .sp-pls b{font-size:16px}}
+:root[data-nar] #sv .sp-pls{grid-template-columns:minmax(0,1fr);gap:4px}:root[data-nar] #sv .sp-pls>div{display:flex;justify-content:space-between;align-items:center;gap:10px;container-type:normal}:root[data-nar] #sv .sp-pls b{font-size:16px}
+#sv .sp-pls .ok b{color:var(--ok)}#sv .sp-pls .bad b{color:var(--bad)}
+#sv .sp-pla{display:flex;gap:8px;flex-wrap:wrap}#sv .sp-pla button{flex:1 1 150px;min-height:46px;border-radius:12px;font-weight:700}
+#sv .sp-pla button.pri{background:var(--ac);color:var(--on);border-color:var(--ac)}
+#sv .bdg.plan{color:#8a5a00;background:#fff3d6}:root[data-theme="dark"] #sv .bdg.plan{color:#ffd88a;background:#3d2f10}
+#sv .acts button.pl.on{color:var(--mut)}
+#xm .sp-fl{display:flex;flex-direction:column;gap:6px}#xm .sp-fl>span{font-weight:600}
+#xm .sp-pk{display:flex;flex-direction:column;gap:6px}
+#xm .sp-pkr{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:12px;padding:8px 12px;cursor:pointer}
+#xm .sp-pkr input{width:22px;height:22px;flex:none;accent-color:var(--ac)}
+#xm .sp-pkr span{flex:1;min-width:0}#xm .sp-pkr b{display:block}#xm .sp-pkr small{display:block;color:var(--mut);font-size:13px;font-weight:500}
+#xm .sp-pkr i{font-style:normal;font-weight:800;white-space:nowrap}
+#xm .sp-pkr:has(input:checked){border-color:var(--ac);background:color-mix(in srgb,var(--ac) 6%,var(--card))}
+#xm .sp-pkt{display:flex;justify-content:space-between;gap:10px;font-weight:700;padding:6px 2px 0}
 </style>
 </head>
 <body>
@@ -1057,7 +1083,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <section class="sys-s" style="--sc:#d97706"><h3>البرنامج</h3><div class="sysl">
 <button id="sysUi">🎨 واجهة النظام<small id="sysUiS">الثيم، الألوان، الخط، وحجم العرض</small></button>
 <button id="sysUp">↩ تحديث البرنامج<small>يجيب آخر نسخة من النت ويعيد الفتح</small></button>
-<button id="verb">ℹ️ الإصدار 7.2v Online<small>شنو الجديد بهذه النسخة</small></button>
+<button id="verb">ℹ️ الإصدار 7.3v Online<small>شنو الجديد بهذه النسخة</small></button>
 <button id="wipe" hidden class="sysd">🧹 تصفير البيانات<small>يمسح البيانات اللي تختارها — سوّي نسخة احتياطية قبلها</small></button>
 </div></section>
 </div></div></div>
@@ -1071,7 +1097,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <div class="hmt"><h1><img src="icon-192.png" alt="" class="hm-ic" width="44" height="44"><span class="hm-tt">Manar Derma OS<small id="hmWho"></small></span></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">7.2v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">7.3v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -1164,6 +1190,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <div class="x-top"><button id="spHome" title="رجوع لشاشة البرامج">🏠 البرامج</button><div class="x-brand"><h1>الموردين والديون</h1><div id="spClock"></div></div><button id="spExp">📊 Excel</button><button id="spPdf">📄 PDF</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button></div>
 <div id="spList">
 <section id="spSum"></section>
+<section class="x-card sp-plan" id="spPlan"></section>
 <section class="x-pbox sp-od" id="spOd" hidden></section>
 <section class="x-card"><h2>الموردين</h2>
 <div class="x-af"><input class="x-fld" id="spQ" type="search" placeholder="🔍 بحث باسم المورد أو رقمه" autocomplete="off" aria-label="بحث بالموردين"><div class="x-afc"><button id="spDebt" class="x-chip on">💳 اللي عليهم دين</button><button id="spAll" class="x-chip">👥 الكل</button></div></div>
@@ -1199,7 +1226,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <div class="hab lg-ab"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
 <div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
 <div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b></div></div>
-<button id="ver" title="شنو الجديد بهذه النسخة؟">7.2v Online · ℹ️ شنو الجديد؟</button>
+<button id="ver" title="شنو الجديد بهذه النسخة؟">7.3v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -1224,13 +1251,13 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 7.2v Online</div><div class="vd">تاريخ التحديث: 12/11/2026</div>
+<div class="vh">ℹ️ 7.3v Online</div><div class="vd">تاريخ التحديث: 12/11/2026</div>
 <ul class="vl">
-<li><b>🔍 تكبير وتصغير:</b> أيقونة المكبرة فوق بكل الشاشات — تكبّر أو تصغّر العرض كله (من 80% لحد 150%)، والضغط على النسبة يرجعها 100%.</li>
-<li><b>🎨 واجهة النظام:</b> بالإعدادات ← «واجهة النظام»: خمس ثيمات (الأساسي، منار الذهبي من ألوان شعار العيادة، وردي هادئ، أخضر طبي، أزرق ملكي) وكلها بيها نهاري وليلي، ولون التمييز، وأربع خطوط عربية (Cairo، Tajawal، IBM Plex Sans Arabic، Almarai)، وحجم العرض.</li>
-<li><b>💻 لكل جهاز شكله:</b> الإعدادات تنحفظ على الجهاز نفسه، فالحاسبة والتاب والموبايل كل واحد يختار اللي يريحه. وتقارير PDF تبقى بنفس شكلها الرسمي.</li>
+<li><b>📌 تسديدات الشهر:</b> بالموردين بطاقة جديدة — تجدول بيها القوائم اللي راح تسددها هذا الشهر («+ جدول قوائم للتسديد»، أو زر «📌 جدولها لهذا الشهر» يم أي قائمة)، وتشوف شگد تسدد وشگد باقي.</li>
+<li><b>🏦 منين انتسددت:</b> وقت التسديد تختار المصدر (الخزينة، الإيراد، الطبيبة، أو تكتب غيره) وينحفظ ويه القائمة.</li>
+<li><b>📄 كشف التسديدات للطبيبة:</b> PDF لكل شهر: القوائم اللي تسددت ومنين كل وحدة وتاريخها وصورة الوصل، وملخص حسب المصدر، والقوائم المجدولة اللي بعدها ما تسددت.</li>
 </ul>
-<div class="vold"><b>7.1v Online</b>: نوافذ الإدخال ما تنسد بالضغط براها.<br><b>7.0v Online</b>: النوافذ (البرنامج يبقى مفتوح بحالته) وترتيب شكل النظام كله.<br><b>6.9v Online</b>: أرقام تقارير PDF ما تتداخل، وفحص كامل لكل الشاشات.<br><b>6.8v Online</b>: «جلسة على الحساب» بديون الكادر وتسديد «انسدد بسستم العيادة».<br><b>6.7v Online</b>: برنامج «جرد المخزن»، «مسددة مسبقًا» بتقارير الموردين، والخروج التلقائي بعد 5 دقايق.</div>
+<div class="vold"><b>7.2v Online</b>: مكبرة تكبير/تصغير، وواجهة النظام (ثيمات، خطوط، ألوان).<br><b>7.1v Online</b>: نوافذ الإدخال ما تنسد بالضغط براها.<br><b>7.0v Online</b>: النوافذ (البرنامج يبقى مفتوح بحالته) وترتيب شكل النظام كله.<br><b>6.9v Online</b>: أرقام تقارير PDF ما تتداخل، وفحص كامل لكل الشاشات.<br><b>6.8v Online</b>: «جلسة على الحساب» بديون الكادر وتسديد «انسدد بسستم العيادة».</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="pri">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="pri">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -1428,7 +1455,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="7.2";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="7.3";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysx").onclick=function(){$("sysm").hidden=true};
 $("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
@@ -2879,6 +2906,7 @@ function drawList(){var tot=0,debtors=0,mon=tdy().slice(0,7),pm=0;var L=sups().m
  B.appendChild(el("div",{class:"x-tre"},[el("div",{},[el("div",{class:"x-lbl",text:"مجموع القوائم غير المسددة"}),el("div",{class:"x-big num"},[fmn(tot),el("small",{text:"دينار"})])]),
   el("div",{style:"min-width:0"},[el("div",{class:"x-meta"},[el("div",{},[el("span",{class:"x-lbl",text:"موردين عليهم دين"}),el("b",{class:"num",text:String(debtors)})]),el("div",{},[el("span",{class:"x-lbl",text:"قوائم متأخرة"}),el("b",{class:"num",text:String(od.length)})]),el("div",{},[el("span",{class:"x-lbl",text:"تسدد هذا الشهر"}),el("b",{class:"num",text:fmn(pm)})])])]),
   el("div",{class:"x-tact"},[el("button",{class:"pri",text:"+ قائمة جديدة",on:{click:function(){invForm(null,null)}}}),el("button",{text:"+ مورد جديد",on:{click:function(){supForm(null)}}})])]));
+ drawPlan();
  var O=g("spOd");O.innerHTML="";O.hidden=!od.length;
  if(od.length){O.appendChild(el("h2",{text:"⏰ قوائم متأخرة ("+od.length+")"}));O.appendChild(el("p",{text:"فات موعد تسديدها وبعدها غير مسددة."}));var ol=el("div",{class:"x-pl"});
   od.forEach(function(o){ol.appendChild(el("button",{on:{click:function(){openSup(o.s.id)}}},[el("span",{},[el("span",{text:o.s.n+(o.m.no?" · قائمة "+o.m.no:"")}),el("small",{text:"موعدها "+dmy(o.m.due)})]),el("b",{class:"num",text:fmn(o.rem)})]))});O.appendChild(ol)}
@@ -2892,6 +2920,51 @@ function drawList(){var tot=0,debtors=0,mon=tdy().slice(0,7),pm=0;var L=sups().m
  rows.forEach(function(r){var a=r.a,odn=a.od.length,un=a.M.filter(function(m){return !m.paid}).length;R.appendChild(el("div",{class:"x-it sp-r",role:"button",tabindex:"0",on:{click:function(){openSup(r.s.id)},keydown:function(e){if(e.key==="Enter")openSup(r.s.id)}}},[
   el("span",{class:"e",text:"🏪"}),el("div",{style:"min-width:0"},[el("div",{class:"t"},[r.s.n,odn?el("span",{class:"bdg late",text:"⏰ "+odn+" متأخرة"}):null]),el("div",{class:"s",text:[r.s.ph,a.M.length?a.M.length+" قائمة"+(un?" · "+un+" غير مسددة":" · كلها مسددة"):"بدون قوائم"].filter(Boolean).join(" · ")})]),
   el("span",{class:"a num"+(a.bal>0?"":" ok"),text:a.bal>0?fmn(a.bal):"✓ مسدد"})]))})}
+/* ---------- تسديدات الشهر (7.3v): القائمة تنجدول لشهر (plan:"YYYY-MM")، ومن تتسدد ينحفظ منين (psrc)، وكشف PDF للطبيبة ---------- */
+var PSRC=[["tr","🏦 الخزينة"],["rev","💰 الإيراد"],["dr","👩‍⚕️ الطبيبة"]],PMON=["كانون الثاني","شباط","آذار","نيسان","أيار","حزيران","تموز","آب","أيلول","تشرين الأول","تشرين الثاني","كانون الأول"];
+function srcN(v){if(!v)return "—";var x=PSRC.filter(function(t){return t[0]===v})[0];return x?x[1].replace(/^\S+\s/,""):v}
+function monN(m){var p=(m||"").split("-");return p.length<2?m:PMON[+p[1]-1]+" "+p[0]}
+function monShift(m,d){var p=m.split("-"),x=new Date(+p[0],+p[1]-1+d,1);return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")}
+function planSet(id,mon){var o=Object.assign({},S.smv[id]);if(mon)o.plan=mon;else delete o.plan;S.smv[id]=o;commit();toast(mon?"📌 انجدولت لتسديدات "+monN(mon):"انشالت من الجدولة")}
+/* قوائم الشهر: المجدولة له + اللي تسددت بيه (حتى لو ما مجدولة) + بالشهر الحالي: المجدولة لأشهر فاتت وبعدها ما تسددت (مرحّلة) */
+function planOf(mon){var cur=tdy().slice(0,7),L=[];Object.keys(S.smv).forEach(function(id){var m=S.smv[id];if(!m||m.k!=="inv"||!S.sup[m.sid])return;var pd=(m.pdate||"").slice(0,7);
+  if(m.paid?(pd===mon||(m.plan===mon&&!pd)):(m.plan===mon||(mon===cur&&m.plan&&m.plan<mon)))L.push(Object.assign({id:id},m))});
+ L.sort(function(a,b){return (a.paid?1:0)-(b.paid?1:0)||(a.paid?(a.pdate||"").localeCompare(b.pdate||""):0)||S.sup[a.sid].n.localeCompare(S.sup[b.sid].n,"ar")||(a.date||"").localeCompare(b.date||"")});
+ var t={L:L,P:L.filter(function(m){return m.paid}),U:L.filter(function(m){return !m.paid}),tp:0,tu:0};t.P.forEach(function(m){t.tp+=m.amount||0});t.U.forEach(function(m){t.tu+=m.amount||0});return t}
+function drawPlan(){var B=g("spPlan"),mon=P.pm||(P.pm=tdy().slice(0,7)),t=planOf(mon);B.innerHTML="";
+ B.appendChild(el("div",{class:"sp-plh"},[el("h2",{text:"📌 تسديدات الشهر"}),el("div",{class:"sp-pln"},[el("button",{type:"button","aria-label":"الشهر السابق",text:"→",on:{click:function(){P.pm=monShift(mon,-1);drawPlan()}}}),el("b",{text:monN(mon)}),el("button",{type:"button","aria-label":"الشهر التالي",text:"←",on:{click:function(){P.pm=monShift(mon,1);drawPlan()}}})])]));
+ B.appendChild(el("div",{class:"sp-pls"},[el("div",{},[el("span",{text:"المجموع"}),el("b",{class:"num",text:fmn(t.tp+t.tu)})]),el("div",{class:"ok"},[el("span",{text:"✓ تسدد ("+t.P.length+")"}),el("b",{class:"num",text:fmn(t.tp)})]),el("div",{class:"bad"},[el("span",{text:"الباقي ("+t.U.length+")"}),el("b",{class:"num",text:fmn(t.tu)})])]));
+ B.appendChild(el("div",{class:"sp-pla"},[el("button",{type:"button",class:"pri",text:"+ جدول قوائم للتسديد",on:{click:function(){planPick(mon)}}}),el("button",{type:"button",text:"📄 كشف التسديدات PDF",on:{click:function(){pdfPlan(mon)}}})]));
+ if(!t.L.length){B.appendChild(el("div",{class:"x-empty",text:"ما أكو قوائم مجدولة أو مسددة بـ "+monN(mon)+". اضغط «+ جدول قوائم للتسديد» واختار القوائم اللي راح تسددها."}));return}
+ var R=el("div",{class:"x-list"});B.appendChild(R);
+ t.L.forEach(function(m){var s=S.sup[m.sid];R.appendChild(el("div",{class:"x-it sp-mv "+(m.paid?"paid":"unpaid"),role:"button",tabindex:"0",on:{click:function(){mvDetail(m.id)},keydown:function(e){if(e.key==="Enter")mvDetail(m.id)}}},[el("span",{class:"e",text:m.paid?"✅":"📌"}),
+  el("div",{style:"min-width:0"},[el("div",{class:"t"},[s.n,el("span",{class:"bdg "+(m.paid?"ok":"plan"),text:m.paid?"✓ تسددت"+(m.psrc?" من "+srcN(m.psrc):""):(m.plan&&m.plan<mon?"مرحّلة من "+monN(m.plan):"بانتظار التسديد")})]),
+   el("div",{class:"s",text:["قائمة"+(m.no?" رقم "+m.no:""),dmy(m.date),m.paid?"تسددت "+dmy(m.pdate)+(m.pm?" · "+m.pm:""):(m.due?"موعدها "+dmy(m.due):"")].filter(Boolean).join(" · ")})]),
+  el("span",{class:"a num",text:fmn(m.amount)}),
+  el("div",{class:"acts"},m.paid?[!m.psrc?el("button",{text:"✎ حدد منين انتسددت",on:{click:function(e){e.stopPropagation();payQuick(m.id)}}}):null]:[el("button",{class:"pay",text:"💵 تسديد",on:{click:function(e){e.stopPropagation();payQuick(m.id)}}}),el("button",{text:"✕ شيلها",on:{click:function(e){e.stopPropagation();planSet(m.id,"")}}})])]))})}
+function planPick(mon){var U2=[];Object.keys(S.smv).forEach(function(id){var m=S.smv[id];if(m&&m.k==="inv"&&!m.paid&&S.sup[m.sid]&&m.plan!==mon)U2.push(Object.assign({id:id},m))});
+ if(!U2.length){toast("ما أكو قوائم غير مسددة تنضاف");return}
+ U2.sort(function(a,b){return S.sup[a.sid].n.localeCompare(S.sup[b.sid].n,"ar")||(a.date||"").localeCompare(b.date||"")});
+ var f=el("div",{class:"sp-pk"}),sum=el("b",{class:"num",text:"0"}),td=tdy();
+ function upd(){var t=0,n=0;Array.prototype.forEach.call(f.querySelectorAll("input:checked"),function(c){t+=+c.dataset.a;n++});sum.textContent=n+" قائمة · "+fmn(t)}
+ U2.forEach(function(m){var c=el("input",{type:"checkbox",value:m.id,"data-a":String(m.amount||0),on:{change:upd}}),late=m.due&&m.due<td;
+  f.appendChild(el("label",{class:"sp-pkr"},[c,el("span",{},[el("b",{text:S.sup[m.sid].n}),el("small",{text:["قائمة"+(m.no?" رقم "+m.no:""),dmy(m.date),m.due?(late?"⏰ متأخرة · ":"")+"موعدها "+dmy(m.due):"",m.plan?"مجدولة لـ "+monN(m.plan):""].filter(Boolean).join(" · ")})]),el("i",{class:"num",text:fmn(m.amount)})]))});
+ f.appendChild(el("div",{class:"sp-pkt"},[el("span",{text:"المختار:"}),sum]));
+ U.modal("📌 جدول قوائم لتسديدات "+monN(mon),f,[{t:"إلغاء"},{t:"جدولها",cls:"ok",fn:function(){var ids=Array.prototype.map.call(f.querySelectorAll("input:checked"),function(c){return c.value});if(!ids.length){toast("اختار قائمة وحدة على الأقل");return false}
+  ids.forEach(function(id){S.smv[id]=Object.assign({},S.smv[id],{plan:mon})});commit();toast("📌 انجدولت "+ids.length+" قائمة لـ "+monN(mon))}}])}
+function pdfPlan(mon){var t=planOf(mon);if(!t.L.length){toast("ما أكو قوائم بهذا الشهر حتى يطلع كشف");return}
+ ensureOrg(function(){var OK="#1b8a4b",BAD="#c0392b",D="—",by={};
+ var s1={h:"✓ القوائم اللي تسددت ("+t.P.length+")",cols:[{h:"#",w:26},{h:"المورد / القائمة"},{h:"تاريخ القائمة",w:84,n:1},{h:"تاريخ التسديد",w:84,n:1},{h:"منين انتسددت",w:104},{h:"المبلغ",w:100,a:"l",n:1}],rows:[]};
+ t.P.forEach(function(m,i){var k=srcN(m.psrc);by[k]=by[k]||{n:0,a:0};by[k].n++;by[k].a+=m.amount||0;
+  s1.rows.push({im:m.pimgs||[],cap:S.sup[m.sid].n+" · قائمة"+(m.no?" رقم "+m.no:"")+" · وصل التسديد",c:[String(i+1),{t:S.sup[m.sid].n,b:1,s:["قائمة"+(m.no?" رقم "+m.no:""),m.pm,m.pnote].filter(Boolean).join(" · ")},dmy(m.date),{t:m.pdate?dmy(m.pdate):D,col:OK},{t:k,b:1},{t:fmn(m.amount),b:1,col:OK}]})});
+ if(t.P.length)s1.rows.push({k:"tot",c:["","مجموع المسدد","","","",{t:fmn(t.tp),col:OK}]});
+ var s2={h:"منين انتسددت (ملخص)",cols:[{h:"المصدر"},{h:"عدد القوائم",w:110,a:"c",n:1},{h:"المبلغ",w:130,a:"l",n:1}],rows:Object.keys(by).sort(function(a,b){return by[b].a-by[a].a}).map(function(k){return {c:[{t:k==="—"?"ما محدد":k,b:1},String(by[k].n),{t:fmn(by[k].a),b:1}]}})};
+ var s3={h:"⏳ مجدولة وبعدها ما تسددت ("+t.U.length+")",cols:[{h:"#",w:26},{h:"المورد / القائمة"},{h:"تاريخ القائمة",w:84,n:1},{h:"موعد التسديد",w:96,n:1},{h:"المبلغ",w:100,a:"l",n:1}],rows:[]};
+ t.U.forEach(function(m,i){s3.rows.push({c:[String(i+1),{t:S.sup[m.sid].n,b:1,s:"قائمة"+(m.no?" رقم "+m.no:"")},dmy(m.date),m.due?dmy(m.due):D,{t:fmn(m.amount),b:1,col:BAD}]})});
+ if(t.U.length)s3.rows.push({k:"tot",c:["","مجموع الباقي","","",{t:fmn(t.tu),col:BAD}]});
+ pdfReport({title:"كشف تسديدات الموردين — "+monN(mon),sub:"صدر "+wd(tdy())+" "+dmy(tdy()),info:[t.L.length+" قائمة · "+t.P.length+" تسددت · "+t.U.length+" باقية"],
+  cards:[["مجموع قوائم الشهر",fmn(t.tp+t.tu)+" د.ع"],["✓ تسدد",fmn(t.tp)+" د.ع",OK,"#eef8f1"],["الباقي",fmn(t.tu)+" د.ع",BAD,"#fdf1ef"]],
+  secs:[s1,s2,s3].filter(function(s){return s.rows.length}),name:"كشف تسديدات الموردين - "+monN(mon)})})}
 /* ---------- صفحة مورد ---------- */
 function openSup(id){P.view="sup";P.sid=id;render();g("sv").scrollTop=0}
 function drawSup(){var s=S.sup[P.sid];if(!s){P.view="list";return drawList()}var a=acct(P.sid);
@@ -2904,10 +2977,11 @@ function drawSup(){var s=S.sup[P.sid];if(!s){P.view="list";return drawList()}var
  if(!a.M.length){R.appendChild(el("div",{class:"x-empty",text:"ما أكو قوائم لهذا المورد بعد. اضغط «+ قائمة»."}));return}
  a.M.slice().reverse().forEach(function(m){var cs=a.st[m.id],sx=status(cs),ni=(m.imgs||[]).length+(m.pimgs||[]).length;
   R.appendChild(el("div",{class:"x-it sp-mv "+(m.paid?"paid":"unpaid"),role:"button",tabindex:"0",title:"اضغط حتى تشوف التفاصيل",on:{click:function(){mvDetail(m.id)},keydown:function(e){if(e.key==="Enter")mvDetail(m.id)}}},[el("span",{class:"e",text:m.paid?"✅":"🧾"}),
-   el("div",{style:"min-width:0"},[el("div",{class:"t"},["قائمة"+(m.no?" رقم "+m.no:""),el("span",{class:"bdg "+sx[1],text:sx[0]})]),
-    el("div",{class:"s",text:[wd(m.date)+" "+dmy(m.date),!m.paid&&m.due?"موعد التسديد "+dmy(m.due):"",m.note,m.paid?"تسددت "+(m.pdate?dmy(m.pdate):"")+(m.pm?" · "+m.pm:"")+(m.pnote?" · "+m.pnote:""):""].filter(Boolean).join(" · ")})]),
+   el("div",{style:"min-width:0"},[el("div",{class:"t"},["قائمة"+(m.no?" رقم "+m.no:""),el("span",{class:"bdg "+sx[1],text:sx[0]}),!m.paid&&m.plan?el("span",{class:"bdg plan",text:"📌 مجدولة · "+monN(m.plan)}):null]),
+    el("div",{class:"s",text:[wd(m.date)+" "+dmy(m.date),!m.paid&&m.due?"موعد التسديد "+dmy(m.due):"",m.note,m.paid?"تسددت "+(m.pdate?dmy(m.pdate):"")+(m.psrc?" · من "+srcN(m.psrc):"")+(m.pm?" · "+m.pm:"")+(m.pnote?" · "+m.pnote:""):""].filter(Boolean).join(" · ")})]),
    el("span",{class:"a num",text:fmn(m.amount)}),
    el("div",{class:"acts"},[!m.paid?el("button",{class:"pay",text:"💵 تسديد",on:{click:function(e){e.stopPropagation();payQuick(m.id)}}}):null,
+    !m.paid?el("button",{class:m.plan?"pl on":"pl",text:m.plan?"📌 شيلها من الجدولة":"📌 جدولها لهذا الشهر",on:{click:function(e){e.stopPropagation();planSet(m.id,m.plan?"":tdy().slice(0,7))}}}):null,
     el("button",{text:"📋 التفاصيل",on:{click:function(e){e.stopPropagation();mvDetail(m.id)}}}),ni?el("button",{class:"iv",text:"🖼️ الصور"+(ni>1?" ("+ni+")":""),on:{click:function(e){e.stopPropagation();U.viewer((m.imgs||[]).concat(m.pimgs||[]),0)}}}):null,
     el("button",{text:"✎ تعديل",on:{click:function(e){e.stopPropagation();invForm(m.id,m.sid)}}}),
     el("button",{class:"dl",text:"🗑 حذف",on:{click:function(e){e.stopPropagation();delMv(m)}}})])]))})}
@@ -2916,7 +2990,7 @@ function dItem(l,v,cls){return el("div",{class:"sp-di"+(cls?" "+cls:"")},[el("sp
 function mvDetail(id){var m0=S.smv[id];if(!m0||m0.k!=="inv")return;var m=Object.assign({id:id},m0),s=S.sup[m.sid]||{n:"—"},a=acct(m.sid),st=a.st[m.id]||{paid:0,rem:m.amount},sx=status(st),f=el("div",{class:"sp-det"});
  f.appendChild(el("div",{class:"sp-st "+sx[1]},[sx[0]]));
  f.appendChild(el("div",{class:"sp-dg"},[dItem("المورد",s.n),dItem("رقم القائمة",m.no||"—"),dItem("تاريخ القائمة",wd(m.date)+" "+dmy(m.date)),dItem("مبلغ القائمة",fmn(m.amount)+" دينار",m.paid?"ok":"bad"),
-  m.paid?dItem("تاريخ التسديد",m.pdate?wd(m.pdate)+" "+dmy(m.pdate):"—","ok"):dItem("موعد التسديد",m.due?dmy(m.due):"بدون موعد",st.late?"bad":""),m.paid?dItem("طريقة الدفع",m.pm||"—"):null]));
+  m.paid?dItem("تاريخ التسديد",m.pdate?wd(m.pdate)+" "+dmy(m.pdate):"—","ok"):dItem("موعد التسديد",m.due?dmy(m.due):"بدون موعد",st.late?"bad":""),m.paid?dItem("طريقة الدفع",m.pm||"—"):null,m.paid?dItem("منين انتسددت",srcN(m.psrc),"ok"):null,m.plan?dItem("مجدولة للتسديد",monN(m.plan)):null]));
  if(m.note)f.appendChild(el("div",{class:"sp-dn"},[el("span",{text:"المواد / الملاحظة"}),el("p",{text:m.note})]));
  if(m.paid&&m.pnote)f.appendChild(el("div",{class:"sp-dn"},[el("span",{text:"ملاحظة التسديد / رقم الوصل"}),el("p",{text:m.pnote})]));
  f.appendChild(el("h4",{text:"📷 صور القائمة"}));
@@ -2924,7 +2998,7 @@ function mvDetail(id){var m0=S.smv[id];if(!m0||m0.k!=="inv")return;var m=Object.
  if(m.paid){f.appendChild(el("h4",{text:"🧾 صورة وصل الدفع"}));if((m.pimgs||[]).length){var t2=el("div",{class:"x-th"});f.appendChild(t2);U.thumbs(t2,m.pimgs.slice(),null)}else f.appendChild(el("p",{class:"sp-dm",text:"ما مضافة صورة."}))}
  var btns=[{t:"إغلاق"},{t:"✎ تعديل",cls:"ok",fn:function(){setTimeout(function(){invForm(id,m.sid)},0)}}];
  if(!m.paid)btns.splice(1,0,{t:"💵 تسديد",cls:"ok",fn:function(){setTimeout(function(){payQuick(id)},0)}});
- else btns.splice(1,0,{t:"↩ رجعها غير مسددة",fn:function(){setTimeout(function(){U.modal("ترجع القائمة غير مسددة؟",el("p",{style:"margin:0",text:"تنمسح معلومات التسديد (التاريخ والطريقة وصورة الوصل)."}),[{t:"رجوع"},{t:"نعم",cls:"bad",fn:function(){var o=S.smv[id];U.imgDrop(o.pimgs);["paid","pdate","pm","pnote","pimgs"].forEach(function(k){delete o[k]});commit();toast("رجعت غير مسددة")}}])},0)}});
+ else btns.splice(1,0,{t:"↩ رجعها غير مسددة",fn:function(){setTimeout(function(){U.modal("ترجع القائمة غير مسددة؟",el("p",{style:"margin:0",text:"تنمسح معلومات التسديد (التاريخ والطريقة وصورة الوصل)."}),[{t:"رجوع"},{t:"نعم",cls:"bad",fn:function(){var o=S.smv[id];U.imgDrop(o.pimgs);["paid","pdate","pm","pnote","pimgs","psrc"].forEach(function(k){delete o[k]});commit();toast("رجعت غير مسددة")}}])},0)}});
  U.modal("🧾 قائمة"+(m.no?" رقم "+m.no:""),f,btns)}
 /* ---------- النوافذ ---------- */
 function supSel(id,cur){var s=el("select",{class:"x-fld",id:id});s.appendChild(el("option",{value:"",text:"اختر المورد…"}));
@@ -2945,9 +3019,14 @@ function payBox(o){var f=el("div",{style:"display:flex;flex-direction:column;gap
  d.value=o.pdate||tdy();nt.value=o.pnote||"";
  f.appendChild(photoBox(imgs,"📷 صوّر وصل الدفع"));f.appendChild(el("label",{},["تاريخ التسديد",d]));
  var mb=el("div",{class:"sp-qb"});["نقد","حوالة","صك","زين كاش"].forEach(function(t){var b=el("button",{type:"button",text:t,class:t===meth?"on":"",on:{click:function(){meth=t;Array.prototype.forEach.call(mb.children,function(c){c.classList.toggle("on",c===b)})}}});mb.appendChild(b)});
+ var src=o.psrc||"",sb=el("div",{class:"sp-qb"}),so=el("input",{class:"x-fld",id:"sppSo",autocomplete:"off",placeholder:"اكتب منين انتسددت"});
+ var known=PSRC.some(function(t){return t[0]===src});so.hidden=!src||known;if(src&&!known)so.value=src;
+ PSRC.concat([["__o","✍️ غير ذلك"]]).forEach(function(t){var b=el("button",{type:"button",text:t[1],class:(t[0]==="__o"?(src&&!known):t[0]===src)?"on":"",on:{click:function(){src=t[0]==="__o"?"__o":t[0];so.hidden=t[0]!=="__o";Array.prototype.forEach.call(sb.children,function(c){c.classList.toggle("on",c===b)});if(t[0]==="__o")setTimeout(function(){so.focus()},30)}}});sb.appendChild(b)});
+ if(src&&!known)src="__o";
+ f.appendChild(el("div",{class:"sp-fl"},[el("span",{text:"منين انتسددت (تطلع بكشف الطبيبة)"}),sb,so]));
  f.appendChild(el("label",{},["طريقة الدفع",mb]));f.appendChild(el("label",{},["ملاحظة التسديد / رقم الوصل",nt]));
- return {node:f,get:function(){return {pdate:d.value||tdy(),pm:meth,pnote:nt.value.trim(),pimgs:imgs}}}}
-function applyPay(o,v){o.paid=true;o.pdate=v.pdate;o.pm=v.pm;if(v.pnote)o.pnote=v.pnote;else delete o.pnote;if(v.pimgs.length)o.pimgs=v.pimgs.slice();else delete o.pimgs}
+ return {node:f,get:function(){return {pdate:d.value||tdy(),pm:meth,pnote:nt.value.trim(),pimgs:imgs,psrc:src==="__o"?so.value.trim():src}}}}
+function applyPay(o,v){o.paid=true;o.pdate=v.pdate;o.pm=v.pm;if(v.psrc)o.psrc=v.psrc;else delete o.psrc;if(v.pnote)o.pnote=v.pnote;else delete o.pnote;if(v.pimgs.length)o.pimgs=v.pimgs.slice();else delete o.pimgs}
 function payQuick(id){var o=S.smv[id];if(!o)return;var P2=payBox(o);
  U.modal("💵 تسديد القائمة"+(o.no?" رقم "+o.no:"")+" · "+fmn(o.amount),P2.node,[{t:"إلغاء"},{t:"💵 تسديد",cls:"ok",fn:function(){var x=Object.assign({},S.smv[id]);applyPay(x,P2.get());S.smv[id]=x;commit();toast("✓ تم تسديد القائمة"+(x.no?" "+x.no:"")+"\n"+fmn(x.amount)+" دينار")}}])}
 function invForm(mid,sid){var m=mid?S.smv[mid]:null,f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),imgs=m&&m.imgs?m.imgs.slice():[];
@@ -2969,7 +3048,7 @@ function invForm(mid,sid){var m=mid?S.smv[mid]:null,f=el("div",{style:"display:f
   var o=Object.assign({},m||{ts:Date.now()},{sid:s2,k:"inv",amount:a,no:no.value.trim(),date:d.value||tdy(),due:du.value||"",note:nt.value.trim()});if(imgs.length)o.imgs=imgs.slice();else delete o.imgs;if(!o.due)delete o.due;
   if(m)U.imgDrop((m.imgs||[]).filter(function(x){return imgs.indexOf(x)<0}));
   if(paid){var v=pb.get();if(m)U.imgDrop((m.pimgs||[]).filter(function(x){return v.pimgs.indexOf(x)<0}));applyPay(o,v);delete o.due}
-  else{if(m)U.imgDrop(m.pimgs);["paid","pdate","pm","pnote","pimgs"].forEach(function(k){delete o[k]})}
+  else{if(m)U.imgDrop(m.pimgs);["paid","pdate","pm","pnote","pimgs","psrc"].forEach(function(k){delete o[k]})}
   S.smv[mid||"v"+rid()]=o;commit();if(!m&&P.view!=="sup")openSup(s2);toast((m?"✔ انحفظت القائمة":"✔ انسجلت القائمة "+fmn(a))+(paid?"\n✓ تم التسديد":"\nغير مسددة"))}}];
  if(m)btns.unshift({t:"حذف",cls:"del",fn:function(){setTimeout(function(){delMv(Object.assign({id:mid},m))},0)}});
  U.modal(m?"تعديل القائمة":"قائمة جديدة",f,btns)}
