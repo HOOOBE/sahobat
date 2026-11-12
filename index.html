@@ -907,6 +907,10 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 .wn-t.on .wn-i{color:var(--lime)}
 .sb-opn{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 1px color-mix(in srgb,var(--tx) 30%,transparent);flex:0 0 auto;margin-inline-start:auto}
 @media (max-width:900px){:root{--tb1:56px}.wn{right:0;padding:0 10px}.wn-b{max-width:150px}}
+/* 7.1v: هزة خفيفة للنافذة إذا انضغط براها وهي بيها إدخال */
+@keyframes mbNudge{0%,100%{transform:none}30%{transform:scale(1.012)}60%{transform:scale(.995)}}
+#xm .mb.nudge{animation:mbNudge .22s ease}
+@media (prefers-reduced-motion:reduce){#xm .mb.nudge{animation:none}}
 </style>
 </head>
 <body>
@@ -991,7 +995,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 </div></section>
 <section class="sys-s" style="--sc:#d97706"><h3>البرنامج</h3><div class="sysl">
 <button id="sysUp">↩ تحديث البرنامج<small>يجيب آخر نسخة من النت ويعيد الفتح</small></button>
-<button id="verb">ℹ️ الإصدار 7.0v Online<small>شنو الجديد بهذه النسخة</small></button>
+<button id="verb">ℹ️ الإصدار 7.1v Online<small>شنو الجديد بهذه النسخة</small></button>
 <button id="wipe" hidden class="sysd">🧹 تصفير البيانات<small>يمسح البيانات اللي تختارها — سوّي نسخة احتياطية قبلها</small></button>
 </div></section>
 </div></div></div>
@@ -1005,7 +1009,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <div class="hmt"><h1><img src="icon-192.png" alt="" class="hm-ic" width="44" height="44"><span class="hm-tt">Manar Derma OS<small id="hmWho"></small></span></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">7.0v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">7.1v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -1133,7 +1137,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <div class="hab lg-ab"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
 <div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
 <div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b></div></div>
-<button id="ver" title="شنو الجديد بهذه النسخة؟">7.0v Online · ℹ️ شنو الجديد؟</button>
+<button id="ver" title="شنو الجديد بهذه النسخة؟">7.1v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -1158,14 +1162,11 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 7.0v Online</div><div class="vd">تاريخ التحديث: 12/11/2026</div>
+<div class="vh">ℹ️ 7.1v Online</div><div class="vd">تاريخ التحديث: 12/11/2026</div>
 <ul class="vl">
-<li><b>🪟 النوافذ:</b> البرنامج اللي تفتحه يبقى مفتوح ومثل ما عفته (نفس الصفحة ونفس المكان واللي كاتبه بالخانات) لما تروح لبرنامج ثاني. شريط النوافذ فوق يبين كل المفتوح: اضغط عليه ترجعله، و✕ تسده. البرنامج المفتوح عليه نقطة خضرة بالشريط الجانبي، وإذا ضغطت على نفس البرنامج اللي أنت بيه يرجع لأوله.</li>
-<li><b>🧹 ترتيب شكل النظام كله:</b> كل البرامج صارت بنفس النظام — العنوان يمين وأزرار Excel/PDF يسار بسطر واحد، ونفس المسافة بين كل قسم وقسم، وزر الرجوع (→) بنفس المكان بكل الشاشات.</li>
-<li><b>📱 بالموبايل:</b> أرقام المربع الغامق صارت سطور واضحة (العنوان يمين والرقم كامل يسار)، والأزرار جواه متساوية ومرتبة صفين، وتبديل الشهر بالإيراد صار شريط واحد بأسهم.</li>
-<li><b>🪟 النوافذ:</b> أزرار «حفظ / إلغاء» ثابتة جوه النافذة وتبين دائمًا بدون ما تنزل، والزر الأساسي نفس اللون بكل النوافذ، والرسالة السريعة صارت أصغر وما تغطي العنوان. شهر الجرد صار ينختار بالعربي.</li>
+<li><b>🪟 نوافذ الإدخال ما تختفي:</b> لما تفتح نافذة مثل «دين جديد» أو «قائمة جديدة» وتضغط براها بالغلط، تبقى مفتوحة واللي كتبته ما يضيع. تنسد بس من «إلغاء» أو «حفظ».</li>
 </ul>
-<div class="vold"><b>6.9v Online</b>: أرقام تقارير PDF ما تتداخل، وفحص كامل لكل الشاشات.<br><b>6.8v Online</b>: «جلسة على الحساب» بديون الكادر وتسديد «انسدد بسستم العيادة».<br><b>6.7v Online</b>: برنامج «جرد المخزن»، «مسددة مسبقًا» بتقارير الموردين، والخروج التلقائي بعد 5 دقايق.<br><b>6.6v Online</b>: تقارير PDF رجعت صفحات A4، وكل قسم يبدي بصفحة جديدة إذا ما يكفيه الباقي.<br><b>6.5v Online</b>: صور الحركات بالـ PDF صغيرة داخل الصف وتتكبر بوضوح.</div>
+<div class="vold"><b>7.0v Online</b>: النوافذ (البرنامج يبقى مفتوح بحالته) وترتيب شكل النظام كله.<br><b>6.9v Online</b>: أرقام تقارير PDF ما تتداخل، وفحص كامل لكل الشاشات.<br><b>6.8v Online</b>: «جلسة على الحساب» بديون الكادر وتسديد «انسدد بسستم العيادة».<br><b>6.7v Online</b>: برنامج «جرد المخزن»، «مسددة مسبقًا» بتقارير الموردين، والخروج التلقائي بعد 5 دقايق.<br><b>6.6v Online</b>: تقارير PDF رجعت صفحات A4، وكل قسم يبدي بصفحة جديدة إذا ما يكفيه الباقي.</div>
 <div class="row" style="margin-top:12px"><button id="vmx" class="pri">تمام</button></div>
 </div></div>
 <div class="md" id="md" hidden><div class="mb"><div id="mt"></div><input id="mi" type="text" autocomplete="off"><div class="row"><button id="mok" class="pri">موافق</button><button id="mno">إلغاء</button></div></div></div>
@@ -1363,7 +1364,7 @@ function drawLog(){var L=$("log");L.innerHTML="";var t=S.log;var sum=0,csum=0,ss
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="7.0";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="7.1";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysx").onclick=function(){$("sysm").hidden=true};
 $("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
@@ -2452,7 +2453,8 @@ function modal(title,body,btns){var mb=g("xmb");mb.innerHTML="";mb.appendChild(e
  btns.forEach(function(b){var x=el("button",{class:b.cls||"",text:b.t});x.onclick=function(){if(b.fn&&b.fn()===false)return;close()};bar.appendChild(x)});
  mb.appendChild(bar);g("xm").hidden=false;var f=mb.querySelector("input:not([type=date]):not([type=checkbox])");if(f)setTimeout(function(){if(!mb.contains(document.activeElement))f.focus()},60)}
 function close(){g("xm").hidden=true;g("xmb").innerHTML=""}
-g("xm").addEventListener("click",function(e){if(e.target.id==="xm")close()});
+/* 7.1v: الضغط برا النافذة ما يسدها إذا بيها خانات إدخال (حتى ما يضيع اللي انكتب) — تنسد بس من «إلغاء/حفظ». نوافذ العرض بس (بدون خانات) تبقى تنسد بالضغط برا. */
+g("xm").addEventListener("click",function(e){if(e.target.id!=="xm")return;if(g("xmb").querySelector("input,textarea,select")){var m=g("xmb");m.classList.remove("nudge");void m.offsetWidth;m.classList.add("nudge");return}close()});
 function fmtLive(i){var n=num(i.value);i.value=n==null?"":fmn(n)}
 function amtField(id,val){var i=el("input",{class:"x-fld num",id:id,inputmode:"numeric",autocomplete:"off",placeholder:"0"});if(val!=null)i.value=fmn(val);i.addEventListener("input",function(){fmtLive(i)});return i}
 
