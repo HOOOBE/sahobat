@@ -1035,9 +1035,10 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
  :is(#xv,#sv,#dv,#rv,#rp,#jd) .x-meta>div b.two{font-size:13.5px;align-items:flex-end}
 }
 /* 7.8v: دين للمندوبين */
-.panel .lnb{width:100%;margin-top:8px;min-height:46px;border-radius:12px;font-weight:800;font-size:16px;background:var(--card);border:1.5px dashed color-mix(in srgb,#b7791f 60%,var(--bd));color:#8a5a00}
-:root[data-theme="dark"] .panel .lnb{color:#ffd88a}
-.panel .lnb:disabled{opacity:.45}
+.lnh{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.lnh .lnnew{min-height:40px;padding:0 14px;border-radius:10px;font-weight:800;background:var(--card);border:1.5px dashed color-mix(in srgb,#b7791f 60%,var(--bd));color:#8a5a00;white-space:nowrap}
+:root[data-theme="dark"] .lnh .lnnew{color:#ffd88a}
+.lnp .lne{color:var(--mut);font-size:13.5px;line-height:1.7}
 .lnp{background:color-mix(in srgb,#f6c56b 12%,var(--card));border:1.5px solid color-mix(in srgb,#e0a83a 45%,var(--bd));border-radius:16px;padding:10px 14px;margin-bottom:14px;display:flex;flex-direction:column;gap:8px}
 .lnp[hidden]{display:none}.lnp h2{margin:0 0 2px;font-size:17px}
 .lnr-it{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:8px 12px}
@@ -1091,7 +1092,6 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
     <div class="minf" id="minf" hidden><button type="button" class="mi-ph" id="miPh" aria-label="عرض صورة المادة"></button><div class="mi-tx"><small>طريقة السحب</small><b id="miNt"></b></div></div>
     <div class="keys" id="keys"></div>
     <button class="go" id="go" disabled>تسجيل ✓</button>
-    <button type="button" class="lnb" id="lnb" disabled title="المادة تطلع من المخزن بس ما تنحسب ضمن سحوبات اليوم">🤝 دين لمندوب</button>
   </div>
 </div></div>
 
@@ -1135,7 +1135,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <section class="sys-s" style="--sc:#d97706"><h3>البرنامج</h3><div class="sysl">
 <button id="sysUi">🎨 واجهة النظام<small id="sysUiS">الثيم، الألوان، الخط، وحجم العرض</small></button>
 <button id="sysUp">↩ تحديث البرنامج<small>يجيب آخر نسخة من النت ويعيد الفتح</small></button>
-<button id="verb">ℹ️ الإصدار 7.8v Online<small>شنو الجديد بهذه النسخة</small></button>
+<button id="verb">ℹ️ الإصدار 7.9v Online<small>شنو الجديد بهذه النسخة</small></button>
 <button id="wipe" hidden class="sysd">🧹 تصفير البيانات<small>يمسح البيانات اللي تختارها — سوّي نسخة احتياطية قبلها</small></button>
 </div></section>
 </div></div></div>
@@ -1149,7 +1149,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <div class="hmt"><h1><img src="icon-192.png" alt="" class="hm-ic" width="44" height="44"><span class="hm-tt">Manar Derma OS<small id="hmWho"></small></span></h1><button id="hmAdd" hidden>＋ برنامج</button><button id="hmEd" hidden>✎ تعديل</button><button class="thb" title="الوضع الليلي / النهاري" aria-label="تغيير الوضع الليلي / النهاري">🌙</button><button id="hmOut">🚪 خروج</button></div>
 <div class="hmn" id="hmN" hidden>اضغط على أي مربع حتى تغيّر اسمه أو لونه أو أيقونته، أو تحذفه. وبعدها اضغط «✔ تم».</div>
 <div class="tiles" id="tiles"></div>
-<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">7.8v Online · ℹ️ شنو الجديد؟</button>
+<button class="hmv" id="verh" title="شنو الجديد بهذه النسخة؟">7.9v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="apm" hidden><div class="mb">
 <div id="apT" style="font-weight:800;font-size:19px;margin-bottom:12px"></div>
@@ -1278,7 +1278,7 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <div class="hab lg-ab"><img src="logo.webp" alt="Manar Derma Clinic" class="hab-logo" width="900" height="287">
 <div class="hab-t">تم تصميم هذا البرنامج من قبل <b>Manar Derma Clinic</b></div>
 <div class="hab-s">إعداد وإشراف: <b dir="ltr">Ihab S. Ahmed</b></div></div>
-<button id="ver" title="شنو الجديد بهذه النسخة؟">7.8v Online · ℹ️ شنو الجديد؟</button>
+<button id="ver" title="شنو الجديد بهذه النسخة؟">7.9v Online · ℹ️ شنو الجديد؟</button>
 </div></div>
 <div class="md" id="wm" hidden><div class="mb"><div style="font-weight:800;font-size:19px;margin-bottom:4px">🧹 تصفير البيانات</div>
 <div style="color:var(--mut);font-size:15px;margin-bottom:10px">اختر شنو تريد تصفّر:</div>
@@ -1303,9 +1303,10 @@ body.has-wn{--tbh:calc(var(--tb1) + 46px)}
 <button id="cmUn" style="width:100%;margin-bottom:8px;color:var(--bad)">فصل هذا الجهاز عن الربط</button></div>
 <button id="cmX" style="width:100%">إغلاق</button></div></div>
 <div class="md" id="vm" hidden><div class="mb">
-<div class="vh">ℹ️ 7.8v Online</div><div class="vd">تاريخ التحديث: 24/11/2026</div>
+<div class="vh">ℹ️ 7.9v Online</div><div class="vd">تاريخ التحديث: 24/11/2026</div>
 <ul class="vl">
-<li><b>🤝 دين مواد للمندوبين:</b> بتسجيل السحوبات، اختار المادة والعدد واضغط «🤝 دين لمندوب» تحت «تسجيل». المادة تنقص من المخزن بس ما تنحسب ضمن سحوبات اليوم ولا تقرير الصادر.</li>
+<li><b>🔒 زر الدين انشال من يم «تسجيل»:</b> حتى الموظفين ما يضغطونه بالغلط. صار بس بحساب الإدارة، ببطاقة «🤝 مواد عند المندوبين» فوق سحوبات اليوم.</li>
+<li><b>🤝 دين مواد للمندوبين (للإدارة بس):</b> بتسجيل السحوبات، اختار المادة والعدد واضغط «+ دين مادة لمندوب» من بطاقة «مواد عند المندوبين» فوق سحوبات اليوم. المادة تنقص من المخزن بس ما تنحسب ضمن سحوبات اليوم ولا تقرير الصادر.</li>
 <li><b>🔔 تبقى بالتنبيهات:</b> كل مادة عند مندوب تبين بالتنبيهات 🔔 وبقائمة «مواد عند المندوبين» فوق سحوبات اليوم، ويه عدد الأيام. من ترجع اضغط «↩ استعادة» وترجع للمخزن (وإذا رجع قسم منها الباقي يبقى دين).</li>
 </ul>
 <div class="vold"><b>7.7v Online</b>: كشف دين الموظف مرتب حسب الدين وتحته تسديداته.<br><b>7.6v Online</b>: خزنة الأموال الإضافية وسلف الكادر.<br><b>7.5v Online</b>: تسديد كل دين لحاله بديون الكادر، وخصم الموردين عند التسديد.<br><b>7.4v Online</b>: «دين قديم (سابق)» بديون الكادر، وتسديدات الشهر حسب المورد بلون وإجمالي.<br><b>7.3v Online</b>: تسديدات الشهر بالموردين، «منين انتسددت»، وكشف التسديدات PDF.</div>
@@ -1364,7 +1365,7 @@ function editXw(name){var m=$("mi");m.inputMode="numeric";
   save();drawAcc();upd();xpSync();toast(hasXw(name)?"✔ «"+name+"»: التحذير قبل "+S.xpw[name]+" يوم":"✔ «"+name+"» رجعت للتحذير العام ("+S.xpd+" يوم)")})}
 function lowList(){var cat={};S.cats.forEach(function(c){c.items.forEach(function(i){cat[i]=c.n})});
  return Object.keys(S.stock).filter(function(n){return n in cat&&S.stock[n]<=S.thr}).map(function(n){return{n:n,c:cat[n],q:S.stock[n]}}).sort(function(a,b){return a.q-b.q})}
-function lnOpen(){return Object.keys(S.lnd||{}).map(function(id){return Object.assign({id:id},S.lnd[id])}).filter(function(l){return !l.ret}).sort(function(a,b){return (a.ts||0)-(b.ts||0)})}
+function lnOpen(){if(!ACC())return [];return Object.keys(S.lnd||{}).map(function(id){return Object.assign({id:id},S.lnd[id])}).filter(function(l){return !l.ret}).sort(function(a,b){return (a.ts||0)-(b.ts||0)})}
 function bellUpd(){var n=lowList().length+xpList().length+lnOpen().length,b=$("bellc");b.textContent=n;b.hidden=!n;$("bell").classList.toggle("alert",n>0);var c=$("tbBellC");if(c){c.textContent=n;c.hidden=!n}}
 function showAlerts(){var L=$("alist"),a=lowList(),xl=xpList();L.innerHTML="";
  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
@@ -1484,7 +1485,7 @@ function upd(){var e=$("sel"),bad="",t=S.item||"اختر مادة";
 function stale(){return S.day!==today()}
 /* ===== 7.8v: دين المواد للمندوبين — S.lnd = {id:{i,n,to,d,ts,by,note,ret:{d,ts,by}}}. ينقص من الخزين بس ما يدخل بسحوبات اليوم، ويبقى بالتنبيهات لحد «↩ استعادة» ===== */
 function lnReps(){var s={},L=[];Object.keys(S.lnd||{}).map(function(k){return S.lnd[k]}).sort(function(a,b){return (b.ts||0)-(a.ts||0)}).forEach(function(l){if(l.to&&!s[l.to]){s[l.to]=1;L.push(l.to)}});return L}
-function lnNew(){var it=S.item,n=S.n;if(!it||!(n>0))return;if(hasSt(it)&&n>S.stock[it]){toast("المتاح بالمخزن "+S.stock[it]+" بس");return}
+function lnNew(){if(!ACC())return;var it=S.item,n=S.n;if(!it||!(n>0)){toast("اختار المادة والعدد من فوق أول، بعدين اضغط «دين لمندوب»");return}if(stale()){$("go").click();return}if(hasSt(it)&&n>S.stock[it]){toast("المتاح بالمخزن "+S.stock[it]+" بس");return}
  var el=XU.el,f=el("div",{style:"display:flex;flex-direction:column;gap:12px"}),to=el("input",{class:"x-fld",id:"lnTo",autocomplete:"off",list:"lnRL",placeholder:"اسم المندوب / الشركة"}),nt=el("input",{class:"x-fld",id:"lnNt",autocomplete:"off",placeholder:"اختياري: سبب أو موعد الإرجاع"}),R=lnReps(),dl=el("datalist",{id:"lnRL"});
  R.forEach(function(r){dl.appendChild(el("option",{value:r}))});
  f.appendChild(el("div",{class:"ln-it"},[el("b",{text:it+" × "+n}),el("small",{text:hasSt(it)?"بالمخزن هسه "+S.stock[it]+" · يبقى "+(S.stock[it]-n):"المادة ما بيها خزين محسوب"})]));
@@ -1505,14 +1506,16 @@ function lnRet(id){var l=S.lnd[id];if(!l||l.ret){toast("هذا الدين مرج
   if(k<l.n){S.lnd[id]=Object.assign({},l,{n:l.n-k});S.lnd["n"+rid()]=Object.assign({},l,{n:k,ret:r})}else S.lnd[id]=Object.assign({},l,{ret:r});
   if(hasSt(l.i))S.stock[l.i]+=k;save();drawAcc();upd();lnDraw();bellUpd();toast("↩ رجعت "+l.i+" × "+k+" للمخزن"+(k<l.n?"\nباقي "+(l.n-k)+" عند "+l.to:""))}}])}
 function lnDel(id){var l=S.lnd[id];if(!l)return;dlg("حذف دين «"+l.i+" × "+l.n+"» عند "+l.to+"؟\n(للتسجيل الغلط بس — الكمية ترجع للمخزن)","",false,function(v){if(!v)return;if(!l.ret&&hasSt(l.i))S.stock[l.i]+=l.n;delete S.lnd[id];save();drawAcc();upd();lnDraw();bellUpd();toast("انحذف الدين")})}
-function lnDraw(){var P=$("lnp");if(!P)return;var L=lnOpen();P.hidden=!L.length;P.innerHTML="";if(!L.length)return;
- var h=document.createElement("h2");h.textContent="🤝 مواد عند المندوبين ("+L.length+")";P.appendChild(h);
+function lnDraw(){var P=$("lnp");if(!P)return;var A=ACC(),L=lnOpen();P.hidden=!A;P.innerHTML="";if(!A)return;
+ var hd=document.createElement("div");hd.className="lnh";var h=document.createElement("h2");h.textContent="🤝 مواد عند المندوبين"+(L.length?" ("+L.length+")":"");
+ var nb=document.createElement("button");nb.type="button";nb.className="lnnew";nb.textContent="+ دين مادة لمندوب";nb.onclick=lnNew;hd.appendChild(h);hd.appendChild(nb);P.appendChild(hd);
+ if(!L.length){var e=document.createElement("small");e.className="lne";e.textContent="ما أكو مواد عند مندوبين. اختار المادة والعدد من فوق واضغط «+ دين مادة لمندوب» — تنقص من المخزن بدون ما تنحسب ضمن سحوبات اليوم.";P.appendChild(e);return}
  L.forEach(function(l){var r=document.createElement("div");r.className="lnr-it";var d=Math.round((Date.now()-(l.ts||0))/864e5);
   r.innerHTML='<div class="tx"><b></b><small></small></div><span class="ag"></span><button type="button" class="mini">↩ استعادة</button>';
   r.querySelector("b").textContent=l.i+" × "+l.n;r.querySelector("small").textContent="عند "+l.to+" · "+dayLbl(l.d)+(l.by?" · سجّلها "+l.by:"")+(l.note?" · "+l.note:"");
   var ag=r.querySelector(".ag");ag.textContent=d>0?"من "+d+" يوم":"اليوم";if(d>=7)ag.classList.add("old");
   r.querySelector("button").onclick=function(){lnRet(l.id)};P.appendChild(r)})}
-function chk(){$("who").textContent=S.emp||"اختر موظف";var st=stale();$("go").textContent=st?"🔒 افتح يوم جديد":"تسجيل ✓";$("go").disabled=st?false:!(S.item&&S.emp&&S.n>0&&S.n<=stLeft(S.item));var lb=$("lnb");if(lb)lb.disabled=!(S.item&&S.n>0&&S.n<=stLeft(S.item))}
+function chk(){$("who").textContent=S.emp||"اختر موظف";var st=stale();$("go").textContent=st?"🔒 افتح يوم جديد":"تسجيل ✓";$("go").disabled=st?false:!(S.item&&S.emp&&S.n>0&&S.n<=stLeft(S.item))}
 function dayCheck(){if(stale()&&!S.log.length){S.day=today();S.exp=false;S.prev=null;save();drawLog()}
  if(S.role){if(dayCheck.d!==today()){dayCheck.d=today();drawAcc();upd()}sysNotify(false)}
  var st=stale();$("dayw").hidden=!st;if(st)$("daywt").textContent="⚠ انتهى يوم "+dayLbl(S.day)+" ولم يتم إغلاقه.\nلا يمكن تسجيل سحوبات جديدة حتى تفتح يومًا جديدًا.";chk()}
@@ -1541,7 +1544,7 @@ function drawLog(){lnDraw();var L=$("log");L.innerHTML="";var t=S.log;var sum=0,
 
 function toggleEdit(){if(S.edit){S.edit=false;renderAll();return}if(!ACC()){toast("وضع التعديل للمحاسب فقط 🔒");return}S.edit=true;renderAll()}
 $("bell").onclick=showAlerts;
-var APPV="7.8";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
+var APPV="7.9";function showVer(){$("vm").hidden=false;try{localStorage.setItem("wd_ver",APPV)}catch(e){}}
 $("ver").onclick=showVer;$("verh").onclick=showVer;$("verb").onclick=showVer;$("sysx").onclick=function(){$("sysm").hidden=true};
 $("sysm").addEventListener("click",function(e){if(e.target===this||e.target.closest(".sysl button"))this.hidden=true},true);$("vmx").onclick=function(){$("vm").hidden=true};
 setTimeout(function(){var v=null;try{v=localStorage.getItem("wd_ver")}catch(e){v=APPV}if(v!==APPV)showVer()},900);$("alx").onclick=function(){$("al").hidden=true};
@@ -1549,7 +1552,6 @@ $("thb").onclick=function(){var m=$("mi");m.inputMode="numeric";dlg("تنبيه 
 $("gear").onclick=toggleEdit;$("done").onclick=toggleEdit;
 $("pinb").onclick=function(){if(!ACC())return;dlg("رمز التعديل يُطلب عند «نسيت باسوورد الإدارة؟».\nاكتب رمزًا جديدًا (اتركه فارغًا لإلغاء الرمز):",S.pin,true,function(p){if(p===null)return;S.pin=p.trim();save();toast(S.pin?"تم حفظ الرمز":"تم إلغاء الرمز")})};
 $("q").oninput=drawAcc;
-$("lnb").onclick=function(){if(stale()){$("go").click();return}lnNew()};
 $("go").onclick=function(){if(stale()){dayCheck();if(stale()){alertModal("⛔ انتهى يوم "+dayLbl(S.day)+"\nاضغط «إنهاء اليوم وبدء يوم جديد» أولاً، بعدها تگدر تسجل السحوبات.");$("dayw").scrollIntoView({behavior:"smooth"})}return}
  var it0=S.item,xs=xpState(it0);
  if(xs==="out"){dlg("⛔ المادة «"+it0+"» منتهية الصلاحية ("+dayLbl(S.xp[it0])+")\n\nمتأكد تريد تسجيل السحب؟","",false,function(v){if(v)doGo(true)});try{if(navigator.vibrate)navigator.vibrate([300,100,300])}catch(e){}return}
